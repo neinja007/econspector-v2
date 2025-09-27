@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ThemeProvider } from '@/components/theming/theme-provider';
+import ThemeProvider from '@/components/theming/theme-provider';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
 	description: 'The premier platform for visualizing, analyzing, and presenting economic data.'
 };
 
-export default function RootLayout({
-	children
-}: Readonly<{
+type RootLayoutProps = {
 	children: React.ReactNode;
-}>) {
+};
+
+const RootLayout = ({ children }: RootLayoutProps) => {
 	return (
 		<html lang='en'>
 			<body className='antialiased'>
@@ -21,4 +21,6 @@ export default function RootLayout({
 			</body>
 		</html>
 	);
-}
+};
+
+export default RootLayout;

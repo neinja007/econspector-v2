@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes';
 
 import { Button } from '@/components/shadcn/ui/button';
 
-export const ThemeToggle = () => {
+const ThemeToggle = () => {
 	const { theme, setTheme } = useTheme();
 
 	return (
@@ -15,3 +15,5 @@ export const ThemeToggle = () => {
 		</Button>
 	);
 };
+
+export default ThemeToggle;
