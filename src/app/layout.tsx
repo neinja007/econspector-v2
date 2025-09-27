@@ -4,6 +4,7 @@ import ThemeProvider from '@/components/theming/theme-provider';
 import { ClerkProvider } from '@clerk/nextjs';
 import { SidebarProvider } from '@/components/shadcn/ui/sidebar';
 import AppSidebar from '@/components/sidebar/app-sidebar';
+import { TanstackQueryProvider } from '@/components/tanstack-query-provider';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
@@ -20,10 +21,12 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 			<html lang='en'>
 				<body className='antialiased'>
 					<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-						<SidebarProvider>
-							<AppSidebar />
-							<main>{children}</main>
-						</SidebarProvider>
+						<TanstackQueryProvider>
+							<SidebarProvider>
+								<AppSidebar />
+								<main>{children}</main>
+							</SidebarProvider>
+						</TanstackQueryProvider>
 					</ThemeProvider>
 				</body>
 			</html>
