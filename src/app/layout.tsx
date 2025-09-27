@@ -5,6 +5,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { SidebarProvider } from '@/components/shadcn/ui/sidebar';
 import AppSidebar from '@/components/sidebar/app-sidebar';
 import { TanstackQueryProvider } from '@/components/tanstack-query-provider';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
@@ -28,6 +29,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 							</SidebarProvider>
 						</TanstackQueryProvider>
 					</ThemeProvider>
+					<Analytics />
 				</body>
 			</html>
 		</ClerkProvider>
