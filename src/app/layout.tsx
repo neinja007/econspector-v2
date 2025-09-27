@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import ThemeProvider from '@/components/theming/theme-provider';
 import { ClerkProvider } from '@clerk/nextjs';
+import { SidebarProvider } from '@/components/shadcn/ui/sidebar';
+import AppSidebar from '@/components/sidebar/app-sidebar';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
@@ -18,7 +20,10 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 			<html lang='en'>
 				<body className='antialiased'>
 					<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-						{children}
+						<SidebarProvider>
+							<AppSidebar />
+							<main>{children}</main>
+						</SidebarProvider>
 					</ThemeProvider>
 				</body>
 			</html>
