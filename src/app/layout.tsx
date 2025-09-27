@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import ThemeProvider from '@/components/theming/theme-provider';
+import { ClerkProvider } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
@@ -13,13 +14,15 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
 	return (
-		<html lang='en'>
-			<body className='antialiased'>
-				<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-					{children}
-				</ThemeProvider>
-			</body>
-		</html>
+		<ClerkProvider>
+			<html lang='en'>
+				<body className='antialiased'>
+					<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
+						{children}
+					</ThemeProvider>
+				</body>
+			</html>
+		</ClerkProvider>
 	);
 };
 
