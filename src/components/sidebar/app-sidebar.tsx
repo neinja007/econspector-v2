@@ -14,7 +14,7 @@ import {
 } from '../shadcn/ui/sidebar';
 import { sidebarRoutes } from '@/data/sidebar-routes';
 import { Home, LogOut, Settings, UserCircle2 } from 'lucide-react';
-import { SignedOut, SignOutButton } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignOutButton } from '@clerk/nextjs';
 
 const AppSidebar = () => {
 	return (
@@ -66,39 +66,46 @@ const AppSidebar = () => {
 						</SidebarGroupContent>
 					</SidebarGroup>
 				))}
-				<SidebarGroup>
-					<SidebarGroupLabel>Account</SidebarGroupLabel>
-					<SidebarGroupContent>
-						<SidebarMenu>
-							<SidebarMenuItem>
-								<SidebarMenuButton asChild>
-									<Link href='/account'>
-										<Settings /> Manage Account
-									</Link>
-								</SidebarMenuButton>
-							</SidebarMenuItem>
-							<SidebarMenuItem>
-								<SidebarMenuButton asChild>
-									<SignOutButton>
-										<button className='cursor-pointer'>
-											<LogOut /> Log Out
-										</button>
-									</SignOutButton>
-								</SidebarMenuButton>
-							</SidebarMenuItem>
-						</SidebarMenu>
-					</SidebarGroupContent>
-				</SidebarGroup>
+				{
+					<SignedIn>
+						<SidebarGroup>
+							<SidebarGroupLabel>Account</SidebarGroupLabel>
+							<SidebarGroupContent>
+								<SidebarMenu>
+									<SidebarMenuItem>
+										<SidebarMenuButton asChild>
+											<Link href='/user/account'>
+												<Settings /> Manage Account
+											</Link>
+										</SidebarMenuButton>
+									</SidebarMenuItem>
+									<SidebarMenuItem>
+										<SidebarMenuButton asChild>
+											<SignOutButton>
+												<button className='cursor-pointer'>
+													<LogOut /> Log Out
+												</button>
+											</SignOutButton>
+										</SidebarMenuButton>
+									</SidebarMenuItem>
+								</SidebarMenu>
+							</SidebarGroupContent>
+						</SidebarGroup>
+					</SignedIn>
+				}
 			</SidebarContent>
-			<SidebarFooter className='w-full border-t p-3'>
+			<SidebarFooter className='w-full border-t'>
 				<SignedOut>
-					<div className='flex items-center gap-2'>
-						<UserCircle2 strokeWidth={1} className='size-10' />
+					<Link
+						href='/user/sign-in'
+						className='flex items-center gap-2 hover:bg-blue-100 rounded-sm p-1 transition-colors'
+					>
+						<UserCircle2 strokeWidth={1} className='size-10 text-gray-700' />
 						<div className='flex flex-col'>
 							<div className='text-lg font-medium'>Register or Sign in</div>
-							<div className='text-sm -mt-1'>To access all features</div>
+							<div className='text-sm -mt-1'>to access all features</div>
 						</div>
-					</div>
+					</Link>
 				</SignedOut>
 			</SidebarFooter>
 		</Sidebar>
