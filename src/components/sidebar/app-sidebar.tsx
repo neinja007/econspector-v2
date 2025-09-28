@@ -20,7 +20,7 @@ const AppSidebar = () => {
 		<Sidebar>
 			<SidebarHeader />
 			<SidebarContent>
-				<SidebarGroup>
+				<SidebarGroup className='-mb-4'>
 					<SidebarMenu>
 						<SidebarMenuItem>
 							<SidebarMenuButton asChild>
