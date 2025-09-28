@@ -25,7 +25,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 						<TanstackQueryProvider>
 							<SidebarProvider>
 								<AppSidebar />
-								<main>{children}</main>
+								<main className='p-4'>{children}</main>
 							</SidebarProvider>
 						</TanstackQueryProvider>
 					</ThemeProvider>
