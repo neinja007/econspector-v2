@@ -3,29 +3,44 @@ import {
 	BarChart,
 	BookText,
 	Brain,
+	ChartNoAxesCombined,
 	Database,
 	DollarSign,
 	Flag,
+	Globe,
+	Globe2,
+	HelpCircle,
+	Home,
 	Landmark,
 	Lightbulb,
 	LucideIcon,
 	MapIcon,
 	MessagesSquare,
 	Scale,
+	Settings,
 	SquareSigma,
-	Table
+	Table,
+	User
 } from 'lucide-react';
 
 export const sidebarRoutes: {
 	name: string;
+	hidden?: boolean;
+	icon: LucideIcon;
 	routes: {
 		label: string;
 		href: string;
 		icon: LucideIcon;
+		getBreadcrumbs?: (pathname: string) => {
+			label: string;
+			href?: string;
+			icon?: LucideIcon;
+		}[];
 	}[];
 }[] = [
 	{
 		name: 'Countries & Regions',
+		icon: Landmark,
 		routes: [
 			{
 				label: 'Analysis',
@@ -46,6 +61,7 @@ export const sidebarRoutes: {
 	},
 	{
 		name: 'Currencies',
+		icon: DollarSign,
 		routes: [
 			{
 				label: 'Analysis',
@@ -66,6 +82,7 @@ export const sidebarRoutes: {
 	},
 	{
 		name: 'International Economy',
+		icon: Globe2,
 		routes: [
 			{
 				label: 'World Map',
@@ -81,6 +98,7 @@ export const sidebarRoutes: {
 	},
 	{
 		name: 'Advanced Analysis',
+		icon: ChartNoAxesCombined,
 		routes: [
 			{
 				label: 'Custom Scores',
@@ -106,6 +124,7 @@ export const sidebarRoutes: {
 	},
 	{
 		name: 'Help & Support',
+		icon: HelpCircle,
 		routes: [
 			{
 				label: 'Handbook',
@@ -126,6 +145,30 @@ export const sidebarRoutes: {
 				label: 'Report an Issue',
 				href: '/help/report-issue',
 				icon: Flag
+			}
+		]
+	},
+	{
+		name: 'Account',
+		icon: User,
+		hidden: true,
+		routes: [
+			{
+				label: 'Manage Account',
+				href: '/user/account',
+				icon: Settings
+			}
+		]
+	},
+	{
+		name: 'General',
+		icon: Globe,
+		hidden: true,
+		routes: [
+			{
+				label: 'Welcome to EconSpector v2!',
+				href: '/',
+				icon: Home
 			}
 		]
 	}

@@ -6,6 +6,7 @@ import { SidebarProvider } from '@/components/shadcn/ui/sidebar';
 import AppSidebar from '@/components/sidebar/app-sidebar';
 import { TanstackQueryProvider } from '@/components/tanstack-query-provider';
 import { Analytics } from '@vercel/analytics/next';
+import { HeadingBreadcrumbs } from '@/components/heading-breadcrumbs';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
@@ -25,7 +26,12 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 						<TanstackQueryProvider>
 							<SidebarProvider>
 								<AppSidebar />
-								<main className='p-4 w-full h-screen'>{children}</main>
+								<main className='w-full h-screen'>
+									<div className='flex items-center p-6'>
+										<HeadingBreadcrumbs />
+									</div>
+									<div className='p-6 h-auto'>{children}</div>
+								</main>
 							</SidebarProvider>
 						</TanstackQueryProvider>
 					</ThemeProvider>
