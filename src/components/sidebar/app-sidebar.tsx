@@ -31,24 +31,26 @@ const AppSidebar = () => {
 						</SidebarMenuItem>
 					</SidebarMenu>
 				</SidebarGroup>
-				{sidebarRoutes.map((group) => (
-					<SidebarGroup key={group.name}>
-						<SidebarGroupLabel>{group.name}</SidebarGroupLabel>
-						<SidebarGroupContent>
-							<SidebarMenu>
-								{group.routes.map((r) => (
-									<SidebarMenuItem key={r.label}>
-										<SidebarMenuButton asChild>
-											<Link href={r.href}>
-												<r.icon /> {r.label}
-											</Link>
-										</SidebarMenuButton>
-									</SidebarMenuItem>
-								))}
-							</SidebarMenu>
-						</SidebarGroupContent>
-					</SidebarGroup>
-				))}
+				{sidebarRoutes
+					.filter((group) => !group.hidden)
+					.map((group) => (
+						<SidebarGroup key={group.name}>
+							<SidebarGroupLabel>{group.name}</SidebarGroupLabel>
+							<SidebarGroupContent>
+								<SidebarMenu>
+									{group.routes.map((r) => (
+										<SidebarMenuItem key={r.label}>
+											<SidebarMenuButton asChild>
+												<Link href={r.href}>
+													<r.icon /> {r.label}
+												</Link>
+											</SidebarMenuButton>
+										</SidebarMenuItem>
+									))}
+								</SidebarMenu>
+							</SidebarGroupContent>
+						</SidebarGroup>
+					))}
 				{
 					<SignedIn>
 						<SidebarGroup>
