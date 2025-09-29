@@ -10,7 +10,7 @@ export const SidebarFooter = () => {
 	const { user } = useUser();
 
 	return (
-		<SidebarFooterShadcn className='w-full border-t h-[70px] flex justify-center'>
+		<SidebarFooterShadcn className='w-full border-t h-[70px] flex justify-center select-none'>
 			<SignedOut>
 				<Link
 					href='/user/sign-in'
