@@ -1,0 +1,120 @@
+currency_code,symbol,name,symbol_native
+USD,$,US Dollar,$
+CAD,CA$,Canadian Dollar,$
+EUR,€,Euro,€
+AED,AED,United Arab Emirates Dirham,د.إ.‏
+AFN,Af,Afghan Afghani,؋
+ALL,ALL,Albanian Lek,Lek
+AMD,AMD,Armenian Dram,դր.
+ARS,AR$,Argentine Peso,$
+AUD,AU$,Australian Dollar,$
+AZN,man.,Azerbaijani Manat,ман.
+BAM,KM,Bosnia-Herzegovina Convertible Mark,KM
+BDT,Tk,Bangladeshi Taka,৳
+BGN,BGN,Bulgarian Lev,лв.
+BHD,BD,Bahraini Dinar,د.ب.‏
+BIF,FBu,Burundian Franc,FBu
+BND,BN$,Brunei Dollar,$
+BOB,Bs,Bolivian Boliviano,Bs
+BRL,R$,Brazilian Real,R$
+BWP,BWP,Botswanan Pula,P
+BYN,Br,Belarusian Ruble,руб.
+BZD,BZ$,Belize Dollar,$
+CDF,CDF,Congolese Franc,FrCD
+CHF,CHF,Swiss Franc,CHF
+CLP,CL$,Chilean Peso,$
+CNY,CN¥,Chinese Yuan,CN¥
+COP,CO$,Colombian Peso,$
+CRC,₡,Costa Rican Colón,₡
+CVE,CV$,Cape Verdean Escudo,CV$
+CZK,Kč,Czech Republic Koruna,Kč
+DJF,Fdj,Djiboutian Franc,Fdj
+DKK,Dkr,Danish Krone,kr
+DOP,RD$,Dominican Peso,RD$
+DZD,DA,Algerian Dinar,د.ج.‏
+EEK,Ekr,Estonian Kroon,kr
+EGP,EGP,Egyptian Pound,ج.م.‏
+ERN,Nfk,Eritrean Nakfa,Nfk
+ETB,Br,Ethiopian Birr,Br
+GBP,£,British Pound Sterling,£
+GEL,GEL,Georgian Lari,GEL
+GHS,GH₵,Ghanaian Cedi,GH₵
+GNF,FG,Guinean Franc,FG
+GTQ,GTQ,Guatemalan Quetzal,Q
+HKD,HK$,Hong Kong Dollar,$
+HNL,HNL,Honduran Lempira,L
+HRK,kn,Croatian Kuna,kn
+HUF,Ft,Hungarian Forint,Ft
+IDR,Rp,Indonesian Rupiah,Rp
+ILS,₪,Israeli New Sheqel,₪
+INR,Rs,Indian Rupee,টকা
+IQD,IQD,Iraqi Dinar,د.ع.‏
+IRR,IRR,Iranian Rial,﷼
+ISK,Ikr,Icelandic Króna,kr
+JMD,J$,Jamaican Dollar,$
+JOD,JD,Jordanian Dinar,د.أ.‏
+JPY,¥,Japanese Yen,￥
+KES,Ksh,Kenyan Shilling,Ksh
+KHR,KHR,Cambodian Riel,៛
+KMF,CF,Comorian Franc,FC
+KRW,₩,South Korean Won,₩
+KWD,KD,Kuwaiti Dinar,د.ك.‏
+KZT,KZT,Kazakhstani Tenge,тңг.
+LBP,L.L.,Lebanese Pound,ل.ل.‏
+LKR,SLRs,Sri Lankan Rupee,SL Re
+LTL,Lt,Lithuanian Litas,Lt
+LVL,Ls,Latvian Lats,Ls
+LYD,LD,Libyan Dinar,د.ل.‏
+MAD,MAD,Moroccan Dirham,د.م.‏
+MDL,MDL,Moldovan Leu,MDL
+MGA,MGA,Malagasy Ariary,MGA
+MKD,MKD,Macedonian Denar,MKD
+MMK,MMK,Myanma Kyat,K
+MOP,MOP$,Macanese Pataca,MOP$
+MUR,MURs,Mauritian Rupee,MURs
+MXN,MX$,Mexican Peso,$
+MYR,RM,Malaysian Ringgit,RM
+MZN,MTn,Mozambican Metical,MTn
+NAD,N$,Namibian Dollar,N$
+NGN,₦,Nigerian Naira,₦
+NIO,C$,Nicaraguan Córdoba,C$
+NOK,Nkr,Norwegian Krone,kr
+NPR,NPRs,Nepalese Rupee,नेरू
+NZD,NZ$,New Zealand Dollar,$
+OMR,OMR,Omani Rial,ر.ع.‏
+PAB,B/.,Panamanian Balboa,B/.
+PEN,S/.,Peruvian Nuevo Sol,S/.
+PHP,₱,Philippine Peso,₱
+PKR,PKRs,Pakistani Rupee,₨
+PLN,zł,Polish Zloty,zł
+PYG,₲,Paraguayan Guarani,₲
+QAR,QR,Qatari Rial,ر.ق.‏
+RON,RON,Romanian Leu,RON
+RSD,din.,Serbian Dinar,дин.
+RUB,RUB,Russian Ruble,₽.
+RWF,RWF,Rwandan Franc,FR
+SAR,SR,Saudi Riyal,ر.س.‏
+SDG,SDG,Sudanese Pound,SDG
+SEK,Skr,Swedish Krona,kr
+SGD,S$,Singapore Dollar,$
+SOS,Ssh,Somali Shilling,Ssh
+SYP,SY£,Syrian Pound,ل.س.‏
+THB,฿,Thai Baht,฿
+TND,DT,Tunisian Dinar,د.ت.‏
+TOP,T$,Tongan Paʻanga,T$
+TRY,TL,Turkish Lira,TL
+TTD,TT$,Trinidad and Tobago Dollar,$
+TWD,NT$,New Taiwan Dollar,NT$
+TZS,TSh,Tanzanian Shilling,TSh
+UAH,₴,Ukrainian Hryvnia,₴
+UGX,USh,Ugandan Shilling,USh
+UYU,$U,Uruguayan Peso,$
+UZS,UZS,Uzbekistan Som,UZS
+VEF,Bs.F.,Venezuelan Bolívar,Bs.F.
+VND,₫,Vietnamese Dong,₫
+XAF,FCFA,CFA Franc BEAC,FCFA
+XOF,CFA,CFA Franc BCEAO,CFA
+YER,YR,Yemeni Rial,ر.ي.‏
+ZAR,R,South African Rand,R
+ZMK,ZK,Zambian Kwacha,ZK
+ZWL,ZWL$,Zimbabwean Dollar,ZWL$
