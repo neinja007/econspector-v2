@@ -10,11 +10,13 @@ import {
 	BreadcrumbSeparator
 } from './shadcn/ui/breadcrumb';
 import { sidebarRoutes } from '@/data/sidebar-routes';
+import { pathMatches } from '@/utils/path-matches';
+import { TriangleAlert } from 'lucide-react';
 
 export const HeadingBreadcrumbs = () => {
 	const pathname = usePathname();
-	const parentRoute = sidebarRoutes.find((route) => route.routes.some((r) => pathname.startsWith(r.href)));
-	const childRoute = parentRoute?.routes.find((r) => pathname.startsWith(r.href));
+	const parentRoute = sidebarRoutes.find((route) => route.routes.some((r) => pathMatches(pathname, r.href)));
+	const childRoute = parentRoute?.routes.find((r) => pathMatches(pathname, r.href));
 
 	const childBreadcrumbs = childRoute?.getBreadcrumbs?.(pathname) || [];
 
@@ -22,7 +24,11 @@ export const HeadingBreadcrumbs = () => {
 		return (
 			<Breadcrumb>
 				<BreadcrumbList className='text-lg'>
-					<BreadcrumbPage>404 Error: Page not found</BreadcrumbPage>
+					<BreadcrumbItem>
+						<BreadcrumbPage className='flex items-center gap-1.5'>
+							<TriangleAlert className='size-5' /> Page not found
+						</BreadcrumbPage>
+					</BreadcrumbItem>
 				</BreadcrumbList>
 			</Breadcrumb>
 		);
