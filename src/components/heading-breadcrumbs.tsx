@@ -42,7 +42,7 @@ export const HeadingBreadcrumbs = () => {
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
 					{childBreadcrumbs.length === 0 ? (
-						childBreadcrumb
+						<BreadcrumbPage className='flex items-center gap-1.5'>{childBreadcrumb}</BreadcrumbPage>
 					) : (
 						<BreadcrumbLink href={childRoute?.href || '/'} className='flex items-center gap-1.5'>
 							{childBreadcrumb}
