@@ -14,6 +14,7 @@ import {
 	Home,
 	Landmark,
 	Lightbulb,
+	LogIn,
 	LucideIcon,
 	MapIcon,
 	MessagesSquare,
@@ -163,6 +164,11 @@ export const sidebarRoutes: {
 				label: 'Manage Account',
 				href: '/user/account',
 				icon: Settings
+			},
+			{
+				label: 'Sign In or Register',
+				href: '/user/sign-in',
+				icon: LogIn
 			}
 		]
 	},
