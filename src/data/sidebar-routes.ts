@@ -1,6 +1,7 @@
 import {
 	ArrowLeftRight,
 	BarChart,
+	BookOpen,
 	BookText,
 	Brain,
 	ChartNoAxesCombined,
@@ -123,27 +124,32 @@ export const sidebarRoutes: {
 		]
 	},
 	{
-		name: 'Help & Support',
+		name: 'Support',
 		icon: HelpCircle,
 		routes: [
 			{
 				label: 'Handbook',
-				href: '/help/handbook',
-				icon: Lightbulb
+				href: '/support/handbook',
+				icon: BookOpen
 			},
 			{
 				label: 'Glossary',
-				href: '/help/glossary',
+				href: '/support/glossary',
 				icon: BookText
 			},
 			{
-				label: 'Support & Feedback',
-				href: '/help/support-feedback',
+				label: 'Help',
+				href: '/support/help',
 				icon: MessagesSquare
 			},
 			{
-				label: 'Report an Issue',
-				href: '/help/report-issue',
+				label: 'Ideas & Feedback',
+				href: '/support/feedback',
+				icon: Lightbulb
+			},
+			{
+				label: 'Report a Problem',
+				href: '/support/report-issue',
 				icon: Flag
 			}
 		]
