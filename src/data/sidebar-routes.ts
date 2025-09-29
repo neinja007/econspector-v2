@@ -6,7 +6,6 @@ import {
 	Database,
 	DollarSign,
 	Flag,
-	Globe2,
 	Landmark,
 	Lightbulb,
 	LucideIcon,
@@ -26,21 +25,21 @@ export const sidebarRoutes: {
 	}[];
 }[] = [
 	{
-		name: 'Countries',
+		name: 'Countries & Regions',
 		routes: [
 			{
-				label: 'Country Analysis',
-				href: '/countries/analysis',
+				label: 'Analysis',
+				href: '/countries-and-regions/analysis',
 				icon: Landmark
 			},
 			{
-				label: 'Country Rankings',
-				href: '/countries/rankings',
+				label: 'Rankings',
+				href: '/countries-and-regions/rankings',
 				icon: BarChart
 			},
 			{
-				label: 'Country Comparison',
-				href: '/countries/comparison',
+				label: 'Comparison',
+				href: '/countries-and-regions/comparison',
 				icon: Scale
 			}
 		]
@@ -49,17 +48,17 @@ export const sidebarRoutes: {
 		name: 'Currencies',
 		routes: [
 			{
-				label: 'Currency Analysis',
+				label: 'Analysis',
 				href: '/currencies/analysis',
 				icon: DollarSign
 			},
 			{
-				label: 'Currency Rankings',
+				label: 'Rankings',
 				href: '/currencies/rankings',
 				icon: BarChart
 			},
 			{
-				label: 'Currency Comparison',
+				label: 'Comparison',
 				href: '/currencies/comparison',
 				icon: Scale
 			}
@@ -72,11 +71,6 @@ export const sidebarRoutes: {
 				label: 'World Map',
 				href: '/international/world-map',
 				icon: MapIcon
-			},
-			{
-				label: 'Global Aggregates',
-				href: '/international/global-aggregates',
-				icon: Globe2
 			},
 			{
 				label: 'Correlations',
