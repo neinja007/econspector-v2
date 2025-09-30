@@ -1,3 +1,4 @@
+import { datasets } from '@/app/advanced/data-explorer/data/datasets';
 import {
 	ArrowLeftRight,
 	BarChart,
@@ -33,11 +34,13 @@ export const sidebarRoutes: {
 		label: string;
 		href: string;
 		icon: LucideIcon;
-		getBreadcrumbs?: (pathname: string) => {
-			label: string;
-			href?: string;
-			icon?: LucideIcon;
-		}[];
+		getBreadcrumbs?: (pathname: string) =>
+			| {
+					label: string;
+					href?: string;
+					icon?: LucideIcon;
+			  }[]
+			| undefined;
 	}[];
 }[] = [
 	{
@@ -115,6 +118,17 @@ export const sidebarRoutes: {
 			{
 				label: 'Data Explorer',
 				href: '/advanced/data-explorer',
+				getBreadcrumbs: (pathname) => {
+					const dataset = datasets.find((dataset) => pathname === '/' + dataset.slug);
+					if (!dataset) return undefined;
+					return [
+						{
+							label: dataset.name,
+							href: `/advanced/data-explorer/${dataset.slug}`,
+							icon: dataset.icon
+						}
+					];
+				},
 				icon: Table
 			},
 			{
