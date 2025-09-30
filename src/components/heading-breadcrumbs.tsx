@@ -12,6 +12,7 @@ import {
 import { sidebarRoutes } from '@/data/sidebar-routes';
 import { pathMatches } from '@/utils/path-matches';
 import { TriangleAlert } from 'lucide-react';
+import Link from 'next/link';
 
 export const HeadingBreadcrumbs = () => {
 	const pathname = usePathname();
@@ -50,11 +51,36 @@ export const HeadingBreadcrumbs = () => {
 					{childBreadcrumbs.length === 0 ? (
 						<BreadcrumbPage className='flex items-center gap-1.5'>{childBreadcrumb}</BreadcrumbPage>
 					) : (
-						<BreadcrumbLink href={childRoute?.href || '/'} className='flex items-center gap-1.5'>
-							{childBreadcrumb}
+						<BreadcrumbLink asChild>
+							<Link href={childRoute?.href || '/'} className='flex items-center gap-1.5'>
+								{childBreadcrumb}
+							</Link>
 						</BreadcrumbLink>
 					)}
 				</BreadcrumbItem>
+				{childBreadcrumbs.length > 0 &&
+					childBreadcrumbs.map((breadcrumb, i) => (
+						<>
+							<BreadcrumbSeparator />
+							<BreadcrumbItem key={breadcrumb.label}>
+								{i === childBreadcrumbs.length - 1 ? (
+									<BreadcrumbPage className='flex items-center gap-1.5'>
+										{breadcrumb.icon && <breadcrumb.icon className='size-5' />} {breadcrumb.label}
+									</BreadcrumbPage>
+								) : breadcrumb.href ? (
+									<BreadcrumbLink asChild>
+										<Link href={breadcrumb.href || '/'} className='flex items-center gap-1.5'>
+											{breadcrumb.icon && <breadcrumb.icon className='size-5' />} {breadcrumb.label}
+										</Link>
+									</BreadcrumbLink>
+								) : (
+									<>
+										{breadcrumb.icon && <breadcrumb.icon className='size-5' />} {breadcrumb.label}
+									</>
+								)}
+							</BreadcrumbItem>
+						</>
+					))}
 			</BreadcrumbList>
 		</Breadcrumb>
 	);
