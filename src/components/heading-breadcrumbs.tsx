@@ -19,7 +19,7 @@ export const HeadingBreadcrumbs = () => {
 	const parentRoute = sidebarRoutes.find((route) => route.routes.some((r) => pathMatches(pathname, r.href)));
 	const childRoute = parentRoute?.routes.find((r) => pathMatches(pathname, r.href));
 
-	const childBreadcrumbs = childRoute?.getBreadcrumbs?.(pathname) || [];
+	const childBreadcrumbs = childRoute?.getBreadcrumbs?.(pathname.split(childRoute.href)[1]) || [];
 
 	if (!parentRoute || !childRoute)
 		return (
