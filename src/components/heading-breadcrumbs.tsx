@@ -13,6 +13,7 @@ import { sidebarRoutes } from '@/data/sidebar-routes';
 import { pathMatches } from '@/utils/path-matches';
 import { TriangleAlert } from 'lucide-react';
 import Link from 'next/link';
+import { Fragment } from 'react';
 
 export const HeadingBreadcrumbs = () => {
 	const pathname = usePathname();
@@ -60,9 +61,9 @@ export const HeadingBreadcrumbs = () => {
 				</BreadcrumbItem>
 				{childBreadcrumbs.length > 0 &&
 					childBreadcrumbs.map((breadcrumb, i) => (
-						<>
+						<Fragment key={breadcrumb.label}>
 							<BreadcrumbSeparator />
-							<BreadcrumbItem key={breadcrumb.label}>
+							<BreadcrumbItem>
 								{i === childBreadcrumbs.length - 1 ? (
 									<BreadcrumbPage className='flex items-center gap-1.5'>
 										{breadcrumb.icon && <breadcrumb.icon className='size-5' />} {breadcrumb.label}
@@ -79,7 +80,7 @@ export const HeadingBreadcrumbs = () => {
 									</>
 								)}
 							</BreadcrumbItem>
-						</>
+						</Fragment>
 					))}
 			</BreadcrumbList>
 		</Breadcrumb>
