@@ -3,7 +3,7 @@ import fs from 'fs';
 const raw = fs.readFileSync('./raw-data/countries.json', 'utf-8');
 const countries = JSON.parse(raw);
 
-const rows: { country_code: string; currency_code: string }[] = [];
+const rows = [];
 
 for (const country of countries) {
 	const countryCode = country.cca3;
