@@ -12,7 +12,7 @@ type DatasetCardProps = {
 
 const DatasetCard = ({ name, description, icon: Icon, slug }: DatasetCardProps) => {
 	return (
-		<Card>
+		<Card className='justify-between'>
 			<CardHeader>
 				<CardTitle className='flex items-center gap-2'>
 					<Icon className='size-5' /> {name}
