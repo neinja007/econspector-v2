@@ -1,16 +1,10 @@
 import { Button } from '@/components/shadcn/ui/button';
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/shadcn/ui/card';
-import { LucideIcon, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import Link from 'next/link';
+import { Dataset } from '../data/datasets';
 
-type DatasetCardProps = {
-	name: string;
-	description: string;
-	icon: LucideIcon;
-	slug: string;
-};
-
-const DatasetCard = ({ name, description, icon: Icon, slug }: DatasetCardProps) => {
+const DatasetCard = ({ name, description, icon: Icon, slug }: Dataset) => {
 	return (
 		<Card className='justify-between'>
 			<CardHeader>

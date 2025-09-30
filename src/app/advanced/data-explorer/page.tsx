@@ -1,5 +1,5 @@
-import { DollarSign, Landmark } from 'lucide-react';
 import DatasetCard from './components/dataset-card';
+import { datasets } from './data/datasets';
 
 const DataExplorer = () => {
 	return (
@@ -9,18 +9,9 @@ const DataExplorer = () => {
 				offer. Select a dataset to get started!
 			</div>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-32 mt-10'>
-				<DatasetCard
-					name='Countries'
-					description='This dataset contains information about countries, including their currencies, country codes, region, and a lot more.'
-					icon={Landmark}
-					slug='countries'
-				/>
-				<DatasetCard
-					name='Currencies'
-					description='You can find all the currencies in the world in this dataset. We also offer information about their countries, their codes, their symbols, and a lot more.'
-					icon={DollarSign}
-					slug='currencies'
-				/>
+				{datasets.map((dataset) => (
+					<DatasetCard key={dataset.slug} {...dataset} />
+				))}
 			</div>
 		</div>
 	);
