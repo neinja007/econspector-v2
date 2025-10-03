@@ -27,10 +27,12 @@ export const GET = async () => {
 				.select()
 				.single();
 
+			console.log(dbIndicator);
+
 			for (const subindicator of indicator.subindicators) {
 				const dbSubindicator = await adminSupabase
 					.schema('data')
-					.from('subindicators')
+					.from('indicators')
 					.insert({ name: subindicator.name, parent_id: dbIndicator.data.id })
 					.select()
 					.single();
@@ -38,7 +40,7 @@ export const GET = async () => {
 				for (const frequency of subindicator.frequencies) {
 					const dbFrequency = await adminSupabase
 						.schema('data')
-						.from('frequencies')
+						.from('indicator_frequencies')
 						.insert({ frequency: frequency.frequency, indicator_id: dbSubindicator.data.id })
 						.select()
 						.single();
@@ -46,7 +48,7 @@ export const GET = async () => {
 					for (const source of frequency.sources) {
 						await adminSupabase
 							.schema('data')
-							.from('sources')
+							.from('frequency_sources')
 							.insert({ frequency_id: dbFrequency.data.id, name: source.source, unit: source.unit })
 							.select()
 							.single();
