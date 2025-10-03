@@ -1,4 +1,4 @@
-import { indicators } from '../../../../../private/raw-data/indicators';
+import { indicators } from '../../../../../../private/raw-data/indicators';
 import { NextResponse } from 'next/server';
 import { adminSupabase } from '@/supabase/admin';
 
