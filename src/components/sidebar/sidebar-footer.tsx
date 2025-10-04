@@ -14,7 +14,7 @@ export const SidebarFooter = () => {
 			<SignedOut>
 				<Link
 					href='/user/sign-in'
-					className='flex items-center gap-2 hover:bg-blue-100 rounded-sm p-1 h-full transition-colors'
+					className='flex items-center gap-2 hover:bg-blue-100 dark:hover:bg-blue-900 rounded-sm p-1 h-full transition-colors'
 				>
 					<UserCircle2 strokeWidth={1} className='size-10 text-gray-700' />
 					<div className='flex flex-col'>
@@ -24,7 +24,7 @@ export const SidebarFooter = () => {
 				</Link>
 			</SignedOut>
 			<SignedIn>
-				<div className='flex items-center gap-2 hover:bg-blue-100 rounded-sm p-1 transition-colors'>
+				<div className='flex items-center gap-2 rounded-sm p-1 transition-colors'>
 					<div className='size-10 rounded-full overflow-hidden'>
 						<Image src={user?.imageUrl || ''} alt={user?.username || user?.fullName || ''} width={40} height={40} />
 					</div>
