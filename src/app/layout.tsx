@@ -47,7 +47,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 											<ThemeToggle />
 										</div>
 									</div>
-									<div className='p-6 h-auto'>{children}</div>
+									<div className='m-6 h-auto w-full max-w-7xl mx-auto'>{children}</div>
 								</main>
 							</SidebarProvider>
 						</TanstackQueryProvider>
