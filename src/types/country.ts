@@ -8,4 +8,6 @@ export type Country = {
 	ccn3: string;
 	region: RegionEnum;
 	subregion: SubregionEnum | undefined;
+	cioc: string;
+	capital: string;
 };
