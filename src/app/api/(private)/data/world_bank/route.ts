@@ -32,7 +32,7 @@ export const POST = async () => {
 				)
 				.then((res) => res.data[1]);
 
-			const result = await adminSupabase
+			await adminSupabase
 				.schema(DatabaseSchema.DATA)
 				.from(DatabaseTable.WORLD_BANK_DATA)
 				.insert(
@@ -45,6 +45,8 @@ export const POST = async () => {
 							period: item.date
 						}))
 				);
+
+			console.log(`Imported ${data.length} data points for ${country.country_code} and ${source.name}`);
 		}
 	}
 
