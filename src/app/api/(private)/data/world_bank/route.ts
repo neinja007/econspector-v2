@@ -46,7 +46,7 @@ export const POST = async () => {
 						}))
 				);
 
-			console.log(`Imported ${data.length} data points for ${country.country_code} and ${source.name}`);
+			console.log(`Imported ${data.length} data points for ${country.country_code} and ${source.code}`);
 		}
 	}
 
