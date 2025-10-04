@@ -1,7 +1,7 @@
-import { indicators } from '../../../../../../private/raw-data/indicators';
-import { NextResponse } from 'next/server';
 import { adminSupabase } from '@/supabase/admin';
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
+import { NextResponse } from 'next/server';
+import { indicators } from '@/data/indicators';
 
 export const GET = async () => {
 	if (process.env.ENABLE_ADMIN_SCRIPTS !== 'true') {
