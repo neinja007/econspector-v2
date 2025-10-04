@@ -8,6 +8,7 @@ import { TanstackQueryProvider } from '@/components/tanstack-query-provider';
 import { Analytics } from '@vercel/analytics/next';
 import { HeadingBreadcrumbs } from '@/components/heading-breadcrumbs';
 import ThemeToggle from '@/components/theming/theme-toggle';
+import { shadcn } from '@clerk/themes';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
@@ -20,7 +21,19 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
 	return (
-		<ClerkProvider>
+		<ClerkProvider
+			appearance={{
+				baseTheme: shadcn,
+				layout: {
+					helpPageUrl: '/support/handbook',
+					logoImageUrl: '/favicon.ico'
+				},
+				variables: {
+					colorPrimary: 'var(--primary)',
+					borderRadius: 'var(--radius)'
+				}
+			}}
+		>
 			<html lang='en'>
 				<body className='antialiased'>
 					<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
