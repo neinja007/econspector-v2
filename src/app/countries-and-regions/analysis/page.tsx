@@ -28,6 +28,7 @@ const CountriesAnalysisPage = () => {
 				<InputGroup className='shrink'>
 					<InputGroupInput
 						placeholder='Search for a country or region...'
+						autoFocus
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}
 					/>
