@@ -1,251 +1,251 @@
-﻿country_code,name,full_name,region,cca2,ccn3,subregion
-ABW,Aruba,Aruba,Americas,AW,533,Caribbean
-AFG,Afghanistan,Islamic Republic of Afghanistan,Asia,AF,004,Southern Asia
-AGO,Angola,Republic of Angola,Africa,AO,024,Middle Africa
-AIA,Anguilla,Anguilla,Americas,AI,660,Caribbean
-ALA,Ã…land Islands,Ã…land Islands,Europe,AX,248,Northern Europe
-ALB,Albania,Republic of Albania,Europe,AL,008,Southeast Europe
-AND,Andorra,Principality of Andorra,Europe,AD,020,Southern Europe
-ARE,United Arab Emirates,United Arab Emirates,Asia,AE,784,Western Asia
-ARG,Argentina,Argentine Republic,Americas,AR,032,South America
-ARM,Armenia,Republic of Armenia,Asia,AM,051,Western Asia
-ASM,American Samoa,American Samoa,Oceania,AS,016,Polynesia
-ATA,Antarctica,Antarctica,Antarctic,AQ,010,
-ATF,French Southern and Antarctic Lands,Territory of the French Southern and Antarctic Lands,Antarctic,TF,260,
-ATG,Antigua and Barbuda,Antigua and Barbuda,Americas,AG,028,Caribbean
-AUS,Australia,Commonwealth of Australia,Oceania,AU,036,Australia and New Zealand
-AUT,Austria,Republic of Austria,Europe,AT,040,Central Europe
-AZE,Azerbaijan,Republic of Azerbaijan,Asia,AZ,031,Western Asia
-BDI,Burundi,Republic of Burundi,Africa,BI,108,Eastern Africa
-BEL,Belgium,Kingdom of Belgium,Europe,BE,056,Western Europe
-BEN,Benin,Republic of Benin,Africa,BJ,204,Western Africa
-BFA,Burkina Faso,Burkina Faso,Africa,BF,854,Western Africa
-BGD,Bangladesh,People's Republic of Bangladesh,Asia,BD,050,Southern Asia
-BGR,Bulgaria,Republic of Bulgaria,Europe,BG,100,Southeast Europe
-BHR,Bahrain,Kingdom of Bahrain,Asia,BH,048,Western Asia
-BHS,Bahamas,Commonwealth of the Bahamas,Americas,BS,044,Caribbean
-BIH,Bosnia and Herzegovina,Bosnia and Herzegovina,Europe,BA,070,Southeast Europe
-BLM,Saint BarthÃ©lemy,Collectivity of Saint BarthÃ©lemy,Americas,BL,652,Caribbean
+country_code,name,full_name,region,cca2,ccn3,subregion,cioc,capital
+ABW,Aruba,Aruba,America,AW,533,Caribbean,ARU,Oranjestad
+AFG,Afghanistan,Islamic Republic of Afghanistan,Asia,AF,004,Southern Asia,AFG,Kabul
+AGO,Angola,Republic of Angola,Africa,AO,024,Middle Africa,ANG,Luanda
+AIA,Anguilla,Anguilla,America,AI,660,Caribbean,,The Valley
+ALA,Åland Islands,Åland Islands,Europe,AX,248,Northern Europe,,Mariehamn
+ALB,Albania,Republic of Albania,Europe,AL,008,Southeast Europe,ALB,Tirana
+AND,Andorra,Principality of Andorra,Europe,AD,020,Southern Europe,AND,Andorra la Vella
+ARE,United Arab Emirates,United Arab Emirates,Asia,AE,784,Western Asia,UAE,Abu Dhabi
+ARG,Argentina,Argentine Republic,America,AR,032,South America,ARG,Buenos Aires
+ARM,Armenia,Republic of Armenia,Asia,AM,051,Western Asia,ARM,Yerevan
+ASM,American Samoa,American Samoa,Oceania,AS,016,Polynesia,ASA,Pago Pago
+ATA,Antarctica,Antarctica,Antarctica,AQ,010,,,
+ATF,French Southern and Antarctic Lands,Territory of the French Southern and Antarctic Lands,Antarctica,TF,260,,,Port-aux-Français
+ATG,Antigua and Barbuda,Antigua and Barbuda,America,AG,028,Caribbean,ANT,Saint John's
+AUS,Australia,Commonwealth of Australia,Oceania,AU,036,Australia and New Zealand,AUS,Canberra
+AUT,Austria,Republic of Austria,Europe,AT,040,Central Europe,AUT,Vienna
+AZE,Azerbaijan,Republic of Azerbaijan,Asia,AZ,031,Western Asia,AZE,Baku
+BDI,Burundi,Republic of Burundi,Africa,BI,108,Eastern Africa,BDI,Gitega
+BEL,Belgium,Kingdom of Belgium,Europe,BE,056,Western Europe,BEL,Brussels
+BEN,Benin,Republic of Benin,Africa,BJ,204,Western Africa,BEN,Porto-Novo
+BES,Caribbean Netherlands,"Bonaire, Sint Eustatius and Saba",America,BQ,535,Caribbean,
+BFA,Burkina Faso,Burkina Faso,Africa,BF,854,Western Africa,BUR,Ouagadougou
+BGD,Bangladesh,People's Republic of Bangladesh,Asia,BD,050,Southern Asia,BAN,Dhaka
+BGR,Bulgaria,Republic of Bulgaria,Europe,BG,100,Southeast Europe,BUL,Sofia
+BHR,Bahrain,Kingdom of Bahrain,Asia,BH,048,Western Asia,BRN,Manama
+BHS,Bahamas,Commonwealth of the Bahamas,America,BS,044,Caribbean,BAH,Nassau
+BIH,Bosnia and Herzegovina,Bosnia and Herzegovina,Europe,BA,070,Southeast Europe,BIH,Sarajevo
+BLM,Saint Barthélemy,Collectivity of Saint Barthélemy,America,BL,652,Caribbean,,Gustavia
+BLR,Belarus,Republic of Belarus,Europe,BY,112,Eastern Europe,BLR,Minsk
+BLZ,Belize,Belize,America,BZ,084,Central America,BIZ,Belmopan
+BMU,Bermuda,Bermuda,America,BM,060,North America,BER,Hamilton
+BOL,Bolivia,Plurinational State of Bolivia,America,BO,068,South America,BOL,Sucre
+BRA,Brazil,Federative Republic of Brazil,America,BR,076,South America,BRA,Brasília
+BRB,Barbados,Barbados,America,BB,052,Caribbean,BAR,Bridgetown
+BRN,Brunei,"Nation of Brunei, Abode of Peace",Asia,BN,096,South-Eastern Asia,
+BTN,Bhutan,Kingdom of Bhutan,Asia,BT,064,Southern Asia,BHU,Thimphu
+BVT,Bouvet Island,Bouvet Island,Antarctica,BV,074,,,
+BWA,Botswana,Republic of Botswana,Africa,BW,072,Southern Africa,BOT,Gaborone
+CAF,Central African Republic,Central African Republic,Africa,CF,140,Middle Africa,CAF,Bangui
+CAN,Canada,Canada,America,CA,124,North America,CAN,Ottawa
+CCK,Cocos (Keeling) Islands,Territory of the Cocos (Keeling) Islands,Oceania,CC,166,Australia and New Zealand,,West Island
+CHE,Switzerland,Swiss Confederation,Europe,CH,756,Western Europe,SUI,Bern
+CHL,Chile,Republic of Chile,America,CL,152,South America,CHI,Santiago
+CHN,China,People's Republic of China,Asia,CN,156,Eastern Asia,CHN,Beijing
+CIV,Ivory Coast,Republic of Côte d'Ivoire,Africa,CI,384,Western Africa,CIV,Yamoussoukro
+CMR,Cameroon,Republic of Cameroon,Africa,CM,120,Middle Africa,CMR,Yaoundé
+COD,DR Congo,Democratic Republic of the Congo,Africa,CD,180,Middle Africa,COD,Kinshasa
+COG,Congo,Republic of the Congo,Africa,CG,178,Middle Africa,CGO,Brazzaville
+COK,Cook Islands,Cook Islands,Oceania,CK,184,Polynesia,COK,Avarua
+COL,Colombia,Republic of Colombia,America,CO,170,South America,COL,Bogotá
+COM,Comoros,Union of the Comoros,Africa,KM,174,Eastern Africa,COM,Moroni
+CPV,Cape Verde,Republic of Cabo Verde,Africa,CV,132,Western Africa,CPV,Praia
+CRI,Costa Rica,Republic of Costa Rica,America,CR,188,Central America,CRC,San José
+CUB,Cuba,Republic of Cuba,America,CU,192,Caribbean,CUB,Havana
+CUW,Curaçao,Country of Curaçao,America,CW,531,Caribbean,,Willemstad
+CXR,Christmas Island,Territory of Christmas Island,Oceania,CX,162,Australia and New Zealand,,Flying Fish Cove
+CYM,Cayman Islands,Cayman Islands,America,KY,136,Caribbean,CAY,George Town
+CYP,Cyprus,Republic of Cyprus,Europe,CY,196,Southern Europe,CYP,Nicosia
+CZE,Czechia,Czech Republic,Europe,CZ,203,Central Europe,CZE,Prague
+DEU,Germany,Federal Republic of Germany,Europe,DE,276,Western Europe,GER,Berlin
+DJI,Djibouti,Republic of Djibouti,Africa,DJ,262,Eastern Africa,DJI,Djibouti
+DMA,Dominica,Commonwealth of Dominica,America,DM,212,Caribbean,DMA,Roseau
+DNK,Denmark,Kingdom of Denmark,Europe,DK,208,Northern Europe,DEN,Copenhagen
+DOM,Dominican Republic,Dominican Republic,America,DO,214,Caribbean,DOM,Santo Domingo
+DZA,Algeria,People's Democratic Republic of Algeria,Africa,DZ,012,Northern Africa,ALG,Algiers
+ECU,Ecuador,Republic of Ecuador,America,EC,218,South America,ECU,Quito
+EGY,Egypt,Arab Republic of Egypt,Africa,EG,818,Northern Africa,EGY,Cairo
+ERI,Eritrea,State of Eritrea,Africa,ER,232,Eastern Africa,ERI,Asmara
+ESH,Western Sahara,Sahrawi Arab Democratic Republic,Africa,EH,732,Northern Africa,,El Aaiún
+ESP,Spain,Kingdom of Spain,Europe,ES,724,Southern Europe,ESP,Madrid
+EST,Estonia,Republic of Estonia,Europe,EE,233,Northern Europe,EST,Tallinn
+ETH,Ethiopia,Federal Democratic Republic of Ethiopia,Africa,ET,231,Eastern Africa,ETH,Addis Ababa
+FIN,Finland,Republic of Finland,Europe,FI,246,Northern Europe,FIN,Helsinki
+FJI,Fiji,Republic of Fiji,Oceania,FJ,242,Melanesia,FIJ,Suva
+FLK,Falkland Islands,Falkland Islands,America,FK,238,South America,,Stanley
+FRA,France,French Republic,Europe,FR,250,Western Europe,FRA,Paris
+FRO,Faroe Islands,Faroe Islands,Europe,FO,234,Northern Europe,,Tórshavn
+FSM,Micronesia,Federated States of Micronesia,Oceania,FM,583,Micronesia,FSM,Palikir
+GAB,Gabon,Gabonese Republic,Africa,GA,266,Middle Africa,GAB,Libreville
+GBR,United Kingdom,United Kingdom of Great Britain and Northern Ireland,Europe,GB,826,Northern Europe,GBR,London
+GEO,Georgia,Georgia,Asia,GE,268,Western Asia,GEO,Tbilisi
+GGY,Guernsey,Bailiwick of Guernsey,Europe,GG,831,Northern Europe,,St. Peter Port
+GHA,Ghana,Republic of Ghana,Africa,GH,288,Western Africa,GHA,Accra
+GIB,Gibraltar,Gibraltar,Europe,GI,292,Southern Europe,,Gibraltar
+GIN,Guinea,Republic of Guinea,Africa,GN,324,Western Africa,GUI,Conakry
+GLP,Guadeloupe,Guadeloupe,America,GP,312,Caribbean,,Basse-Terre
+GMB,Gambia,Republic of the Gambia,Africa,GM,270,Western Africa,GAM,Banjul
+GNB,Guinea-Bissau,Republic of Guinea-Bissau,Africa,GW,624,Western Africa,GBS,Bissau
+GNQ,Equatorial Guinea,Republic of Equatorial Guinea,Africa,GQ,226,Middle Africa,GEQ,Malabo
+GRC,Greece,Hellenic Republic,Europe,GR,300,Southern Europe,GRE,Athens
+GRD,Grenada,Grenada,America,GD,308,Caribbean,GRN,St. George's
+GRL,Greenland,Greenland,America,GL,304,North America,,Nuuk
+GTM,Guatemala,Republic of Guatemala,America,GT,320,Central America,GUA,Guatemala City
+GUF,French Guiana,Guiana,America,GF,254,South America,,Cayenne
+GUM,Guam,Guam,Oceania,GU,316,Micronesia,GUM,Hagåtña
+GUY,Guyana,Co-operative Republic of Guyana,America,GY,328,South America,GUY,Georgetown
+HKG,Hong Kong,Hong Kong Special Administrative Region of the People's Republic of China,Asia,HK,344,Eastern Asia,HKG,City of Victoria
+HMD,Heard Island and McDonald Islands,Heard Island and McDonald Islands,Antarctica,HM,334,,,
+HND,Honduras,Republic of Honduras,America,HN,340,Central America,HON,Tegucigalpa
+HRV,Croatia,Republic of Croatia,Europe,HR,191,Southeast Europe,CRO,Zagreb
+HTI,Haiti,Republic of Haiti,America,HT,332,Caribbean,HAI,Port-au-Prince
+HUN,Hungary,Hungary,Europe,HU,348,Central Europe,HUN,Budapest
+IDN,Indonesia,Republic of Indonesia,Asia,ID,360,South-Eastern Asia,INA,Jakarta
+IMN,Isle of Man,Isle of Man,Europe,IM,833,Northern Europe,,Douglas
+IND,India,Republic of India,Asia,IN,356,Southern Asia,IND,New Delhi
+IOT,British Indian Ocean Territory,British Indian Ocean Territory,Africa,IO,086,Eastern Africa,,Diego Garcia
+IRL,Ireland,Republic of Ireland,Europe,IE,372,Northern Europe,IRL,Dublin
+IRN,Iran,Islamic Republic of Iran,Asia,IR,364,Southern Asia,IRI,Tehran
+IRQ,Iraq,Republic of Iraq,Asia,IQ,368,Western Asia,IRQ,Baghdad
+ISL,Iceland,Iceland,Europe,IS,352,Northern Europe,ISL,Reykjavik
+ISR,Israel,State of Israel,Asia,IL,376,Western Asia,ISR,Jerusalem
+ITA,Italy,Italian Republic,Europe,IT,380,Southern Europe,ITA,Rome
+JAM,Jamaica,Jamaica,America,JM,388,Caribbean,JAM,Kingston
+JEY,Jersey,Bailiwick of Jersey,Europe,JE,832,Northern Europe,,Saint Helier
+JOR,Jordan,Hashemite Kingdom of Jordan,Asia,JO,400,Western Asia,JOR,Amman
+JPN,Japan,Japan,Asia,JP,392,Eastern Asia,JPN,Tokyo
+KAZ,Kazakhstan,Republic of Kazakhstan,Asia,KZ,398,Central Asia,KAZ,Astana
+KEN,Kenya,Republic of Kenya,Africa,KE,404,Eastern Africa,KEN,Nairobi
+KGZ,Kyrgyzstan,Kyrgyz Republic,Asia,KG,417,Central Asia,KGZ,Bishkek
+KHM,Cambodia,Kingdom of Cambodia,Asia,KH,116,South-Eastern Asia,CAM,Phnom Penh
+KIR,Kiribati,Independent and Sovereign Republic of Kiribati,Oceania,KI,296,Micronesia,KIR,South Tarawa
+KNA,Saint Kitts and Nevis,Federation of Saint Christopher and Nevis,America,KN,659,Caribbean,SKN,Basseterre
+KOR,South Korea,Republic of Korea,Asia,KR,410,Eastern Asia,KOR,Seoul
+KWT,Kuwait,State of Kuwait,Asia,KW,414,Western Asia,KUW,Kuwait City
+LAO,Laos,Lao People's Democratic Republic,Asia,LA,418,South-Eastern Asia,LAO,Vientiane
+LBN,Lebanon,Lebanese Republic,Asia,LB,422,Western Asia,LBN,Beirut
+LBR,Liberia,Republic of Liberia,Africa,LR,430,Western Africa,LBR,Monrovia
+LBY,Libya,State of Libya,Africa,LY,434,Northern Africa,LBA,Tripoli
+LCA,Saint Lucia,Saint Lucia,America,LC,662,Caribbean,LCA,Castries
+LIE,Liechtenstein,Principality of Liechtenstein,Europe,LI,438,Western Europe,LIE,Vaduz
+LKA,Sri Lanka,Democratic Socialist Republic of Sri Lanka,Asia,LK,144,Southern Asia,SRI,Colombo
+LSO,Lesotho,Kingdom of Lesotho,Africa,LS,426,Southern Africa,LES,Maseru
+LTU,Lithuania,Republic of Lithuania,Europe,LT,440,Northern Europe,LTU,Vilnius
+LUX,Luxembourg,Grand Duchy of Luxembourg,Europe,LU,442,Western Europe,LUX,Luxembourg
+LVA,Latvia,Republic of Latvia,Europe,LV,428,Northern Europe,LAT,Riga
+MAC,Macau,Macao Special Administrative Region of the People's Republic of China,Asia,MO,446,Eastern Asia,,
+MAF,Saint Martin,Saint Martin,America,MF,663,Caribbean,,Marigot
+MAR,Morocco,Kingdom of Morocco,Africa,MA,504,Northern Africa,MAR,Rabat
+MCO,Monaco,Principality of Monaco,Europe,MC,492,Western Europe,MON,Monaco
+MDA,Moldova,Republic of Moldova,Europe,MD,498,Eastern Europe,MDA,Chișinău
+MDG,Madagascar,Republic of Madagascar,Africa,MG,450,Eastern Africa,MAD,Antananarivo
+MDV,Maldives,Republic of the Maldives,Asia,MV,462,Southern Asia,MDV,Malé
+MEX,Mexico,United Mexican States,America,MX,484,North America,MEX,Mexico City
+MHL,Marshall Islands,Republic of the Marshall Islands,Oceania,MH,584,Micronesia,MHL,Majuro
+MKD,North Macedonia,Republic of North Macedonia,Europe,MK,807,Southeast Europe,MKD,Skopje
+MLI,Mali,Republic of Mali,Africa,ML,466,Western Africa,MLI,Bamako
+MLT,Malta,Republic of Malta,Europe,MT,470,Southern Europe,MLT,Valletta
+MMR,Myanmar,Republic of the Union of Myanmar,Asia,MM,104,South-Eastern Asia,MYA,Naypyidaw
+MNE,Montenegro,Montenegro,Europe,ME,499,Southeast Europe,MNE,Podgorica
+MNG,Mongolia,Mongolia,Asia,MN,496,Eastern Asia,MGL,Ulan Bator
+MNP,Northern Mariana Islands,Commonwealth of the Northern Mariana Islands,Oceania,MP,580,Micronesia,,Saipan
+MOZ,Mozambique,Republic of Mozambique,Africa,MZ,508,Eastern Africa,MOZ,Maputo
+MRT,Mauritania,Islamic Republic of Mauritania,Africa,MR,478,Western Africa,MTN,Nouakchott
+MSR,Montserrat,Montserrat,America,MS,500,Caribbean,,Plymouth
+MTQ,Martinique,Martinique,America,MQ,474,Caribbean,,Fort-de-France
+MUS,Mauritius,Republic of Mauritius,Africa,MU,480,Eastern Africa,MRI,Port Louis
+MWI,Malawi,Republic of Malawi,Africa,MW,454,Eastern Africa,MAW,Lilongwe
+MYS,Malaysia,Malaysia,Asia,MY,458,South-Eastern Asia,MAS,Kuala Lumpur
+MYT,Mayotte,Department of Mayotte,Africa,YT,175,Eastern Africa,,Mamoudzou
+NAM,Namibia,Republic of Namibia,Africa,NA,516,Southern Africa,NAM,Windhoek
+NCL,New Caledonia,New Caledonia,Oceania,NC,540,Melanesia,,Nouméa
+NER,Niger,Republic of Niger,Africa,NE,562,Western Africa,NIG,Niamey
+NFK,Norfolk Island,Territory of Norfolk Island,Oceania,NF,574,Australia and New Zealand,,Kingston
+NGA,Nigeria,Federal Republic of Nigeria,Africa,NG,566,Western Africa,NGR,Abuja
+NIC,Nicaragua,Republic of Nicaragua,America,NI,558,Central America,NCA,Managua
+NIU,Niue,Niue,Oceania,NU,570,Polynesia,,Alofi
+NLD,Netherlands,Kingdom of the Netherlands,Europe,NL,528,Western Europe,NED,Amsterdam
+NOR,Norway,Kingdom of Norway,Europe,NO,578,Northern Europe,NOR,Oslo
+NPL,Nepal,Federal Democratic Republic of Nepal,Asia,NP,524,Southern Asia,NEP,Kathmandu
+NRU,Nauru,Republic of Nauru,Oceania,NR,520,Micronesia,NRU,Yaren
+NZL,New Zealand,New Zealand,Oceania,NZ,554,Australia and New Zealand,NZL,Wellington
+OMN,Oman,Sultanate of Oman,Asia,OM,512,Western Asia,OMA,Muscat
+PAK,Pakistan,Islamic Republic of Pakistan,Asia,PK,586,Southern Asia,PAK,Islamabad
+PAN,Panama,Republic of Panama,America,PA,591,Central America,PAN,Panama City
+PCN,Pitcairn Islands,Pitcairn Group of Islands,Oceania,PN,612,Polynesia,,Adamstown
+PER,Peru,Republic of Peru,America,PE,604,South America,PER,Lima
+PHL,Philippines,Republic of the Philippines,Asia,PH,608,South-Eastern Asia,PHI,Manila
+PLW,Palau,Republic of Palau,Oceania,PW,585,Micronesia,PLW,Ngerulmud
+PNG,Papua New Guinea,Independent State of Papua New Guinea,Oceania,PG,598,Melanesia,PNG,Port Moresby
+POL,Poland,Republic of Poland,Europe,PL,616,Central Europe,POL,Warsaw
+PRI,Puerto Rico,Commonwealth of Puerto Rico,America,PR,630,Caribbean,PUR,San Juan
+PRK,North Korea,Democratic People's Republic of Korea,Asia,KP,408,Eastern Asia,PRK,Pyongyang
+PRT,Portugal,Portuguese Republic,Europe,PT,620,Southern Europe,POR,Lisbon
+PRY,Paraguay,Republic of Paraguay,America,PY,600,South America,PAR,Asunción
+PSE,Palestine,State of Palestine,Asia,PS,275,Western Asia,PLE,Ramallah
+PYF,French Polynesia,French Polynesia,Oceania,PF,258,Polynesia,,Papeetē
+QAT,Qatar,State of Qatar,Asia,QA,634,Western Asia,QAT,Doha
+REU,Réunion,Réunion Island,Africa,RE,638,Eastern Africa,,Saint-Denis
+ROU,Romania,Romania,Europe,RO,642,Southeast Europe,ROU,Bucharest
+RUS,Russia,Russian Federation,Europe,RU,643,Eastern Europe,RUS,Moscow
+RWA,Rwanda,Republic of Rwanda,Africa,RW,646,Eastern Africa,RWA,Kigali
+SAU,Saudi Arabia,Kingdom of Saudi Arabia,Asia,SA,682,Western Asia,KSA,Riyadh
+SDN,Sudan,Republic of the Sudan,Africa,SD,729,Northern Africa,SUD,Khartoum
+SEN,Senegal,Republic of Senegal,Africa,SN,686,Western Africa,SEN,Dakar
+SGP,Singapore,Republic of Singapore,Asia,SG,702,South-Eastern Asia,SGP,Singapore
+SGS,South Georgia,South Georgia and the South Sandwich Islands,Antarctica,GS,239,,,King Edward Point
 SHN,"Saint Helena, Ascension and Tristan da Cunha","Saint Helena, Ascension and Tristan da Cunha",Africa,SH,654,Western Africa
-BLR,Belarus,Republic of Belarus,Europe,BY,112,Eastern Europe
-BLZ,Belize,Belize,Americas,BZ,084,Central America
-BMU,Bermuda,Bermuda,Americas,BM,060,North America
-BOL,Bolivia,Plurinational State of Bolivia,Americas,BO,068,South America
-BES,Caribbean Netherlands,"Bonaire, Sint Eustatius and Saba",Americas,BQ,535,Caribbean
-BRA,Brazil,Federative Republic of Brazil,Americas,BR,076,South America
-BRB,Barbados,Barbados,Americas,BB,052,Caribbean
-BRN,Brunei,"Nation of Brunei, Abode of Peace",Asia,BN,096,South-Eastern Asia
-BTN,Bhutan,Kingdom of Bhutan,Asia,BT,064,Southern Asia
-BVT,Bouvet Island,Bouvet Island,Antarctic,BV,074,
-BWA,Botswana,Republic of Botswana,Africa,BW,072,Southern Africa
-CAF,Central African Republic,Central African Republic,Africa,CF,140,Middle Africa
-CAN,Canada,Canada,Americas,CA,124,North America
-CCK,Cocos (Keeling) Islands,Territory of the Cocos (Keeling) Islands,Oceania,CC,166,Australia and New Zealand
-CHE,Switzerland,Swiss Confederation,Europe,CH,756,Western Europe
-CHL,Chile,Republic of Chile,Americas,CL,152,South America
-CHN,China,People's Republic of China,Asia,CN,156,Eastern Asia
-CIV,Ivory Coast,Republic of CÃ´te d'Ivoire,Africa,CI,384,Western Africa
-CMR,Cameroon,Republic of Cameroon,Africa,CM,120,Middle Africa
-COD,DR Congo,Democratic Republic of the Congo,Africa,CD,180,Middle Africa
-COG,Congo,Republic of the Congo,Africa,CG,178,Middle Africa
-COK,Cook Islands,Cook Islands,Oceania,CK,184,Polynesia
-COL,Colombia,Republic of Colombia,Americas,CO,170,South America
-COM,Comoros,Union of the Comoros,Africa,KM,174,Eastern Africa
-CPV,Cape Verde,Republic of Cabo Verde,Africa,CV,132,Western Africa
-CRI,Costa Rica,Republic of Costa Rica,Americas,CR,188,Central America
-CUB,Cuba,Republic of Cuba,Americas,CU,192,Caribbean
-CUW,CuraÃ§ao,Country of CuraÃ§ao,Americas,CW,531,Caribbean
-CXR,Christmas Island,Territory of Christmas Island,Oceania,CX,162,Australia and New Zealand
-CYM,Cayman Islands,Cayman Islands,Americas,KY,136,Caribbean
-CYP,Cyprus,Republic of Cyprus,Europe,CY,196,Southern Europe
-CZE,Czechia,Czech Republic,Europe,CZ,203,Central Europe
-DEU,Germany,Federal Republic of Germany,Europe,DE,276,Western Europe
-DJI,Djibouti,Republic of Djibouti,Africa,DJ,262,Eastern Africa
-DMA,Dominica,Commonwealth of Dominica,Americas,DM,212,Caribbean
-DNK,Denmark,Kingdom of Denmark,Europe,DK,208,Northern Europe
-DOM,Dominican Republic,Dominican Republic,Americas,DO,214,Caribbean
-DZA,Algeria,People's Democratic Republic of Algeria,Africa,DZ,012,Northern Africa
-ECU,Ecuador,Republic of Ecuador,Americas,EC,218,South America
-EGY,Egypt,Arab Republic of Egypt,Africa,EG,818,Northern Africa
-ERI,Eritrea,State of Eritrea,Africa,ER,232,Eastern Africa
-ESH,Western Sahara,Sahrawi Arab Democratic Republic,Africa,EH,732,Northern Africa
-ESP,Spain,Kingdom of Spain,Europe,ES,724,Southern Europe
-EST,Estonia,Republic of Estonia,Europe,EE,233,Northern Europe
-ETH,Ethiopia,Federal Democratic Republic of Ethiopia,Africa,ET,231,Eastern Africa
-FIN,Finland,Republic of Finland,Europe,FI,246,Northern Europe
-FJI,Fiji,Republic of Fiji,Oceania,FJ,242,Melanesia
-FLK,Falkland Islands,Falkland Islands,Americas,FK,238,South America
-FRA,France,French Republic,Europe,FR,250,Western Europe
-FRO,Faroe Islands,Faroe Islands,Europe,FO,234,Northern Europe
-FSM,Micronesia,Federated States of Micronesia,Oceania,FM,583,Micronesia
-GAB,Gabon,Gabonese Republic,Africa,GA,266,Middle Africa
-GBR,United Kingdom,United Kingdom of Great Britain and Northern Ireland,Europe,GB,826,Northern Europe
-GEO,Georgia,Georgia,Asia,GE,268,Western Asia
-GGY,Guernsey,Bailiwick of Guernsey,Europe,GG,831,Northern Europe
-GHA,Ghana,Republic of Ghana,Africa,GH,288,Western Africa
-GIB,Gibraltar,Gibraltar,Europe,GI,292,Southern Europe
-GIN,Guinea,Republic of Guinea,Africa,GN,324,Western Africa
-GLP,Guadeloupe,Guadeloupe,Americas,GP,312,Caribbean
-GMB,Gambia,Republic of the Gambia,Africa,GM,270,Western Africa
-GNB,Guinea-Bissau,Republic of Guinea-Bissau,Africa,GW,624,Western Africa
-GNQ,Equatorial Guinea,Republic of Equatorial Guinea,Africa,GQ,226,Middle Africa
-GRC,Greece,Hellenic Republic,Europe,GR,300,Southern Europe
-GRD,Grenada,Grenada,Americas,GD,308,Caribbean
-GRL,Greenland,Greenland,Americas,GL,304,North America
-GTM,Guatemala,Republic of Guatemala,Americas,GT,320,Central America
-GUF,French Guiana,Guiana,Americas,GF,254,South America
-GUM,Guam,Guam,Oceania,GU,316,Micronesia
-GUY,Guyana,Co-operative Republic of Guyana,Americas,GY,328,South America
-HKG,Hong Kong,Hong Kong Special Administrative Region of the People's Republic of China,Asia,HK,344,Eastern Asia
-HMD,Heard Island and McDonald Islands,Heard Island and McDonald Islands,Antarctic,HM,334,
-HND,Honduras,Republic of Honduras,Americas,HN,340,Central America
-HRV,Croatia,Republic of Croatia,Europe,HR,191,Southeast Europe
-HTI,Haiti,Republic of Haiti,Americas,HT,332,Caribbean
-HUN,Hungary,Hungary,Europe,HU,348,Central Europe
-IDN,Indonesia,Republic of Indonesia,Asia,ID,360,South-Eastern Asia
-IMN,Isle of Man,Isle of Man,Europe,IM,833,Northern Europe
-IND,India,Republic of India,Asia,IN,356,Southern Asia
-IOT,British Indian Ocean Territory,British Indian Ocean Territory,Africa,IO,086,Eastern Africa
-IRL,Ireland,Republic of Ireland,Europe,IE,372,Northern Europe
-IRN,Iran,Islamic Republic of Iran,Asia,IR,364,Southern Asia
-IRQ,Iraq,Republic of Iraq,Asia,IQ,368,Western Asia
-ISL,Iceland,Iceland,Europe,IS,352,Northern Europe
-ISR,Israel,State of Israel,Asia,IL,376,Western Asia
-ITA,Italy,Italian Republic,Europe,IT,380,Southern Europe
-JAM,Jamaica,Jamaica,Americas,JM,388,Caribbean
-JEY,Jersey,Bailiwick of Jersey,Europe,JE,832,Northern Europe
-JOR,Jordan,Hashemite Kingdom of Jordan,Asia,JO,400,Western Asia
-JPN,Japan,Japan,Asia,JP,392,Eastern Asia
-KAZ,Kazakhstan,Republic of Kazakhstan,Asia,KZ,398,Central Asia
-KEN,Kenya,Republic of Kenya,Africa,KE,404,Eastern Africa
-KGZ,Kyrgyzstan,Kyrgyz Republic,Asia,KG,417,Central Asia
-KHM,Cambodia,Kingdom of Cambodia,Asia,KH,116,South-Eastern Asia
-KIR,Kiribati,Independent and Sovereign Republic of Kiribati,Oceania,KI,296,Micronesia
-KNA,Saint Kitts and Nevis,Federation of Saint Christopher and Nevis,Americas,KN,659,Caribbean
-KOR,South Korea,Republic of Korea,Asia,KR,410,Eastern Asia
-UNK,Kosovo,Republic of Kosovo,Europe,XK,,Southeast Europe
-KWT,Kuwait,State of Kuwait,Asia,KW,414,Western Asia
-LAO,Laos,Lao People's Democratic Republic,Asia,LA,418,South-Eastern Asia
-LBN,Lebanon,Lebanese Republic,Asia,LB,422,Western Asia
-LBR,Liberia,Republic of Liberia,Africa,LR,430,Western Africa
-LBY,Libya,State of Libya,Africa,LY,434,Northern Africa
-LCA,Saint Lucia,Saint Lucia,Americas,LC,662,Caribbean
-LIE,Liechtenstein,Principality of Liechtenstein,Europe,LI,438,Western Europe
-LKA,Sri Lanka,Democratic Socialist Republic of Sri Lanka,Asia,LK,144,Southern Asia
-LSO,Lesotho,Kingdom of Lesotho,Africa,LS,426,Southern Africa
-LTU,Lithuania,Republic of Lithuania,Europe,LT,440,Northern Europe
-LUX,Luxembourg,Grand Duchy of Luxembourg,Europe,LU,442,Western Europe
-LVA,Latvia,Republic of Latvia,Europe,LV,428,Northern Europe
-MAC,Macau,Macao Special Administrative Region of the People's Republic of China,Asia,MO,446,Eastern Asia
-MAF,Saint Martin,Saint Martin,Americas,MF,663,Caribbean
-MAR,Morocco,Kingdom of Morocco,Africa,MA,504,Northern Africa
-MCO,Monaco,Principality of Monaco,Europe,MC,492,Western Europe
-MDA,Moldova,Republic of Moldova,Europe,MD,498,Eastern Europe
-MDG,Madagascar,Republic of Madagascar,Africa,MG,450,Eastern Africa
-MDV,Maldives,Republic of the Maldives,Asia,MV,462,Southern Asia
-MEX,Mexico,United Mexican States,Americas,MX,484,North America
-MHL,Marshall Islands,Republic of the Marshall Islands,Oceania,MH,584,Micronesia
-MKD,North Macedonia,Republic of North Macedonia,Europe,MK,807,Southeast Europe
-MLI,Mali,Republic of Mali,Africa,ML,466,Western Africa
-MLT,Malta,Republic of Malta,Europe,MT,470,Southern Europe
-MMR,Myanmar,Republic of the Union of Myanmar,Asia,MM,104,South-Eastern Asia
-MNE,Montenegro,Montenegro,Europe,ME,499,Southeast Europe
-MNG,Mongolia,Mongolia,Asia,MN,496,Eastern Asia
-MNP,Northern Mariana Islands,Commonwealth of the Northern Mariana Islands,Oceania,MP,580,Micronesia
-MOZ,Mozambique,Republic of Mozambique,Africa,MZ,508,Eastern Africa
-MRT,Mauritania,Islamic Republic of Mauritania,Africa,MR,478,Western Africa
-MSR,Montserrat,Montserrat,Americas,MS,500,Caribbean
-MTQ,Martinique,Martinique,Americas,MQ,474,Caribbean
-MUS,Mauritius,Republic of Mauritius,Africa,MU,480,Eastern Africa
-MWI,Malawi,Republic of Malawi,Africa,MW,454,Eastern Africa
-MYS,Malaysia,Malaysia,Asia,MY,458,South-Eastern Asia
-MYT,Mayotte,Department of Mayotte,Africa,YT,175,Eastern Africa
-NAM,Namibia,Republic of Namibia,Africa,NA,516,Southern Africa
-NCL,New Caledonia,New Caledonia,Oceania,NC,540,Melanesia
-NER,Niger,Republic of Niger,Africa,NE,562,Western Africa
-NFK,Norfolk Island,Territory of Norfolk Island,Oceania,NF,574,Australia and New Zealand
-NGA,Nigeria,Federal Republic of Nigeria,Africa,NG,566,Western Africa
-NIC,Nicaragua,Republic of Nicaragua,Americas,NI,558,Central America
-NIU,Niue,Niue,Oceania,NU,570,Polynesia
-NLD,Netherlands,Kingdom of the Netherlands,Europe,NL,528,Western Europe
-NOR,Norway,Kingdom of Norway,Europe,NO,578,Northern Europe
-NPL,Nepal,Federal Democratic Republic of Nepal,Asia,NP,524,Southern Asia
-NRU,Nauru,Republic of Nauru,Oceania,NR,520,Micronesia
-NZL,New Zealand,New Zealand,Oceania,NZ,554,Australia and New Zealand
-OMN,Oman,Sultanate of Oman,Asia,OM,512,Western Asia
-PAK,Pakistan,Islamic Republic of Pakistan,Asia,PK,586,Southern Asia
-PAN,Panama,Republic of Panama,Americas,PA,591,Central America
-PCN,Pitcairn Islands,Pitcairn Group of Islands,Oceania,PN,612,Polynesia
-PER,Peru,Republic of Peru,Americas,PE,604,South America
-PHL,Philippines,Republic of the Philippines,Asia,PH,608,South-Eastern Asia
-PLW,Palau,Republic of Palau,Oceania,PW,585,Micronesia
-PNG,Papua New Guinea,Independent State of Papua New Guinea,Oceania,PG,598,Melanesia
-POL,Poland,Republic of Poland,Europe,PL,616,Central Europe
-PRI,Puerto Rico,Commonwealth of Puerto Rico,Americas,PR,630,Caribbean
-PRK,North Korea,Democratic People's Republic of Korea,Asia,KP,408,Eastern Asia
-PRT,Portugal,Portuguese Republic,Europe,PT,620,Southern Europe
-PRY,Paraguay,Republic of Paraguay,Americas,PY,600,South America
-PSE,Palestine,State of Palestine,Asia,PS,275,Western Asia
-PYF,French Polynesia,French Polynesia,Oceania,PF,258,Polynesia
-QAT,Qatar,State of Qatar,Asia,QA,634,Western Asia
-REU,RÃ©union,RÃ©union Island,Africa,RE,638,Eastern Africa
-ROU,Romania,Romania,Europe,RO,642,Southeast Europe
-RUS,Russia,Russian Federation,Europe,RU,643,Eastern Europe
-RWA,Rwanda,Republic of Rwanda,Africa,RW,646,Eastern Africa
-SAU,Saudi Arabia,Kingdom of Saudi Arabia,Asia,SA,682,Western Asia
-SDN,Sudan,Republic of the Sudan,Africa,SD,729,Northern Africa
-SEN,Senegal,Republic of Senegal,Africa,SN,686,Western Africa
-SGP,Singapore,Republic of Singapore,Asia,SG,702,South-Eastern Asia
-SGS,South Georgia,South Georgia and the South Sandwich Islands,Antarctic,GS,239,
-SJM,Svalbard and Jan Mayen,Svalbard og Jan Mayen,Europe,SJ,744,Northern Europe
-SLB,Solomon Islands,Solomon Islands,Oceania,SB,090,Melanesia
-SLE,Sierra Leone,Republic of Sierra Leone,Africa,SL,694,Western Africa
-SLV,El Salvador,Republic of El Salvador,Americas,SV,222,Central America
-SMR,San Marino,Most Serene Republic of San Marino,Europe,SM,674,Southern Europe
-SOM,Somalia,Federal Republic of Somalia,Africa,SO,706,Eastern Africa
-SPM,Saint Pierre and Miquelon,Saint Pierre and Miquelon,Americas,PM,666,North America
-SRB,Serbia,Republic of Serbia,Europe,RS,688,Southeast Europe
-SSD,South Sudan,Republic of South Sudan,Africa,SS,728,Middle Africa
-STP,SÃ£o TomÃ© and PrÃ­ncipe,Democratic Republic of SÃ£o TomÃ© and PrÃ­ncipe,Africa,ST,678,Middle Africa
-SUR,Suriname,Republic of Suriname,Americas,SR,740,South America
-SVK,Slovakia,Slovak Republic,Europe,SK,703,Central Europe
-SVN,Slovenia,Republic of Slovenia,Europe,SI,705,Central Europe
-SWE,Sweden,Kingdom of Sweden,Europe,SE,752,Northern Europe
-SWZ,Eswatini,Kingdom of Eswatini,Africa,SZ,748,Southern Africa
-SXM,Sint Maarten,Sint Maarten,Americas,SX,534,Caribbean
-SYC,Seychelles,Republic of Seychelles,Africa,SC,690,Eastern Africa
-SYR,Syria,Syrian Arab Republic,Asia,SY,760,Western Asia
-TCA,Turks and Caicos Islands,Turks and Caicos Islands,Americas,TC,796,Caribbean
-TCD,Chad,Republic of Chad,Africa,TD,148,Middle Africa
-TGO,Togo,Togolese Republic,Africa,TG,768,Western Africa
-THA,Thailand,Kingdom of Thailand,Asia,TH,764,South-Eastern Asia
-TJK,Tajikistan,Republic of Tajikistan,Asia,TJ,762,Central Asia
-TKL,Tokelau,Tokelau,Oceania,TK,772,Polynesia
-TKM,Turkmenistan,Turkmenistan,Asia,TM,795,Central Asia
-TLS,Timor-Leste,Democratic Republic of Timor-Leste,Asia,TL,626,South-Eastern Asia
-TON,Tonga,Kingdom of Tonga,Oceania,TO,776,Polynesia
-TTO,Trinidad and Tobago,Republic of Trinidad and Tobago,Americas,TT,780,Caribbean
-TUN,Tunisia,Tunisian Republic,Africa,TN,788,Northern Africa
-TUR,TÃ¼rkiye,Republic of TÃ¼rkiye,Asia,TR,792,Western Asia
-TUV,Tuvalu,Tuvalu,Oceania,TV,798,Polynesia
-TWN,Taiwan,Republic of China (Taiwan),Asia,TW,158,Eastern Asia
-TZA,Tanzania,United Republic of Tanzania,Africa,TZ,834,Eastern Africa
-UGA,Uganda,Republic of Uganda,Africa,UG,800,Eastern Africa
-UKR,Ukraine,Ukraine,Europe,UA,804,Eastern Europe
-UMI,United States Minor Outlying Islands,United States Minor Outlying Islands,Americas,UM,581,North America
-URY,Uruguay,Oriental Republic of Uruguay,Americas,UY,858,South America
-USA,United States,United States of America,Americas,US,840,North America
-UZB,Uzbekistan,Republic of Uzbekistan,Asia,UZ,860,Central Asia
-VAT,Vatican City,Vatican City State,Europe,VA,336,Southern Europe
-VCT,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,Americas,VC,670,Caribbean
-VEN,Venezuela,Bolivarian Republic of Venezuela,Americas,VE,862,South America
-VGB,British Virgin Islands,Virgin Islands,Americas,VG,092,Caribbean
-VIR,United States Virgin Islands,Virgin Islands of the United States,Americas,VI,850,Caribbean
-VNM,Vietnam,Socialist Republic of Vietnam,Asia,VN,704,South-Eastern Asia
-VUT,Vanuatu,Republic of Vanuatu,Oceania,VU,548,Melanesia
-WLF,Wallis and Futuna,Territory of the Wallis and Futuna Islands,Oceania,WF,876,Polynesia
-WSM,Samoa,Independent State of Samoa,Oceania,WS,882,Polynesia
-YEM,Yemen,Republic of Yemen,Asia,YE,887,Western Asia
-ZAF,South Africa,Republic of South Africa,Africa,ZA,710,Southern Africa
-ZMB,Zambia,Republic of Zambia,Africa,ZM,894,Eastern Africa
-ZWE,Zimbabwe,Republic of Zimbabwe,Africa,ZW,716,Eastern Africa
+SJM,Svalbard and Jan Mayen,Svalbard og Jan Mayen,Europe,SJ,744,Northern Europe,,Longyearbyen
+SLB,Solomon Islands,Solomon Islands,Oceania,SB,090,Melanesia,SOL,Honiara
+SLE,Sierra Leone,Republic of Sierra Leone,Africa,SL,694,Western Africa,SLE,Freetown
+SLV,El Salvador,Republic of El Salvador,America,SV,222,Central America,ESA,San Salvador
+SMR,San Marino,Most Serene Republic of San Marino,Europe,SM,674,Southern Europe,SMR,City of San Marino
+SOM,Somalia,Federal Republic of Somalia,Africa,SO,706,Eastern Africa,SOM,Mogadishu
+SPM,Saint Pierre and Miquelon,Saint Pierre and Miquelon,America,PM,666,North America,,Saint-Pierre
+SRB,Serbia,Republic of Serbia,Europe,RS,688,Southeast Europe,SRB,Belgrade
+SSD,South Sudan,Republic of South Sudan,Africa,SS,728,Middle Africa,,Juba
+STP,São Tomé and Príncipe,Democratic Republic of São Tomé and Príncipe,Africa,ST,678,Middle Africa,STP,São Tomé
+SUR,Suriname,Republic of Suriname,America,SR,740,South America,SUR,Paramaribo
+SVK,Slovakia,Slovak Republic,Europe,SK,703,Central Europe,SVK,Bratislava
+SVN,Slovenia,Republic of Slovenia,Europe,SI,705,Central Europe,SLO,Ljubljana
+SWE,Sweden,Kingdom of Sweden,Europe,SE,752,Northern Europe,SWE,Stockholm
+SWZ,Eswatini,Kingdom of Eswatini,Africa,SZ,748,Southern Africa,SWZ,Lobamba
+SXM,Sint Maarten,Sint Maarten,America,SX,534,Caribbean,,Philipsburg
+SYC,Seychelles,Republic of Seychelles,Africa,SC,690,Eastern Africa,SEY,Victoria
+SYR,Syria,Syrian Arab Republic,Asia,SY,760,Western Asia,SYR,Damascus
+TCA,Turks and Caicos Islands,Turks and Caicos Islands,America,TC,796,Caribbean,,Cockburn Town
+TCD,Chad,Republic of Chad,Africa,TD,148,Middle Africa,CHA,N'Djamena
+TGO,Togo,Togolese Republic,Africa,TG,768,Western Africa,TOG,Lomé
+THA,Thailand,Kingdom of Thailand,Asia,TH,764,South-Eastern Asia,THA,Bangkok
+TJK,Tajikistan,Republic of Tajikistan,Asia,TJ,762,Central Asia,TJK,Dushanbe
+TKL,Tokelau,Tokelau,Oceania,TK,772,Polynesia,,Fakaofo
+TKM,Turkmenistan,Turkmenistan,Asia,TM,795,Central Asia,TKM,Ashgabat
+TLS,Timor-Leste,Democratic Republic of Timor-Leste,Asia,TL,626,South-Eastern Asia,TLS,Dili
+TON,Tonga,Kingdom of Tonga,Oceania,TO,776,Polynesia,TGA,Nuku'alofa
+TTO,Trinidad and Tobago,Republic of Trinidad and Tobago,America,TT,780,Caribbean,TTO,Port of Spain
+TUN,Tunisia,Tunisian Republic,Africa,TN,788,Northern Africa,TUN,Tunis
+TUR,Türkiye,Republic of Türkiye,Asia,TR,792,Western Asia,TUR,Ankara
+TUV,Tuvalu,Tuvalu,Oceania,TV,798,Polynesia,TUV,Funafuti
+TWN,Taiwan,Republic of China (Taiwan),Asia,TW,158,Eastern Asia,TPE,Taipei
+TZA,Tanzania,United Republic of Tanzania,Africa,TZ,834,Eastern Africa,TAN,Dodoma
+UGA,Uganda,Republic of Uganda,Africa,UG,800,Eastern Africa,UGA,Kampala
+UKR,Ukraine,Ukraine,Europe,UA,804,Eastern Europe,UKR,Kyiv
+UMI,United States Minor Outlying Islands,United States Minor Outlying Islands,America,UM,581,North America,,
+URY,Uruguay,Oriental Republic of Uruguay,America,UY,858,South America,URU,Montevideo
+USA,United States,United States of America,America,US,840,North America,USA,Washington D.C.
+UZB,Uzbekistan,Republic of Uzbekistan,Asia,UZ,860,Central Asia,UZB,Tashkent
+VAT,Vatican City,Vatican City State,Europe,VA,336,Southern Europe,,Vatican City
+VCT,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,America,VC,670,Caribbean,VIN,Kingstown
+VEN,Venezuela,Bolivarian Republic of Venezuela,America,VE,862,South America,VEN,Caracas
+VGB,British Virgin Islands,Virgin Islands,America,VG,092,Caribbean,IVB,Road Town
+VIR,United States Virgin Islands,Virgin Islands of the United States,America,VI,850,Caribbean,ISV,Charlotte Amalie
+VNM,Vietnam,Socialist Republic of Vietnam,Asia,VN,704,South-Eastern Asia,VIE,Hanoi
+VUT,Vanuatu,Republic of Vanuatu,Oceania,VU,548,Melanesia,VAN,Port Vila
+WLF,Wallis and Futuna,Territory of the Wallis and Futuna Islands,Oceania,WF,876,Polynesia,,Mata-Utu
+WSM,Samoa,Independent State of Samoa,Oceania,WS,882,Polynesia,SAM,Apia
+XKX,Kosovo,Republic of Kosovo,Europe,XK,,Southeast Europe,KOS,Pristina
+YEM,Yemen,Republic of Yemen,Asia,YE,887,Western Asia,YEM,Sana'a
+ZAF,South Africa,Republic of South Africa,Africa,ZA,710,Southern Africa,RSA,Pretoria
+ZMB,Zambia,Republic of Zambia,Africa,ZM,894,Eastern Africa,ZAM,Lusaka
+ZWE,Zimbabwe,Republic of Zimbabwe,Africa,ZW,716,Eastern Africa,ZIM,Harare
