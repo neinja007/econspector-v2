@@ -7,6 +7,7 @@ import AppSidebar from '@/components/sidebar/app-sidebar';
 import { TanstackQueryProvider } from '@/components/tanstack-query-provider';
 import { Analytics } from '@vercel/analytics/next';
 import { HeadingBreadcrumbs } from '@/components/heading-breadcrumbs';
+import ThemeToggle from '@/components/theming/theme-toggle';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
@@ -27,8 +28,11 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 							<SidebarProvider>
 								<AppSidebar />
 								<main className='w-full h-screen'>
-									<div className='flex items-center p-6'>
+									<div className='flex items-center justify-between p-6'>
 										<HeadingBreadcrumbs />
+										<div>
+											<ThemeToggle />
+										</div>
 									</div>
 									<div className='p-6 h-auto'>{children}</div>
 								</main>
