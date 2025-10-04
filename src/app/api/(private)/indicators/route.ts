@@ -1,7 +1,7 @@
 import { adminSupabase } from '@/supabase/admin';
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { NextResponse } from 'next/server';
-import { indicators } from '@/data/indicators';
+import { indicators } from '../../../../../private/data/indicators';
 
 export const POST = async () => {
 	if (process.env.ENABLE_ADMIN_SCRIPTS !== 'true') {
