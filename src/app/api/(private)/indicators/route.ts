@@ -3,7 +3,7 @@ import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { NextResponse } from 'next/server';
 import { indicators } from '@/data/indicators';
 
-export const GET = async () => {
+export const POST = async () => {
 	if (process.env.ENABLE_ADMIN_SCRIPTS !== 'true') {
 		return NextResponse.json({ message: 'Admin scripts are not enabled. Nice try.' }, { status: 403 });
 	}
@@ -27,8 +27,6 @@ export const GET = async () => {
 				.insert({ name: indicator.name })
 				.select()
 				.single();
-
-			console.log(dbIndicator);
 
 			for (const subindicator of indicator.subindicators) {
 				const dbSubindicator = await adminSupabase
@@ -56,6 +54,31 @@ export const GET = async () => {
 					}
 				}
 			}
+		} else {
+			const dbIndicator = await adminSupabase
+				.schema(DatabaseSchema.DATA)
+				.from(DatabaseTable.INDICATORS)
+				.insert({ name: indicator.name })
+				.select()
+				.single();
+
+			for (const frequency of indicator.frequencies) {
+				const dbFrequency = await adminSupabase
+					.schema(DatabaseSchema.DATA)
+					.from(DatabaseTable.INDICATOR_FREQUENCIES)
+					.insert({ frequency: frequency.frequency, indicator_id: dbIndicator.data.id })
+					.select()
+					.single();
+
+				for (const source of frequency.sources) {
+					await adminSupabase
+						.schema(DatabaseSchema.DATA)
+						.from(DatabaseTable.FREQUENCY_SOURCES)
+						.insert({ frequency_id: dbFrequency.data.id, name: source.source, unit: source.unit })
+						.select()
+						.single();
+				}
+			}
 		}
 	}
 	return NextResponse.json({
@@ -63,4 +86,16 @@ export const GET = async () => {
 		created: createdIndicators,
 		skipped: skippedIndicators
 	});
+};
+
+export const DELETE = async () => {
+	if (process.env.ENABLE_ADMIN_SCRIPTS !== 'true') {
+		return NextResponse.json({ message: 'Admin scripts are not enabled. Nice try.' }, { status: 403 });
+	}
+
+	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.INDICATORS).delete().neq('id', 0);
+	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.INDICATOR_FREQUENCIES).delete().neq('id', 0);
+	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.FREQUENCY_SOURCES).delete().neq('id', 0);
+
+	return NextResponse.json({ message: 'Indicators deleted from database' });
 };
