@@ -7,7 +7,11 @@ const useSearch = <T>(list: T[], search: string, keys: string[]) => {
 		return new Fuse(list, { ...fuseOptions, keys });
 	}, [keys, list]);
 
-	return fuse.search(search).map((result) => result.item);
+	if (search.trim()) {
+		return fuse.search(search).map((result) => result.item);
+	} else {
+		return list;
+	}
 };
 
 export default useSearch;
