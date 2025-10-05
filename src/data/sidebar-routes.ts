@@ -25,6 +25,7 @@ import {
 	MapIcon,
 	MessagesSquare,
 	Scale,
+	Search,
 	Settings,
 	SquareSigma,
 	Table,
@@ -64,7 +65,7 @@ export const sidebarRoutes: {
 			{
 				label: 'Analysis',
 				href: '/countries-and-regions/analysis',
-				icon: Landmark,
+				icon: Search,
 				getBreadcrumbs: async (pathname) => {
 					console.log(pathname);
 					const type = pathname.split('/')[1] as 'country' | 'region';
@@ -113,7 +114,7 @@ export const sidebarRoutes: {
 			{
 				label: 'Analysis',
 				href: '/currencies/analysis',
-				icon: DollarSign
+				icon: Search
 			},
 			{
 				label: 'Rankings',
