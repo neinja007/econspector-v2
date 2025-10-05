@@ -10,6 +10,7 @@ import {
 	BookText,
 	Brain,
 	ChartNoAxesCombined,
+	Component,
 	Database,
 	DollarSign,
 	Flag,
@@ -84,7 +85,8 @@ export const sidebarRoutes: {
 						return [
 							{
 								label: region.name || subregion.name,
-								href: `/countries-and-regions/analysis/${type}/${code}`
+								href: `/countries-and-regions/analysis/${type}/${code}`,
+								icon: Component
 							}
 						];
 					} else {
