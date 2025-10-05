@@ -11,6 +11,8 @@ import { SearchResults } from './components/search-results';
 
 const CountriesAnalysisPage = () => {
 	const [search, setSearch] = useState('');
+	const [showCountries, setShowCountries] = useState(true);
+	const [showRegions, setShowRegions] = useState(true);
 	const { data: countries } = useCountries();
 	const searchResults = useSearch(countries?.data || [], search, [
 		'country_code',
@@ -37,11 +39,19 @@ const CountriesAnalysisPage = () => {
 					</InputGroupAddon>
 				</InputGroup>
 				<div className='flex items-center gap-1.5 whitespace-nowrap'>
-					<Checkbox id='show-countries' />
+					<Checkbox
+						id='show-countries'
+						checked={showCountries}
+						onCheckedChange={(checked) => setShowCountries(checked === 'indeterminate' ? false : checked)}
+					/>
 					<Label htmlFor='show-countries'>Show countries</Label>
 				</div>
 				<div className='flex items-center gap-1.5 whitespace-nowrap'>
-					<Checkbox id='show-regions' />
+					<Checkbox
+						id='show-regions'
+						checked={showRegions}
+						onCheckedChange={(checked) => setShowRegions(checked === 'indeterminate' ? false : checked)}
+					/>
 					<Label htmlFor='show-regions'>Show regions</Label>
 				</div>
 			</div>
