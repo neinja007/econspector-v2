@@ -14,4 +14,14 @@ async function getCountries(): Promise<{ data: Country[]; count: number }> {
 	return { data, count: count ?? 0 };
 }
 
-export { getCountries };
+async function getCountry(code: string): Promise<Country> {
+	const { data, error } = await supabase
+		.schema(DatabaseSchema.DATA)
+		.from(DatabaseTable.COUNTRIES)
+		.select('*')
+		.eq('country_code', code);
+	if (error) throw error;
+	return data[0];
+}
+
+export { getCountries, getCountry };
