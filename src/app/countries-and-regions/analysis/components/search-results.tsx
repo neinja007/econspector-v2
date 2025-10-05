@@ -5,16 +5,17 @@ import { slug } from '@/utils/slug';
 
 type SearchResultsProps = {
 	searchResults: CountryOrRegion[];
+	showType: boolean;
 };
 
-export const SearchResults = ({ searchResults }: SearchResultsProps) => {
+export const SearchResults = ({ searchResults, showType }: SearchResultsProps) => {
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8'>
 			{searchResults.map((element) => (
 				<Link
 					href={`/countries-and-regions/analysis/${slug(element.data.name)}`}
 					className='border rounded-md p-4 flex gap-4 justify-between hover:bg-accent hover:border-accent-foreground transition-colors'
-					key={slug(element.type === 'country' ? element.data.country_code : element.data.code)}
+					key={slug(element.type + '-' + (element.type === 'country' ? element.data.country_code : element.data.code))}
 				>
 					{element.type === 'country' ? (
 						<div className='shrink-0'>
@@ -28,6 +29,7 @@ export const SearchResults = ({ searchResults }: SearchResultsProps) => {
 					<div className='flex flex-col items-end justify-between'>
 						<span className='line-clamp-2 text-right'>{element.data.name}</span>
 						<span className='text-sm text-muted-foreground'>
+							{showType && `${element.type.charAt(0).toUpperCase() + element.type.slice(1)} | `}
 							{element.type === 'country' ? element.data.country_code : element.data.code}
 						</span>
 					</div>

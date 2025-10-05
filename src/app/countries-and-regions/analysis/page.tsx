@@ -69,7 +69,7 @@ const CountriesAnalysisPage = () => {
 					<Label htmlFor='show-regions'>Show regions</Label>
 				</div>
 			</div>
-			<SearchResults searchResults={searchResults} />
+			<SearchResults searchResults={searchResults} showType={showCountries && showRegions} />
 		</div>
 	);
 };
