@@ -9,10 +9,11 @@ import { Analytics } from '@vercel/analytics/next';
 import { HeadingBreadcrumbs } from '@/components/heading-breadcrumbs';
 import ThemeToggle from '@/components/theming/theme-toggle';
 import { shadcn } from '@clerk/themes';
+import { slogan } from '@/data/slogan';
 
 export const metadata: Metadata = {
 	title: 'EconSpector v2',
-	description: 'The premier platform for visualizing, analyzing, and presenting economic data.'
+	description: slogan
 };
 
 type RootLayoutProps = {
