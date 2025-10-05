@@ -14,7 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 	let name = code;
 	if (type === 'country') {
 		const country = await getCountry(code);
-		name = country ? `${country.full_name} (${country.name})` : code;
+		name = country
+			? country.full_name === country.name
+				? country.full_name
+				: `${country.full_name} (${country.name})`
+			: code;
 	} else if (type === 'region') {
 		const region = await getRegion(code);
 		const subregion = await getSubregion(code);
