@@ -11,16 +11,44 @@ import {
 } from './shadcn/ui/breadcrumb';
 import { sidebarRoutes } from '@/data/sidebar-routes';
 import { pathMatches } from '@/utils/path-matches';
-import { TriangleAlert } from 'lucide-react';
+import { TriangleAlert, type LucideIcon } from 'lucide-react';
 import Link from 'next/link';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 
 export const HeadingBreadcrumbs = () => {
 	const pathname = usePathname();
-	const parentRoute = sidebarRoutes.find((route) => route.routes.some((r) => pathMatches(pathname, r.href)));
-	const childRoute = parentRoute?.routes.find((r) => pathMatches(pathname, r.href));
+	const parentRoute = useMemo(
+		() => sidebarRoutes.find((route) => route.routes.some((r) => pathMatches(pathname, r.href))),
+		[pathname]
+	);
+	const childRoute = useMemo(
+		() => parentRoute?.routes.find((r) => pathMatches(pathname, r.href)),
+		[parentRoute, pathname]
+	);
 
-	const childBreadcrumbs = childRoute?.getBreadcrumbs?.(pathname.split(childRoute.href)[1]) || [];
+	const [childBreadcrumbs, setChildBreadcrumbs] = useState<
+		{ label: string; href?: string; icon?: React.ReactNode | LucideIcon }[]
+	>([]);
+
+	useEffect(() => {
+		let canceled = false;
+		if (!childRoute) {
+			setChildBreadcrumbs([]);
+			return;
+		}
+		const suffix = pathname.split(childRoute.href)[1];
+		const maybe = childRoute.getBreadcrumbs?.(suffix);
+		if (maybe instanceof Promise) {
+			maybe.then((res) => {
+				if (!canceled) setChildBreadcrumbs(res || []);
+			});
+		} else {
+			setChildBreadcrumbs(maybe || []);
+		}
+		return () => {
+			canceled = true;
+		};
+	}, [childRoute, pathname]);
 
 	if (!parentRoute || !childRoute)
 		return (
@@ -66,17 +94,35 @@ export const HeadingBreadcrumbs = () => {
 							<BreadcrumbItem>
 								{i === childBreadcrumbs.length - 1 ? (
 									<BreadcrumbPage className='flex items-center gap-1.5'>
-										{breadcrumb.icon && <breadcrumb.icon className='size-5' />} {breadcrumb.label}
+										{breadcrumb.icon &&
+											(typeof breadcrumb.icon === 'function' ? (
+												<breadcrumb.icon className='size-5' />
+											) : (
+												breadcrumb.icon
+											))}
+										{breadcrumb.label}
 									</BreadcrumbPage>
 								) : breadcrumb.href ? (
 									<BreadcrumbLink asChild>
 										<Link href={breadcrumb.href || '/'} className='flex items-center gap-1.5'>
-											{breadcrumb.icon && <breadcrumb.icon className='size-5' />} {breadcrumb.label}
+											{breadcrumb.icon &&
+												(typeof breadcrumb.icon === 'function' ? (
+													<breadcrumb.icon className='size-5' />
+												) : (
+													breadcrumb.icon
+												))}
+											{breadcrumb.label}
 										</Link>
 									</BreadcrumbLink>
 								) : (
 									<>
-										{breadcrumb.icon && <breadcrumb.icon className='size-5' />} {breadcrumb.label}
+										{breadcrumb.icon &&
+											(typeof breadcrumb.icon === 'function' ? (
+												<breadcrumb.icon className='size-5' />
+											) : (
+												breadcrumb.icon
+											))}
+										{breadcrumb.label}
 									</>
 								)}
 							</BreadcrumbItem>
