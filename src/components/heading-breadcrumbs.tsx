@@ -14,6 +14,8 @@ import { pathMatches } from '@/utils/path-matches';
 import { TriangleAlert, type LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Spinner } from './shadcn/ui/spinner';
+import { renderIconOrComponent } from '@/utils/render-icon-or-component';
 
 export const HeadingBreadcrumbs = () => {
 	const pathname = usePathname();
@@ -30,23 +32,30 @@ export const HeadingBreadcrumbs = () => {
 		{ label: string; href?: string; icon?: React.ReactNode | LucideIcon }[]
 	>([]);
 
+	const [childBreadcrumbsLoading, setChildBreadcrumbsLoading] = useState(false);
+
 	useEffect(() => {
 		let canceled = false;
 		if (!childRoute) {
 			setChildBreadcrumbs([]);
+			setChildBreadcrumbsLoading(false);
 			return;
 		}
 		const suffix = pathname.split(childRoute.href)[1];
 		const maybe = childRoute.getBreadcrumbs?.(suffix);
 		if (maybe instanceof Promise) {
+			setChildBreadcrumbsLoading(true);
 			maybe.then((res) => {
 				if (!canceled) setChildBreadcrumbs(res || []);
+				setChildBreadcrumbsLoading(false);
 			});
 		} else {
 			setChildBreadcrumbs(maybe || []);
+			setChildBreadcrumbsLoading(false);
 		}
 		return () => {
 			canceled = true;
+			setChildBreadcrumbsLoading(false);
 		};
 	}, [childRoute, pathname]);
 
@@ -77,7 +86,7 @@ export const HeadingBreadcrumbs = () => {
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
-					{childBreadcrumbs.length === 0 ? (
+					{childBreadcrumbs.length === 0 || childBreadcrumbsLoading ? (
 						<BreadcrumbPage className='flex items-center gap-1.5'>{childBreadcrumb}</BreadcrumbPage>
 					) : (
 						<BreadcrumbLink asChild>
@@ -87,6 +96,14 @@ export const HeadingBreadcrumbs = () => {
 						</BreadcrumbLink>
 					)}
 				</BreadcrumbItem>
+				{childBreadcrumbsLoading && childBreadcrumbs.length === 0 && (
+					<>
+						<BreadcrumbSeparator />
+						<BreadcrumbItem>
+							<Spinner /> Loading...
+						</BreadcrumbItem>
+					</>
+				)}
 				{childBreadcrumbs.length > 0 &&
 					childBreadcrumbs.map((breadcrumb, i) => (
 						<Fragment key={breadcrumb.label}>
@@ -95,33 +112,21 @@ export const HeadingBreadcrumbs = () => {
 								{i === childBreadcrumbs.length - 1 ? (
 									<BreadcrumbPage className='flex items-center gap-1.5'>
 										{breadcrumb.icon &&
-											(typeof breadcrumb.icon === 'function' ? (
-												<breadcrumb.icon className='size-5' />
-											) : (
-												breadcrumb.icon
-											))}
+											renderIconOrComponent({ icon: breadcrumb.icon, props: { className: 'size-5' } })}
 										{breadcrumb.label}
 									</BreadcrumbPage>
 								) : breadcrumb.href ? (
 									<BreadcrumbLink asChild>
 										<Link href={breadcrumb.href || '/'} className='flex items-center gap-1.5'>
 											{breadcrumb.icon &&
-												(typeof breadcrumb.icon === 'function' ? (
-													<breadcrumb.icon className='size-5' />
-												) : (
-													breadcrumb.icon
-												))}
+												renderIconOrComponent({ icon: breadcrumb.icon, props: { className: 'size-5' } })}
 											{breadcrumb.label}
 										</Link>
 									</BreadcrumbLink>
 								) : (
 									<>
 										{breadcrumb.icon &&
-											(typeof breadcrumb.icon === 'function' ? (
-												<breadcrumb.icon className='size-5' />
-											) : (
-												breadcrumb.icon
-											))}
+											renderIconOrComponent({ icon: breadcrumb.icon, props: { className: 'size-5' } })}
 										{breadcrumb.label}
 									</>
 								)}
