@@ -1,4 +1,6 @@
 import { getCountry } from '@/api/country';
+import { getRegion } from '@/api/region';
+import { getSubregion } from '@/api/subregion';
 import { datasets } from '@/app/advanced/data-explorer/data/datasets';
 import FlagComponent from '@/components/flag';
 import {
@@ -76,8 +78,18 @@ export const sidebarRoutes: {
 								icon: createElement(FlagComponent, { code: country.cca2, ratio: '4x3', height: 24 })
 							}
 						];
+					} else if (type === 'region') {
+						const region = await getRegion(code);
+						const subregion = await getSubregion(code);
+						return [
+							{
+								label: region.name || subregion.name,
+								href: `/countries-and-regions/analysis/${type}/${code}`
+							}
+						];
+					} else {
+						return undefined;
 					}
-					return [{ label: type, href: `/countries-and-regions/analysis/${type}`, icon: Landmark }];
 				}
 			},
 			{
