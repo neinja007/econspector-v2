@@ -1,10 +1,11 @@
+import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { supabase } from '@/supabase/client';
 import { Country } from '@/types/country';
 
 async function getCountries(): Promise<{ data: Country[]; count: number }> {
 	const { data, error, count } = await supabase
-		.schema('data')
-		.from('countries')
+		.schema(DatabaseSchema.DATA)
+		.from(DatabaseTable.COUNTRIES)
 		.select('*', {
 			count: 'estimated'
 		})
