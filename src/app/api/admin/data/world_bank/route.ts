@@ -145,10 +145,6 @@ export const POST = async () => {
 };
 
 export const DELETE = async () => {
-	if (process.env.ENABLE_ADMIN_SCRIPTS !== 'true') {
-		return NextResponse.json({ message: 'Admin scripts are not enabled. Nice try.' }, { status: 403 });
-	}
-
 	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.WORLD_BANK_DATA).delete().neq('id', 0);
 
 	return NextResponse.json({ message: 'World bank data deleted successfully' });
