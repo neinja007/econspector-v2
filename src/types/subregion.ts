@@ -1,4 +1,4 @@
-export type Region = {
+export type Subregion = {
 	code: string;
 	name: string;
 };

@@ -9,5 +9,7 @@ export enum DatabaseTable {
 	WORLD_BANK_DATA = 'world_bank_data',
 	COUNTRIES = 'countries',
 	CURRENCIES = 'currencies',
-	COUNTRIES_CURRENCIES = 'countries_currencies'
+	COUNTRIES_CURRENCIES = 'countries_currencies',
+	REGIONS = 'regions',
+	SUBREGIONS = 'subregions'
 }
