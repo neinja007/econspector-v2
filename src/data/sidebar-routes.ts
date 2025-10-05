@@ -1,4 +1,6 @@
+import { getCountry } from '@/api/country';
 import { datasets } from '@/app/advanced/data-explorer/data/datasets';
+import FlagComponent from '@/components/flag';
 import {
 	ArrowLeftRight,
 	BarChart,
@@ -25,6 +27,7 @@ import {
 	Table,
 	User
 } from 'lucide-react';
+import { createElement, ReactNode } from 'react';
 
 export const sidebarRoutes: {
 	name: string;
@@ -35,10 +38,18 @@ export const sidebarRoutes: {
 		href: string;
 		icon: LucideIcon;
 		getBreadcrumbs?: (pathname: string) =>
+			| Promise<
+					| {
+							label: string;
+							href?: string;
+							icon?: ReactNode | LucideIcon;
+					  }[]
+					| undefined
+			  >
 			| {
 					label: string;
 					href?: string;
-					icon?: LucideIcon;
+					icon?: ReactNode | LucideIcon;
 			  }[]
 			| undefined;
 	}[];
@@ -50,7 +61,24 @@ export const sidebarRoutes: {
 			{
 				label: 'Analysis',
 				href: '/countries-and-regions/analysis',
-				icon: Landmark
+				icon: Landmark,
+				getBreadcrumbs: async (pathname) => {
+					console.log(pathname);
+					const type = pathname.split('/')[1] as 'country' | 'region';
+					const code = pathname.split('/')[2];
+					if (!type || !code) return undefined;
+					if (type === 'country') {
+						const country = await getCountry(code);
+						return [
+							{
+								label: country.name,
+								href: `/countries-and-regions/analysis/${type}/${code}`,
+								icon: createElement(FlagComponent, { code: country.cca2, ratio: '4x3', height: 24 })
+							}
+						];
+					}
+					return [{ label: type, href: `/countries-and-regions/analysis/${type}`, icon: Landmark }];
+				}
 			},
 			{
 				label: 'Rankings',
