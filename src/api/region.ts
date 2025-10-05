@@ -14,4 +14,14 @@ async function getRegions(): Promise<{ data: Region[]; count: number }> {
 	return { data, count: count ?? 0 };
 }
 
-export { getRegions };
+async function getRegion(code: string): Promise<Region> {
+	const { data, error } = await supabase
+		.schema(DatabaseSchema.DATA)
+		.from(DatabaseTable.REGIONS)
+		.select('*')
+		.eq('code', code);
+	if (error) throw error;
+	return data[0];
+}
+
+export { getRegions, getRegion };
