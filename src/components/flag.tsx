@@ -13,7 +13,7 @@ const Flag = ({ code, ratio, height }: FlagProps) => {
 		<Image
 			src={`/flags/${ratio}/${code.toLowerCase()}.svg`}
 			alt='flag'
-			className='rounded-md'
+			className='rounded-md object-cover'
 			width={width}
 			height={height}
 		/>
