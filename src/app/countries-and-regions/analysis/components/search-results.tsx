@@ -13,7 +13,9 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8'>
 			{searchResults.map((element) => (
 				<Link
-					href={`/countries-and-regions/analysis/${slug(element.data.name)}`}
+					href={`/countries-and-regions/analysis/${element.type}/${
+						element.type === 'country' ? element.data.country_code : element.data.code
+					}`}
 					className='border rounded-md p-4 flex gap-4 justify-between hover:bg-accent hover:border-accent-foreground transition-colors'
 					key={slug(element.type + '-' + (element.type === 'country' ? element.data.country_code : element.data.code))}
 				>
