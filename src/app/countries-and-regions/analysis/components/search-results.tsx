@@ -17,11 +17,11 @@ export const SearchResults = ({ searchResults }: SearchResultsProps) => {
 					key={slug(element.data.name)}
 				>
 					{element.type === 'country' ? (
-						<div>
+						<div className='shrink-0'>
 							<Flag code={element.data.cca2} ratio='4x3' height={70} />
 						</div>
 					) : (
-						<div className='w-10 h-10'>{element.data.code}</div>
+						<div className='w-10 h-10 shrink-0'>{element.data.code}</div>
 					)}
 					<div className='flex flex-col items-end justify-between'>
 						<span className='line-clamp-2 text-right'>{element.data.name}</span>
