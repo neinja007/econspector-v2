@@ -8,20 +8,34 @@ import { useCountries } from '@/hooks/react-query/queries/use-countries';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
 import { SearchResults } from './components/search-results';
+import { CountryOrRegion } from './types/search-results';
+import { useRegions } from '@/hooks/react-query/queries/use-regions';
+import { useSubregions } from '@/hooks/react-query/queries/use-subregions';
 
 const CountriesAnalysisPage = () => {
 	const [search, setSearch] = useState('');
+
 	const [showCountries, setShowCountries] = useState(true);
-	const [showRegions, setShowRegions] = useState(true);
+	const [showRegions, setShowRegions] = useState(false);
+
 	const { data: countries } = useCountries();
-	const searchResults = useSearch(countries?.data || [], search, [
-		'country_code',
-		'name',
-		'full_name',
-		'cca2',
-		'ccn3',
-		'cioc',
-		'capital'
+	const { data: regions } = useRegions();
+	const { data: subregions } = useSubregions();
+
+	const searchList = [
+		...(showCountries ? countries?.data.map((country) => ({ type: 'country', data: country })) || [] : []),
+		...(showRegions ? regions?.data.map((region) => ({ type: 'region', data: region })) || [] : []),
+		...(showRegions ? subregions?.data.map((subregion) => ({ type: 'region', data: subregion })) || [] : [])
+	] as CountryOrRegion[];
+
+	const searchResults = useSearch(searchList, search, [
+		'data.country_code',
+		'data.name',
+		'data.full_name',
+		'data.cca2',
+		'data.ccn3',
+		'data.cioc',
+		'data.capital'
 	]);
 
 	return (
