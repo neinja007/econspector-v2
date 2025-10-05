@@ -4,10 +4,6 @@ import { NextResponse } from 'next/server';
 import { indicators } from '../../../../../private/data/indicators';
 
 export const POST = async () => {
-	if (process.env.ENABLE_ADMIN_SCRIPTS !== 'true') {
-		return NextResponse.json({ message: 'Admin scripts are not enabled. Nice try.' }, { status: 403 });
-	}
-
 	const existingIndicators = await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.INDICATORS).select('*');
 	const skippedIndicators = [];
 	const createdIndicators = [];
@@ -89,10 +85,6 @@ export const POST = async () => {
 };
 
 export const DELETE = async () => {
-	if (process.env.ENABLE_ADMIN_SCRIPTS !== 'true') {
-		return NextResponse.json({ message: 'Admin scripts are not enabled. Nice try.' }, { status: 403 });
-	}
-
 	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.INDICATORS).delete().neq('id', 0);
 	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.INDICATOR_FREQUENCIES).delete().neq('id', 0);
 	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.FREQUENCY_SOURCES).delete().neq('id', 0);
