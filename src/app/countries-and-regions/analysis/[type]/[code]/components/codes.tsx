@@ -9,7 +9,7 @@ export const Codes = ({ keys, data }: { keys: string[]; data: Country | Region |
 		.map((key) => (key in data ? data[key as keyof typeof data] : undefined))
 		.filter(Boolean)
 		.map((code, i) => (
-			<div key={code}>
+			<div key={keys[i].toLowerCase() + '-' + code}>
 				<SimpleTooltip
 					tooltip={
 						<span>
