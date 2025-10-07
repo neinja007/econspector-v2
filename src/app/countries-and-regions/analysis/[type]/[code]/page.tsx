@@ -1,25 +1,31 @@
 'use client';
 
-import Flag from '@/components/flag';
+import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useCountryOrRegion } from '@/hooks/react-query/queries/use-country-or-region';
 import { useParams } from 'next/navigation';
+import { Info } from './components/info';
 
 const CountryAnalysisPage = () => {
-	const { code } = useParams<{ code: string; type: 'country' | 'region' | 'subregion' }>();
+	const { code, type } = useParams<{ code: string; type: 'country' | 'region' | 'subregion' }>();
 
-	const { data: country } = useCountryOrRegion('country', code);
+	const { data, status } = useCountryOrRegion(type, code);
 
-	return (
-		<div>
-			<div className='flex justify-between'>
-				<Flag code={country?.cca2 || ''} ratio='4x3' height={72} />
-				<div className='flex flex-col'>
-					<h1 className='text-2xl font-bold'>{country?.name}</h1>
-					<p className='text-sm text-gray-500'>{country?.full_name}</p>
-				</div>
+	if (status === 'pending') {
+		return (
+			<div className='flex items-center justify-center h-96 gap-2'>
+				<Spinner />
+				The {type} is being loaded...
 			</div>
-		</div>
-	);
+		);
+	}
+
+	if (status === 'success') {
+		return (
+			<div>
+				<Info data={data} />
+			</div>
+		);
+	}
 };
 
 export default CountryAnalysisPage;
