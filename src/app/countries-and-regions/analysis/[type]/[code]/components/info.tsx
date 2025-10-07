@@ -1,10 +1,11 @@
 import Flag from '@/components/flag';
-import { Country } from '@/types/country';
+import { CountryWithCurrencies } from '@/types/country';
 import { Region } from '@/types/region';
 import { Subregion } from '@/types/subregion';
 import { Codes } from './codes';
+import { Currencies } from './currencies';
 
-type InfoProps = { data: Country | Region | Subregion };
+type InfoProps = { data: Region | Subregion | CountryWithCurrencies };
 
 export const Info = ({ data }: InfoProps) => {
 	return (
@@ -20,6 +21,7 @@ export const Info = ({ data }: InfoProps) => {
 					</span>
 					{'capital' in data && data.capital && <span className='text-sm text-gray-500'>Capital: {data.capital}</span>}
 				</div>
+				{'currencies' in data && <Currencies data={data.currencies} />}
 			</div>
 		</div>
 	);

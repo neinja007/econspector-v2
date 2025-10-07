@@ -1,3 +1,5 @@
+import { Currency } from './currency';
+
 export type Country = {
 	country_code: string;
 	name: string;
@@ -6,4 +8,8 @@ export type Country = {
 	ccn3: string;
 	cioc: string;
 	capital: string;
+};
+
+export type CountryWithCurrencies = Country & {
+	currencies: Currency[];
 };
