@@ -37,5 +37,5 @@ export const Codes = ({ keys, data }: { keys: string[]; data: Country | Region |
 			[] as React.ReactNode[]
 		);
 
-	return <span className='text-sm flex gap-2'>{codesString}</span>;
+	return <span className='text-sm flex gap-1'>{codesString}</span>;
 };
