@@ -14,10 +14,10 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 			{searchResults.map((element) => (
 				<Link
 					href={`/countries-and-regions/analysis/${element.type}/${
-						element.type === 'country' ? element.data.country_code : element.data.code
+						element.type === 'country' ? element.data.cca3 : element.data.code
 					}`}
 					className='border rounded-md p-4 flex gap-4 justify-between hover:bg-accent hover:border-accent-foreground transition-colors'
-					key={slug(element.type + '-' + (element.type === 'country' ? element.data.country_code : element.data.code))}
+					key={slug(element.type + '-' + (element.type === 'country' ? element.data.cca3 : element.data.code))}
 				>
 					{element.type === 'country' ? (
 						<div className='shrink-0'>
@@ -32,7 +32,7 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 						<span className='line-clamp-2 text-right'>{element.data.name}</span>
 						<span className='text-sm text-muted-foreground'>
 							{showType && `${element.type.charAt(0).toUpperCase() + element.type.slice(1)} | `}
-							{element.type === 'country' ? element.data.country_code : element.data.code}
+							{element.type === 'country' ? element.data.cca3 : element.data.code}
 						</span>
 					</div>
 				</Link>

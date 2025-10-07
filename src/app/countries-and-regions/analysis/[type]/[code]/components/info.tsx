@@ -17,7 +17,7 @@ export const Info = ({ data }: InfoProps) => {
 						{'full_name' in data && data.full_name !== data.name ? `${data.full_name} (${data.name})` : data.name}
 					</h1>
 					<span className='text-sm text-gray-500'>
-						<Codes keys={['cca2', 'ccn3', 'cioc', 'country_code']} data={data} />
+						<Codes keys={['cca2', 'ccn3', 'cioc', 'cca3']} data={data} />
 					</span>
 					{'capital' in data && data.capital && <span className='text-sm text-gray-500'>Capital: {data.capital}</span>}
 				</div>

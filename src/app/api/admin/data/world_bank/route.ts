@@ -68,7 +68,7 @@ export const POST = async () => {
 			allRequests.push(
 				retryRequest(async () => {
 					const res = await axios.get(
-						`https://api.worldbank.org/v2/countries/${country.country_code}/indicators/${source.code}?per_page=10000&format=json`,
+						`https://api.worldbank.org/v2/countries/${country.cca3}/indicators/${source.code}?per_page=10000&format=json`,
 						{
 							timeout: 30000,
 							headers: {
@@ -78,12 +78,12 @@ export const POST = async () => {
 					);
 
 					return {
-						country_code: country.country_code,
+						country_code: country.cca3,
 						source_id: source.id,
 						data: res.data[1] ?? []
 					};
 				}).catch((err) => {
-					console.error(`Failed to fetch ${country.country_code} ${source.code} after retries:`, err.message);
+					console.error(`Failed to fetch ${country.cca3} ${source.code} after retries:`, err.message);
 					return null;
 				})
 			);

@@ -29,7 +29,7 @@ const CountriesAnalysisPage = () => {
 	];
 
 	const searchResults = useSearch(searchList, search, [
-		'data.country_code',
+		'data.cca3',
 		'data.name',
 		'data.full_name',
 		'data.cca2',

@@ -20,16 +20,16 @@ const rows = [];
  */
 
 for (const country of dbCountries) {
-	const nonDbCountryData = countries.find((co) => co.cca3 === country.country_code);
+	const nonDbCountryData = countries.find((co) => co.cca3 === country.cca3);
 	if (!nonDbCountryData) {
-		console.log(`Country ${country.country_code} not found in non-db countries.json`);
+		console.log(`Country ${country.cca3} not found in non-db countries.json`);
 		continue;
 	}
 	const countryCurrencyData = nonDbCountryData.currencies;
 	for (const currencyCode of Object.keys(countryCurrencyData)) {
 		if (dbCurrencies.find((c) => c.currency_code === currencyCode)) {
 			rows.push({
-				country_code: country.country_code,
+				country_code: country.cca3,
 				currency_code: currencyCode
 			});
 		} else {
@@ -38,7 +38,7 @@ for (const country of dbCountries) {
 	}
 }
 
-const csv = 'country_code,currency_code\n' + rows.map((row) => `${row.country_code},${row.currency_code}`).join('\n');
+const csv = 'country_code,currency_code\n' + rows.map((row) => `${row.cca3},${row.currency_code}`).join('\n');
 
 fs.writeFileSync('private/scripts/output/countries_currencies.csv', csv);
 

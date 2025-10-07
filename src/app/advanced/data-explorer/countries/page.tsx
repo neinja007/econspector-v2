@@ -8,7 +8,7 @@ const CountriesPage = () => {
 	return (
 		<div>
 			{countries?.data.map((country) => (
-				<div key={country.country_code}>{country.name}</div>
+				<div key={country.cca3}>{country.name}</div>
 			))}
 		</div>
 	);

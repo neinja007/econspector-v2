@@ -19,7 +19,7 @@ async function getCountry(code: string): Promise<CountryWithCurrencies> {
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.COUNTRIES)
 		.select('*, currencies(*)')
-		.eq('country_code', code);
+		.eq('cca3', code);
 	if (error) throw error;
 	return data[0];
 }

@@ -15,7 +15,7 @@ interface CountryData {
 }
 
 interface CSVRow {
-	country_code: string;
+	cca3: string;
 	name: string;
 	full_name: string;
 	region: string;
@@ -56,7 +56,7 @@ async function addCapitalAndCiocToCountries() {
 		for (const line of dataLines) {
 			const columns = line.split(',');
 			const row: CSVRow = {
-				country_code: columns[0],
+				cca3: columns[0],
 				name: columns[1],
 				full_name: columns[2],
 				region: columns[3],
@@ -84,7 +84,7 @@ async function addCapitalAndCiocToCountries() {
 
 			// Convert row back to CSV format
 			const updatedLine = [
-				row.country_code,
+				row.cca3,
 				row.name,
 				row.full_name,
 				row.region,

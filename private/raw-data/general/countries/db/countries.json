@@ -1,7 +1,7 @@
 [
 	{
 		"idx": 0,
-		"country_code": "ABW",
+		"cca3": "ABW",
 		"name": "Aruba",
 		"full_name": "Aruba",
 		"region": "AME",
@@ -14,7 +14,7 @@
 	},
 	{
 		"idx": 1,
-		"country_code": "AFG",
+		"cca3": "AFG",
 		"name": "Afghanistan",
 		"full_name": "Islamic Republic of Afghanistan",
 		"region": "ASI",
@@ -27,7 +27,7 @@
 	},
 	{
 		"idx": 2,
-		"country_code": "AGO",
+		"cca3": "AGO",
 		"name": "Angola",
 		"full_name": "Republic of Angola",
 		"region": "AFR",
@@ -40,7 +40,7 @@
 	},
 	{
 		"idx": 3,
-		"country_code": "AIA",
+		"cca3": "AIA",
 		"name": "Anguilla",
 		"full_name": "Anguilla",
 		"region": "AME",
@@ -53,7 +53,7 @@
 	},
 	{
 		"idx": 4,
-		"country_code": "ALA",
+		"cca3": "ALA",
 		"name": "Åland Islands",
 		"full_name": "Åland Islands",
 		"region": "EUR",
@@ -66,7 +66,7 @@
 	},
 	{
 		"idx": 5,
-		"country_code": "ALB",
+		"cca3": "ALB",
 		"name": "Albania",
 		"full_name": "Republic of Albania",
 		"region": "EUR",
@@ -79,7 +79,7 @@
 	},
 	{
 		"idx": 6,
-		"country_code": "AND",
+		"cca3": "AND",
 		"name": "Andorra",
 		"full_name": "Principality of Andorra",
 		"region": "EUR",
@@ -92,7 +92,7 @@
 	},
 	{
 		"idx": 7,
-		"country_code": "ARE",
+		"cca3": "ARE",
 		"name": "United Arab Emirates",
 		"full_name": "United Arab Emirates",
 		"region": "ASI",
@@ -105,7 +105,7 @@
 	},
 	{
 		"idx": 8,
-		"country_code": "ARG",
+		"cca3": "ARG",
 		"name": "Argentina",
 		"full_name": "Argentine Republic",
 		"region": "AME",
@@ -118,7 +118,7 @@
 	},
 	{
 		"idx": 9,
-		"country_code": "ARM",
+		"cca3": "ARM",
 		"name": "Armenia",
 		"full_name": "Republic of Armenia",
 		"region": "ASI",
@@ -131,7 +131,7 @@
 	},
 	{
 		"idx": 10,
-		"country_code": "ASM",
+		"cca3": "ASM",
 		"name": "American Samoa",
 		"full_name": "American Samoa",
 		"region": "OCE",
@@ -144,7 +144,7 @@
 	},
 	{
 		"idx": 11,
-		"country_code": "ATA",
+		"cca3": "ATA",
 		"name": "Antarctica",
 		"full_name": "Antarctica",
 		"region": "ANT",
@@ -157,7 +157,7 @@
 	},
 	{
 		"idx": 12,
-		"country_code": "ATF",
+		"cca3": "ATF",
 		"name": "French Southern and Antarctic Lands",
 		"full_name": "Territory of the French Southern and Antarctic Lands",
 		"region": "ANT",
@@ -170,7 +170,7 @@
 	},
 	{
 		"idx": 13,
-		"country_code": "ATG",
+		"cca3": "ATG",
 		"name": "Antigua and Barbuda",
 		"full_name": "Antigua and Barbuda",
 		"region": "AME",
@@ -183,7 +183,7 @@
 	},
 	{
 		"idx": 14,
-		"country_code": "AUS",
+		"cca3": "AUS",
 		"name": "Australia",
 		"full_name": "Commonwealth of Australia",
 		"region": "OCE",
@@ -196,7 +196,7 @@
 	},
 	{
 		"idx": 15,
-		"country_code": "AUT",
+		"cca3": "AUT",
 		"name": "Austria",
 		"full_name": "Republic of Austria",
 		"region": "EUR",
@@ -209,7 +209,7 @@
 	},
 	{
 		"idx": 16,
-		"country_code": "AZE",
+		"cca3": "AZE",
 		"name": "Azerbaijan",
 		"full_name": "Republic of Azerbaijan",
 		"region": "ASI",
@@ -222,7 +222,7 @@
 	},
 	{
 		"idx": 17,
-		"country_code": "BDI",
+		"cca3": "BDI",
 		"name": "Burundi",
 		"full_name": "Republic of Burundi",
 		"region": "AFR",
@@ -235,7 +235,7 @@
 	},
 	{
 		"idx": 18,
-		"country_code": "BEL",
+		"cca3": "BEL",
 		"name": "Belgium",
 		"full_name": "Kingdom of Belgium",
 		"region": "EUR",
@@ -248,7 +248,7 @@
 	},
 	{
 		"idx": 19,
-		"country_code": "BEN",
+		"cca3": "BEN",
 		"name": "Benin",
 		"full_name": "Republic of Benin",
 		"region": "AFR",
@@ -261,7 +261,7 @@
 	},
 	{
 		"idx": 20,
-		"country_code": "BES",
+		"cca3": "BES",
 		"name": "Caribbean Netherlands",
 		"full_name": "Bonaire, Sint Eustatius and Saba",
 		"region": "AME",
@@ -274,7 +274,7 @@
 	},
 	{
 		"idx": 21,
-		"country_code": "BFA",
+		"cca3": "BFA",
 		"name": "Burkina Faso",
 		"full_name": "Burkina Faso",
 		"region": "AFR",
@@ -287,7 +287,7 @@
 	},
 	{
 		"idx": 22,
-		"country_code": "BGD",
+		"cca3": "BGD",
 		"name": "Bangladesh",
 		"full_name": "People's Republic of Bangladesh",
 		"region": "ASI",
@@ -300,7 +300,7 @@
 	},
 	{
 		"idx": 23,
-		"country_code": "BGR",
+		"cca3": "BGR",
 		"name": "Bulgaria",
 		"full_name": "Republic of Bulgaria",
 		"region": "EUR",
@@ -313,7 +313,7 @@
 	},
 	{
 		"idx": 24,
-		"country_code": "BHR",
+		"cca3": "BHR",
 		"name": "Bahrain",
 		"full_name": "Kingdom of Bahrain",
 		"region": "ASI",
@@ -326,7 +326,7 @@
 	},
 	{
 		"idx": 25,
-		"country_code": "BHS",
+		"cca3": "BHS",
 		"name": "Bahamas",
 		"full_name": "Commonwealth of the Bahamas",
 		"region": "AME",
@@ -339,7 +339,7 @@
 	},
 	{
 		"idx": 26,
-		"country_code": "BIH",
+		"cca3": "BIH",
 		"name": "Bosnia and Herzegovina",
 		"full_name": "Bosnia and Herzegovina",
 		"region": "EUR",
@@ -352,7 +352,7 @@
 	},
 	{
 		"idx": 27,
-		"country_code": "BLM",
+		"cca3": "BLM",
 		"name": "Saint Barthélemy",
 		"full_name": "Collectivity of Saint Barthélemy",
 		"region": "AME",
@@ -365,7 +365,7 @@
 	},
 	{
 		"idx": 28,
-		"country_code": "BLR",
+		"cca3": "BLR",
 		"name": "Belarus",
 		"full_name": "Republic of Belarus",
 		"region": "EUR",
@@ -378,7 +378,7 @@
 	},
 	{
 		"idx": 29,
-		"country_code": "BLZ",
+		"cca3": "BLZ",
 		"name": "Belize",
 		"full_name": "Belize",
 		"region": "AME",
@@ -391,7 +391,7 @@
 	},
 	{
 		"idx": 30,
-		"country_code": "BMU",
+		"cca3": "BMU",
 		"name": "Bermuda",
 		"full_name": "Bermuda",
 		"region": "AME",
@@ -404,7 +404,7 @@
 	},
 	{
 		"idx": 31,
-		"country_code": "BOL",
+		"cca3": "BOL",
 		"name": "Bolivia",
 		"full_name": "Plurinational State of Bolivia",
 		"region": "AME",
@@ -417,7 +417,7 @@
 	},
 	{
 		"idx": 32,
-		"country_code": "BRA",
+		"cca3": "BRA",
 		"name": "Brazil",
 		"full_name": "Federative Republic of Brazil",
 		"region": "AME",
@@ -430,7 +430,7 @@
 	},
 	{
 		"idx": 33,
-		"country_code": "BRB",
+		"cca3": "BRB",
 		"name": "Barbados",
 		"full_name": "Barbados",
 		"region": "AME",
@@ -443,7 +443,7 @@
 	},
 	{
 		"idx": 34,
-		"country_code": "BRN",
+		"cca3": "BRN",
 		"name": "Brunei",
 		"full_name": "Nation of Brunei, Abode of Peace",
 		"region": "ASI",
@@ -456,7 +456,7 @@
 	},
 	{
 		"idx": 35,
-		"country_code": "BTN",
+		"cca3": "BTN",
 		"name": "Bhutan",
 		"full_name": "Kingdom of Bhutan",
 		"region": "ASI",
@@ -469,7 +469,7 @@
 	},
 	{
 		"idx": 36,
-		"country_code": "BVT",
+		"cca3": "BVT",
 		"name": "Bouvet Island",
 		"full_name": "Bouvet Island",
 		"region": "ANT",
@@ -482,7 +482,7 @@
 	},
 	{
 		"idx": 37,
-		"country_code": "BWA",
+		"cca3": "BWA",
 		"name": "Botswana",
 		"full_name": "Republic of Botswana",
 		"region": "AFR",
@@ -495,7 +495,7 @@
 	},
 	{
 		"idx": 38,
-		"country_code": "CAF",
+		"cca3": "CAF",
 		"name": "Central African Republic",
 		"full_name": "Central African Republic",
 		"region": "AFR",
@@ -508,7 +508,7 @@
 	},
 	{
 		"idx": 39,
-		"country_code": "CAN",
+		"cca3": "CAN",
 		"name": "Canada",
 		"full_name": "Canada",
 		"region": "AME",
@@ -521,7 +521,7 @@
 	},
 	{
 		"idx": 40,
-		"country_code": "CCK",
+		"cca3": "CCK",
 		"name": "Cocos (Keeling) Islands",
 		"full_name": "Territory of the Cocos (Keeling) Islands",
 		"region": "OCE",
@@ -534,7 +534,7 @@
 	},
 	{
 		"idx": 41,
-		"country_code": "CHE",
+		"cca3": "CHE",
 		"name": "Switzerland",
 		"full_name": "Swiss Confederation",
 		"region": "EUR",
@@ -547,7 +547,7 @@
 	},
 	{
 		"idx": 42,
-		"country_code": "CHL",
+		"cca3": "CHL",
 		"name": "Chile",
 		"full_name": "Republic of Chile",
 		"region": "AME",
@@ -560,7 +560,7 @@
 	},
 	{
 		"idx": 43,
-		"country_code": "CHN",
+		"cca3": "CHN",
 		"name": "China",
 		"full_name": "People's Republic of China",
 		"region": "ASI",
@@ -573,7 +573,7 @@
 	},
 	{
 		"idx": 44,
-		"country_code": "CIV",
+		"cca3": "CIV",
 		"name": "Ivory Coast",
 		"full_name": "Republic of Côte d'Ivoire",
 		"region": "AFR",
@@ -586,7 +586,7 @@
 	},
 	{
 		"idx": 45,
-		"country_code": "CMR",
+		"cca3": "CMR",
 		"name": "Cameroon",
 		"full_name": "Republic of Cameroon",
 		"region": "AFR",
@@ -599,7 +599,7 @@
 	},
 	{
 		"idx": 46,
-		"country_code": "COD",
+		"cca3": "COD",
 		"name": "DR Congo",
 		"full_name": "Democratic Republic of the Congo",
 		"region": "AFR",
@@ -612,7 +612,7 @@
 	},
 	{
 		"idx": 47,
-		"country_code": "COG",
+		"cca3": "COG",
 		"name": "Congo",
 		"full_name": "Republic of the Congo",
 		"region": "AFR",
@@ -625,7 +625,7 @@
 	},
 	{
 		"idx": 48,
-		"country_code": "COK",
+		"cca3": "COK",
 		"name": "Cook Islands",
 		"full_name": "Cook Islands",
 		"region": "OCE",
@@ -638,7 +638,7 @@
 	},
 	{
 		"idx": 49,
-		"country_code": "COL",
+		"cca3": "COL",
 		"name": "Colombia",
 		"full_name": "Republic of Colombia",
 		"region": "AME",
@@ -651,7 +651,7 @@
 	},
 	{
 		"idx": 50,
-		"country_code": "COM",
+		"cca3": "COM",
 		"name": "Comoros",
 		"full_name": "Union of the Comoros",
 		"region": "AFR",
@@ -664,7 +664,7 @@
 	},
 	{
 		"idx": 51,
-		"country_code": "CPV",
+		"cca3": "CPV",
 		"name": "Cape Verde",
 		"full_name": "Republic of Cabo Verde",
 		"region": "AFR",
@@ -677,7 +677,7 @@
 	},
 	{
 		"idx": 52,
-		"country_code": "CRI",
+		"cca3": "CRI",
 		"name": "Costa Rica",
 		"full_name": "Republic of Costa Rica",
 		"region": "AME",
@@ -690,7 +690,7 @@
 	},
 	{
 		"idx": 53,
-		"country_code": "CUB",
+		"cca3": "CUB",
 		"name": "Cuba",
 		"full_name": "Republic of Cuba",
 		"region": "AME",
@@ -703,7 +703,7 @@
 	},
 	{
 		"idx": 54,
-		"country_code": "CUW",
+		"cca3": "CUW",
 		"name": "Curaçao",
 		"full_name": "Country of Curaçao",
 		"region": "AME",
@@ -716,7 +716,7 @@
 	},
 	{
 		"idx": 55,
-		"country_code": "CXR",
+		"cca3": "CXR",
 		"name": "Christmas Island",
 		"full_name": "Territory of Christmas Island",
 		"region": "OCE",
@@ -729,7 +729,7 @@
 	},
 	{
 		"idx": 56,
-		"country_code": "CYM",
+		"cca3": "CYM",
 		"name": "Cayman Islands",
 		"full_name": "Cayman Islands",
 		"region": "AME",
@@ -742,7 +742,7 @@
 	},
 	{
 		"idx": 57,
-		"country_code": "CYP",
+		"cca3": "CYP",
 		"name": "Cyprus",
 		"full_name": "Republic of Cyprus",
 		"region": "EUR",
@@ -755,7 +755,7 @@
 	},
 	{
 		"idx": 58,
-		"country_code": "CZE",
+		"cca3": "CZE",
 		"name": "Czechia",
 		"full_name": "Czech Republic",
 		"region": "EUR",
@@ -768,7 +768,7 @@
 	},
 	{
 		"idx": 59,
-		"country_code": "DEU",
+		"cca3": "DEU",
 		"name": "Germany",
 		"full_name": "Federal Republic of Germany",
 		"region": "EUR",
@@ -781,7 +781,7 @@
 	},
 	{
 		"idx": 60,
-		"country_code": "DJI",
+		"cca3": "DJI",
 		"name": "Djibouti",
 		"full_name": "Republic of Djibouti",
 		"region": "AFR",
@@ -794,7 +794,7 @@
 	},
 	{
 		"idx": 61,
-		"country_code": "DMA",
+		"cca3": "DMA",
 		"name": "Dominica",
 		"full_name": "Commonwealth of Dominica",
 		"region": "AME",
@@ -807,7 +807,7 @@
 	},
 	{
 		"idx": 62,
-		"country_code": "DNK",
+		"cca3": "DNK",
 		"name": "Denmark",
 		"full_name": "Kingdom of Denmark",
 		"region": "EUR",
@@ -820,7 +820,7 @@
 	},
 	{
 		"idx": 63,
-		"country_code": "DOM",
+		"cca3": "DOM",
 		"name": "Dominican Republic",
 		"full_name": "Dominican Republic",
 		"region": "AME",
@@ -833,7 +833,7 @@
 	},
 	{
 		"idx": 64,
-		"country_code": "DZA",
+		"cca3": "DZA",
 		"name": "Algeria",
 		"full_name": "People's Democratic Republic of Algeria",
 		"region": "AFR",
@@ -846,7 +846,7 @@
 	},
 	{
 		"idx": 65,
-		"country_code": "ECU",
+		"cca3": "ECU",
 		"name": "Ecuador",
 		"full_name": "Republic of Ecuador",
 		"region": "AME",
@@ -859,7 +859,7 @@
 	},
 	{
 		"idx": 66,
-		"country_code": "EGY",
+		"cca3": "EGY",
 		"name": "Egypt",
 		"full_name": "Arab Republic of Egypt",
 		"region": "AFR",
@@ -872,7 +872,7 @@
 	},
 	{
 		"idx": 67,
-		"country_code": "ERI",
+		"cca3": "ERI",
 		"name": "Eritrea",
 		"full_name": "State of Eritrea",
 		"region": "AFR",
@@ -885,7 +885,7 @@
 	},
 	{
 		"idx": 68,
-		"country_code": "ESH",
+		"cca3": "ESH",
 		"name": "Western Sahara",
 		"full_name": "Sahrawi Arab Democratic Republic",
 		"region": "AFR",
@@ -898,7 +898,7 @@
 	},
 	{
 		"idx": 69,
-		"country_code": "ESP",
+		"cca3": "ESP",
 		"name": "Spain",
 		"full_name": "Kingdom of Spain",
 		"region": "EUR",
@@ -911,7 +911,7 @@
 	},
 	{
 		"idx": 70,
-		"country_code": "EST",
+		"cca3": "EST",
 		"name": "Estonia",
 		"full_name": "Republic of Estonia",
 		"region": "EUR",
@@ -924,7 +924,7 @@
 	},
 	{
 		"idx": 71,
-		"country_code": "ETH",
+		"cca3": "ETH",
 		"name": "Ethiopia",
 		"full_name": "Federal Democratic Republic of Ethiopia",
 		"region": "AFR",
@@ -937,7 +937,7 @@
 	},
 	{
 		"idx": 72,
-		"country_code": "FIN",
+		"cca3": "FIN",
 		"name": "Finland",
 		"full_name": "Republic of Finland",
 		"region": "EUR",
@@ -950,7 +950,7 @@
 	},
 	{
 		"idx": 73,
-		"country_code": "FJI",
+		"cca3": "FJI",
 		"name": "Fiji",
 		"full_name": "Republic of Fiji",
 		"region": "OCE",
@@ -963,7 +963,7 @@
 	},
 	{
 		"idx": 74,
-		"country_code": "FLK",
+		"cca3": "FLK",
 		"name": "Falkland Islands",
 		"full_name": "Falkland Islands",
 		"region": "AME",
@@ -976,7 +976,7 @@
 	},
 	{
 		"idx": 75,
-		"country_code": "FRA",
+		"cca3": "FRA",
 		"name": "France",
 		"full_name": "French Republic",
 		"region": "EUR",
@@ -989,7 +989,7 @@
 	},
 	{
 		"idx": 76,
-		"country_code": "FRO",
+		"cca3": "FRO",
 		"name": "Faroe Islands",
 		"full_name": "Faroe Islands",
 		"region": "EUR",
@@ -1002,7 +1002,7 @@
 	},
 	{
 		"idx": 77,
-		"country_code": "FSM",
+		"cca3": "FSM",
 		"name": "Micronesia",
 		"full_name": "Federated States of Micronesia",
 		"region": "OCE",
@@ -1015,7 +1015,7 @@
 	},
 	{
 		"idx": 78,
-		"country_code": "GAB",
+		"cca3": "GAB",
 		"name": "Gabon",
 		"full_name": "Gabonese Republic",
 		"region": "AFR",
@@ -1028,7 +1028,7 @@
 	},
 	{
 		"idx": 79,
-		"country_code": "GBR",
+		"cca3": "GBR",
 		"name": "United Kingdom",
 		"full_name": "United Kingdom of Great Britain and Northern Ireland",
 		"region": "EUR",
@@ -1041,7 +1041,7 @@
 	},
 	{
 		"idx": 80,
-		"country_code": "GEO",
+		"cca3": "GEO",
 		"name": "Georgia",
 		"full_name": "Georgia",
 		"region": "ASI",
@@ -1054,7 +1054,7 @@
 	},
 	{
 		"idx": 81,
-		"country_code": "GGY",
+		"cca3": "GGY",
 		"name": "Guernsey",
 		"full_name": "Bailiwick of Guernsey",
 		"region": "EUR",
@@ -1067,7 +1067,7 @@
 	},
 	{
 		"idx": 82,
-		"country_code": "GHA",
+		"cca3": "GHA",
 		"name": "Ghana",
 		"full_name": "Republic of Ghana",
 		"region": "AFR",
@@ -1080,7 +1080,7 @@
 	},
 	{
 		"idx": 83,
-		"country_code": "GIB",
+		"cca3": "GIB",
 		"name": "Gibraltar",
 		"full_name": "Gibraltar",
 		"region": "EUR",
@@ -1093,7 +1093,7 @@
 	},
 	{
 		"idx": 84,
-		"country_code": "GIN",
+		"cca3": "GIN",
 		"name": "Guinea",
 		"full_name": "Republic of Guinea",
 		"region": "AFR",
@@ -1106,7 +1106,7 @@
 	},
 	{
 		"idx": 85,
-		"country_code": "GLP",
+		"cca3": "GLP",
 		"name": "Guadeloupe",
 		"full_name": "Guadeloupe",
 		"region": "AME",
@@ -1119,7 +1119,7 @@
 	},
 	{
 		"idx": 86,
-		"country_code": "GMB",
+		"cca3": "GMB",
 		"name": "Gambia",
 		"full_name": "Republic of the Gambia",
 		"region": "AFR",
@@ -1132,7 +1132,7 @@
 	},
 	{
 		"idx": 87,
-		"country_code": "GNB",
+		"cca3": "GNB",
 		"name": "Guinea-Bissau",
 		"full_name": "Republic of Guinea-Bissau",
 		"region": "AFR",
@@ -1145,7 +1145,7 @@
 	},
 	{
 		"idx": 88,
-		"country_code": "GNQ",
+		"cca3": "GNQ",
 		"name": "Equatorial Guinea",
 		"full_name": "Republic of Equatorial Guinea",
 		"region": "AFR",
@@ -1158,7 +1158,7 @@
 	},
 	{
 		"idx": 89,
-		"country_code": "GRC",
+		"cca3": "GRC",
 		"name": "Greece",
 		"full_name": "Hellenic Republic",
 		"region": "EUR",
@@ -1171,7 +1171,7 @@
 	},
 	{
 		"idx": 90,
-		"country_code": "GRD",
+		"cca3": "GRD",
 		"name": "Grenada",
 		"full_name": "Grenada",
 		"region": "AME",
@@ -1184,7 +1184,7 @@
 	},
 	{
 		"idx": 91,
-		"country_code": "GRL",
+		"cca3": "GRL",
 		"name": "Greenland",
 		"full_name": "Greenland",
 		"region": "AME",
@@ -1197,7 +1197,7 @@
 	},
 	{
 		"idx": 92,
-		"country_code": "GTM",
+		"cca3": "GTM",
 		"name": "Guatemala",
 		"full_name": "Republic of Guatemala",
 		"region": "AME",
@@ -1210,7 +1210,7 @@
 	},
 	{
 		"idx": 93,
-		"country_code": "GUF",
+		"cca3": "GUF",
 		"name": "French Guiana",
 		"full_name": "Guiana",
 		"region": "AME",
@@ -1223,7 +1223,7 @@
 	},
 	{
 		"idx": 94,
-		"country_code": "GUM",
+		"cca3": "GUM",
 		"name": "Guam",
 		"full_name": "Guam",
 		"region": "OCE",
@@ -1236,7 +1236,7 @@
 	},
 	{
 		"idx": 95,
-		"country_code": "GUY",
+		"cca3": "GUY",
 		"name": "Guyana",
 		"full_name": "Co-operative Republic of Guyana",
 		"region": "AME",
@@ -1249,7 +1249,7 @@
 	},
 	{
 		"idx": 96,
-		"country_code": "HKG",
+		"cca3": "HKG",
 		"name": "Hong Kong",
 		"full_name": "Hong Kong Special Administrative Region of the People's Republic of China",
 		"region": "ASI",
@@ -1262,7 +1262,7 @@
 	},
 	{
 		"idx": 97,
-		"country_code": "HMD",
+		"cca3": "HMD",
 		"name": "Heard Island and McDonald Islands",
 		"full_name": "Heard Island and McDonald Islands",
 		"region": "ANT",
@@ -1275,7 +1275,7 @@
 	},
 	{
 		"idx": 98,
-		"country_code": "HND",
+		"cca3": "HND",
 		"name": "Honduras",
 		"full_name": "Republic of Honduras",
 		"region": "AME",
@@ -1288,7 +1288,7 @@
 	},
 	{
 		"idx": 99,
-		"country_code": "HRV",
+		"cca3": "HRV",
 		"name": "Croatia",
 		"full_name": "Republic of Croatia",
 		"region": "EUR",
@@ -1301,7 +1301,7 @@
 	},
 	{
 		"idx": 100,
-		"country_code": "HTI",
+		"cca3": "HTI",
 		"name": "Haiti",
 		"full_name": "Republic of Haiti",
 		"region": "AME",
@@ -1314,7 +1314,7 @@
 	},
 	{
 		"idx": 101,
-		"country_code": "HUN",
+		"cca3": "HUN",
 		"name": "Hungary",
 		"full_name": "Hungary",
 		"region": "EUR",
@@ -1327,7 +1327,7 @@
 	},
 	{
 		"idx": 102,
-		"country_code": "IDN",
+		"cca3": "IDN",
 		"name": "Indonesia",
 		"full_name": "Republic of Indonesia",
 		"region": "ASI",
@@ -1340,7 +1340,7 @@
 	},
 	{
 		"idx": 103,
-		"country_code": "IMN",
+		"cca3": "IMN",
 		"name": "Isle of Man",
 		"full_name": "Isle of Man",
 		"region": "EUR",
@@ -1353,7 +1353,7 @@
 	},
 	{
 		"idx": 104,
-		"country_code": "IND",
+		"cca3": "IND",
 		"name": "India",
 		"full_name": "Republic of India",
 		"region": "ASI",
@@ -1366,7 +1366,7 @@
 	},
 	{
 		"idx": 105,
-		"country_code": "IOT",
+		"cca3": "IOT",
 		"name": "British Indian Ocean Territory",
 		"full_name": "British Indian Ocean Territory",
 		"region": "AFR",
@@ -1379,7 +1379,7 @@
 	},
 	{
 		"idx": 106,
-		"country_code": "IRL",
+		"cca3": "IRL",
 		"name": "Ireland",
 		"full_name": "Republic of Ireland",
 		"region": "EUR",
@@ -1392,7 +1392,7 @@
 	},
 	{
 		"idx": 107,
-		"country_code": "IRN",
+		"cca3": "IRN",
 		"name": "Iran",
 		"full_name": "Islamic Republic of Iran",
 		"region": "ASI",
@@ -1405,7 +1405,7 @@
 	},
 	{
 		"idx": 108,
-		"country_code": "IRQ",
+		"cca3": "IRQ",
 		"name": "Iraq",
 		"full_name": "Republic of Iraq",
 		"region": "ASI",
@@ -1418,7 +1418,7 @@
 	},
 	{
 		"idx": 109,
-		"country_code": "ISL",
+		"cca3": "ISL",
 		"name": "Iceland",
 		"full_name": "Iceland",
 		"region": "EUR",
@@ -1431,7 +1431,7 @@
 	},
 	{
 		"idx": 110,
-		"country_code": "ISR",
+		"cca3": "ISR",
 		"name": "Israel",
 		"full_name": "State of Israel",
 		"region": "ASI",
@@ -1444,7 +1444,7 @@
 	},
 	{
 		"idx": 111,
-		"country_code": "ITA",
+		"cca3": "ITA",
 		"name": "Italy",
 		"full_name": "Italian Republic",
 		"region": "EUR",
@@ -1457,7 +1457,7 @@
 	},
 	{
 		"idx": 112,
-		"country_code": "JAM",
+		"cca3": "JAM",
 		"name": "Jamaica",
 		"full_name": "Jamaica",
 		"region": "AME",
@@ -1470,7 +1470,7 @@
 	},
 	{
 		"idx": 113,
-		"country_code": "JEY",
+		"cca3": "JEY",
 		"name": "Jersey",
 		"full_name": "Bailiwick of Jersey",
 		"region": "EUR",
@@ -1483,7 +1483,7 @@
 	},
 	{
 		"idx": 114,
-		"country_code": "JOR",
+		"cca3": "JOR",
 		"name": "Jordan",
 		"full_name": "Hashemite Kingdom of Jordan",
 		"region": "ASI",
@@ -1496,7 +1496,7 @@
 	},
 	{
 		"idx": 115,
-		"country_code": "JPN",
+		"cca3": "JPN",
 		"name": "Japan",
 		"full_name": "Japan",
 		"region": "ASI",
@@ -1509,7 +1509,7 @@
 	},
 	{
 		"idx": 116,
-		"country_code": "KAZ",
+		"cca3": "KAZ",
 		"name": "Kazakhstan",
 		"full_name": "Republic of Kazakhstan",
 		"region": "ASI",
@@ -1522,7 +1522,7 @@
 	},
 	{
 		"idx": 117,
-		"country_code": "KEN",
+		"cca3": "KEN",
 		"name": "Kenya",
 		"full_name": "Republic of Kenya",
 		"region": "AFR",
@@ -1535,7 +1535,7 @@
 	},
 	{
 		"idx": 118,
-		"country_code": "KGZ",
+		"cca3": "KGZ",
 		"name": "Kyrgyzstan",
 		"full_name": "Kyrgyz Republic",
 		"region": "ASI",
@@ -1548,7 +1548,7 @@
 	},
 	{
 		"idx": 119,
-		"country_code": "KHM",
+		"cca3": "KHM",
 		"name": "Cambodia",
 		"full_name": "Kingdom of Cambodia",
 		"region": "ASI",
@@ -1561,7 +1561,7 @@
 	},
 	{
 		"idx": 120,
-		"country_code": "KIR",
+		"cca3": "KIR",
 		"name": "Kiribati",
 		"full_name": "Independent and Sovereign Republic of Kiribati",
 		"region": "OCE",
@@ -1574,7 +1574,7 @@
 	},
 	{
 		"idx": 121,
-		"country_code": "KNA",
+		"cca3": "KNA",
 		"name": "Saint Kitts and Nevis",
 		"full_name": "Federation of Saint Christopher and Nevis",
 		"region": "AME",
@@ -1587,7 +1587,7 @@
 	},
 	{
 		"idx": 122,
-		"country_code": "KOR",
+		"cca3": "KOR",
 		"name": "South Korea",
 		"full_name": "Republic of Korea",
 		"region": "ASI",
@@ -1600,7 +1600,7 @@
 	},
 	{
 		"idx": 123,
-		"country_code": "KWT",
+		"cca3": "KWT",
 		"name": "Kuwait",
 		"full_name": "State of Kuwait",
 		"region": "ASI",
@@ -1613,7 +1613,7 @@
 	},
 	{
 		"idx": 124,
-		"country_code": "LAO",
+		"cca3": "LAO",
 		"name": "Laos",
 		"full_name": "Lao People's Democratic Republic",
 		"region": "ASI",
@@ -1626,7 +1626,7 @@
 	},
 	{
 		"idx": 125,
-		"country_code": "LBN",
+		"cca3": "LBN",
 		"name": "Lebanon",
 		"full_name": "Lebanese Republic",
 		"region": "ASI",
@@ -1639,7 +1639,7 @@
 	},
 	{
 		"idx": 126,
-		"country_code": "LBR",
+		"cca3": "LBR",
 		"name": "Liberia",
 		"full_name": "Republic of Liberia",
 		"region": "AFR",
@@ -1652,7 +1652,7 @@
 	},
 	{
 		"idx": 127,
-		"country_code": "LBY",
+		"cca3": "LBY",
 		"name": "Libya",
 		"full_name": "State of Libya",
 		"region": "AFR",
@@ -1665,7 +1665,7 @@
 	},
 	{
 		"idx": 128,
-		"country_code": "LCA",
+		"cca3": "LCA",
 		"name": "Saint Lucia",
 		"full_name": "Saint Lucia",
 		"region": "AME",
@@ -1678,7 +1678,7 @@
 	},
 	{
 		"idx": 129,
-		"country_code": "LIE",
+		"cca3": "LIE",
 		"name": "Liechtenstein",
 		"full_name": "Principality of Liechtenstein",
 		"region": "EUR",
@@ -1691,7 +1691,7 @@
 	},
 	{
 		"idx": 130,
-		"country_code": "LKA",
+		"cca3": "LKA",
 		"name": "Sri Lanka",
 		"full_name": "Democratic Socialist Republic of Sri Lanka",
 		"region": "ASI",
@@ -1704,7 +1704,7 @@
 	},
 	{
 		"idx": 131,
-		"country_code": "LSO",
+		"cca3": "LSO",
 		"name": "Lesotho",
 		"full_name": "Kingdom of Lesotho",
 		"region": "AFR",
@@ -1717,7 +1717,7 @@
 	},
 	{
 		"idx": 132,
-		"country_code": "LTU",
+		"cca3": "LTU",
 		"name": "Lithuania",
 		"full_name": "Republic of Lithuania",
 		"region": "EUR",
@@ -1730,7 +1730,7 @@
 	},
 	{
 		"idx": 133,
-		"country_code": "LUX",
+		"cca3": "LUX",
 		"name": "Luxembourg",
 		"full_name": "Grand Duchy of Luxembourg",
 		"region": "EUR",
@@ -1743,7 +1743,7 @@
 	},
 	{
 		"idx": 134,
-		"country_code": "LVA",
+		"cca3": "LVA",
 		"name": "Latvia",
 		"full_name": "Republic of Latvia",
 		"region": "EUR",
@@ -1756,7 +1756,7 @@
 	},
 	{
 		"idx": 135,
-		"country_code": "MAC",
+		"cca3": "MAC",
 		"name": "Macau",
 		"full_name": "Macao Special Administrative Region of the People's Republic of China",
 		"region": "ASI",
@@ -1769,7 +1769,7 @@
 	},
 	{
 		"idx": 136,
-		"country_code": "MAF",
+		"cca3": "MAF",
 		"name": "Saint Martin",
 		"full_name": "Saint Martin",
 		"region": "AME",
@@ -1782,7 +1782,7 @@
 	},
 	{
 		"idx": 137,
-		"country_code": "MAR",
+		"cca3": "MAR",
 		"name": "Morocco",
 		"full_name": "Kingdom of Morocco",
 		"region": "AFR",
@@ -1795,7 +1795,7 @@
 	},
 	{
 		"idx": 138,
-		"country_code": "MCO",
+		"cca3": "MCO",
 		"name": "Monaco",
 		"full_name": "Principality of Monaco",
 		"region": "EUR",
@@ -1808,7 +1808,7 @@
 	},
 	{
 		"idx": 139,
-		"country_code": "MDA",
+		"cca3": "MDA",
 		"name": "Moldova",
 		"full_name": "Republic of Moldova",
 		"region": "EUR",
@@ -1821,7 +1821,7 @@
 	},
 	{
 		"idx": 140,
-		"country_code": "MDG",
+		"cca3": "MDG",
 		"name": "Madagascar",
 		"full_name": "Republic of Madagascar",
 		"region": "AFR",
@@ -1834,7 +1834,7 @@
 	},
 	{
 		"idx": 141,
-		"country_code": "MDV",
+		"cca3": "MDV",
 		"name": "Maldives",
 		"full_name": "Republic of the Maldives",
 		"region": "ASI",
@@ -1847,7 +1847,7 @@
 	},
 	{
 		"idx": 142,
-		"country_code": "MEX",
+		"cca3": "MEX",
 		"name": "Mexico",
 		"full_name": "United Mexican States",
 		"region": "AME",
@@ -1860,7 +1860,7 @@
 	},
 	{
 		"idx": 143,
-		"country_code": "MHL",
+		"cca3": "MHL",
 		"name": "Marshall Islands",
 		"full_name": "Republic of the Marshall Islands",
 		"region": "OCE",
@@ -1873,7 +1873,7 @@
 	},
 	{
 		"idx": 144,
-		"country_code": "MKD",
+		"cca3": "MKD",
 		"name": "North Macedonia",
 		"full_name": "Republic of North Macedonia",
 		"region": "EUR",
@@ -1886,7 +1886,7 @@
 	},
 	{
 		"idx": 145,
-		"country_code": "MLI",
+		"cca3": "MLI",
 		"name": "Mali",
 		"full_name": "Republic of Mali",
 		"region": "AFR",
@@ -1899,7 +1899,7 @@
 	},
 	{
 		"idx": 146,
-		"country_code": "MLT",
+		"cca3": "MLT",
 		"name": "Malta",
 		"full_name": "Republic of Malta",
 		"region": "EUR",
@@ -1912,7 +1912,7 @@
 	},
 	{
 		"idx": 147,
-		"country_code": "MMR",
+		"cca3": "MMR",
 		"name": "Myanmar",
 		"full_name": "Republic of the Union of Myanmar",
 		"region": "ASI",
@@ -1925,7 +1925,7 @@
 	},
 	{
 		"idx": 148,
-		"country_code": "MNE",
+		"cca3": "MNE",
 		"name": "Montenegro",
 		"full_name": "Montenegro",
 		"region": "EUR",
@@ -1938,7 +1938,7 @@
 	},
 	{
 		"idx": 149,
-		"country_code": "MNG",
+		"cca3": "MNG",
 		"name": "Mongolia",
 		"full_name": "Mongolia",
 		"region": "ASI",
@@ -1951,7 +1951,7 @@
 	},
 	{
 		"idx": 150,
-		"country_code": "MNP",
+		"cca3": "MNP",
 		"name": "Northern Mariana Islands",
 		"full_name": "Commonwealth of the Northern Mariana Islands",
 		"region": "OCE",
@@ -1964,7 +1964,7 @@
 	},
 	{
 		"idx": 151,
-		"country_code": "MOZ",
+		"cca3": "MOZ",
 		"name": "Mozambique",
 		"full_name": "Republic of Mozambique",
 		"region": "AFR",
@@ -1977,7 +1977,7 @@
 	},
 	{
 		"idx": 152,
-		"country_code": "MRT",
+		"cca3": "MRT",
 		"name": "Mauritania",
 		"full_name": "Islamic Republic of Mauritania",
 		"region": "AFR",
@@ -1990,7 +1990,7 @@
 	},
 	{
 		"idx": 153,
-		"country_code": "MSR",
+		"cca3": "MSR",
 		"name": "Montserrat",
 		"full_name": "Montserrat",
 		"region": "AME",
@@ -2003,7 +2003,7 @@
 	},
 	{
 		"idx": 154,
-		"country_code": "MTQ",
+		"cca3": "MTQ",
 		"name": "Martinique",
 		"full_name": "Martinique",
 		"region": "AME",
@@ -2016,7 +2016,7 @@
 	},
 	{
 		"idx": 155,
-		"country_code": "MUS",
+		"cca3": "MUS",
 		"name": "Mauritius",
 		"full_name": "Republic of Mauritius",
 		"region": "AFR",
@@ -2029,7 +2029,7 @@
 	},
 	{
 		"idx": 156,
-		"country_code": "MWI",
+		"cca3": "MWI",
 		"name": "Malawi",
 		"full_name": "Republic of Malawi",
 		"region": "AFR",
@@ -2042,7 +2042,7 @@
 	},
 	{
 		"idx": 157,
-		"country_code": "MYS",
+		"cca3": "MYS",
 		"name": "Malaysia",
 		"full_name": "Malaysia",
 		"region": "ASI",
@@ -2055,7 +2055,7 @@
 	},
 	{
 		"idx": 158,
-		"country_code": "MYT",
+		"cca3": "MYT",
 		"name": "Mayotte",
 		"full_name": "Department of Mayotte",
 		"region": "AFR",
@@ -2068,7 +2068,7 @@
 	},
 	{
 		"idx": 159,
-		"country_code": "NAM",
+		"cca3": "NAM",
 		"name": "Namibia",
 		"full_name": "Republic of Namibia",
 		"region": "AFR",
@@ -2081,7 +2081,7 @@
 	},
 	{
 		"idx": 160,
-		"country_code": "NCL",
+		"cca3": "NCL",
 		"name": "New Caledonia",
 		"full_name": "New Caledonia",
 		"region": "OCE",
@@ -2094,7 +2094,7 @@
 	},
 	{
 		"idx": 161,
-		"country_code": "NER",
+		"cca3": "NER",
 		"name": "Niger",
 		"full_name": "Republic of Niger",
 		"region": "AFR",
@@ -2107,7 +2107,7 @@
 	},
 	{
 		"idx": 162,
-		"country_code": "NFK",
+		"cca3": "NFK",
 		"name": "Norfolk Island",
 		"full_name": "Territory of Norfolk Island",
 		"region": "OCE",
@@ -2120,7 +2120,7 @@
 	},
 	{
 		"idx": 163,
-		"country_code": "NGA",
+		"cca3": "NGA",
 		"name": "Nigeria",
 		"full_name": "Federal Republic of Nigeria",
 		"region": "AFR",
@@ -2133,7 +2133,7 @@
 	},
 	{
 		"idx": 164,
-		"country_code": "NIC",
+		"cca3": "NIC",
 		"name": "Nicaragua",
 		"full_name": "Republic of Nicaragua",
 		"region": "AME",
@@ -2146,7 +2146,7 @@
 	},
 	{
 		"idx": 165,
-		"country_code": "NIU",
+		"cca3": "NIU",
 		"name": "Niue",
 		"full_name": "Niue",
 		"region": "OCE",
@@ -2159,7 +2159,7 @@
 	},
 	{
 		"idx": 166,
-		"country_code": "NLD",
+		"cca3": "NLD",
 		"name": "Netherlands",
 		"full_name": "Kingdom of the Netherlands",
 		"region": "EUR",
@@ -2172,7 +2172,7 @@
 	},
 	{
 		"idx": 167,
-		"country_code": "NOR",
+		"cca3": "NOR",
 		"name": "Norway",
 		"full_name": "Kingdom of Norway",
 		"region": "EUR",
@@ -2185,7 +2185,7 @@
 	},
 	{
 		"idx": 168,
-		"country_code": "NPL",
+		"cca3": "NPL",
 		"name": "Nepal",
 		"full_name": "Federal Democratic Republic of Nepal",
 		"region": "ASI",
@@ -2198,7 +2198,7 @@
 	},
 	{
 		"idx": 169,
-		"country_code": "NRU",
+		"cca3": "NRU",
 		"name": "Nauru",
 		"full_name": "Republic of Nauru",
 		"region": "OCE",
@@ -2211,7 +2211,7 @@
 	},
 	{
 		"idx": 170,
-		"country_code": "NZL",
+		"cca3": "NZL",
 		"name": "New Zealand",
 		"full_name": "New Zealand",
 		"region": "OCE",
@@ -2224,7 +2224,7 @@
 	},
 	{
 		"idx": 171,
-		"country_code": "OMN",
+		"cca3": "OMN",
 		"name": "Oman",
 		"full_name": "Sultanate of Oman",
 		"region": "ASI",
@@ -2237,7 +2237,7 @@
 	},
 	{
 		"idx": 172,
-		"country_code": "PAK",
+		"cca3": "PAK",
 		"name": "Pakistan",
 		"full_name": "Islamic Republic of Pakistan",
 		"region": "ASI",
@@ -2250,7 +2250,7 @@
 	},
 	{
 		"idx": 173,
-		"country_code": "PAN",
+		"cca3": "PAN",
 		"name": "Panama",
 		"full_name": "Republic of Panama",
 		"region": "AME",
@@ -2263,7 +2263,7 @@
 	},
 	{
 		"idx": 174,
-		"country_code": "PCN",
+		"cca3": "PCN",
 		"name": "Pitcairn Islands",
 		"full_name": "Pitcairn Group of Islands",
 		"region": "OCE",
@@ -2276,7 +2276,7 @@
 	},
 	{
 		"idx": 175,
-		"country_code": "PER",
+		"cca3": "PER",
 		"name": "Peru",
 		"full_name": "Republic of Peru",
 		"region": "AME",
@@ -2289,7 +2289,7 @@
 	},
 	{
 		"idx": 176,
-		"country_code": "PHL",
+		"cca3": "PHL",
 		"name": "Philippines",
 		"full_name": "Republic of the Philippines",
 		"region": "ASI",
@@ -2302,7 +2302,7 @@
 	},
 	{
 		"idx": 177,
-		"country_code": "PLW",
+		"cca3": "PLW",
 		"name": "Palau",
 		"full_name": "Republic of Palau",
 		"region": "OCE",
@@ -2315,7 +2315,7 @@
 	},
 	{
 		"idx": 178,
-		"country_code": "PNG",
+		"cca3": "PNG",
 		"name": "Papua New Guinea",
 		"full_name": "Independent State of Papua New Guinea",
 		"region": "OCE",
@@ -2328,7 +2328,7 @@
 	},
 	{
 		"idx": 179,
-		"country_code": "POL",
+		"cca3": "POL",
 		"name": "Poland",
 		"full_name": "Republic of Poland",
 		"region": "EUR",
@@ -2341,7 +2341,7 @@
 	},
 	{
 		"idx": 180,
-		"country_code": "PRI",
+		"cca3": "PRI",
 		"name": "Puerto Rico",
 		"full_name": "Commonwealth of Puerto Rico",
 		"region": "AME",
@@ -2354,7 +2354,7 @@
 	},
 	{
 		"idx": 181,
-		"country_code": "PRK",
+		"cca3": "PRK",
 		"name": "North Korea",
 		"full_name": "Democratic People's Republic of Korea",
 		"region": "ASI",
@@ -2367,7 +2367,7 @@
 	},
 	{
 		"idx": 182,
-		"country_code": "PRT",
+		"cca3": "PRT",
 		"name": "Portugal",
 		"full_name": "Portuguese Republic",
 		"region": "EUR",
@@ -2380,7 +2380,7 @@
 	},
 	{
 		"idx": 183,
-		"country_code": "PRY",
+		"cca3": "PRY",
 		"name": "Paraguay",
 		"full_name": "Republic of Paraguay",
 		"region": "AME",
@@ -2393,7 +2393,7 @@
 	},
 	{
 		"idx": 184,
-		"country_code": "PSE",
+		"cca3": "PSE",
 		"name": "Palestine",
 		"full_name": "State of Palestine",
 		"region": "ASI",
@@ -2406,7 +2406,7 @@
 	},
 	{
 		"idx": 185,
-		"country_code": "PYF",
+		"cca3": "PYF",
 		"name": "French Polynesia",
 		"full_name": "French Polynesia",
 		"region": "OCE",
@@ -2419,7 +2419,7 @@
 	},
 	{
 		"idx": 186,
-		"country_code": "QAT",
+		"cca3": "QAT",
 		"name": "Qatar",
 		"full_name": "State of Qatar",
 		"region": "ASI",
@@ -2432,7 +2432,7 @@
 	},
 	{
 		"idx": 187,
-		"country_code": "REU",
+		"cca3": "REU",
 		"name": "Réunion",
 		"full_name": "Réunion Island",
 		"region": "AFR",
@@ -2445,7 +2445,7 @@
 	},
 	{
 		"idx": 188,
-		"country_code": "ROU",
+		"cca3": "ROU",
 		"name": "Romania",
 		"full_name": "Romania",
 		"region": "EUR",
@@ -2458,7 +2458,7 @@
 	},
 	{
 		"idx": 189,
-		"country_code": "RUS",
+		"cca3": "RUS",
 		"name": "Russia",
 		"full_name": "Russian Federation",
 		"region": "EUR",
@@ -2471,7 +2471,7 @@
 	},
 	{
 		"idx": 190,
-		"country_code": "RWA",
+		"cca3": "RWA",
 		"name": "Rwanda",
 		"full_name": "Republic of Rwanda",
 		"region": "AFR",
@@ -2484,7 +2484,7 @@
 	},
 	{
 		"idx": 191,
-		"country_code": "SAU",
+		"cca3": "SAU",
 		"name": "Saudi Arabia",
 		"full_name": "Kingdom of Saudi Arabia",
 		"region": "ASI",
@@ -2497,7 +2497,7 @@
 	},
 	{
 		"idx": 192,
-		"country_code": "SDN",
+		"cca3": "SDN",
 		"name": "Sudan",
 		"full_name": "Republic of the Sudan",
 		"region": "AFR",
@@ -2510,7 +2510,7 @@
 	},
 	{
 		"idx": 193,
-		"country_code": "SEN",
+		"cca3": "SEN",
 		"name": "Senegal",
 		"full_name": "Republic of Senegal",
 		"region": "AFR",
@@ -2523,7 +2523,7 @@
 	},
 	{
 		"idx": 194,
-		"country_code": "SGP",
+		"cca3": "SGP",
 		"name": "Singapore",
 		"full_name": "Republic of Singapore",
 		"region": "ASI",
@@ -2536,7 +2536,7 @@
 	},
 	{
 		"idx": 195,
-		"country_code": "SGS",
+		"cca3": "SGS",
 		"name": "South Georgia",
 		"full_name": "South Georgia and the South Sandwich Islands",
 		"region": "ANT",
@@ -2549,7 +2549,7 @@
 	},
 	{
 		"idx": 196,
-		"country_code": "SHN",
+		"cca3": "SHN",
 		"name": "Saint Helena, Ascension and Tristan da Cunha",
 		"full_name": "Saint Helena, Ascension and Tristan da Cunha",
 		"region": "AFR",
@@ -2562,7 +2562,7 @@
 	},
 	{
 		"idx": 197,
-		"country_code": "SJM",
+		"cca3": "SJM",
 		"name": "Svalbard and Jan Mayen",
 		"full_name": "Svalbard og Jan Mayen",
 		"region": "EUR",
@@ -2575,7 +2575,7 @@
 	},
 	{
 		"idx": 198,
-		"country_code": "SLB",
+		"cca3": "SLB",
 		"name": "Solomon Islands",
 		"full_name": "Solomon Islands",
 		"region": "OCE",
@@ -2588,7 +2588,7 @@
 	},
 	{
 		"idx": 199,
-		"country_code": "SLE",
+		"cca3": "SLE",
 		"name": "Sierra Leone",
 		"full_name": "Republic of Sierra Leone",
 		"region": "AFR",
@@ -2601,7 +2601,7 @@
 	},
 	{
 		"idx": 200,
-		"country_code": "SLV",
+		"cca3": "SLV",
 		"name": "El Salvador",
 		"full_name": "Republic of El Salvador",
 		"region": "AME",
@@ -2614,7 +2614,7 @@
 	},
 	{
 		"idx": 201,
-		"country_code": "SMR",
+		"cca3": "SMR",
 		"name": "San Marino",
 		"full_name": "Most Serene Republic of San Marino",
 		"region": "EUR",
@@ -2627,7 +2627,7 @@
 	},
 	{
 		"idx": 202,
-		"country_code": "SOM",
+		"cca3": "SOM",
 		"name": "Somalia",
 		"full_name": "Federal Republic of Somalia",
 		"region": "AFR",
@@ -2640,7 +2640,7 @@
 	},
 	{
 		"idx": 203,
-		"country_code": "SPM",
+		"cca3": "SPM",
 		"name": "Saint Pierre and Miquelon",
 		"full_name": "Saint Pierre and Miquelon",
 		"region": "AME",
@@ -2653,7 +2653,7 @@
 	},
 	{
 		"idx": 204,
-		"country_code": "SRB",
+		"cca3": "SRB",
 		"name": "Serbia",
 		"full_name": "Republic of Serbia",
 		"region": "EUR",
@@ -2666,7 +2666,7 @@
 	},
 	{
 		"idx": 205,
-		"country_code": "SSD",
+		"cca3": "SSD",
 		"name": "South Sudan",
 		"full_name": "Republic of South Sudan",
 		"region": "AFR",
@@ -2679,7 +2679,7 @@
 	},
 	{
 		"idx": 206,
-		"country_code": "STP",
+		"cca3": "STP",
 		"name": "São Tomé and Príncipe",
 		"full_name": "Democratic Republic of São Tomé and Príncipe",
 		"region": "AFR",
@@ -2692,7 +2692,7 @@
 	},
 	{
 		"idx": 207,
-		"country_code": "SUR",
+		"cca3": "SUR",
 		"name": "Suriname",
 		"full_name": "Republic of Suriname",
 		"region": "AME",
@@ -2705,7 +2705,7 @@
 	},
 	{
 		"idx": 208,
-		"country_code": "SVK",
+		"cca3": "SVK",
 		"name": "Slovakia",
 		"full_name": "Slovak Republic",
 		"region": "EUR",
@@ -2718,7 +2718,7 @@
 	},
 	{
 		"idx": 209,
-		"country_code": "SVN",
+		"cca3": "SVN",
 		"name": "Slovenia",
 		"full_name": "Republic of Slovenia",
 		"region": "EUR",
@@ -2731,7 +2731,7 @@
 	},
 	{
 		"idx": 210,
-		"country_code": "SWE",
+		"cca3": "SWE",
 		"name": "Sweden",
 		"full_name": "Kingdom of Sweden",
 		"region": "EUR",
@@ -2744,7 +2744,7 @@
 	},
 	{
 		"idx": 211,
-		"country_code": "SWZ",
+		"cca3": "SWZ",
 		"name": "Eswatini",
 		"full_name": "Kingdom of Eswatini",
 		"region": "AFR",
@@ -2757,7 +2757,7 @@
 	},
 	{
 		"idx": 212,
-		"country_code": "SXM",
+		"cca3": "SXM",
 		"name": "Sint Maarten",
 		"full_name": "Sint Maarten",
 		"region": "AME",
@@ -2770,7 +2770,7 @@
 	},
 	{
 		"idx": 213,
-		"country_code": "SYC",
+		"cca3": "SYC",
 		"name": "Seychelles",
 		"full_name": "Republic of Seychelles",
 		"region": "AFR",
@@ -2783,7 +2783,7 @@
 	},
 	{
 		"idx": 214,
-		"country_code": "SYR",
+		"cca3": "SYR",
 		"name": "Syria",
 		"full_name": "Syrian Arab Republic",
 		"region": "ASI",
@@ -2796,7 +2796,7 @@
 	},
 	{
 		"idx": 215,
-		"country_code": "TCA",
+		"cca3": "TCA",
 		"name": "Turks and Caicos Islands",
 		"full_name": "Turks and Caicos Islands",
 		"region": "AME",
@@ -2809,7 +2809,7 @@
 	},
 	{
 		"idx": 216,
-		"country_code": "TCD",
+		"cca3": "TCD",
 		"name": "Chad",
 		"full_name": "Republic of Chad",
 		"region": "AFR",
@@ -2822,7 +2822,7 @@
 	},
 	{
 		"idx": 217,
-		"country_code": "TGO",
+		"cca3": "TGO",
 		"name": "Togo",
 		"full_name": "Togolese Republic",
 		"region": "AFR",
@@ -2835,7 +2835,7 @@
 	},
 	{
 		"idx": 218,
-		"country_code": "THA",
+		"cca3": "THA",
 		"name": "Thailand",
 		"full_name": "Kingdom of Thailand",
 		"region": "ASI",
@@ -2848,7 +2848,7 @@
 	},
 	{
 		"idx": 219,
-		"country_code": "TJK",
+		"cca3": "TJK",
 		"name": "Tajikistan",
 		"full_name": "Republic of Tajikistan",
 		"region": "ASI",
@@ -2861,7 +2861,7 @@
 	},
 	{
 		"idx": 220,
-		"country_code": "TKL",
+		"cca3": "TKL",
 		"name": "Tokelau",
 		"full_name": "Tokelau",
 		"region": "OCE",
@@ -2874,7 +2874,7 @@
 	},
 	{
 		"idx": 221,
-		"country_code": "TKM",
+		"cca3": "TKM",
 		"name": "Turkmenistan",
 		"full_name": "Turkmenistan",
 		"region": "ASI",
@@ -2887,7 +2887,7 @@
 	},
 	{
 		"idx": 222,
-		"country_code": "TLS",
+		"cca3": "TLS",
 		"name": "Timor-Leste",
 		"full_name": "Democratic Republic of Timor-Leste",
 		"region": "ASI",
@@ -2900,7 +2900,7 @@
 	},
 	{
 		"idx": 223,
-		"country_code": "TON",
+		"cca3": "TON",
 		"name": "Tonga",
 		"full_name": "Kingdom of Tonga",
 		"region": "OCE",
@@ -2913,7 +2913,7 @@
 	},
 	{
 		"idx": 224,
-		"country_code": "TTO",
+		"cca3": "TTO",
 		"name": "Trinidad and Tobago",
 		"full_name": "Republic of Trinidad and Tobago",
 		"region": "AME",
@@ -2926,7 +2926,7 @@
 	},
 	{
 		"idx": 225,
-		"country_code": "TUN",
+		"cca3": "TUN",
 		"name": "Tunisia",
 		"full_name": "Tunisian Republic",
 		"region": "AFR",
@@ -2939,7 +2939,7 @@
 	},
 	{
 		"idx": 226,
-		"country_code": "TUR",
+		"cca3": "TUR",
 		"name": "Türkiye",
 		"full_name": "Republic of Türkiye",
 		"region": "ASI",
@@ -2952,7 +2952,7 @@
 	},
 	{
 		"idx": 227,
-		"country_code": "TUV",
+		"cca3": "TUV",
 		"name": "Tuvalu",
 		"full_name": "Tuvalu",
 		"region": "OCE",
@@ -2965,7 +2965,7 @@
 	},
 	{
 		"idx": 228,
-		"country_code": "TWN",
+		"cca3": "TWN",
 		"name": "Taiwan",
 		"full_name": "Republic of China (Taiwan)",
 		"region": "ASI",
@@ -2978,7 +2978,7 @@
 	},
 	{
 		"idx": 229,
-		"country_code": "TZA",
+		"cca3": "TZA",
 		"name": "Tanzania",
 		"full_name": "United Republic of Tanzania",
 		"region": "AFR",
@@ -2991,7 +2991,7 @@
 	},
 	{
 		"idx": 230,
-		"country_code": "UGA",
+		"cca3": "UGA",
 		"name": "Uganda",
 		"full_name": "Republic of Uganda",
 		"region": "AFR",
@@ -3004,7 +3004,7 @@
 	},
 	{
 		"idx": 231,
-		"country_code": "UKR",
+		"cca3": "UKR",
 		"name": "Ukraine",
 		"full_name": "Ukraine",
 		"region": "EUR",
@@ -3017,7 +3017,7 @@
 	},
 	{
 		"idx": 232,
-		"country_code": "UMI",
+		"cca3": "UMI",
 		"name": "United States Minor Outlying Islands",
 		"full_name": "United States Minor Outlying Islands",
 		"region": "AME",
@@ -3030,7 +3030,7 @@
 	},
 	{
 		"idx": 233,
-		"country_code": "URY",
+		"cca3": "URY",
 		"name": "Uruguay",
 		"full_name": "Oriental Republic of Uruguay",
 		"region": "AME",
@@ -3043,7 +3043,7 @@
 	},
 	{
 		"idx": 234,
-		"country_code": "USA",
+		"cca3": "USA",
 		"name": "United States",
 		"full_name": "United States of America",
 		"region": "AME",
@@ -3056,7 +3056,7 @@
 	},
 	{
 		"idx": 235,
-		"country_code": "UZB",
+		"cca3": "UZB",
 		"name": "Uzbekistan",
 		"full_name": "Republic of Uzbekistan",
 		"region": "ASI",
@@ -3069,7 +3069,7 @@
 	},
 	{
 		"idx": 236,
-		"country_code": "VAT",
+		"cca3": "VAT",
 		"name": "Vatican City",
 		"full_name": "Vatican City State",
 		"region": "EUR",
@@ -3082,7 +3082,7 @@
 	},
 	{
 		"idx": 237,
-		"country_code": "VCT",
+		"cca3": "VCT",
 		"name": "Saint Vincent and the Grenadines",
 		"full_name": "Saint Vincent and the Grenadines",
 		"region": "AME",
@@ -3095,7 +3095,7 @@
 	},
 	{
 		"idx": 238,
-		"country_code": "VEN",
+		"cca3": "VEN",
 		"name": "Venezuela",
 		"full_name": "Bolivarian Republic of Venezuela",
 		"region": "AME",
@@ -3108,7 +3108,7 @@
 	},
 	{
 		"idx": 239,
-		"country_code": "VGB",
+		"cca3": "VGB",
 		"name": "British Virgin Islands",
 		"full_name": "Virgin Islands",
 		"region": "AME",
@@ -3121,7 +3121,7 @@
 	},
 	{
 		"idx": 240,
-		"country_code": "VIR",
+		"cca3": "VIR",
 		"name": "United States Virgin Islands",
 		"full_name": "Virgin Islands of the United States",
 		"region": "AME",
@@ -3134,7 +3134,7 @@
 	},
 	{
 		"idx": 241,
-		"country_code": "VNM",
+		"cca3": "VNM",
 		"name": "Vietnam",
 		"full_name": "Socialist Republic of Vietnam",
 		"region": "ASI",
@@ -3147,7 +3147,7 @@
 	},
 	{
 		"idx": 242,
-		"country_code": "VUT",
+		"cca3": "VUT",
 		"name": "Vanuatu",
 		"full_name": "Republic of Vanuatu",
 		"region": "OCE",
@@ -3160,7 +3160,7 @@
 	},
 	{
 		"idx": 243,
-		"country_code": "WLF",
+		"cca3": "WLF",
 		"name": "Wallis and Futuna",
 		"full_name": "Territory of the Wallis and Futuna Islands",
 		"region": "OCE",
@@ -3173,7 +3173,7 @@
 	},
 	{
 		"idx": 244,
-		"country_code": "WSM",
+		"cca3": "WSM",
 		"name": "Samoa",
 		"full_name": "Independent State of Samoa",
 		"region": "OCE",
@@ -3186,7 +3186,7 @@
 	},
 	{
 		"idx": 245,
-		"country_code": "XKX",
+		"cca3": "XKX",
 		"name": "Kosovo",
 		"full_name": "Republic of Kosovo",
 		"region": "EUR",
@@ -3199,7 +3199,7 @@
 	},
 	{
 		"idx": 246,
-		"country_code": "YEM",
+		"cca3": "YEM",
 		"name": "Yemen",
 		"full_name": "Republic of Yemen",
 		"region": "ASI",
@@ -3212,7 +3212,7 @@
 	},
 	{
 		"idx": 247,
-		"country_code": "ZAF",
+		"cca3": "ZAF",
 		"name": "South Africa",
 		"full_name": "Republic of South Africa",
 		"region": "AFR",
@@ -3225,7 +3225,7 @@
 	},
 	{
 		"idx": 248,
-		"country_code": "ZMB",
+		"cca3": "ZMB",
 		"name": "Zambia",
 		"full_name": "Republic of Zambia",
 		"region": "AFR",
@@ -3238,7 +3238,7 @@
 	},
 	{
 		"idx": 249,
-		"country_code": "ZWE",
+		"cca3": "ZWE",
 		"name": "Zimbabwe",
 		"full_name": "Republic of Zimbabwe",
 		"region": "AFR",
