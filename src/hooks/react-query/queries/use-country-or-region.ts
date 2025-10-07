@@ -1,0 +1,17 @@
+import { getCountry } from '@/api/country';
+import { getRegion } from '@/api/region';
+import { getSubregion } from '@/api/subregion';
+import { Country } from '@/types/country';
+import { Region } from '@/types/region';
+import { Subregion } from '@/types/subregion';
+import { useQuery } from '@tanstack/react-query';
+
+export function useCountryOrRegion(type: 'country', code: string): ReturnType<typeof useQuery<Country>>;
+export function useCountryOrRegion(type: 'region', code: string): ReturnType<typeof useQuery<Region>>;
+export function useCountryOrRegion(type: 'subregion', code: string): ReturnType<typeof useQuery<Subregion>>;
+export function useCountryOrRegion(type: 'country' | 'region' | 'subregion', code: string) {
+	return useQuery<Country | Region | Subregion>({
+		queryKey: ['country-or-region', type, code],
+		queryFn: () => (type === 'country' ? getCountry(code) : type === 'region' ? getRegion(code) : getSubregion(code))
+	});
+}

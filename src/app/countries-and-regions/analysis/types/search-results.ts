@@ -9,5 +9,9 @@ export type CountryOrRegion =
 	  }
 	| {
 			type: 'region';
-			data: Region | Subregion;
+			data: Region;
+	  }
+	| {
+			type: 'subregion';
+			data: Subregion;
 	  };

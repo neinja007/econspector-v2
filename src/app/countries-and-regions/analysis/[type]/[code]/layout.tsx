@@ -21,12 +21,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 			: code;
 	} else if (type === 'region') {
 		const region = await getRegion(code);
+		name = region ? region.name : code;
+	} else {
 		const subregion = await getSubregion(code);
-		name = region || subregion ? region.name || subregion.name : code;
+		name = subregion ? subregion.name : code;
 	}
 
 	return {
-		title: `${name} - Economic Analysis - EconSpector`,
+		title: `${name} - ${type.charAt(0).toUpperCase() + type.slice(1)} Analysis - EconSpector`,
 		description: `A full, detailed economic analysis of ${name} by EconSpector, ${sloganNotCapitalized}`
 	};
 }

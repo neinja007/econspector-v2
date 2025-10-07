@@ -22,11 +22,11 @@ const CountriesAnalysisPage = () => {
 	const { data: regions } = useRegions();
 	const { data: subregions } = useSubregions();
 
-	const searchList = [
-		...(showCountries ? countries?.data.map((country) => ({ type: 'country', data: country })) || [] : []),
-		...(showRegions ? regions?.data.map((region) => ({ type: 'region', data: region })) || [] : []),
-		...(showRegions ? subregions?.data.map((subregion) => ({ type: 'region', data: subregion })) || [] : [])
-	] as CountryOrRegion[];
+	const searchList: CountryOrRegion[] = [
+		...(showCountries ? countries?.data.map((country) => ({ type: 'country' as const, data: country })) || [] : []),
+		...(showRegions ? regions?.data.map((region) => ({ type: 'region' as const, data: region })) || [] : []),
+		...(showRegions ? subregions?.data.map((subregion) => ({ type: 'subregion' as const, data: subregion })) || [] : [])
+	];
 
 	const searchResults = useSearch(searchList, search, [
 		'data.country_code',
