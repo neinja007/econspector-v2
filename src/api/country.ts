@@ -1,6 +1,6 @@
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { supabase } from '@/supabase/client';
-import { Country } from '@/types/country';
+import { Country, CountryWithCurrencies } from '@/types/country';
 
 async function getCountries(): Promise<{ data: Country[]; count: number }> {
 	const { data, error, count } = await supabase
@@ -14,11 +14,11 @@ async function getCountries(): Promise<{ data: Country[]; count: number }> {
 	return { data, count: count ?? 0 };
 }
 
-async function getCountry(code: string): Promise<Country> {
+async function getCountry(code: string): Promise<CountryWithCurrencies> {
 	const { data, error } = await supabase
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.COUNTRIES)
-		.select('*')
+		.select('*, currencies(*)')
 		.eq('country_code', code);
 	if (error) throw error;
 	return data[0];
