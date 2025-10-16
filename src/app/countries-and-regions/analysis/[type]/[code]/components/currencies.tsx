@@ -1,4 +1,3 @@
-import { Badge } from '@/components/shadcn/ui/badge';
 import { Button } from '@/components/shadcn/ui/button';
 import { Currency } from '@/types/currency';
 import Link from 'next/link';
@@ -14,7 +13,7 @@ export const Currencies = ({ data }: { data: Currency[] }) => {
 						className='flex items-center gap-1 transition-colors hover:text-blue-500'
 						href={`/currencies/analysis/${currency.currency_code}`}
 					>
-						{currency.name} <Badge variant='outline'>{currency.symbol_native}</Badge>
+						{currency.symbol_native} {currency.name}
 					</Link>
 				</Button>
 			))}
