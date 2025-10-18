@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
 import { FrequencyEnum } from '@/types/frequency';
 import { Indicator } from '@/types/indicator';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type IndicatorDataProps = {
 	indicator: Indicator;
@@ -24,15 +24,29 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 		? indicator.children.find((child) => child.id === selectedChildId)?.indicator_frequencies
 		: indicator.indicator_frequencies;
 
-	const [selectedFrequency, setSelectedFrequency] = useState<number | null>(availableFrequencies?.[0]?.id ?? null);
+	console.log(availableFrequencies);
+
+	const [selectedFrequencyId, setSelectedFrequencyId] = useState<number | null>(availableFrequencies?.[0]?.id ?? null);
+
+	useEffect(() => {
+		if (availableFrequencies) {
+			setSelectedFrequencyId(availableFrequencies[0].id);
+		}
+	}, [availableFrequencies]);
 
 	const availableSources = availableFrequencies?.find(
-		(frequency) => frequency.id === selectedFrequency
+		(frequency) => frequency.id === selectedFrequencyId
 	)?.frequency_sources;
 
-	const [selectedSource, setSelectedSource] = useState<number | null>(availableSources?.[0]?.id ?? null);
+	const [selectedSourceId, setSelectedSourceId] = useState<number | null>(availableSources?.[0]?.id ?? null);
 
-	const { data: timeSeriesData } = useTimeSeriesData(selectedSource ?? 0, areaCode);
+	useEffect(() => {
+		if (availableSources) {
+			setSelectedSourceId(availableSources[0].id);
+		}
+	}, [availableSources]);
+
+	const { data: timeSeriesData } = useTimeSeriesData(selectedSourceId ?? 0, areaCode);
 
 	return (
 		<Card>
@@ -57,8 +71,8 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 						</Select>
 					)}
 					<Select
-						value={selectedFrequency?.toString() ?? undefined}
-						onValueChange={(value) => setSelectedFrequency(parseInt(value))}
+						value={selectedFrequencyId?.toString() ?? undefined}
+						onValueChange={(value) => setSelectedFrequencyId(parseInt(value))}
 						disabled={(!selectedChildId && hasChildren) || availableFrequencies?.length === 1}
 					>
 						<SelectTrigger className='w-fit ml-auto' size='sm'>
@@ -81,7 +95,8 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 					unit={selectedIndicator.unit}
 					config={{
 						[areaCode]: {
-							label: areaName
+							label: areaName,
+							color: '#ff0000'
 						}
 					}}
 				/>
