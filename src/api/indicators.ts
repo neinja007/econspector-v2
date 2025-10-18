@@ -8,8 +8,18 @@ async function getIndicators(categoryId: string): Promise<Indicator[]> {
 		.from(DatabaseTable.INDICATORS)
 		.select('*, indicator_frequencies(*, frequency_sources(*))')
 		.eq('category_id', categoryId);
+
+	const children = await supabase
+		.schema(DatabaseSchema.DATA)
+		.from(DatabaseTable.INDICATORS)
+		.select('*, indicator_frequencies(*, frequency_sources(*))')
+		.in('parent_id', data?.map((indicator) => indicator.id) ?? []);
+
 	if (error) throw error;
-	return data;
+	return data?.map((indicator) => ({
+		...indicator,
+		children: children?.data?.filter((child) => child.parent_id === indicator.id) ?? []
+	}));
 }
 
 export { getIndicators };

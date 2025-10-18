@@ -12,6 +12,7 @@ export type Indicator = {
 	data_updated_at: string;
 	category_id: string;
 	indicator_frequencies: IndicatorFrequency[];
+	children: Indicator[];
 };
 
 export type IndicatorFrequency = {
