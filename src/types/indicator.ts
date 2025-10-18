@@ -1,3 +1,5 @@
+import { FrequencyEnum } from './frequency';
+
 export type IndicatorCategory = {
 	id: string;
 	name: string;
@@ -12,12 +14,10 @@ export type Indicator = {
 	indicator_frequencies: IndicatorFrequency[];
 };
 
-export type Frequency = 'Annual' | 'Biannual' | 'Monthly' | 'Quarterly';
-
 export type IndicatorFrequency = {
 	id: number;
 	indicator_id: number;
-	frequency: Frequency;
+	frequency: FrequencyEnum;
 	frequency_sources: FrequencySource[];
 };
 
