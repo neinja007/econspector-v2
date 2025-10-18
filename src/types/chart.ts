@@ -1,5 +1,5 @@
 export enum ChartType {
-	LINE = 'line',
-	BAR = 'bar',
-	AREA = 'area'
+	LINE = 'LINE',
+	BAR = 'BAR',
+	AREA = 'AREA'
 }
