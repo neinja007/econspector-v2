@@ -33,8 +33,8 @@ const CountryAnalysisPage = () => {
 					<Info data={data} />
 				</div>
 				<hr />
-				<Tabs>
-					<div className='flex gap-2'>
+				<Tabs className='gap-4'>
+					<div className='flex gap-4'>
 						<TabsList>
 							{indicatorCategories?.map((category) => (
 								<TabsTrigger key={category.id} value={category.name}>
