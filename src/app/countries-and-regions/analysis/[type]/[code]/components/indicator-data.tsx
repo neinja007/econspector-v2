@@ -1,9 +1,12 @@
 import { Chart } from '@/components/chart';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/shadcn/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
+import { Skeleton } from '@/components/shadcn/ui/skeleton';
+import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
 import { FrequencyEnum } from '@/types/frequency';
 import { Indicator } from '@/types/indicator';
+import { TriangleAlertIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 type IndicatorDataProps = {
@@ -46,7 +49,7 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 		}
 	}, [availableSources]);
 
-	const { data: timeSeriesData } = useTimeSeriesData(selectedSourceId ?? 0, areaCode);
+	const { data: timeSeriesData, status } = useTimeSeriesData(selectedSourceId ?? 0, areaCode);
 
 	return (
 		<Card>
@@ -88,18 +91,30 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 					</Select>
 				</CardTitle>
 			</CardHeader>
-			<CardContent>
-				<Chart
-					data={timeSeriesData?.map((data) => ({ period: data.period, values: { [areaCode]: data.value } })) ?? []}
-					type={selectedIndicator.chart_type}
-					unit={selectedIndicator.unit}
-					config={{
-						[areaCode]: {
-							label: areaName,
-							color: '#ff0000'
-						}
-					}}
-				/>
+			<CardContent className='h-[200px]'>
+				{status === 'success' ? (
+					timeSeriesData?.length > 0 ? (
+						<Chart
+							data={timeSeriesData?.map((data) => ({ period: data.period, values: { [areaCode]: data.value } })) ?? []}
+							type={selectedIndicator.chart_type}
+							unit={selectedIndicator.unit}
+							config={{
+								[areaCode]: {
+									label: areaName,
+									color: '#ff0000'
+								}
+							}}
+						/>
+					) : (
+						<div className='h-full w-full flex items-center justify-center gap-2'>
+							<TriangleAlertIcon /> No data available.
+						</div>
+					)
+				) : (
+					<Skeleton className='h-full w-full flex items-center justify-center gap-2'>
+						<Spinner /> Loading data...
+					</Skeleton>
+				)}
 			</CardContent>
 		</Card>
 	);
