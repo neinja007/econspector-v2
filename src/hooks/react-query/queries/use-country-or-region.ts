@@ -1,6 +1,6 @@
-import { getCountry } from '@/api/country';
-import { getRegion } from '@/api/region';
-import { getSubregion } from '@/api/subregion';
+import { getCountry } from '@/api/countries';
+import { getRegion } from '@/api/regions';
+import { getSubregion } from '@/api/subregions';
 import { CountryWithCurrencies } from '@/types/country';
 import { Region } from '@/types/region';
 import { Subregion } from '@/types/subregion';

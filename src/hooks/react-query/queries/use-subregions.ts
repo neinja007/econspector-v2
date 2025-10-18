@@ -1,4 +1,4 @@
-import { getSubregions } from '@/api/subregion';
+import { getSubregions } from '@/api/subregions';
 import { Subregion } from '@/types/subregion';
 import { useQuery } from '@tanstack/react-query';
 
