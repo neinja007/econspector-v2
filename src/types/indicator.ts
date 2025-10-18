@@ -11,7 +11,7 @@ export type Indicator = {
 	parent_id: number;
 	name: string;
 	unit: string;
-	chart_type: ChartType;
+	chart_type: ChartType | null;
 	data_updated_at: string;
 	category_id: string;
 	indicator_frequencies: IndicatorFrequency[];
