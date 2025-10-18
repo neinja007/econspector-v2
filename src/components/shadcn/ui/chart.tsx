@@ -119,6 +119,7 @@ function ChartTooltipContent({
   nameKey,
   labelKey,
   compactNotation = false,
+  unit,
 }: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
   React.ComponentProps<"div"> & {
     hideLabel?: boolean
@@ -127,6 +128,7 @@ function ChartTooltipContent({
     nameKey?: string
     labelKey?: string
     compactNotation?: boolean
+    unit?: string
   }) {
   const { config } = useChart()
 
@@ -241,7 +243,7 @@ function ChartTooltipContent({
                           {item.value.toLocaleString(undefined, compactNotation ? {
                             maximumFractionDigits: 2,
                             notation: "compact",
-                          } : undefined)}
+                          } : undefined)} {unit}
                         </span>
                       )}
                     </div>
