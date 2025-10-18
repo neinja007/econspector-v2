@@ -25,6 +25,6 @@ export type IndicatorFrequency = {
 export type FrequencySource = {
 	id: number;
 	frequency_id: number;
-	source: string;
+	name: string;
 	unit: string;
 };
