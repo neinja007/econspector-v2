@@ -61,7 +61,7 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 						return <Bar key={key} dataKey={key} fill={color} />;
 					}
 				})}
-				<ChartLegend />
+				{Object.keys(config).length > 1 && <ChartLegend />}
 			</RechartsComponent>
 		</ChartContainer>
 	);
