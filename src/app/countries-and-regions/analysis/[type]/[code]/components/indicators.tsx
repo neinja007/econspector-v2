@@ -2,6 +2,7 @@ import { useIndicators } from '@/hooks/react-query/queries/use-indicators';
 import { IndicatorCategory } from '@/types/indicator-category';
 import { IndicatorData } from './indicator-data';
 import { Skeleton } from '@/components/shadcn/ui/skeleton';
+import { TriangleAlertIcon } from 'lucide-react';
 
 type IndicatorsProps = {
 	category: IndicatorCategory;
@@ -13,7 +14,11 @@ export const Indicators = ({ category, areaName, areaCode }: IndicatorsProps) =>
 	const { data: indicators, status } = useIndicators(category.id);
 
 	if (status === 'success' && indicators?.length === 0) {
-		return <div>No indicators found</div>;
+		return (
+			<div className='h-full w-full flex items-center justify-center gap-2 mt-10'>
+				<TriangleAlertIcon className='size-5' /> No indicators found.
+			</div>
+		);
 	}
 
 	if (status === 'pending') {
