@@ -5,7 +5,10 @@ import {
 	YAxis,
 	AreaChart as RechartsAreaChart,
 	BarChart as RechartsBarChart,
-	LineChart as RechartsLineChart
+	LineChart as RechartsLineChart,
+	Area,
+	Line,
+	Bar
 } from 'recharts';
 
 type ChartProps = {
@@ -21,6 +24,8 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 		...item.values
 	}));
 
+	console.log(type);
+
 	const RechartsComponent =
 		type === ChartType.LINE ? RechartsLineChart : type === ChartType.BAR ? RechartsBarChart : RechartsAreaChart;
 
@@ -28,8 +33,34 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 		<ChartContainer config={config} className='h-[200px] w-full'>
 			<RechartsComponent data={chartData} accessibilityLayer>
 				<XAxis dataKey='period' />
-				<YAxis dataKey={unit} />
-				<ChartTooltip content={<ChartTooltipContent />} />
+				<YAxis
+					tickFormatter={(value) =>
+						value.toLocaleString(undefined, {
+							maximumFractionDigits: 1,
+							notation: 'compact'
+						})
+					}
+				/>
+				<ChartTooltip content={<ChartTooltipContent compactNotation unit={unit} />} />
+				{Object.keys(config).map((key) => {
+					const color = config[key].color ?? '#ff0000';
+					if (type === ChartType.AREA) {
+						return (
+							<Area
+								key={key}
+								fill={config[key].color ?? '#ff0000'}
+								stroke={config[key].color ?? '#ff0000'}
+								fillOpacity={0.5}
+								strokeWidth={2}
+								dataKey={key}
+							/>
+						);
+					} else if (type === ChartType.LINE) {
+						return <Line key={key} dataKey={key} stroke={color} strokeWidth={2} dot={false} data={chartData} />;
+					} else {
+						return <Bar key={key} dataKey={key} fill={color} />;
+					}
+				})}
 				<ChartLegend />
 			</RechartsComponent>
 		</ChartContainer>
