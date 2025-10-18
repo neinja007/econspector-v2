@@ -1,25 +1,36 @@
+import { Chart } from '@/components/chart';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/shadcn/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
+import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
 import { FrequencyEnum } from '@/types/frequency';
-import { Indicator } from '@/types/indicator';
+import { FrequencySource, Indicator } from '@/types/indicator';
 import { useState } from 'react';
 
 type IndicatorDataProps = {
 	indicator: Indicator;
+	areaName: string;
+	areaCode: string;
 };
 
-export const IndicatorData = ({ indicator }: IndicatorDataProps) => {
+export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataProps) => {
 	const hasChildren = indicator.children.length > 0;
 	const [selectedChildId, setSelectedChildId] = useState<number | null>(indicator.children[0]?.id ?? null);
-	const [selectedFrequency, setSelectedFrequency] = useState<FrequencyEnum | null>(
-		hasChildren
-			? indicator.children[0]?.indicator_frequencies[0]?.frequency ?? null
-			: indicator.indicator_frequencies[0]?.frequency ?? null
-	);
 
 	const availableFrequencies = hasChildren
 		? indicator.children.find((child) => child.id === selectedChildId)?.indicator_frequencies
 		: indicator.indicator_frequencies;
+
+	const [selectedFrequency, setSelectedFrequency] = useState<FrequencyEnum | null>(
+		availableFrequencies?.[0]?.frequency ?? null
+	);
+
+	const availableSources = availableFrequencies?.find(
+		(frequency) => frequency.frequency === selectedFrequency
+	)?.frequency_sources;
+
+	const [selectedSource, setSelectedSource] = useState<FrequencySource | null>(availableSources?.[0] ?? null);
+
+	const { data: timeSeriesData } = useTimeSeriesData(selectedSource, areaCode);
 
 	return (
 		<Card>
@@ -48,7 +59,7 @@ export const IndicatorData = ({ indicator }: IndicatorDataProps) => {
 						onValueChange={(value) => setSelectedFrequency(value as FrequencyEnum)}
 						disabled={(!selectedChildId && hasChildren) || availableFrequencies?.length === 1}
 					>
-						<SelectTrigger className='w-fit' size='sm'>
+						<SelectTrigger className='w-fit ml-auto' size='sm'>
 							<SelectValue />
 						</SelectTrigger>
 						<SelectContent>
@@ -61,7 +72,18 @@ export const IndicatorData = ({ indicator }: IndicatorDataProps) => {
 					</Select>
 				</CardTitle>
 			</CardHeader>
-			<CardContent>Data</CardContent>
+			<CardContent>
+				<Chart
+					data={timeSeriesData?.map((data) => ({ period: data.period, values: { [areaCode]: data.value } })) ?? []}
+					type={indicator.chart_type}
+					unit={indicator.unit}
+					config={{
+						[areaCode]: {
+							label: areaName
+						}
+					}}
+				/>
+			</CardContent>
 		</Card>
 	);
 };

@@ -51,7 +51,7 @@ const CountryAnalysisPage = () => {
 					</div>
 					{indicatorCategories?.map((category) => (
 						<TabsContent key={category.id} value={category.name}>
-							<Indicators category={category} />
+							<Indicators category={category} areaName={data.name} areaCode={code} />
 						</TabsContent>
 					))}
 				</Tabs>
