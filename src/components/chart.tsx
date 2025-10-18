@@ -40,6 +40,7 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 							notation: 'compact'
 						})
 					}
+					width={40}
 				/>
 				<ChartTooltip content={<ChartTooltipContent compactNotation unit={unit} />} />
 				{Object.keys(config).map((key) => {
