@@ -1,7 +1,7 @@
 'use client';
 
 import { SignedIn, SignedOut, useUser, SignOutButton } from '@clerk/nextjs';
-import { UserCircle2, Settings, LogOut, ChevronUp } from 'lucide-react';
+import { UserCircle2, Settings, LogOut, ChevronUp, User, Coins } from 'lucide-react';
 import { SidebarFooter as SidebarFooterShadcn } from '@/components/shadcn/ui/sidebar';
 import {
 	DropdownMenu,
@@ -54,7 +54,17 @@ export const SidebarFooter = () => {
 					>
 						<DropdownMenuItem asChild>
 							<Link href='/user/account'>
-								<Settings /> Manage Account
+								<User /> Manage Account
+							</Link>
+						</DropdownMenuItem>
+						<DropdownMenuItem asChild>
+							<Link href='/user/account'>
+								<Settings /> Settings & Preferences
+							</Link>
+						</DropdownMenuItem>
+						<DropdownMenuItem asChild>
+							<Link href='/user/account'>
+								<Coins /> Purchase Credits
 							</Link>
 						</DropdownMenuItem>
 						<SignOutButton>
