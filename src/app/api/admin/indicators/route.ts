@@ -24,6 +24,11 @@ export const POST = async () => {
 				.select()
 				.single();
 
+			if (dbIndicator.error || !dbIndicator.data) {
+				console.error('Failed to create indicator:', dbIndicator.error);
+				continue;
+			}
+
 			for (const subindicator of indicator.subindicators) {
 				const dbSubindicator = await adminSupabase
 					.schema(DatabaseSchema.DATA)
@@ -31,6 +36,11 @@ export const POST = async () => {
 					.insert({ name: subindicator.name, parent_id: dbIndicator.data.id })
 					.select()
 					.single();
+
+				if (dbSubindicator.error || !dbSubindicator.data) {
+					console.error('Failed to create subindicator:', dbSubindicator.error);
+					continue;
+				}
 
 				for (const frequency of subindicator.frequencies) {
 					const dbFrequency = await adminSupabase
@@ -40,13 +50,22 @@ export const POST = async () => {
 						.select()
 						.single();
 
+					if (dbFrequency.error || !dbFrequency.data) {
+						console.error('Failed to create frequency:', dbFrequency.error, 'Frequency data:', frequency);
+						continue;
+					}
+
 					for (const source of frequency.sources) {
-						await adminSupabase
+						const dbSource = await adminSupabase
 							.schema(DatabaseSchema.DATA)
 							.from(DatabaseTable.FREQUENCY_SOURCES)
 							.insert({ frequency_id: dbFrequency.data.id, name: source.source, unit: source.unit })
 							.select()
 							.single();
+
+						if (dbSource.error || !dbSource.data) {
+							console.error('Failed to create frequency source:', dbSource.error, 'Source data:', source);
+						}
 					}
 				}
 			}
@@ -58,6 +77,11 @@ export const POST = async () => {
 				.select()
 				.single();
 
+			if (dbIndicator.error || !dbIndicator.data) {
+				console.error('Failed to create indicator:', dbIndicator.error);
+				continue;
+			}
+
 			for (const frequency of indicator.frequencies) {
 				const dbFrequency = await adminSupabase
 					.schema(DatabaseSchema.DATA)
@@ -66,13 +90,22 @@ export const POST = async () => {
 					.select()
 					.single();
 
+				if (dbFrequency.error || !dbFrequency.data) {
+					console.error('Failed to create frequency:', dbFrequency.error, 'Frequency data:', frequency);
+					continue;
+				}
+
 				for (const source of frequency.sources) {
-					await adminSupabase
+					const dbSource = await adminSupabase
 						.schema(DatabaseSchema.DATA)
 						.from(DatabaseTable.FREQUENCY_SOURCES)
 						.insert({ frequency_id: dbFrequency.data.id, name: source.source, unit: source.unit })
 						.select()
 						.single();
+
+					if (dbSource.error || !dbSource.data) {
+						console.error('Failed to create frequency source:', dbSource.error, 'Source data:', source);
+					}
 				}
 			}
 		}
