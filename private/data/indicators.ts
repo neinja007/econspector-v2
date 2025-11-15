@@ -87,6 +87,21 @@ export const indicators: Indicator[] = [
 						]
 					}
 				]
+			},
+			{
+				name: 'current LCU',
+				frequencies: [
+					{
+						frequency: FrequencyEnum.ANNUAL,
+						sources: [
+							{
+								source: DataSourceEnum.WORLD_BANK,
+								unit: 'LCU',
+								worldBankIndicatorCode: 'NY.GDP.MKTP.CN'
+							}
+						]
+					}
+				]
 			}
 		]
 	}
