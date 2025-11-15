@@ -10,12 +10,17 @@ import { InputGroupAddon, InputGroupInput } from '@/components/shadcn/ui/input-g
 import { InputGroup } from '@/components/shadcn/ui/input-group';
 import { Search } from 'lucide-react';
 import { Indicators } from './components/indicators';
+import { useState } from 'react';
 
 const CountryAnalysisPage = () => {
 	const { code, type } = useParams<{ code: string; type: 'country' | 'region' | 'subregion' }>();
 
 	const { data, status } = useCountryOrRegion(type, code);
 	const { data: indicatorCategories } = useIndicatorCategories();
+
+	const [tab, setTab] = useState<string>('all');
+
+	const [search, setSearch] = useState<string>('');
 
 	if (status === 'pending') {
 		return (
@@ -33,9 +38,10 @@ const CountryAnalysisPage = () => {
 					<Info data={data} />
 				</div>
 				<hr />
-				<Tabs className='gap-4'>
+				<Tabs className='gap-4' value={tab} onValueChange={setTab}>
 					<div className='flex gap-4'>
 						<TabsList>
+							<TabsTrigger value='all'>All</TabsTrigger>
 							{indicatorCategories?.map((category) => (
 								<TabsTrigger key={category.id} value={category.name}>
 									{category.name}
@@ -43,10 +49,15 @@ const CountryAnalysisPage = () => {
 							))}
 						</TabsList>
 						<InputGroup>
-							<InputGroupInput placeholder='Search indicators...' />
+							<InputGroupInput
+								placeholder={`Search ${tab ? tab.toLowerCase() : 'all'} indicators...`}
+								value={search}
+								onChange={(e) => setSearch(e.target.value)}
+							/>
 							<InputGroupAddon>
 								<Search />
 							</InputGroupAddon>
+							{search && <InputGroupAddon align='inline-end'>12 results</InputGroupAddon>}
 						</InputGroup>
 					</div>
 					{indicatorCategories?.map((category) => (
