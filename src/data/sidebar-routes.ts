@@ -7,11 +7,9 @@ import {
 	ArrowLeftRight,
 	BarChart,
 	BookOpen,
-	BookText,
 	Brain,
 	ChartNoAxesCombined,
 	Component,
-	Database,
 	DollarSign,
 	Flag,
 	Globe,
@@ -153,11 +151,11 @@ export const sidebarRoutes: {
 				href: '/advanced/custom-scores',
 				icon: SquareSigma
 			},
-			{
-				label: 'Indicators',
-				href: '/advanced/indicators',
-				icon: Database
-			},
+			// {
+			// 	label: 'Indicators',
+			// 	href: '/advanced/indicators',
+			// 	icon: Database
+			// },
 			{
 				label: 'Data Explorer',
 				href: '/advanced/data-explorer',
@@ -186,17 +184,12 @@ export const sidebarRoutes: {
 		icon: HelpCircle,
 		routes: [
 			{
-				label: 'Handbook',
-				href: '/support/handbook',
+				label: 'Documentation',
+				href: '/support/documentation',
 				icon: BookOpen
 			},
 			{
-				label: 'Glossary',
-				href: '/support/glossary',
-				icon: BookText
-			},
-			{
-				label: 'Help',
+				label: 'Help & Contact',
 				href: '/support/help',
 				icon: MessagesSquare
 			},
