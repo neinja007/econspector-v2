@@ -30,7 +30,7 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 		type === ChartType.LINE ? RechartsLineChart : type === ChartType.BAR ? RechartsBarChart : RechartsAreaChart;
 
 	return (
-		<ChartContainer config={config} className='h-full w-full'>
+		<ChartContainer config={config} className='h-full w-full pr-2'>
 			<RechartsComponent data={chartData} accessibilityLayer>
 				<XAxis dataKey='period' />
 				<YAxis
