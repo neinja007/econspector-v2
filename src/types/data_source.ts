@@ -1,7 +1,7 @@
 export enum DataSourceEnum {
-	WORLD_BANK = 'World Bank',
+	WORLD_BANK = 'WORLD_BANK',
 	UN_DATA = 'UNDATA',
 	IMF = 'IMF',
-	TRADING_ECONOMICS = 'Trading Economics',
+	TRADING_ECONOMICS = 'TRADING_ECONOMICS',
 	OECD = 'OECD'
 }
