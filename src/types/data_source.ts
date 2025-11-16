@@ -1,4 +1,4 @@
-export enum DataSourceEnum {
+export enum DataSource {
 	WORLD_BANK = 'WORLD_BANK',
 	UN_DATA = 'UNDATA',
 	IMF = 'IMF',

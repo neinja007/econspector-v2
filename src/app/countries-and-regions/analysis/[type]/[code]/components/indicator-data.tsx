@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Skeleton } from '@/components/shadcn/ui/skeleton';
 import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
-import { FrequencyEnum } from '@/types/frequency';
+import { Frequency } from '@/types/frequency';
 import { Indicator } from '@/types/indicator';
 import { TriangleAlertIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -84,7 +84,7 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 						<SelectContent>
 							{availableFrequencies?.map((frequency) => (
 								<SelectItem key={frequency.id} value={frequency.id.toString()}>
-									{FrequencyEnum[frequency.frequency]}
+									{Frequency[frequency.frequency]}
 								</SelectItem>
 							))}
 						</SelectContent>

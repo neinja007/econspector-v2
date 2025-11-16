@@ -1,6 +1,6 @@
 import { ChartType } from './chart';
-import { DataSourceEnum } from './data_source';
-import { FrequencyEnum } from './frequency';
+import { DataSource } from './data_source';
+import { Frequency } from './frequency';
 
 export type IndicatorCategory = {
 	id: string;
@@ -22,12 +22,12 @@ export type Indicator = {
 export type IndicatorFrequency = {
 	id: number;
 	indicator_id: number;
-	frequency: keyof typeof FrequencyEnum;
+	frequency: keyof typeof Frequency;
 	frequency_sources: FrequencySource[];
 };
 
 export type FrequencySource = {
 	id: number;
 	frequency_id: number;
-	name: keyof typeof DataSourceEnum;
+	name: keyof typeof DataSource;
 };

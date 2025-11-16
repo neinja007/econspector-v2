@@ -1,4 +1,4 @@
-export enum FrequencyEnum {
+export enum Frequency {
 	ANNUAL = 'ANNUAL',
 	BIANNUAL = 'BIANNUAL',
 	QUARTERLY = 'QUARTERLY',

@@ -1,20 +1,20 @@
-import { DataSourceEnum } from '@/types/data_source';
-import { FrequencyEnum } from '@/types/frequency';
+import { DataSource } from '@/types/data_source';
+import { Frequency } from '@/types/frequency';
 
 export type Source = {
-	source: DataSourceEnum;
+	source: DataSource;
 	unit: string;
 	worldBankIndicatorCode: string;
 };
 
-export type Frequency = {
-	frequency: FrequencyEnum;
+export type IndicatorFrequency = {
+	frequency: Frequency;
 	sources: Source[];
 };
 
 export type Subindicator = {
 	name: string;
-	frequencies: Frequency[];
+	frequencies: IndicatorFrequency[];
 };
 
 export type Indicator =
@@ -32,10 +32,10 @@ export const indicators: Indicator[] = [
 				name: '% growth',
 				frequencies: [
 					{
-						frequency: FrequencyEnum.ANNUAL,
+						frequency: Frequency.ANNUAL,
 						sources: [
 							{
-								source: DataSourceEnum.WORLD_BANK,
+								source: DataSource.WORLD_BANK,
 								unit: '%',
 								worldBankIndicatorCode: 'NY.GDP.MKTP.KD.ZG'
 							}
@@ -47,10 +47,10 @@ export const indicators: Indicator[] = [
 				name: 'constant 2015 US$',
 				frequencies: [
 					{
-						frequency: FrequencyEnum.ANNUAL,
+						frequency: Frequency.ANNUAL,
 						sources: [
 							{
-								source: DataSourceEnum.WORLD_BANK,
+								source: DataSource.WORLD_BANK,
 								unit: 'USD',
 								worldBankIndicatorCode: 'NY.GDP.MKTP.KD'
 							}
@@ -62,10 +62,10 @@ export const indicators: Indicator[] = [
 				name: 'constant LCU',
 				frequencies: [
 					{
-						frequency: FrequencyEnum.ANNUAL,
+						frequency: Frequency.ANNUAL,
 						sources: [
 							{
-								source: DataSourceEnum.WORLD_BANK,
+								source: DataSource.WORLD_BANK,
 								unit: 'LCU',
 								worldBankIndicatorCode: 'NY.GDP.MKTP.KN'
 							}
@@ -77,10 +77,10 @@ export const indicators: Indicator[] = [
 				name: 'current US$',
 				frequencies: [
 					{
-						frequency: FrequencyEnum.ANNUAL,
+						frequency: Frequency.ANNUAL,
 						sources: [
 							{
-								source: DataSourceEnum.WORLD_BANK,
+								source: DataSource.WORLD_BANK,
 								unit: 'USD',
 								worldBankIndicatorCode: 'NY.GDP.MKTP.CD'
 							}
@@ -92,10 +92,10 @@ export const indicators: Indicator[] = [
 				name: 'current LCU',
 				frequencies: [
 					{
-						frequency: FrequencyEnum.ANNUAL,
+						frequency: Frequency.ANNUAL,
 						sources: [
 							{
-								source: DataSourceEnum.WORLD_BANK,
+								source: DataSource.WORLD_BANK,
 								unit: 'LCU',
 								worldBankIndicatorCode: 'NY.GDP.MKTP.CN'
 							}
