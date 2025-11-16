@@ -2,6 +2,7 @@ import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 import { adminSupabase } from '@/supabase/admin';
+import { DataSource } from '@/types/data_source';
 
 export const POST = async () => {
 	const worldBankCountries = await adminSupabase
@@ -18,7 +19,7 @@ export const POST = async () => {
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.FREQUENCY_SOURCES)
 		.select('*')
-		.eq('name', 'World Bank');
+		.eq('name', DataSource.WORLD_BANK);
 
 	if (!worldBankSources.data) {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });
@@ -43,7 +44,6 @@ export const POST = async () => {
 			countryiso3code: string;
 			date: string;
 			value: number | null;
-			unit: string;
 			obs_status: string;
 			decimal: number;
 		}[] = res.data[1];
