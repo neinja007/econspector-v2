@@ -33,7 +33,7 @@ export const POST = async () => {
 				const dbSubindicator = await adminSupabase
 					.schema(DatabaseSchema.DATA)
 					.from(DatabaseTable.INDICATORS)
-					.insert({ name: subindicator.name, parent_id: dbIndicator.data.id })
+					.insert({ name: subindicator.name, parent_id: dbIndicator.data.id, unit: subindicator.unit })
 					.select()
 					.single();
 
@@ -59,7 +59,7 @@ export const POST = async () => {
 						const dbSource = await adminSupabase
 							.schema(DatabaseSchema.DATA)
 							.from(DatabaseTable.FREQUENCY_SOURCES)
-							.insert({ frequency_id: dbFrequency.data.id, name: source.source })
+							.insert({ frequency_id: dbFrequency.data.id, name: source.source, code: source.code })
 							.select()
 							.single();
 
@@ -73,7 +73,7 @@ export const POST = async () => {
 			const dbIndicator = await adminSupabase
 				.schema(DatabaseSchema.DATA)
 				.from(DatabaseTable.INDICATORS)
-				.insert({ name: indicator.name })
+				.insert({ name: indicator.name, unit: indicator.unit })
 				.select()
 				.single();
 
@@ -99,7 +99,7 @@ export const POST = async () => {
 					const dbSource = await adminSupabase
 						.schema(DatabaseSchema.DATA)
 						.from(DatabaseTable.FREQUENCY_SOURCES)
-						.insert({ frequency_id: dbFrequency.data.id, name: source.source, unit: source.unit })
+						.insert({ frequency_id: dbFrequency.data.id, name: source.source, code: source.code })
 						.select()
 						.single();
 

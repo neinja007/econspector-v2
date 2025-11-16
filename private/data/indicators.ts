@@ -1,10 +1,10 @@
+import { ChartType } from '@/types/chart';
 import { DataSource } from '@/types/data_source';
 import { Frequency } from '@/types/frequency';
 
 export type Source = {
 	source: DataSource;
-	unit: string;
-	worldBankIndicatorCode: string;
+	code: string;
 };
 
 export type IndicatorFrequency = {
@@ -14,6 +14,8 @@ export type IndicatorFrequency = {
 
 export type Subindicator = {
 	name: string;
+	unit: string;
+	chart_type?: ChartType;
 	frequencies: IndicatorFrequency[];
 };
 
@@ -30,14 +32,15 @@ export const indicators: Indicator[] = [
 		subindicators: [
 			{
 				name: '% growth',
+				unit: '%',
+				chart_type: ChartType.BAR,
 				frequencies: [
 					{
 						frequency: Frequency.ANNUAL,
 						sources: [
 							{
 								source: DataSource.WORLD_BANK,
-								unit: '%',
-								worldBankIndicatorCode: 'NY.GDP.MKTP.KD.ZG'
+								code: 'NY.GDP.MKTP.KD.ZG'
 							}
 						]
 					}
@@ -45,14 +48,15 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'constant 2015 US$',
+				unit: 'USD',
+				chart_type: ChartType.AREA,
 				frequencies: [
 					{
 						frequency: Frequency.ANNUAL,
 						sources: [
 							{
 								source: DataSource.WORLD_BANK,
-								unit: 'USD',
-								worldBankIndicatorCode: 'NY.GDP.MKTP.KD'
+								code: 'NY.GDP.MKTP.KD'
 							}
 						]
 					}
@@ -60,14 +64,15 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'constant LCU',
+				unit: 'LCU',
+				chart_type: ChartType.AREA,
 				frequencies: [
 					{
 						frequency: Frequency.ANNUAL,
 						sources: [
 							{
 								source: DataSource.WORLD_BANK,
-								unit: 'LCU',
-								worldBankIndicatorCode: 'NY.GDP.MKTP.KN'
+								code: 'NY.GDP.MKTP.KN'
 							}
 						]
 					}
@@ -75,14 +80,15 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'current US$',
+				unit: 'USD',
+				chart_type: ChartType.LINE,
 				frequencies: [
 					{
 						frequency: Frequency.ANNUAL,
 						sources: [
 							{
 								source: DataSource.WORLD_BANK,
-								unit: 'USD',
-								worldBankIndicatorCode: 'NY.GDP.MKTP.CD'
+								code: 'NY.GDP.MKTP.CD'
 							}
 						]
 					}
@@ -90,14 +96,15 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'current LCU',
+				unit: 'LCU',
+				chart_type: ChartType.LINE,
 				frequencies: [
 					{
 						frequency: Frequency.ANNUAL,
 						sources: [
 							{
 								source: DataSource.WORLD_BANK,
-								unit: 'LCU',
-								worldBankIndicatorCode: 'NY.GDP.MKTP.CN'
+								code: 'NY.GDP.MKTP.CN'
 							}
 						]
 					}
