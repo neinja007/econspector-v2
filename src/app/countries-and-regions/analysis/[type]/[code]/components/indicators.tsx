@@ -5,13 +5,13 @@ import { Skeleton } from '@/components/shadcn/ui/skeleton';
 import { TriangleAlertIcon } from 'lucide-react';
 
 type IndicatorsProps = {
-	category: IndicatorCategory;
+	category: IndicatorCategory | null;
 	areaName: string;
 	areaCode: string;
 };
 
 export const Indicators = ({ category, areaName, areaCode }: IndicatorsProps) => {
-	const { data: indicators, status } = useIndicators(category.id);
+	const { data: indicators, status } = useIndicators(category?.id ?? null);
 
 	if (status === 'success' && indicators?.length === 0) {
 		return (

@@ -2,12 +2,16 @@ import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { supabase } from '@/supabase/client';
 import { Indicator } from '@/types/indicator';
 
-async function getIndicators(categoryId: string): Promise<Indicator[]> {
-	const { data, error } = await supabase
+async function getIndicators(categoryId: string | null): Promise<Indicator[]> {
+	let query = supabase
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.INDICATORS)
-		.select('*, indicator_frequencies(*, frequency_sources(*))')
-		.eq('category_id', categoryId);
+		.select('*, indicator_frequencies(*, frequency_sources(*))');
+
+	if (categoryId) {
+		query = query.eq('category_id', categoryId);
+	}
+	const { data, error } = await query;
 
 	const children = await supabase
 		.schema(DatabaseSchema.DATA)
