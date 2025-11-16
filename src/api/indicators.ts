@@ -6,7 +6,8 @@ async function getIndicators(categoryId: string | null): Promise<Indicator[]> {
 	let query = supabase
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.INDICATORS)
-		.select('*, indicator_frequencies(*, frequency_sources(*))');
+		.select('*, indicator_frequencies(*, frequency_sources(*))')
+		.is('parent_id', null);
 
 	if (categoryId) {
 		query = query.eq('category_id', categoryId);
