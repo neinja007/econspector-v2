@@ -24,8 +24,6 @@ export const POST = async (req: Request) => {
 		.select('*')
 		.eq('name', DataSource.WORLD_BANK);
 
-	console.log('worldBankSources', worldBankSources.data);
-
 	if (!worldBankSources.data) {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });
 	}
