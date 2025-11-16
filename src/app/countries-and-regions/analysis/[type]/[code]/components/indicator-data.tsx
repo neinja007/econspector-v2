@@ -1,3 +1,4 @@
+import { AbbreviationText } from '@/components/abbreviation-text';
 import { Chart } from '@/components/chart';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/shadcn/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
@@ -56,14 +57,14 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 		<Card>
 			<CardHeader>
 				<CardTitle className='flex items-center gap-2'>
-					{indicator.name}{' '}
+					<AbbreviationText text={indicator.name} />
 					{hasChildren && (
 						<Select
 							value={selectedChildId?.toString() ?? undefined}
 							onValueChange={(value) => setSelectedChildId(Number(value))}
 						>
 							<SelectTrigger className='w-fit' size='sm'>
-								<SelectValue />
+								<AbbreviationText text={selectedIndicator?.name} cursorPointer={true} />
 							</SelectTrigger>
 							<SelectContent>
 								{indicator.children.map((child) => (
