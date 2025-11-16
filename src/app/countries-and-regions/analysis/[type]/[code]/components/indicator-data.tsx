@@ -6,6 +6,7 @@ import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
 import { Frequency } from '@/types/frequency';
 import { Indicator } from '@/types/indicator';
+import { capitalize } from '@/utils/capitalize';
 import { TriangleAlertIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -84,7 +85,7 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 						<SelectContent>
 							{availableFrequencies?.map((frequency) => (
 								<SelectItem key={frequency.id} value={frequency.id.toString()}>
-									{Frequency[frequency.frequency]}
+									{capitalize(Frequency[frequency.frequency])}
 								</SelectItem>
 							))}
 						</SelectContent>
