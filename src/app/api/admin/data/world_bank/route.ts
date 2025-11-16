@@ -4,7 +4,10 @@ import axios from 'axios';
 import { adminSupabase } from '@/supabase/admin';
 import { DataSource } from '@/types/data_source';
 
-export const POST = async () => {
+export const POST = async (req: Request) => {
+	const body = await req.json();
+	const updateMode = body.update === 'all' || body.update === 'new' ? body.update : 'all';
+
 	const worldBankCountries = await adminSupabase
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.COUNTRIES)
@@ -27,7 +30,15 @@ export const POST = async () => {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });
 	}
 
-	for (const source of worldBankSources.data) {
+	let sourcesToUpdate = [];
+
+	if (updateMode === 'all') {
+		sourcesToUpdate = worldBankSources.data;
+	} else if (updateMode === 'new') {
+		sourcesToUpdate = worldBankSources.data.filter((source) => source.data_updated_at === null);
+	}
+
+	for (const source of sourcesToUpdate) {
 		console.log(`${source.code}: Fetching data...`);
 
 		const res = await axios.get(
@@ -79,6 +90,16 @@ export const POST = async () => {
 		}
 
 		console.log(`${source.code}: Insertion complete.`);
+
+		await adminSupabase
+			.schema(DatabaseSchema.DATA)
+			.from(DatabaseTable.INDICATORS)
+			.update({
+				data_updated_at: new Date().toISOString()
+			})
+			.eq('id', source.indicator_id);
+
+		console.log(`${source.code}: Indicator date updated successfully.`);
 	}
 
 	return NextResponse.json({ message: 'Data inserted successfully' });
