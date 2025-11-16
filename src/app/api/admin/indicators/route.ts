@@ -13,7 +13,7 @@ export const POST = async () => {
 			skippedIndicators.push(indicator.name);
 			continue;
 		} else {
-			createdIndicators.push(indicator);
+			createdIndicators.push(indicator.name);
 		}
 
 		if ('subindicators' in indicator) {
@@ -33,7 +33,12 @@ export const POST = async () => {
 				const dbSubindicator = await adminSupabase
 					.schema(DatabaseSchema.DATA)
 					.from(DatabaseTable.INDICATORS)
-					.insert({ name: subindicator.name, parent_id: dbIndicator.data.id, unit: subindicator.unit })
+					.insert({
+						name: subindicator.name,
+						parent_id: dbIndicator.data.id,
+						unit: subindicator.unit,
+						chart_type: subindicator.chart_type
+					})
 					.select()
 					.single();
 
@@ -73,7 +78,7 @@ export const POST = async () => {
 			const dbIndicator = await adminSupabase
 				.schema(DatabaseSchema.DATA)
 				.from(DatabaseTable.INDICATORS)
-				.insert({ name: indicator.name, unit: indicator.unit })
+				.insert({ name: indicator.name, unit: indicator.unit, chart_type: indicator.chart_type })
 				.select()
 				.single();
 
