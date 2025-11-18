@@ -1,14 +1,19 @@
+'use client';
+
 import { SidebarHeader as SidebarHeaderShadcn } from '@/components/shadcn/ui/sidebar';
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export const SidebarHeader = () => {
+	const { resolvedTheme } = useTheme();
+
 	return (
 		<SidebarHeaderShadcn className='w-full border-b'>
 			<div className='flex w-full gap-4 items-center justify-center py-1'>
 				<div className='size-10 relative'>
 					<Image
-						src='/icons/water.svg'
+						src={resolvedTheme === 'dark' ? '/icons/water_dark.svg' : '/icons/water_light.svg'}
 						alt='EconSpector Water'
 						width={40}
 						height={40}
