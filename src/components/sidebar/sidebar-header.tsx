@@ -8,7 +8,7 @@ export const SidebarHeader = () => {
 			<div className='flex w-full gap-4 items-center justify-center py-1'>
 				<div className='size-10 relative'>
 					<Image
-						src='/icons/water3.svg'
+						src='/icons/water.svg'
 						alt='EconSpector Water'
 						width={40}
 						height={40}
