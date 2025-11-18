@@ -11,11 +11,23 @@ import {
 } from '@/components/shadcn/ui/dropdown-menu';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useUpdateUserProfile } from '@/hooks/react-query/mutations/use-update-user-profile';
 
 export const SidebarFooter = () => {
 	const { user } = useUser();
 	const [isOpen, setIsOpen] = useState(false);
+	const updateUserProfile = useUpdateUserProfile();
+
+	useEffect(() => {
+		if (user) {
+			updateUserProfile.mutate({
+				id: user.id,
+				name: user.username || user.fullName || '',
+				email: user.emailAddresses[0].emailAddress || ''
+			});
+		}
+	}, [updateUserProfile, user]);
 
 	return (
 		<SidebarFooterShadcn className='w-full border-t h-[70px] flex justify-center select-none'>
