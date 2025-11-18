@@ -26,7 +26,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 			appearance={{
 				baseTheme: shadcn,
 				layout: {
-					helpPageUrl: '/support/handbook',
+					helpPageUrl: '/support/documentation',
 					logoImageUrl: '/favicon.ico'
 				},
 				variables: {
