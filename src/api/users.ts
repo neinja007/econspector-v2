@@ -1,8 +1,10 @@
+import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { supabase } from '@/supabase/client';
 
 export const updateUserProfile = async (userId: string, name: string, email: string) => {
 	const { data, error } = await supabase
-		.from('users')
+		.schema(DatabaseSchema.USERS)
+		.from(DatabaseTable.USERS)
 		.upsert({ id: userId, name, email, last_active: new Date().toISOString() })
 		.select()
 		.single();

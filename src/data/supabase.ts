@@ -1,5 +1,6 @@
 export enum DatabaseSchema {
-	DATA = 'data'
+	DATA = 'data',
+	USERS = 'users'
 }
 
 export enum DatabaseTable {
@@ -12,5 +13,8 @@ export enum DatabaseTable {
 	CURRENCIES = 'currencies',
 	COUNTRIES_CURRENCIES = 'countries_currencies',
 	REGIONS = 'regions',
-	SUBREGIONS = 'subregions'
+	SUBREGIONS = 'subregions',
+
+	USERS = 'users',
+	FAVOURITE_COUNTRIES = 'favourite_countries'
 }
