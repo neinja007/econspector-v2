@@ -21,7 +21,7 @@ export const POST = async (req: Request) => {
 	const worldBankSources = await adminSupabase
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.FREQUENCY_SOURCES)
-		.select('*')
+		.select('*, indicator_frequencies(indicator_id)')
 		.eq('name', DataSource.WORLD_BANK);
 
 	if (!worldBankSources.data) {
@@ -37,6 +37,14 @@ export const POST = async (req: Request) => {
 	}
 
 	for (const source of sourcesToUpdate) {
+		console.log(`${source.code}: Removing existing data...`);
+
+		await adminSupabase
+			.schema(DatabaseSchema.DATA)
+			.from(DatabaseTable.WORLD_BANK_DATA)
+			.delete()
+			.eq('source_id', source.id);
+
 		console.log(`${source.code}: Fetching data...`);
 
 		const res = await axios.get(
@@ -91,11 +99,11 @@ export const POST = async (req: Request) => {
 
 		await adminSupabase
 			.schema(DatabaseSchema.DATA)
-			.from(DatabaseTable.INDICATORS)
+			.from(DatabaseTable.FREQUENCY_SOURCES)
 			.update({
 				data_updated_at: new Date().toISOString()
 			})
-			.eq('id', source.indicator_id);
+			.eq('id', source.id);
 
 		console.log(`${source.code}: Indicator date updated successfully.`);
 	}
