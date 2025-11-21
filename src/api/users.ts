@@ -9,6 +9,8 @@ export const updateUserProfile = async (userId: string, name: string, email: str
 		.select()
 		.single();
 
+	window.sessionStorage.setItem('updated-user', 'true');
+
 	if (error) throw error;
 	return data;
 };
