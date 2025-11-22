@@ -20,19 +20,6 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
 	return (
-		// <ClerkProvider
-		// 	appearance={{
-		// 		baseTheme: shadcn,
-		// 		layout: {
-		// 			helpPageUrl: '/support/documentation',
-		// 			logoImageUrl: '/favicon.ico'
-		// 		},
-		// 		variables: {
-		// 			colorPrimary: 'var(--primary)',
-		// 			borderRadius: 'var(--radius)'
-		// 		}
-		// 	}}
-		// >
 		<html lang='en'>
 			<body className='antialiased'>
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
@@ -54,7 +41,6 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 				<Analytics />
 			</body>
 		</html>
-		// </ClerkProvider>
 	);
 };
 
