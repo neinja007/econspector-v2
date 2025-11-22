@@ -76,7 +76,7 @@ export const SidebarFooter = () => {
 								<Coins /> Purchase Credits
 							</Link>
 						</DropdownMenuItem>
-						<DropdownMenuItem onClick={logout}>
+						<DropdownMenuItem onClick={logout} className='cursor-pointer'>
 							<LogOut /> Log Out
 						</DropdownMenuItem>
 					</DropdownMenuContent>
