@@ -24,7 +24,7 @@ const AppSidebar = () => {
 						<SidebarMenuItem>
 							<SidebarMenuButton asChild>
 								<Link href='/'>
-									<Home /> Welcome!
+									<Home /> Welcome to EconSpector
 								</Link>
 							</SidebarMenuButton>
 						</SidebarMenuItem>
