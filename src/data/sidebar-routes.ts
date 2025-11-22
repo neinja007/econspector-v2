@@ -24,10 +24,12 @@ import {
 	MessagesSquare,
 	Scale,
 	Search,
-	Settings,
 	SquareSigma,
 	Table,
-	User
+	Lock,
+	Check,
+	Key,
+	AlertCircle
 } from 'lucide-react';
 import { createElement, ReactNode } from 'react';
 
@@ -206,19 +208,44 @@ export const sidebarRoutes: {
 		]
 	},
 	{
-		name: 'Account',
-		icon: User,
+		name: 'Authentication',
+		icon: Lock,
 		hidden: true,
 		routes: [
 			{
-				label: 'Manage Account',
-				href: '/user/account',
-				icon: Settings
+				label: 'Log In to EconSpector',
+				href: '/auth/login',
+				icon: LogIn
 			},
 			{
-				label: 'Sign In or Register',
-				href: '/user/sign-in',
+				label: 'Sign Up for EconSpector',
+				href: '/auth/sign-up',
 				icon: LogIn
+			},
+			{
+				label: 'Signed Up Successfully',
+				href: '/auth/sign-up-success',
+				icon: Check
+			},
+			{
+				label: 'Forgot Password',
+				href: '/auth/forgot-password',
+				icon: HelpCircle
+			},
+			{
+				label: 'Update Password',
+				href: '/auth/update-password',
+				icon: Key
+			},
+			{
+				label: 'Confirm Email',
+				href: '/auth/confirm',
+				icon: Check
+			},
+			{
+				label: 'An Authentication Error Occurred',
+				href: '/auth/error',
+				icon: AlertCircle
 			}
 		]
 	},
