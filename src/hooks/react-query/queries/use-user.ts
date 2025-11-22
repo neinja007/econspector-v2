@@ -8,7 +8,16 @@ export const useUser = () => {
 
 	const query = useQuery<User | null>({
 		queryKey: ['user'],
-		queryFn: async () => (await supabase.auth.getUser()).data.user
+		queryFn: async () => {
+			const { data, error } = await supabase.auth.getUser();
+			if (error) {
+				if (error.name !== 'AuthSessionMissingError') {
+					console.error('Failed to fetch user:', error);
+				}
+				return null;
+			}
+			return data.user;
+		}
 	});
 
 	useEffect(() => {
