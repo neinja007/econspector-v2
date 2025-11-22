@@ -11,11 +11,15 @@ import {
 import Link from 'next/link';
 import { useState } from 'react';
 import { useUser } from '@/hooks/react-query/queries/use-user';
+import { supabase } from '@/supabase/client';
 
 export const SidebarFooter = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const { data: user } = useUser();
-	console.log(user);
+
+	const logout = async () => {
+		await supabase.auth.signOut();
+	};
 
 	return (
 		<SidebarFooterShadcn className='w-full border-t h-[70px] flex justify-center select-none'>
@@ -35,14 +39,20 @@ export const SidebarFooter = () => {
 					<DropdownMenuTrigger asChild>
 						<button className='flex items-center gap-2 rounded-sm p-1 transition-colors w-full hover:bg-accent cursor-pointer'>
 							<div className='size-fit rounded-full overflow-hidden'>
-								{/* <Image src={user?.imageUrl || ''} alt={user?.username || user?.fullName || ''} width={40} height={40} /> */}
+								{/* <Image
+									src={user?.user_metadata.avatar_url || ''}
+									alt={user?.email || ''}
+									width={40}
+									height={40}
+									className='object-cover'
+								/> */}
 							</div>
 							<div className='flex flex-col flex-1 text-left'>
-								<div className='text-lg font-medium flex justify-between items-center pr-2'>
-									{/* <span>{user?.username || user?.fullName}</span> */}
+								<div className='font-medium flex justify-between items-center pr-2'>
+									<span>{user?.email}</span>
 									<ChevronUp className={`ml-auto size-5 ${isOpen ? 'rotate-180' : 'rotate-0'} transition-transform`} />
 								</div>
-								{/* <div className='text-sm -mt-1'>{user?.emailAddresses[0].emailAddress}</div> */}
+								<div className='text-sm -mt-1'>{user?.email}</div>
 							</div>
 						</button>
 					</DropdownMenuTrigger>
@@ -51,28 +61,24 @@ export const SidebarFooter = () => {
 						align='start'
 						className='w-[var(--radix-dropdown-menu-trigger-width)] bg-sidebar border-t'
 					>
-						<DropdownMenuItem asChild>
-							<Link href='/user/account'>
+						<DropdownMenuItem>
+							<Link href='/user/account' className='flex items-center gap-2'>
 								<User /> Manage Account
 							</Link>
 						</DropdownMenuItem>
-						<DropdownMenuItem asChild>
-							<Link href='/user/account'>
+						<DropdownMenuItem>
+							<Link href='/user/account' className='flex items-center gap-2'>
 								<Settings /> Settings & Preferences
 							</Link>
 						</DropdownMenuItem>
-						<DropdownMenuItem asChild>
-							<Link href='/user/account'>
+						<DropdownMenuItem>
+							<Link href='/user/account' className='flex items-center gap-2'>
 								<Coins /> Purchase Credits
 							</Link>
 						</DropdownMenuItem>
-						{/* <SignOutButton> */}
-						<DropdownMenuItem asChild>
-							<button className='cursor-pointer w-full'>
-								<LogOut /> Log Out
-							</button>
+						<DropdownMenuItem onClick={logout}>
+							<LogOut /> Log Out
 						</DropdownMenuItem>
-						{/* </SignOutButton> */}
 					</DropdownMenuContent>
 				</DropdownMenu>
 			)}
