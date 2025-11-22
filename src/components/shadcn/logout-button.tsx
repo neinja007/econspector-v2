@@ -1,17 +1,28 @@
-'use client'
+'use client';
 
-import { createClient } from '@/utils/shadcn/client'
-import { Button } from '@/components/shadcn/ui/button'
-import { useRouter } from 'next/navigation'
+import { createClient } from '@/utils/shadcn/client';
+import { Button } from '@/components/shadcn/ui/button';
+import { useRouter } from 'next/navigation';
+import { useQueryClient } from '@tanstack/react-query';
 
-export function LogoutButton() {
-  const router = useRouter()
+type LogoutButtonProps = {
+	children: React.ReactNode;
+};
 
-  const logout = async () => {
-    const supabase = createClient()
-    await supabase.auth.signOut()
-    router.push('/auth/login')
-  }
+export function LogoutButton({ children }: LogoutButtonProps) {
+	const router = useRouter();
+	const queryClient = useQueryClient();
 
-  return <Button onClick={logout}>Logout</Button>
+	const logout = async () => {
+		const supabase = createClient();
+		await supabase.auth.signOut();
+		await queryClient.invalidateQueries({ queryKey: ['user'] });
+		router.push('/auth/login');
+	};
+
+	return (
+		<Button onClick={logout} asChild>
+			{children}
+		</Button>
+	);
 }

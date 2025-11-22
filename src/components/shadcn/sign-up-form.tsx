@@ -9,6 +9,7 @@ import { Label } from '@/components/shadcn/ui/label';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 
 export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
 	const [email, setEmail] = useState('');
@@ -17,6 +18,7 @@ export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutR
 	const [error, setError] = useState<string | null>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
+	const queryClient = useQueryClient();
 
 	const handleSignUp = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -39,6 +41,7 @@ export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutR
 				}
 			});
 			if (error) throw error;
+			await queryClient.invalidateQueries({ queryKey: ['user'] });
 			router.push('/auth/sign-up-success');
 		} catch (error: unknown) {
 			setError(error instanceof Error ? error.message : 'An error occurred');

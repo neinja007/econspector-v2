@@ -10,70 +10,72 @@ import {
 } from '@/components/shadcn/ui/dropdown-menu';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useUser } from '@/hooks/react-query/queries/use-user';
 
 export const SidebarFooter = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const { data: user } = useUser();
+	console.log(user);
 
 	return (
 		<SidebarFooterShadcn className='w-full border-t h-[70px] flex justify-center select-none'>
-			{/* <SignedOut> */}
-			<Link
-				href='/user/sign-in'
-				className='flex items-center gap-2 hover:bg-blue-100 dark:hover:bg-blue-900 rounded-sm p-1 h-full transition-colors'
-			>
-				<UserCircle2 strokeWidth={1} className='size-10 text-gray-700' />
-				<div className='flex flex-col'>
-					<div className='text-lg font-medium'>Register or Sign in</div>
-					<div className='text-sm -mt-1'>to access all features</div>
-				</div>
-			</Link>
-			{/* </SignedOut> */}
-			{/* <SignedIn> */}
-			<DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
-				<DropdownMenuTrigger asChild>
-					<button className='flex items-center gap-2 rounded-sm p-1 transition-colors w-full hover:bg-accent cursor-pointer'>
-						<div className='size-fit rounded-full overflow-hidden'>
-							{/* <Image src={user?.imageUrl || ''} alt={user?.username || user?.fullName || ''} width={40} height={40} /> */}
-						</div>
-						<div className='flex flex-col flex-1 text-left'>
-							<div className='text-lg font-medium flex justify-between items-center pr-2'>
-								{/* <span>{user?.username || user?.fullName}</span> */}
-								<ChevronUp className={`ml-auto size-5 ${isOpen ? 'rotate-180' : 'rotate-0'} transition-transform`} />
-							</div>
-							{/* <div className='text-sm -mt-1'>{user?.emailAddresses[0].emailAddress}</div> */}
-						</div>
-					</button>
-				</DropdownMenuTrigger>
-				<DropdownMenuContent
-					side='top'
-					align='start'
-					className='w-[var(--radix-dropdown-menu-trigger-width)] bg-sidebar border-t'
+			{!user ? (
+				<Link
+					href='/auth/sign-up'
+					className='flex items-center gap-2 hover:bg-blue-100 dark:hover:bg-blue-900 rounded-sm p-1 h-full transition-colors'
 				>
-					<DropdownMenuItem asChild>
-						<Link href='/user/account'>
-							<User /> Manage Account
-						</Link>
-					</DropdownMenuItem>
-					<DropdownMenuItem asChild>
-						<Link href='/user/account'>
-							<Settings /> Settings & Preferences
-						</Link>
-					</DropdownMenuItem>
-					<DropdownMenuItem asChild>
-						<Link href='/user/account'>
-							<Coins /> Purchase Credits
-						</Link>
-					</DropdownMenuItem>
-					{/* <SignOutButton> */}
-					<DropdownMenuItem asChild>
-						<button className='cursor-pointer w-full'>
-							<LogOut /> Log Out
+					<UserCircle2 strokeWidth={1} className='size-10 text-muted-foreground' />
+					<div className='flex flex-col'>
+						<div className='text-lg font-medium'>Register or Sign in</div>
+						<div className='text-sm -mt-1'>to access all features</div>
+					</div>
+				</Link>
+			) : (
+				<DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+					<DropdownMenuTrigger asChild>
+						<button className='flex items-center gap-2 rounded-sm p-1 transition-colors w-full hover:bg-accent cursor-pointer'>
+							<div className='size-fit rounded-full overflow-hidden'>
+								{/* <Image src={user?.imageUrl || ''} alt={user?.username || user?.fullName || ''} width={40} height={40} /> */}
+							</div>
+							<div className='flex flex-col flex-1 text-left'>
+								<div className='text-lg font-medium flex justify-between items-center pr-2'>
+									{/* <span>{user?.username || user?.fullName}</span> */}
+									<ChevronUp className={`ml-auto size-5 ${isOpen ? 'rotate-180' : 'rotate-0'} transition-transform`} />
+								</div>
+								{/* <div className='text-sm -mt-1'>{user?.emailAddresses[0].emailAddress}</div> */}
+							</div>
 						</button>
-					</DropdownMenuItem>
-					{/* </SignOutButton> */}
-				</DropdownMenuContent>
-			</DropdownMenu>
-			{/* </SignedIn> */}
+					</DropdownMenuTrigger>
+					<DropdownMenuContent
+						side='top'
+						align='start'
+						className='w-[var(--radix-dropdown-menu-trigger-width)] bg-sidebar border-t'
+					>
+						<DropdownMenuItem asChild>
+							<Link href='/user/account'>
+								<User /> Manage Account
+							</Link>
+						</DropdownMenuItem>
+						<DropdownMenuItem asChild>
+							<Link href='/user/account'>
+								<Settings /> Settings & Preferences
+							</Link>
+						</DropdownMenuItem>
+						<DropdownMenuItem asChild>
+							<Link href='/user/account'>
+								<Coins /> Purchase Credits
+							</Link>
+						</DropdownMenuItem>
+						{/* <SignOutButton> */}
+						<DropdownMenuItem asChild>
+							<button className='cursor-pointer w-full'>
+								<LogOut /> Log Out
+							</button>
+						</DropdownMenuItem>
+						{/* </SignOutButton> */}
+					</DropdownMenuContent>
+				</DropdownMenu>
+			)}
 		</SidebarFooterShadcn>
 	);
 };

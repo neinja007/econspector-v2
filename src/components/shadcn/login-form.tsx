@@ -9,6 +9,7 @@ import { Label } from '@/components/shadcn/ui/label';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
 	const [email, setEmail] = useState('');
@@ -16,6 +17,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
 	const [error, setError] = useState<string | null>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
+	const queryClient = useQueryClient();
 
 	const handleLogin = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -29,6 +31,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
 				password
 			});
 			if (error) throw error;
+			await queryClient.invalidateQueries({ queryKey: ['user'] });
 			router.push('/');
 		} catch (error: unknown) {
 			setError(error instanceof Error ? error.message : 'An error occurred');
