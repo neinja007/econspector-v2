@@ -1,4 +1,4 @@
-import { getIndicatorCategories } from '@/api/indicator-categories';
+import { getIndicatorCategories } from '@/supabase/api/indicator-categories';
 import { IndicatorCategory } from '@/types/indicator-category';
 import { useQuery } from '@tanstack/react-query';
 

@@ -1,7 +1,7 @@
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { NextResponse } from 'next/server';
 import axios from 'axios';
-import { adminSupabase } from '@/supabase/admin';
+import { adminSupabase } from '@/supabase/clients/admin';
 import { DataSource } from '@/types/data_source';
 
 export const POST = async (req: Request) => {

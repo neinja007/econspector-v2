@@ -1,5 +1,5 @@
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
-import { supabase } from '@/supabase/client';
+import { supabase } from '@/supabase/clients/client';
 import { IndicatorCategory } from '@/types/indicator-category';
 
 async function getIndicatorCategories(): Promise<IndicatorCategory[]> {

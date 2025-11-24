@@ -1,4 +1,4 @@
-import { adminSupabase } from '@/supabase/admin';
+import { adminSupabase } from '@/supabase/clients/admin';
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
 import { NextResponse } from 'next/server';
 import { indicators } from '../../../../../private/data/indicators';

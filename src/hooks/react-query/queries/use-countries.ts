@@ -1,4 +1,4 @@
-import { getCountries } from '@/api/countries';
+import { getCountries } from '@/supabase/api/countries';
 import { Country } from '@/types/country';
 import { useQuery } from '@tanstack/react-query';
 

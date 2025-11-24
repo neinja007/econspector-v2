@@ -1,11 +1,11 @@
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
-import { supabase } from '@/supabase/client';
-import { Region } from '@/types/region';
+import { supabase } from '@/supabase/clients/client';
+import { Subregion } from '@/types/subregion';
 
-async function getRegions(): Promise<{ data: Region[]; count: number }> {
+async function getSubregions(): Promise<{ data: Subregion[]; count: number }> {
 	const { data, error, count } = await supabase
 		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.REGIONS)
+		.from(DatabaseTable.SUBREGIONS)
 		.select('*', {
 			count: 'estimated'
 		})
@@ -14,14 +14,14 @@ async function getRegions(): Promise<{ data: Region[]; count: number }> {
 	return { data, count: count ?? 0 };
 }
 
-async function getRegion(code: string): Promise<Region> {
+async function getSubregion(code: string): Promise<Subregion> {
 	const { data, error } = await supabase
 		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.REGIONS)
+		.from(DatabaseTable.SUBREGIONS)
 		.select('*')
 		.eq('code', code);
 	if (error) throw error;
 	return data[0];
 }
 
-export { getRegions, getRegion };
+export { getSubregions, getSubregion };

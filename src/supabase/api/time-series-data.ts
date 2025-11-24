@@ -1,5 +1,5 @@
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
-import { supabase } from '@/supabase/client';
+import { supabase } from '@/supabase/clients/client';
 
 export const getTimeSeriesData = async (sourceId: number, countryCode: string) => {
 	const { data, error } = await supabase

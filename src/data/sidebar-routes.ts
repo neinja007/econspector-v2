@@ -1,6 +1,6 @@
-import { getCountry } from '@/api/countries';
-import { getRegion } from '@/api/regions';
-import { getSubregion } from '@/api/subregions';
+import { getCountry } from '@/supabase/api/countries';
+import { getRegion } from '@/supabase/api/regions';
+import { getSubregion } from '@/supabase/api/subregions';
 import { datasets } from '@/app/advanced/data-explorer/data/datasets';
 import FlagComponent from '@/components/flag';
 import {

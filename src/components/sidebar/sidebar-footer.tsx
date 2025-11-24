@@ -11,7 +11,7 @@ import {
 import Link from 'next/link';
 import { useState } from 'react';
 import { useUser } from '@/hooks/react-query/queries/use-user';
-import { supabase } from '@/supabase/client';
+import { supabase } from '@/supabase/clients/client';
 
 export const SidebarFooter = () => {
 	const [isOpen, setIsOpen] = useState(false);

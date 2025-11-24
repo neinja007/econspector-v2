@@ -1,5 +1,5 @@
 import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
-import { supabase } from '@/supabase/client';
+import { supabase } from '@/supabase/clients/client';
 import { Country, CountryWithCurrencies } from '@/types/country';
 
 async function getCountries(): Promise<{ data: Country[]; count: number }> {

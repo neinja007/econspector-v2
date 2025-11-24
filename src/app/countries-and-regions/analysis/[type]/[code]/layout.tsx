@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { getCountry } from '@/api/countries';
-import { getRegion } from '@/api/regions';
-import { getSubregion } from '@/api/subregions';
+import { getCountry } from '@/supabase/api/countries';
+import { getRegion } from '@/supabase/api/regions';
+import { getSubregion } from '@/supabase/api/subregions';
 import { sloganNotCapitalized } from '@/data/slogan';
 
 type LayoutProps = { children: React.ReactNode };

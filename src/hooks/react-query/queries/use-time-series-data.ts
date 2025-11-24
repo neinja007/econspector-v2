@@ -1,4 +1,4 @@
-import { getTimeSeriesData } from '@/api/time-series-data';
+import { getTimeSeriesData } from '@/supabase/api/time-series-data';
 import { useQuery } from '@tanstack/react-query';
 
 export const useTimeSeriesData = (sourceId: number, countryCode: string) => {

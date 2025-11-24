@@ -1,4 +1,4 @@
-import { getIndicators } from '@/api/indicators';
+import { getIndicators } from '@/supabase/api/indicators';
 import { Indicator } from '@/types/indicator';
 import { useQuery } from '@tanstack/react-query';
 
