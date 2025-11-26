@@ -1,7 +1,6 @@
 'use client';
 
 import { cn } from '@/utils/shadcn/utils';
-import { createClient } from '@/utils/shadcn/client';
 import { Button } from '@/components/shadcn/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/shadcn/ui/card';
 import { Input } from '@/components/shadcn/ui/input';
@@ -10,6 +9,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
+import { supabase } from '@/supabase/clients/client';
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
 	const [email, setEmail] = useState('');
@@ -21,7 +21,6 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
 
 	const handleLogin = async (e: React.FormEvent) => {
 		e.preventDefault();
-		const supabase = createClient();
 		setIsLoading(true);
 		setError(null);
 
