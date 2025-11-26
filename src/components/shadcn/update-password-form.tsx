@@ -38,7 +38,9 @@ export function UpdatePasswordForm({ className, ...props }: React.ComponentProps
 				<Alert variant='success'>
 					<CheckCircle className='h-4 w-4' />
 					<AlertTitle className='text-xl'>Password Updated</AlertTitle>
-					<AlertDescription>Your password has been updated successfully.</AlertDescription>
+					<AlertDescription>
+						Your password has been updated successfully. Feel free to leave this page.
+					</AlertDescription>
 				</Alert>
 			) : (
 				<Card>
