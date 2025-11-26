@@ -34,7 +34,7 @@ export function ForgotPasswordForm({ className, ...props }: React.ComponentProps
 	};
 
 	return (
-		<div className={cn('flex flex-col gap-6 w-full max-w-sm', className)} {...props}>
+		<div className={cn('flex flex-col gap-6 w-full', className)} {...props}>
 			{success ? (
 				<Card>
 					<CardHeader>
