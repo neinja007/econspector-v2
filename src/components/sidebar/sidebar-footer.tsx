@@ -62,17 +62,17 @@ export const SidebarFooter = () => {
 						className='w-[var(--radix-dropdown-menu-trigger-width)] bg-sidebar border-t'
 					>
 						<DropdownMenuItem>
-							<Link href='/user/account' className='flex items-center gap-2'>
+							<Link href='/auth' className='flex items-center gap-2'>
 								<User /> Manage Account
 							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuItem>
-							<Link href='/user/account' className='flex items-center gap-2'>
+							<Link href='/settings' className='flex items-center gap-2'>
 								<Settings /> Settings & Preferences
 							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuItem>
-							<Link href='/user/account' className='flex items-center gap-2'>
+							<Link href='/credits' className='flex items-center gap-2'>
 								<Coins /> Purchase Credits
 							</Link>
 						</DropdownMenuItem>
