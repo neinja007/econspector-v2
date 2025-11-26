@@ -1,5 +1,12 @@
+import { Alert, AlertDescription, AlertTitle } from '@/components/shadcn/ui/alert';
+import { CheckCircleIcon } from 'lucide-react';
+
 export default function Page() {
 	return (
-		<div className='text-xl'>You have successfully signed up. Please check your email to confirm your account.</div>
+		<Alert variant='success'>
+			<CheckCircleIcon className='h-4 w-4' />
+			<AlertTitle>You have successfully signed up.</AlertTitle>
+			<AlertDescription>Please check your email to confirm your account.</AlertDescription>
+		</Alert>
 	);
 }
