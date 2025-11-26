@@ -53,8 +53,8 @@ export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutR
 		<div className={cn('flex flex-col gap-6 w-full', className)} {...props}>
 			<Card>
 				<CardHeader>
-					<CardTitle className='text-2xl'>Sign up</CardTitle>
-					<CardDescription>Create a new account</CardDescription>
+					<CardTitle className='text-2xl'>Sign up to EconSpector</CardTitle>
+					<CardDescription>Enter your email and password below to create a new account</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<form onSubmit={handleSignUp}>

@@ -43,8 +43,8 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
 		<div className={cn('flex flex-col gap-6 w-full', className)} {...props}>
 			<Card>
 				<CardHeader>
-					<CardTitle className='text-2xl'>Login</CardTitle>
-					<CardDescription>Enter your email below to login to your account</CardDescription>
+					<CardTitle className='text-2xl'>Login to EconSpector</CardTitle>
+					<CardDescription>Enter your email and password below to login to your account</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<form onSubmit={handleLogin}>
