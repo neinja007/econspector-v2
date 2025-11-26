@@ -14,7 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
 			<div className='text-sm text-muted-foreground text-center'>
 				If you need help, please get in touch on our{' '}
 				<Link href='/support/help' className='text-blue-500 underline'>
-					Help & Contact
+					Support &gt; Help & Contact
 				</Link>{' '}
 				page.
 			</div>
