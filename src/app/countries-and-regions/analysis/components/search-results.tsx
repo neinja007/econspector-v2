@@ -2,6 +2,9 @@ import Flag from '@/components/flag';
 import Link from 'next/link';
 import { CountryOrRegion } from '../types/search-results';
 import { slug } from '@/utils/slug';
+import { useFavouriteCountries } from '@/hooks/react-query/queries/use-favourite-countries';
+import { cn } from '@/utils/shadcn/utils';
+import { Star } from 'lucide-react';
 
 type SearchResultsProps = {
 	searchResults: CountryOrRegion[];
@@ -9,34 +12,60 @@ type SearchResultsProps = {
 };
 
 export const SearchResults = ({ searchResults, showType }: SearchResultsProps) => {
+	const { data: favouriteCountries } = useFavouriteCountries();
+
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8'>
-			{searchResults.map((element) => (
-				<Link
-					href={`/countries-and-regions/analysis/${element.type}/${
-						element.type === 'country' ? element.data.cca3 : element.data.code
-					}`}
-					className='border rounded-md p-4 flex gap-4 justify-between hover:bg-accent hover:border-accent-foreground transition-colors'
-					key={slug(element.type + '-' + (element.type === 'country' ? element.data.cca3 : element.data.code))}
-				>
-					{element.type === 'country' ? (
-						<div className='shrink-0'>
-							<Flag code={element.data.cca2} ratio='4x3' height={72} />
+			{searchResults
+				.sort((a, b) => {
+					const aIndex = favouriteCountries?.some((country) =>
+						a.type === 'country' ? country === a.data.cca3 : a.data.code
+					);
+					const bIndex = favouriteCountries?.some((country) =>
+						b.type === 'country' ? country === b.data.cca3 : b.data.code
+					);
+					return (aIndex ? 0 : 1) - (bIndex ? 0 : 1);
+				})
+				.map((element) => (
+					<Link
+						href={`/countries-and-regions/analysis/${element.type}/${
+							element.type === 'country' ? element.data.cca3 : element.data.code
+						}`}
+						className={cn(
+							'border rounded-md p-4 flex gap-4 justify-between transition-colors',
+							favouriteCountries?.some((country) =>
+								element.type === 'country' ? country === element.data.cca3 : country === element.data.code
+							)
+								? 'hover:bg-yellow-500/10 hover:border-yellow-500'
+								: 'hover:bg-accent hover:border-accent-foreground'
+						)}
+						key={slug(element.type + '-' + (element.type === 'country' ? element.data.cca3 : element.data.code))}
+					>
+						{element.type === 'country' ? (
+							<div className='shrink-0'>
+								<Flag code={element.data.cca2} ratio='4x3' height={72} />
+							</div>
+						) : (
+							<div className='w-24 h-18 bg-gray-500 rounded-md flex items-center justify-center shrink-0'>
+								{element.data.code}
+							</div>
+						)}
+						<div className='flex flex-col items-end justify-between'>
+							<span className='line-clamp-2 text-right flex items-center gap-2'>
+								{element.data.name}{' '}
+								{favouriteCountries?.some((country) =>
+									element.type === 'country' ? country === element.data.cca3 : country === element.data.code
+								) ? (
+									<Star className='size-5 text-yellow-500' />
+								) : null}
+							</span>
+							<span className='text-sm text-muted-foreground'>
+								{showType && `${element.type.charAt(0).toUpperCase() + element.type.slice(1)} | `}
+								{element.type === 'country' ? element.data.cca3 : element.data.code}
+							</span>
 						</div>
-					) : (
-						<div className='w-24 h-18 bg-gray-500 rounded-md flex items-center justify-center shrink-0'>
-							{element.data.code}
-						</div>
-					)}
-					<div className='flex flex-col items-end justify-between'>
-						<span className='line-clamp-2 text-right'>{element.data.name}</span>
-						<span className='text-sm text-muted-foreground'>
-							{showType && `${element.type.charAt(0).toUpperCase() + element.type.slice(1)} | `}
-							{element.type === 'country' ? element.data.cca3 : element.data.code}
-						</span>
-					</div>
-				</Link>
-			))}
+					</Link>
+				))}
 		</div>
 	);
 };
