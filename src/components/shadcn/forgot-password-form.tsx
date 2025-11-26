@@ -8,6 +8,8 @@ import { Label } from '@/components/shadcn/ui/label';
 import Link from 'next/link';
 import { useState } from 'react';
 import { supabase } from '@/supabase/clients/client';
+import { Alert, AlertDescription, AlertTitle } from './ui/alert';
+import { AlertCircleIcon } from 'lucide-react';
 
 export function ForgotPasswordForm({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
 	const [email, setEmail] = useState('');
@@ -36,22 +38,20 @@ export function ForgotPasswordForm({ className, ...props }: React.ComponentProps
 	return (
 		<div className={cn('flex flex-col gap-6 w-full', className)} {...props}>
 			{success ? (
-				<Card>
-					<CardHeader>
-						<CardTitle className='text-2xl'>Check Your Email</CardTitle>
-						<CardDescription>Password reset instructions sent</CardDescription>
-					</CardHeader>
-					<CardContent>
-						<p className='text-sm text-muted-foreground'>
-							If you registered using your email and password, you will receive a password reset email.
-						</p>
-					</CardContent>
-				</Card>
+				<Alert variant='information'>
+					<AlertCircleIcon className='h-4 w-4' />
+					<AlertTitle className='text-xl'>Check Your Email</AlertTitle>
+					<AlertDescription>
+						If you registered using your email and password, you will receive a password reset email.
+					</AlertDescription>
+				</Alert>
 			) : (
 				<Card>
 					<CardHeader>
-						<CardTitle className='text-2xl'>Reset Your Password</CardTitle>
-						<CardDescription>Type in your email and we&apos;ll send you a link to reset your password</CardDescription>
+						<CardTitle>Reset Your Password</CardTitle>
+						<CardDescription>
+							Provide your email address and you will receive a link to reset your password
+						</CardDescription>
 					</CardHeader>
 					<CardContent>
 						<form onSubmit={handleForgotPassword}>
