@@ -43,7 +43,10 @@ export const sidebarRoutes: {
 		label: string;
 		href: string;
 		icon: LucideIcon;
-		getBreadcrumbs?: (pathname: string) =>
+		getBreadcrumbs?: (
+			pathname: string,
+			short?: boolean
+		) =>
 			| Promise<
 					| {
 							label: string;
@@ -77,7 +80,7 @@ export const sidebarRoutes: {
 						const country = await getCountry(code);
 						return [
 							{
-								label: country.name,
+								label: `${country.full_name} (${country.name})`,
 								href: `/countries-and-regions/analysis/${type}/${code}`,
 								icon: createElement(FlagComponent, { code: country.cca2, ratio: '4x3', height: 24 })
 							}
