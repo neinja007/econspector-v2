@@ -17,8 +17,9 @@ export const generateGlobalMetadata = async (): Promise<Metadata> => {
 		const childRoute = parentRoute.routes.find((r) => pathMatches(pathname, r.href, r.exact));
 
 		if (childRoute) {
-			const maybe = childRoute.getBreadcrumbs?.(pathname);
+			const suffix = pathname.split(childRoute.href)[1];
 			routeLabels.push(childRoute.label);
+			const maybe = childRoute.getBreadcrumbs?.(suffix);
 
 			if (maybe instanceof Promise) {
 				const breadcrumbs = await maybe;
@@ -32,8 +33,10 @@ export const generateGlobalMetadata = async (): Promise<Metadata> => {
 	}
 
 	if (!routeLabels.length) return { title: 'EconSpector v2', description: slogan };
+	// const full_title = routeLabels.join(' - ') + ' | EconSpector v2';
+	const shorter_title = routeLabels.slice(1).join(' - ') + ' | EconSpector v2';
 	return {
-		title: routeLabels.join(' - ') + ' | EconSpector v2',
+		title: shorter_title,
 		description: slogan
 	};
 };
