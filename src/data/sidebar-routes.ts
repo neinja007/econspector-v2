@@ -29,7 +29,8 @@ import {
 	Lock,
 	Check,
 	Key,
-	AlertCircle
+	AlertCircle,
+	User
 } from 'lucide-react';
 import { createElement, ReactNode } from 'react';
 
@@ -216,6 +217,11 @@ export const sidebarRoutes: {
 				label: 'Log In to EconSpector',
 				href: '/auth/login',
 				icon: LogIn
+			},
+			{
+				label: 'Account Management',
+				href: '/auth',
+				icon: User
 			},
 			{
 				label: 'Sign Up for EconSpector',
