@@ -20,11 +20,11 @@ import { renderIconOrComponent } from '@/utils/render-icon-or-component';
 export const HeadingBreadcrumbs = () => {
 	const pathname = usePathname();
 	const parentRoute = useMemo(
-		() => sidebarRoutes.find((route) => route.routes.some((r) => pathMatches(pathname, r.href))),
+		() => sidebarRoutes.find((route) => route.routes.some((r) => pathMatches(pathname, r.href, r.exact))),
 		[pathname]
 	);
 	const childRoute = useMemo(
-		() => parentRoute?.routes.find((r) => pathMatches(pathname, r.href)),
+		() => parentRoute?.routes.find((r) => pathMatches(pathname, r.href, r.exact)),
 		[parentRoute, pathname]
 	);
 

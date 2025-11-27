@@ -39,6 +39,7 @@ export const sidebarRoutes: {
 	hidden?: boolean;
 	icon: LucideIcon;
 	routes: {
+		exact?: boolean;
 		label: string;
 		href: string;
 		icon: LucideIcon;
@@ -221,6 +222,7 @@ export const sidebarRoutes: {
 			{
 				label: 'Account Management',
 				href: '/auth',
+				exact: true,
 				icon: User
 			},
 			{
