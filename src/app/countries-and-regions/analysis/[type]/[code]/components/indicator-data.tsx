@@ -29,8 +29,6 @@ export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataPr
 		? indicator.children.find((child) => child.id === selectedChildId)?.indicator_frequencies
 		: indicator.indicator_frequencies;
 
-	console.log(availableFrequencies);
-
 	const [selectedFrequencyId, setSelectedFrequencyId] = useState<number | null>(availableFrequencies?.[0]?.id ?? null);
 
 	useEffect(() => {

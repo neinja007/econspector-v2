@@ -24,8 +24,6 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 		...item.values
 	}));
 
-	console.log(type);
-
 	const RechartsComponent =
 		type === ChartType.LINE ? RechartsLineChart : type === ChartType.BAR ? RechartsBarChart : RechartsAreaChart;
 

@@ -72,7 +72,6 @@ export const sidebarRoutes: {
 				href: '/countries-and-regions/analysis',
 				icon: Search,
 				getBreadcrumbs: async (pathname) => {
-					console.log(pathname);
 					const type = pathname.split('/')[1] as 'country' | 'region';
 					const code = pathname.split('/')[2];
 					if (!type || !code) return undefined;
