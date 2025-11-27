@@ -1,0 +1,39 @@
+import { sidebarRoutes } from '@/data/sidebar-routes';
+import { slogan } from '@/data/slogan';
+import { Metadata } from 'next';
+import { headers } from 'next/headers';
+import { pathMatches } from './path-matches';
+
+export const generateGlobalMetadata = async (): Promise<Metadata> => {
+	const headersList = await headers();
+	const pathname = headersList.get('x-pathname') || '';
+
+	if (!pathname) return { title: 'EconSpector v2', description: slogan };
+
+	const parentRoute = sidebarRoutes.find((route) => route.routes.some((r) => pathMatches(pathname, r.href, r.exact)));
+	const routeLabels: string[] = parentRoute ? [parentRoute.name] : [];
+
+	if (parentRoute) {
+		const childRoute = parentRoute.routes.find((r) => pathMatches(pathname, r.href, r.exact));
+
+		if (childRoute) {
+			const maybe = childRoute.getBreadcrumbs?.(pathname);
+			routeLabels.push(childRoute.label);
+
+			if (maybe instanceof Promise) {
+				const breadcrumbs = await maybe;
+				const lastBreadcrumb = breadcrumbs?.at(-1);
+
+				if (lastBreadcrumb) {
+					routeLabels.push(lastBreadcrumb.label);
+				}
+			}
+		}
+	}
+
+	if (!routeLabels.length) return { title: 'EconSpector v2', description: slogan };
+	return {
+		title: routeLabels.join(' - ') + ' | EconSpector v2',
+		description: slogan
+	};
+};

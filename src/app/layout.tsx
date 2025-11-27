@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import './globals.css';
 import ThemeProvider from '@/components/theming/theme-provider';
 import { SidebarProvider } from '@/components/shadcn/ui/sidebar';
@@ -7,12 +6,9 @@ import { TanstackQueryProvider } from '@/components/tanstack-query-provider';
 import { Analytics } from '@vercel/analytics/next';
 import { HeadingBreadcrumbs } from '@/components/heading-breadcrumbs';
 import ThemeToggle from '@/components/theming/theme-toggle';
-import { slogan } from '@/data/slogan';
+import { generateGlobalMetadata } from '@/utils/generate-global-metadata';
 
-export const metadata: Metadata = {
-	title: 'EconSpector v2',
-	description: slogan
-};
+export const generateMetadata = generateGlobalMetadata;
 
 type RootLayoutProps = {
 	children: React.ReactNode;
