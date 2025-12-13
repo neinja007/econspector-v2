@@ -8,7 +8,7 @@ export enum DatabaseTable {
 	INDICATOR_FREQUENCIES = 'indicator_frequencies',
 	FREQUENCY_SOURCES = 'frequency_sources',
 	INDICATOR_CATEGORIES = 'indicator_categories',
-	WORLD_BANK_DATA = 'world_bank_data',
+	TIME_SERIES_DATA = 'time_series_data',
 	COUNTRIES = 'countries',
 	CURRENCIES = 'currencies',
 	COUNTRIES_CURRENCIES = 'countries_currencies',

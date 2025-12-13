@@ -121,7 +121,7 @@ export const POST = async () => {
 				const batch = allDataToInsert.slice(i, i + BATCH_SIZE);
 				const { error } = await adminSupabase
 					.schema(DatabaseSchema.DATA)
-					.from(DatabaseTable.WORLD_BANK_DATA)
+					.from(DatabaseTable.TIME_SERIES_DATA)
 					.upsert(batch);
 
 				console.log(`Inserted batch ${i / BATCH_SIZE + 1}: ${batch.length} records`);
@@ -145,7 +145,7 @@ export const POST = async () => {
 };
 
 export const DELETE = async () => {
-	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.WORLD_BANK_DATA).delete().neq('id', 0);
+	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.TIME_SERIES_DATA).delete().neq('id', 0);
 
 	return NextResponse.json({ message: 'World bank data deleted successfully' });
 };

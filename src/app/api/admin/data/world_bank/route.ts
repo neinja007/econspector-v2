@@ -41,7 +41,7 @@ export const POST = async (req: Request) => {
 
 		await adminSupabase
 			.schema(DatabaseSchema.DATA)
-			.from(DatabaseTable.WORLD_BANK_DATA)
+			.from(DatabaseTable.TIME_SERIES_DATA)
 			.delete()
 			.eq('source_id', source.id);
 
@@ -80,14 +80,15 @@ export const POST = async (req: Request) => {
 				source_id: source.id,
 				country_code: item.countryiso3code,
 				period: item.date,
-				value: item.value
+				value: item.value,
+				data_source: DataSource.WORLD_BANK
 			}));
 
 		console.log(`${source.code}: Conversion complete.`);
 
 		const { error } = await adminSupabase
 			.schema(DatabaseSchema.DATA)
-			.from(DatabaseTable.WORLD_BANK_DATA)
+			.from(DatabaseTable.TIME_SERIES_DATA)
 			.upsert(insertableData);
 
 		if (error) {
@@ -112,6 +113,6 @@ export const POST = async (req: Request) => {
 };
 
 export const DELETE = async () => {
-	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.WORLD_BANK_DATA).delete().neq('id', 0);
+	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.TIME_SERIES_DATA).delete().neq('id', 0);
 	return NextResponse.json({ message: 'World bank data deleted successfully' });
 };
