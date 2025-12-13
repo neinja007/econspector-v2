@@ -29,5 +29,5 @@ export type IndicatorFrequency = {
 export type FrequencySource = {
 	id: number;
 	frequency_id: number;
-	name: keyof typeof DataSource;
+	data_source: keyof typeof DataSource;
 };

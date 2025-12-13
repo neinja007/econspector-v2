@@ -22,7 +22,7 @@ export const POST = async (req: Request) => {
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.FREQUENCY_SOURCES)
 		.select('*, indicator_frequencies(indicator_id)')
-		.eq('name', DataSource.WORLD_BANK);
+		.eq('data_source', DataSource.WORLD_BANK);
 
 	if (!worldBankSources.data) {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });

@@ -55,7 +55,7 @@ export const POST = async () => {
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.FREQUENCY_SOURCES)
 		.select('*')
-		.eq('name', 'World Bank');
+		.eq('data_source', 'World Bank');
 
 	if (!worldBankSources.data) {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });
