@@ -2,13 +2,16 @@
 
 import { IndicatorSelection } from '@/components/indicator-selection';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
+import { Slider } from '@/components/shadcn/ui/slider';
 import { useIndicators } from '@/hooks/react-query/queries/use-indicators';
+import { useRankings } from '@/hooks/react-query/queries/use-rankings';
 import { useEffect, useState } from 'react';
 
 const Page = () => {
 	const [rankBy, setRankBy] = useState<'country' | 'region' | 'subregion'>('country');
 	const [selectedIndicatorId, setSelectedIndicatorId] = useState<string>('');
 	const { data: indicators } = useIndicators();
+	const [timePeriod, setTimePeriod] = useState<[number, number] | null>(null);
 
 	const selectedIndicator = indicators?.find((indicator) => indicator.id.toString() === selectedIndicatorId);
 
@@ -19,6 +22,15 @@ const Page = () => {
 			setSelectedChildId(selectedIndicator.children[0]?.id ?? null);
 		}
 	}, [selectedIndicator]);
+
+	const sourceId =
+		selectedIndicator &&
+		(selectedChildId
+			? selectedIndicator?.children.find((child) => child.id === selectedChildId)?.indicator_frequencies?.[0]
+					?.frequency_sources?.[0]?.id
+			: selectedIndicator.indicator_frequencies?.[0]?.frequency_sources?.[0]?.id);
+
+	const rankings = useRankings(sourceId ?? 0, timePeriod!);
 
 	return (
 		<div className='flex flex-col gap-4'>
@@ -46,6 +58,26 @@ const Page = () => {
 						</Select>
 					)}
 				</div>
+				<div>
+					{/* Time period slider using shadcn/ui/slider */}
+					{/* You need to install @radix-ui/react-slider if not present */}
+					{/* And have the Slider component in your shadcn/ui directory */}
+					<div className='flex flex-col items-end gap-1'>
+						<div className='flex items-center gap-2 w-56'>
+							<span>{timePeriod ? timePeriod[0] : 2000}</span>
+							<Slider
+								id='timeSlider'
+								min={2000}
+								max={2023}
+								value={timePeriod ? [timePeriod[0], timePeriod[1]] : [2000, 2023]}
+								onValueChange={([start, end]) => setTimePeriod([start, end])}
+								step={1}
+								className='flex-1'
+							/>
+							<span>{timePeriod ? timePeriod[1] : 2023}</span>
+						</div>
+					</div>
+				</div>
 
 				<div className='flex items-center gap-2'>
 					Rank by
@@ -59,6 +91,23 @@ const Page = () => {
 							<SelectItem value='subregion'>Subregions</SelectItem>
 						</SelectContent>
 					</Select>
+				</div>
+			</div>
+			<div className='flex flex-col gap-4'>
+				<div className='flex flex-col gap-2'>
+					<h2 className='text-lg font-bold'>Rankings</h2>
+					<p className='text-sm text-muted-foreground'>Rankings for the selected indicator and time period</p>
+				</div>
+				<div className='flex flex-col gap-2'>
+					<h2 className='text-lg font-bold'>Rankings</h2>
+					<p className='text-sm text-muted-foreground'>Rankings for the selected indicator and time period</p>
+					<div className='flex flex-col gap-2'>
+						{rankings.data?.map((ranking) => (
+							<div key={ranking.cca3}>
+								<h3 className='text-lg font-bold'>{ranking.name}</h3>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 		</div>
