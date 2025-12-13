@@ -1,7 +1,7 @@
 import { updateSession } from '@/utils/shadcn/middleware';
 import { type NextRequest } from 'next/server';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
 	const response = await updateSession(request);
 
 	// Add pathname to response headers so it's accessible in generateMetadata
