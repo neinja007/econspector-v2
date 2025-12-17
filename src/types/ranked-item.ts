@@ -1,7 +1,12 @@
 export type RankedItem = {
-	type: 'country' | 'region' | 'subregion';
 	score: number;
-	code: string;
+	item: {
+		type: 'country' | 'region' | 'subregion';
+		code: string;
+		name: string;
+		fullName?: string;
+		iconPath?: string;
+	};
 	coverage: (Coverage | TemporalCoverage)[];
 	rank: number;
 };

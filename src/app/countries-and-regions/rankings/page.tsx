@@ -1,11 +1,13 @@
 'use client';
 
+import { DataTable } from '@/components/data-table';
 import { IndicatorSelection } from '@/components/indicator-selection';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
 import { Slider } from '@/components/shadcn/ui/slider';
 import { useIndicators } from '@/hooks/react-query/queries/use-indicators';
 import { useRankings } from '@/hooks/react-query/queries/use-rankings';
 import { useEffect, useState } from 'react';
+import { columns } from './types/ranking-columns';
 
 const Page = () => {
 	const [rankBy, setRankBy] = useState<'country' | 'region' | 'subregion'>('country');
@@ -31,6 +33,8 @@ const Page = () => {
 			: selectedIndicator.indicator_frequencies?.[0]?.frequency_sources?.[0]?.id);
 
 	const rankings = useRankings(sourceId ?? 0, timePeriod!);
+
+	console.log('rank', rankings.data);
 
 	return (
 		<div className='flex flex-col gap-4'>
@@ -97,16 +101,8 @@ const Page = () => {
 				<div className='flex flex-col gap-2'>
 					<h2 className='text-lg font-bold'>Rankings</h2>
 					<p className='text-sm text-muted-foreground'>Rankings for the selected indicator and time period</p>
-				</div>
-				<div className='flex flex-col gap-2'>
-					<h2 className='text-lg font-bold'>Rankings</h2>
-					<p className='text-sm text-muted-foreground'>Rankings for the selected indicator and time period</p>
 					<div className='flex flex-col gap-2'>
-						{rankings.data?.map((ranking) => (
-							<div key={ranking.cca3}>
-								<h3 className='text-lg font-bold'>{ranking.name}</h3>
-							</div>
-						))}
+						<DataTable columns={columns} data={rankings.data ?? []} />
 					</div>
 				</div>
 			</div>
