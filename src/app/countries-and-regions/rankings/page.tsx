@@ -32,9 +32,7 @@ const Page = () => {
 					?.frequency_sources?.[0]?.id
 			: selectedIndicator.indicator_frequencies?.[0]?.frequency_sources?.[0]?.id);
 
-	const rankings = useRankings(sourceId ?? 0, timePeriod!);
-
-	console.log('rank', rankings.data);
+	const rankings = useRankings(sourceId ?? 0, timePeriod);
 
 	return (
 		<div className='flex flex-col gap-4'>
@@ -98,13 +96,7 @@ const Page = () => {
 				</div>
 			</div>
 			<div className='flex flex-col gap-4'>
-				<div className='flex flex-col gap-2'>
-					<h2 className='text-lg font-bold'>Rankings</h2>
-					<p className='text-sm text-muted-foreground'>Rankings for the selected indicator and time period</p>
-					<div className='flex flex-col gap-2'>
-						<DataTable columns={columns} data={rankings.data ?? []} />
-					</div>
-				</div>
+				<DataTable columns={columns} data={rankings.data ?? []} />
 			</div>
 		</div>
 	);

@@ -15,9 +15,9 @@ export type Coverage = {
 	code: string;
 	label: string;
 	coverage: CoverageData[];
-}[];
+};
 
-export type TemporalCoverage = {
+export type TemporalCoverage = Coverage & {
 	code: 'temporal';
 	label: 'Temporal Coverage';
 	coverage: CoverageData[];
