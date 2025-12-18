@@ -3,6 +3,8 @@
 import { RankedItem } from '@/types/ranked-item';
 import { ColumnDef } from '@tanstack/react-table';
 import Flag from '@/components/flag';
+import Link from 'next/link';
+import { SimpleTooltip } from '@/components/simple-tooltip';
 
 export const columns: ColumnDef<RankedItem>[] = [
 	{
@@ -10,14 +12,14 @@ export const columns: ColumnDef<RankedItem>[] = [
 		header: 'Rank',
 		cell: ({ row }) => {
 			return <div className='ml-1'>{row.original.rank}.</div>;
-		},
+		}
 	},
 	{
 		accessorKey: 'score',
 		header: 'Value',
 		cell: ({ row }) => {
 			return <div>{row.original.score.toFixed(2)}</div>;
-		},
+		}
 	},
 	{
 		accessorKey: 'item',
@@ -29,10 +31,17 @@ export const columns: ColumnDef<RankedItem>[] = [
 			return (
 				<div className='flex items-center gap-2'>
 					<Flag code={row.original.item.iconPath || ''} ratio='4x3' height={24} />
-					{row.original.item.fullName}
+					<SimpleTooltip tooltip={row.original.item.fullName}>
+						<Link
+							href={`/countries-and-regions/analysis/${row.original.item.type}/${row.original.item.code}`}
+							className='hover:underline'
+						>
+							{row.original.item.name}
+						</Link>
+					</SimpleTooltip>
 				</div>
 			);
-		},
+		}
 	},
 	{
 		accessorKey: 'coverage',
@@ -55,6 +64,6 @@ export const columns: ColumnDef<RankedItem>[] = [
 					)}
 				</div>
 			);
-		},
-	},
+		}
+	}
 ];
