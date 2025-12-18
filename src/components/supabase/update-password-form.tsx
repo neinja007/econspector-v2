@@ -7,7 +7,7 @@ import { Input } from '@/components/shadcn/ui/input';
 import { Label } from '@/components/shadcn/ui/label';
 import { useState } from 'react';
 import { supabase } from '@/supabase/clients/client';
-import { Alert, AlertDescription, AlertTitle } from './ui/alert';
+import { Alert, AlertDescription, AlertTitle } from '@/components/shadcn/ui/alert';
 import { CheckCircle } from 'lucide-react';
 
 export function UpdatePasswordForm({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
@@ -35,8 +35,8 @@ export function UpdatePasswordForm({ className, ...props }: React.ComponentProps
 	return (
 		<div className={cn('flex flex-col gap-6 w-full', className)} {...props}>
 			{success ? (
-				<Alert variant='success'>
-					<CheckCircle className='h-4 w-4' />
+				<Alert variant='default'>
+					<CheckCircle className='size-5' />
 					<AlertTitle className='text-xl'>Password Updated</AlertTitle>
 					<AlertDescription>
 						Your password has been updated successfully. Feel free to leave this page.

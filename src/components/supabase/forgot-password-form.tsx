@@ -8,7 +8,7 @@ import { Label } from '@/components/shadcn/ui/label';
 import Link from 'next/link';
 import { useState } from 'react';
 import { supabase } from '@/supabase/clients/client';
-import { Alert, AlertDescription, AlertTitle } from './ui/alert';
+import { Alert, AlertDescription, AlertTitle } from '@/components/shadcn/ui/alert';
 import { AlertCircleIcon } from 'lucide-react';
 
 export function ForgotPasswordForm({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
@@ -38,8 +38,8 @@ export function ForgotPasswordForm({ className, ...props }: React.ComponentProps
 	return (
 		<div className={cn('flex flex-col gap-6 w-full', className)} {...props}>
 			{success ? (
-				<Alert variant='information'>
-					<AlertCircleIcon className='h-4 w-4' />
+				<Alert variant='default'>
+					<AlertCircleIcon className='size-5' />
 					<AlertTitle className='text-xl'>Check Your Email</AlertTitle>
 					<AlertDescription>
 						If you registered using your email and password, you will receive a password reset email.
