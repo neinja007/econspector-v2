@@ -13,7 +13,7 @@ const Page = () => {
 	const [rankBy, setRankBy] = useState<'country' | 'region' | 'subregion'>('country');
 	const [selectedIndicatorId, setSelectedIndicatorId] = useState<string>('');
 	const { data: indicators } = useIndicators();
-	const [timePeriod, setTimePeriod] = useState<[number, number] | null>(null);
+	const [timePeriod, setTimePeriod] = useState<[number, number] | null>([1960, 2024]);
 
 	const selectedIndicator = indicators?.find((indicator) => indicator.id.toString() === selectedIndicatorId);
 
@@ -32,7 +32,7 @@ const Page = () => {
 					?.frequency_sources?.[0]?.id
 			: selectedIndicator.indicator_frequencies?.[0]?.frequency_sources?.[0]?.id);
 
-	const rankings = useRankings(sourceId ?? 0, timePeriod);
+	const rankings = useRankings(sourceId ?? 0, timePeriod ?? null);
 
 	return (
 		<div className='flex flex-col gap-4'>
@@ -69,8 +69,8 @@ const Page = () => {
 							<span>{timePeriod ? timePeriod[0] : 2000}</span>
 							<Slider
 								id='timeSlider'
-								min={2000}
-								max={2023}
+								min={1960}
+								max={2024}
 								value={timePeriod ? [timePeriod[0], timePeriod[1]] : [2000, 2023]}
 								onValueChange={([start, end]) => setTimePeriod([start, end])}
 								step={1}
