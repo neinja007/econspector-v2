@@ -14,6 +14,8 @@ import { Home } from 'lucide-react';
 import { SidebarHeader } from './sidebar-header';
 import { SidebarFooter } from './sidebar-footer';
 
+// TODO: listen to pathname to determine isActive for all the buttons
+
 const AppSidebar = () => {
 	return (
 		<Sidebar>
