@@ -1,4 +1,4 @@
-import { ForgotPasswordForm } from '@/components/shadcn/forgot-password-form';
+import { ForgotPasswordForm } from '@/components/supabase/forgot-password-form';
 
 export default function Page() {
 	return <ForgotPasswordForm />;
