@@ -11,7 +11,7 @@ type IndicatorsProps = {
 };
 
 export const Indicators = ({ category, areaName, areaCode }: IndicatorsProps) => {
-	const { data: indicators, status } = useIndicators(category?.id ?? null);
+	const { data: indicators, status } = useIndicators(category?.id ?? undefined);
 
 	if (status === 'success' && indicators?.length === 0) {
 		return (
