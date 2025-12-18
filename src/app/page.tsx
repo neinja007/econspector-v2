@@ -1,6 +1,6 @@
 'use client';
 
-import { SparklesCore } from '@/components/ui/sparkles';
+import { SparklesCore } from '@/components/aceternity/sparkles';
 import { useTheme } from 'next-themes';
 
 export default function Home() {

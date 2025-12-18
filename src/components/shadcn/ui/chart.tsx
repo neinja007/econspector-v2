@@ -118,8 +118,6 @@ function ChartTooltipContent({
   color,
   nameKey,
   labelKey,
-  compactNotation = false,
-  unit,
 }: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
   React.ComponentProps<"div"> & {
     hideLabel?: boolean
@@ -127,8 +125,6 @@ function ChartTooltipContent({
     indicator?: "line" | "dot" | "dashed"
     nameKey?: string
     labelKey?: string
-    compactNotation?: boolean
-    unit?: string
   }) {
   const { config } = useChart()
 
@@ -177,7 +173,7 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        "border-border/50 bg-background grid min-w-[8rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl",
+        "border-border/50 bg-background gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl grid min-w-[8rem] items-start",
         className
       )}
     >
@@ -228,7 +224,7 @@ function ChartTooltipContent({
                     )}
                     <div
                       className={cn(
-                        "flex flex-1 justify-between leading-none gap-2",
+                        "flex flex-1 justify-between leading-none",
                         nestLabel ? "items-end" : "items-center"
                       )}
                     >
@@ -240,10 +236,7 @@ function ChartTooltipContent({
                       </div>
                       {item.value && (
                         <span className="text-foreground font-mono font-medium tabular-nums">
-                          {item.value.toLocaleString(undefined, compactNotation ? {
-                            maximumFractionDigits: 2,
-                            notation: "compact",
-                          } : undefined)} {unit}
+                          {item.value.toLocaleString()}
                         </span>
                       )}
                     </div>
@@ -315,7 +308,6 @@ function ChartLegendContent({
   )
 }
 
-// Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(
   config: ChartConfig,
   payload: unknown,
