@@ -140,6 +140,10 @@
 	}
 }
 
+body {
+	font-family: 'Inter', sans-serif;
+}
+
 @layer base {
 	button:not([disabled]):not([data-slot='tooltip-trigger']),
 	[role='button']:not([disabled]):not([data-slot='tooltip-trigger']) {
