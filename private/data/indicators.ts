@@ -286,5 +286,313 @@ export const indicators: Indicator[] = [
 				]
 			}
 		]
+	},
+	{
+		name: 'Land area',
+		unit: 'km²',
+		chart_type: ChartType.AREA,
+		frequencies: [
+			{
+				frequency: Frequency.ANNUAL,
+				sources: [
+					{
+						source: DataSource.WORLD_BANK,
+						code: 'AG.LND.TOTL.K2'
+					}
+				]
+			}
+		]
+	},
+	{
+		name: 'Forest area',
+		subindicators: [
+			{
+				name: 'Total',
+				unit: 'km²',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'AG.LND.FRST.K2'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: '% of land area',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'AG.LND.FRST.ZS'
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		name: 'Income Distribution',
+		subindicators: [
+			{
+				name: 'Gini index',
+				unit: '%',
+				chart_type: ChartType.LINE,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SI.POV.GINI'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'lowest 20%',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SI.DST.FRST.20'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'lowest 10%',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SI.DST.FRST.10'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'second 20%',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SI.DST.02ND.20'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'third 20%',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SI.DST.03RD.20'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'fourth 20%',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SI.DST.04TH.20'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'highest 20%',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SI.DST.05TH.20'
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		name: 'Unemployment',
+		subindicators: [
+			{
+				name: 'Total',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SL.UEM.TOTL.ZS'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'Male',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SL.UEM.TOTL.MA.ZS'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'Female',
+				unit: '%',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SL.UEM.TOTL.FE.ZS'
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		name: 'Birth rate, crude',
+		unit: 'per 1000',
+		chart_type: ChartType.AREA,
+		frequencies: [
+			{
+				frequency: Frequency.ANNUAL,
+				sources: [
+					{
+						source: DataSource.WORLD_BANK,
+						code: 'SP.DYN.CBRT.IN'
+					}
+				]
+			}
+		]
+	},
+	{
+		name: 'Life expectancy',
+		subindicators: [
+			{
+				name: 'Total',
+				unit: 'years',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SP.DYN.LE00.IN'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'Male',
+				unit: 'years',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SP.DYN.LE00.MA.IN'
+							}
+						]
+					}
+				]
+			},
+			{
+				name: 'Female',
+				unit: 'years',
+				chart_type: ChartType.AREA,
+				frequencies: [
+					{
+						frequency: Frequency.ANNUAL,
+						sources: [
+							{
+								source: DataSource.WORLD_BANK,
+								code: 'SP.DYN.LE00.FE.IN'
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		name: 'Women who believe a husband is justified in beating his wife when she burns the food',
+		unit: '%',
+		chart_type: ChartType.AREA,
+		frequencies: [
+			{
+				frequency: Frequency.ANNUAL,
+				sources: [
+					{
+						source: DataSource.WORLD_BANK,
+						code: 'SG.VAW.BURN.ZS'
+					}
+				]
+			}
+		]
 	}
 ];
