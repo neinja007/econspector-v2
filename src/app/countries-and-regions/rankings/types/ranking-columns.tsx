@@ -17,17 +17,32 @@ export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 	{
 		accessorKey: 'score',
 		header: unit ? `Value (${unit})` : 'Value',
-		cell: ({ row }) => {
+		cell: ({ row, table }) => {
 			return (
-				<div>
-					{row.original.score.toLocaleString(undefined, {
-						maximumFractionDigits: 2,
-						notation: 'compact'
-					})}
-					{unit ? ` ${unit}` : null}
+				<div
+					className='relative bg-blue-500 rounded-sm max-w-full h-6 flex items-center'
+					style={{
+						width: `${(row.original.score / (table.getRowModel().rows[0]?.original.score || 1)) * 100}%`,
+						maxWidth: '100%',
+						minWidth: '8px'
+					}}
+				>
+					<span
+						className='absolute left-0 whitespace-nowrap text-white px-1'
+						style={{ top: '50%', transform: 'translateY(-50%)' }}
+					>
+						{row.original.score !== undefined && row.original.score !== null
+							? row.original.score.toLocaleString(undefined, {
+									maximumFractionDigits: 2,
+									notation: 'compact'
+							  })
+							: ''}
+						{unit ? ` ${unit}` : null}
+					</span>
 				</div>
 			);
-		}
+		},
+		enableSorting: true
 	},
 	{
 		accessorKey: 'item',
@@ -56,21 +71,7 @@ export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 		header: 'Data Coverage',
 		cell: ({ row }) => {
 			return (
-				<div className='flex items-center'>
-					{row.original.coverage.map((coverage) =>
-						coverage.code === 'temporal' ? (
-							coverage.coverage.map((coverageDataPoint) => (
-								<div
-									className='size-4 border border-r-white last-of-type:border-r-transparent'
-									key={coverageDataPoint.code}
-									style={{ backgroundColor: coverageDataPoint.covered ? 'green' : 'red' }}
-								></div>
-							))
-						) : (
-							<div key={coverage.code}>{coverage.label}</div>
-						)
-					)}
-				</div>
+				<div className='flex items-center'>{row.original.coverage.map((coverage) => coverage.code).join(', ')}</div>
 			);
 		}
 	}
