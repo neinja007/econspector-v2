@@ -26,12 +26,12 @@ const Page = () => {
 		}
 	}, [selectedIndicator]);
 
-	const sourceId =
-		selectedIndicator &&
-		(selectedChildId
-			? selectedIndicator?.children.find((child) => child.id === selectedChildId)?.indicator_frequencies?.[0]
-					?.frequency_sources?.[0]?.id
-			: selectedIndicator.indicator_frequencies?.[0]?.frequency_sources?.[0]?.id);
+	const activeIndicator =
+		selectedIndicator && selectedChildId
+			? selectedIndicator.children.find((child) => child.id === selectedChildId)
+			: selectedIndicator;
+
+	const sourceId = activeIndicator?.indicator_frequencies?.[0]?.frequency_sources?.[0]?.id ?? null;
 
 	const rankings = useRankings(sourceId ?? 0, isValidTimePeriod(timePeriod) ? timePeriod : null);
 
@@ -98,7 +98,7 @@ const Page = () => {
 			</div>
 			<div className='flex flex-col gap-4'>
 				<DataTable
-					columns={columns}
+					columns={columns(activeIndicator?.unit ?? '')}
 					data={rankings.data ?? []}
 					emptyMessage={
 						!sourceId

@@ -6,7 +6,7 @@ import Flag from '@/components/flag';
 import Link from 'next/link';
 import { SimpleTooltip } from '@/components/simple-tooltip';
 
-export const columns: ColumnDef<RankedItem>[] = [
+export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 	{
 		accessorKey: 'rank',
 		header: 'Rank',
@@ -16,9 +16,17 @@ export const columns: ColumnDef<RankedItem>[] = [
 	},
 	{
 		accessorKey: 'score',
-		header: 'Value',
+		header: unit ? `Value (${unit})` : 'Value',
 		cell: ({ row }) => {
-			return <div>{row.original.score.toFixed(2)}</div>;
+			return (
+				<div>
+					{row.original.score.toLocaleString(undefined, {
+						maximumFractionDigits: 2,
+						notation: 'compact'
+					})}
+					{unit ? ` ${unit}` : null}
+				</div>
+			);
 		}
 	},
 	{
