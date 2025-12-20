@@ -34,7 +34,9 @@ export const generateGlobalMetadata = async (): Promise<Metadata> => {
 
 	if (!routeLabels.length) return { title: 'EconSpector v2', description: slogan };
 	// const full_title = routeLabels.join(' - ') + ' | EconSpector v2';
-	const shorter_title = routeLabels.slice(1).join(' - ') + ' | EconSpector v2';
+	const short_fragment = routeLabels.slice(1).join(' - ');
+	const shorter_title =
+		short_fragment + (short_fragment.toLowerCase().indexOf('econspector') !== -1 ? '' : ' | EconSpector v2');
 	return {
 		title: shorter_title,
 		description: slogan
