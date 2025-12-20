@@ -8,6 +8,7 @@ import { useIndicators } from '@/hooks/react-query/queries/use-indicators';
 import { useRankings } from '@/hooks/react-query/queries/use-rankings';
 import { useEffect, useState } from 'react';
 import { columns } from './types/ranking-columns';
+import { isValidTimePeriod } from '@/utils/is-valid-time-period';
 
 const Page = () => {
 	const [rankBy, setRankBy] = useState<'country' | 'region' | 'subregion'>('country');
@@ -32,7 +33,7 @@ const Page = () => {
 					?.frequency_sources?.[0]?.id
 			: selectedIndicator.indicator_frequencies?.[0]?.frequency_sources?.[0]?.id);
 
-	const rankings = useRankings(sourceId ?? 0, timePeriod ?? null);
+	const rankings = useRankings(sourceId ?? 0, isValidTimePeriod(timePeriod) ? timePeriod : null);
 
 	return (
 		<div className='flex flex-col gap-4'>
@@ -96,7 +97,17 @@ const Page = () => {
 				</div>
 			</div>
 			<div className='flex flex-col gap-4'>
-				<DataTable columns={columns} data={rankings.data ?? []} />
+				<DataTable
+					columns={columns}
+					data={rankings.data ?? []}
+					emptyMessage={
+						!sourceId
+							? 'Select an indicator to view rankings.'
+							: !isValidTimePeriod(timePeriod)
+							? 'Select a valid time period.'
+							: 'No results.'
+					}
+				/>
 			</div>
 		</div>
 	);
