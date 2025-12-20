@@ -33,7 +33,6 @@ export function Combobox({
 	const [query, setQuery] = React.useState('');
 
 	const results = useSearch(options, query, fuseKeys);
-	console.log(results);
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
