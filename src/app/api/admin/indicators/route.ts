@@ -104,7 +104,7 @@ export const POST = async () => {
 					const dbSource = await adminSupabase
 						.schema(DatabaseSchema.DATA)
 						.from(DatabaseTable.FREQUENCY_SOURCES)
-						.insert({ frequency_id: dbFrequency.data.id, name: source.source, code: source.code })
+						.insert({ frequency_id: dbFrequency.data.id, data_source: source.source, code: source.code })
 						.select()
 						.single();
 
