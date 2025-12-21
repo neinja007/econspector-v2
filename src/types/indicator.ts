@@ -17,6 +17,7 @@ export type Indicator = {
 	category_id: string;
 	indicator_frequencies: IndicatorFrequency[];
 	children: Indicator[];
+	description: string | null;
 };
 
 export type IndicatorFrequency = {
