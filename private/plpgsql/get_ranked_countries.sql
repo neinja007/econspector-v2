@@ -1,6 +1,3 @@
--- PL/pgSQL function to get ranked countries
--- Equivalent to the getRankedCountries JavaScript function
---
 -- Parameters:
 --   p_level: 'countries' | 'regions' | 'subregions' (currently only 'countries' is supported)
 --   p_source_id: The source ID to filter by
@@ -126,6 +123,3 @@ BEGIN
   RETURN COALESCE(v_result, '[]'::JSON);
 END;
 $$;
-
--- Grant execute permission (adjust as needed for your security model)
--- GRANT EXECUTE ON FUNCTION data.get_ranked_countries(TEXT, INTEGER, INTEGER, INTEGER) TO authenticated;
