@@ -20,8 +20,8 @@ export const Info = ({ data }: InfoProps) => {
 		<div className='flex gap-4 justify-between w-full'>
 			<div className='flex items-center gap-6'>
 				{'cca2' in data && <Flag code={data.cca2 || ''} ratio='4x3' height={150} />}
-				<div className='flex flex-col justify-between'>
-					<div className='flex flex-col gap-2'>
+				<div className='flex flex-col gap-3 justify-between'>
+					<div className='flex flex-col gap-1.5'>
 						<h1 className='text-2xl font-bold'>
 							{'full_name' in data && data.full_name !== data.name ? `${data.full_name} (${data.name})` : data.name}
 						</h1>
