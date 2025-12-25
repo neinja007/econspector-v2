@@ -5,6 +5,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import Flag from '@/components/flag';
 import Link from 'next/link';
 import { SimpleTooltip } from '@/components/simple-tooltip';
+import { cn } from '@/utils/shadcn/utils';
 
 export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 	{
@@ -21,15 +22,22 @@ export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 		cell: ({ row, table }) => {
 			return (
 				<div
-					className='relative bg-blue-500 rounded-sm max-w-full h-6 flex items-center'
+					className={cn(
+						'relative rounded-sm max-w-full h-6 flex items-center',
+						row.original.score > 0 ? 'dark:bg-blue-500 bg-blue-400' : 'dark:bg-red-600 bg-red-400'
+					)}
 					style={{
-						width: `${(row.original.score / (table.getRowModel().rows[0]?.original.score || 1)) * 100}%`,
+						width: `${
+							(row.original.score > 0
+								? Math.abs(row.original.score / table.getPreSortedRowModel().rows[0]?.original.score)
+								: Math.abs(row.original.score / (table.getPreSortedRowModel().rows.at(-1)?.original.score || 1))) * 100
+						}%`,
 						maxWidth: '100%',
 						minWidth: '8px'
 					}}
 				>
 					<span
-						className='absolute left-0 whitespace-nowrap text-white px-1'
+						className='absolute left-0 whitespace-nowrap dark:text-white px-1'
 						style={{ top: '50%', transform: 'translateY(-50%)' }}
 					>
 						{row.original.score !== undefined && row.original.score !== null
