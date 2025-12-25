@@ -14,7 +14,7 @@ export function UpdatePasswordForm({ className, ...props }: React.ComponentProps
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState<string | null>(null);
 	const [isLoading, setIsLoading] = useState(false);
-	const [success, setSuccess] = useState(true);
+	const [success, setSuccess] = useState(false);
 
 	const handleForgotPassword = async (e: React.FormEvent) => {
 		e.preventDefault();
