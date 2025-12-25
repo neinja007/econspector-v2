@@ -12,7 +12,8 @@ export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 		header: 'Rank',
 		cell: ({ row }) => {
 			return <div className='ml-1'>{row.original.rank}.</div>;
-		}
+		},
+		enableSorting: false
 	},
 	{
 		accessorKey: 'score',
@@ -64,7 +65,8 @@ export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 					</SimpleTooltip>
 				</div>
 			);
-		}
+		},
+		enableSorting: false
 	},
 	{
 		accessorKey: 'coverage',
@@ -73,6 +75,7 @@ export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 			return (
 				<div className='flex items-center'>{row.original.coverage.map((coverage) => coverage.code).join(', ')}</div>
 			);
-		}
+		},
+		enableSorting: false
 	}
 ];

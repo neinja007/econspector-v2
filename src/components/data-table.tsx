@@ -1,8 +1,16 @@
 'use client';
 
-import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-
+import {
+	ColumnDef,
+	flexRender,
+	getCoreRowModel,
+	getSortedRowModel,
+	SortingState,
+	useReactTable
+} from '@tanstack/react-table';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/shadcn/ui/table';
+import { useState } from 'react';
+import { ChevronDown, ChevronsUpDown, ChevronUp } from 'lucide-react';
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];
@@ -15,10 +23,17 @@ export function DataTable<TData, TValue>({
 	data,
 	emptyMessage = 'No results.'
 }: DataTableProps<TData, TValue>) {
+	const [sorting, setSorting] = useState<SortingState>([]);
+
 	const table = useReactTable({
 		data,
 		columns,
-		getCoreRowModel: getCoreRowModel()
+		getCoreRowModel: getCoreRowModel(),
+		onSortingChange: setSorting,
+		getSortedRowModel: getSortedRowModel(),
+		state: {
+			sorting
+		}
 	});
 
 	return (
@@ -30,7 +45,23 @@ export function DataTable<TData, TValue>({
 							{headerGroup.headers.map((header) => {
 								return (
 									<TableHead key={header.id}>
-										{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+										<div
+											className={header.column.getCanSort() ? 'flex items-center gap-1 cursor-pointer select-none' : ''}
+											onClick={header.column.getToggleSortingHandler()}
+										>
+											{flexRender(header.column.columnDef.header, header.getContext())}
+											{header.column.getCanSort() && (
+												<div className='ml-1'>
+													{header.column.getIsSorted() === 'asc' ? (
+														<ChevronUp className='h-4 w-4' />
+													) : header.column.getIsSorted() === 'desc' ? (
+														<ChevronDown className='h-4 w-4' />
+													) : (
+														<ChevronsUpDown className='h-4 w-4 opacity-50' />
+													)}
+												</div>
+											)}
+										</div>
 									</TableHead>
 								);
 							})}
