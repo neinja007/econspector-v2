@@ -1,13 +1,11 @@
 import { AbbreviationText } from '@/components/abbreviation-text';
 import { Chart } from '@/components/chart';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/shadcn/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/shadcn/ui/select';
 import { Skeleton } from '@/components/shadcn/ui/skeleton';
 import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
-import { Frequency } from '@/types/frequency';
 import { Indicator } from '@/types/indicator';
-import { capitalize } from '@/utils/capitalize';
 import { TriangleAlertIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -54,7 +52,7 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle className='flex items-center gap-2'>
+				<CardTitle className='flex items-center gap-2 min-h-8'>
 					<AbbreviationText text={indicator.name} />
 					{hasChildren && (
 						<Select
@@ -73,22 +71,6 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 							</SelectContent>
 						</Select>
 					)}
-					<Select
-						value={selectedFrequencyId?.toString() ?? undefined}
-						onValueChange={(value) => setSelectedFrequencyId(parseInt(value))}
-						disabled={(!selectedChildId && hasChildren) || availableFrequencies?.length === 1}
-					>
-						<SelectTrigger className='w-fit ml-auto' size='sm'>
-							<SelectValue />
-						</SelectTrigger>
-						<SelectContent>
-							{availableFrequencies?.map((frequency) => (
-								<SelectItem key={frequency.id} value={frequency.id.toString()}>
-									{capitalize(Frequency[frequency.frequency])}
-								</SelectItem>
-							))}
-						</SelectContent>
-					</Select>
 				</CardTitle>
 			</CardHeader>
 			<CardContent className='h-[200px]'>
