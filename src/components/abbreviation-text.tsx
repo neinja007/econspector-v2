@@ -13,7 +13,7 @@ export const AbbreviationText = ({ text, cursorPointer = false }: { text: string
 					asChild={true}
 					cursorPointer={cursorPointer}
 					tooltip={
-						<span>
+						<span className='truncate max-w-[200px]'>
 							{abbreviations[part.toLowerCase()].short}{' '}
 							<Link
 								className='text-blue-500 hover:underline'

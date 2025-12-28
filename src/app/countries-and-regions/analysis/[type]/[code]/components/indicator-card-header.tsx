@@ -2,6 +2,7 @@ import { AbbreviationText } from '@/components/abbreviation-text';
 import { Button } from '@/components/shadcn/ui/button';
 import { CardHeader, CardTitle } from '@/components/shadcn/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/shadcn/ui/select';
+import { SimpleTooltip } from '@/components/simple-tooltip';
 import { Indicator } from '@/types/indicator';
 import { Expand } from 'lucide-react';
 
@@ -25,7 +26,13 @@ export const IndicatorCardHeader = ({
 	return (
 		<CardHeader>
 			<CardTitle className='flex items-center gap-2 min-h-8'>
-				<AbbreviationText text={indicator.name} />
+				<div className='max-w-[200px] line-clamp-1 leading-5'>
+					{indicator.description ? (
+						<SimpleTooltip tooltip={indicator.description}>{indicator.name}</SimpleTooltip>
+					) : (
+						indicator.name
+					)}
+				</div>
 				{hasChildren && (
 					<Select
 						value={selectedChildId?.toString() ?? undefined}
