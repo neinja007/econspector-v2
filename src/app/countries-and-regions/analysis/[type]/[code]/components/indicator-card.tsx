@@ -1,12 +1,13 @@
 import { AbbreviationText } from '@/components/abbreviation-text';
 import { Chart } from '@/components/chart';
+import { Button } from '@/components/shadcn/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/shadcn/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/shadcn/ui/select';
 import { Skeleton } from '@/components/shadcn/ui/skeleton';
 import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
 import { Indicator } from '@/types/indicator';
-import { TriangleAlertIcon } from 'lucide-react';
+import { Expand, TriangleAlertIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 type IndicatorCardProps = {
@@ -71,6 +72,9 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 							</SelectContent>
 						</Select>
 					)}
+					<Button size='icon-sm' className='ml-auto' variant='ghost'>
+						<Expand />
+					</Button>
 				</CardTitle>
 			</CardHeader>
 			<CardContent className='h-[200px]'>
