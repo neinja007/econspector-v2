@@ -1,6 +1,6 @@
 export enum DataSource {
 	WORLD_BANK = 'WORLD_BANK',
-	UN_DATA = 'UNDATA',
+	UN_DATA = 'UN_DATA',
 	IMF = 'IMF',
 	TRADING_ECONOMICS = 'TRADING_ECONOMICS',
 	OECD = 'OECD'
@@ -8,8 +8,8 @@ export enum DataSource {
 
 export const DataSourceMap = {
 	[DataSource.WORLD_BANK]: 'World Bank',
-	[DataSource.UN_DATA]: 'UN Data',
-	[DataSource.IMF]: 'IMF',
+	[DataSource.UN_DATA]: 'United Nations Data',
+	[DataSource.IMF]: 'International Monetary Fund',
 	[DataSource.TRADING_ECONOMICS]: 'Trading Economics',
-	[DataSource.OECD]: 'OECD'
+	[DataSource.OECD]: 'Organisation for Economic Co-operation and Development'
 };
