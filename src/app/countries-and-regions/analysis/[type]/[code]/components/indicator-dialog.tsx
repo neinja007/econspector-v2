@@ -1,4 +1,5 @@
 import { Chart } from '@/components/chart';
+import { Button } from '@/components/shadcn/ui/button';
 import {
 	Dialog,
 	DialogContent,
@@ -12,6 +13,7 @@ import { TimeSeriesData } from '@/types/data';
 import { DataSourceMap } from '@/types/data_source';
 import { FrequencyMap } from '@/types/frequency';
 import { FrequencySource, Indicator, IndicatorFrequency } from '@/types/indicator';
+import { X } from 'lucide-react';
 
 type IndicatorDialogProps = {
 	children: React.ReactNode;
@@ -21,13 +23,14 @@ type IndicatorDialogProps = {
 	timeSeriesData: TimeSeriesData | undefined;
 	selectedChild: Indicator | null;
 	hasChildren: boolean;
-	selectedFrequency: IndicatorFrequency;
-	selectedSource: FrequencySource;
+	selectedFrequency: IndicatorFrequency | null;
+	selectedSource: FrequencySource | null;
 	setSelectedChildId: (childId: number) => void;
 	setSelectedFrequencyId: (frequencyId: number) => void;
 	setSelectedSourceId: (sourceId: number) => void;
 	selectedTimePeriod: [number, number] | null;
 	setSelectedTimePeriod: (timePeriod: [number, number]) => void;
+	isExpanded: boolean;
 	setIsExpanded: (expanded: boolean) => void;
 };
 
@@ -46,15 +49,16 @@ export const IndicatorDialog = ({
 	setSelectedTimePeriod,
 	setIsExpanded,
 	areaCode,
-	areaName
+	areaName,
+	isExpanded
 }: IndicatorDialogProps) => {
 	const selectedIndicator = hasChildren ? selectedChild ?? indicator : indicator;
 	const availableFrequencies = selectedIndicator.indicator_frequencies;
 
 	return (
-		<Dialog>
+		<Dialog open={isExpanded} onOpenChange={setIsExpanded}>
 			<DialogTrigger asChild>{children}</DialogTrigger>
-			<DialogContent fatDialog>
+			<DialogContent fatDialog showCloseButton={false}>
 				<DialogHeader>
 					<DialogTitle className='flex items-center gap-2'>
 						{indicator.name}
@@ -92,7 +96,7 @@ export const IndicatorDialog = ({
 						)}
 						{selectedSource && (
 							<Select
-								disabled={!selectedFrequency.frequency_sources || selectedFrequency.frequency_sources.length <= 1}
+								disabled={!selectedFrequency?.frequency_sources || selectedFrequency?.frequency_sources.length <= 1}
 								value={selectedSource.id.toString()}
 								onValueChange={(value) => setSelectedSourceId(Number(value))}
 							>
@@ -100,7 +104,7 @@ export const IndicatorDialog = ({
 									<SelectValue />
 								</SelectTrigger>
 								<SelectContent>
-									{selectedFrequency.frequency_sources.map((source) => (
+									{selectedFrequency?.frequency_sources.map((source) => (
 										<SelectItem key={source.id} value={source.id.toString()}>
 											{DataSourceMap[source.data_source]}
 										</SelectItem>
@@ -108,11 +112,15 @@ export const IndicatorDialog = ({
 								</SelectContent>
 							</Select>
 						)}
+						<Button size='icon-sm' className='ml-auto' variant='ghost' onClick={() => setIsExpanded(false)}>
+							<X />
+						</Button>
 					</DialogTitle>
 					<DialogDescription>
 						{indicator.description ? indicator.description : 'There is no description associated with this indicator.'}
 					</DialogDescription>
 				</DialogHeader>
+				<hr />
 				<Chart
 					data={timeSeriesData?.map((data) => ({ period: data.period, values: { [areaCode]: data.value } })) ?? []}
 					type={selectedIndicator.chart_type}
@@ -124,6 +132,7 @@ export const IndicatorDialog = ({
 						}
 					}}
 				/>
+				<hr />
 			</DialogContent>
 		</Dialog>
 	);
