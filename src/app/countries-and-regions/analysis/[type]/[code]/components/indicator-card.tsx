@@ -55,14 +55,14 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 
 	const { data: timeSeriesData, status } = useTimeSeriesData(selectedSourceId ?? 0, areaCode);
 
-	useEffect(() => {
-		if (timeSeriesData) {
-			setSelectedTimePeriod([
-				Number(timeSeriesData[0].period),
-				Number(timeSeriesData[timeSeriesData.length - 1].period)
-			]);
-		}
-	}, [timeSeriesData]);
+	// useEffect(() => {
+	// 	if (timeSeriesData) {
+	// 		setSelectedTimePeriod([
+	// 			Number(timeSeriesData[0].period),
+	// 			Number(timeSeriesData[timeSeriesData.length - 1].period)
+	// 		]);
+	// 	}
+	// }, [timeSeriesData]);
 
 	const selectedChild = hasChildren ? indicator.children.find((child) => child.id === selectedChildId) ?? null : null;
 	const selectedFrequency = availableFrequencies?.find((frequency) => frequency.id === selectedFrequencyId) ?? null;
