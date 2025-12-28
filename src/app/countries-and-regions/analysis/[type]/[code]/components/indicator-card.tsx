@@ -4,9 +4,11 @@ import { Skeleton } from '@/components/shadcn/ui/skeleton';
 import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
 import { Indicator } from '@/types/indicator';
-import { TriangleAlertIcon } from 'lucide-react';
+import { Expand, TriangleAlertIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { IndicatorCardHeader } from './indicator-card-header';
+import { Button } from '@/components/shadcn/ui/button';
+import { IndicatorDialog } from './indicator-dialog';
 
 type IndicatorCardProps = {
 	indicator: Indicator;
@@ -49,7 +51,18 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 		}
 	}, [availableSources]);
 
+	const [selectedTimePeriod, setSelectedTimePeriod] = useState<[number, number] | null>();
+
 	const { data: timeSeriesData, status } = useTimeSeriesData(selectedSourceId ?? 0, areaCode);
+
+	useEffect(() => {
+		if (timeSeriesData) {
+			setSelectedTimePeriod([
+				Number(timeSeriesData[0].period),
+				Number(timeSeriesData[timeSeriesData.length - 1].period)
+			]);
+		}
+	}, [timeSeriesData]);
 
 	return (
 		<Card>
@@ -59,8 +72,26 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 				selectedChildId={selectedChildId}
 				setSelectedChildId={setSelectedChildId}
 				selectedIndicator={selectedIndicator}
-				setIsExpanded={setIsExpanded}
-			/>
+			>
+				{timeSeriesData && selectedChildId && selectedFrequencyId && selectedSourceId && selectedTimePeriod && (
+					<IndicatorDialog
+						indicator={indicator}
+						timeSeriesData={timeSeriesData}
+						selectedChildId={selectedChildId}
+						selectedFrequencyId={selectedFrequencyId}
+						selectedSourceId={selectedSourceId}
+						setSelectedChildId={setSelectedChildId}
+						setSelectedFrequencyId={setSelectedFrequencyId}
+						setSelectedSourceId={setSelectedSourceId}
+						selectedTimePeriod={selectedTimePeriod}
+						setSelectedTimePeriod={setSelectedTimePeriod}
+					>
+						<Button size='icon-sm' className='ml-auto' variant='ghost' onClick={() => setIsExpanded(true)}>
+							<Expand />
+						</Button>
+					</IndicatorDialog>
+				)}
+			</IndicatorCardHeader>
 			<CardContent className='h-[200px]'>
 				{status === 'success' ? (
 					timeSeriesData?.length > 0 ? (
