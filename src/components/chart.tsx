@@ -10,15 +10,17 @@ import {
 	Line,
 	Bar
 } from 'recharts';
+import { useMemo } from 'react';
 
 type ChartProps = {
 	data: { period: string; values: Record<string, number> }[];
 	type: ChartType | null;
 	unit: string;
 	config: ChartConfig;
+	loading?: boolean;
 };
 
-export const Chart = ({ data, type, unit, config }: ChartProps) => {
+export const Chart = ({ data, type, unit, config, loading = false }: ChartProps) => {
 	const chartData = data.map((item) => ({
 		period: item.period,
 		...item.values
@@ -27,9 +29,13 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 	const RechartsComponent =
 		type === ChartType.LINE ? RechartsLineChart : type === ChartType.BAR ? RechartsBarChart : RechartsAreaChart;
 
+	const chartKey = useMemo(() => {
+		return Math.random().toString();
+	}, [data]);
+
 	return (
 		<ChartContainer config={config} className='h-full w-full pr-2'>
-			<RechartsComponent data={chartData} accessibilityLayer>
+			<RechartsComponent key={chartKey} data={chartData} accessibilityLayer>
 				<XAxis dataKey='period' />
 				<YAxis
 					tickFormatter={(value) =>
@@ -55,7 +61,7 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 							/>
 						);
 					} else if (type === ChartType.LINE) {
-						return <Line key={key} dataKey={key} stroke={color} strokeWidth={2} dot={false} data={chartData} />;
+						return <Line key={key} dataKey={key} stroke={color} strokeWidth={2} dot={false} />;
 					} else {
 						return <Bar key={key} dataKey={key} fill={color} />;
 					}
