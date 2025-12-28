@@ -1,14 +1,12 @@
-import { AbbreviationText } from '@/components/abbreviation-text';
 import { Chart } from '@/components/chart';
-import { Button } from '@/components/shadcn/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/shadcn/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/shadcn/ui/select';
+import { Card, CardContent } from '@/components/shadcn/ui/card';
 import { Skeleton } from '@/components/shadcn/ui/skeleton';
 import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useTimeSeriesData } from '@/hooks/react-query/queries/use-time-series-data';
 import { Indicator } from '@/types/indicator';
-import { Expand, TriangleAlertIcon } from 'lucide-react';
+import { TriangleAlertIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { IndicatorCardHeader } from './indicator-card-header';
 
 type IndicatorCardProps = {
 	indicator: Indicator;
@@ -18,6 +16,9 @@ type IndicatorCardProps = {
 
 export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardProps) => {
 	const hasChildren = indicator.children.length > 0;
+
+	const [isExpanded, setIsExpanded] = useState(false);
+
 	const [selectedChildId, setSelectedChildId] = useState<number | null>(indicator.children[0]?.id ?? null);
 
 	const selectedIndicator = hasChildren
@@ -52,31 +53,14 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 
 	return (
 		<Card>
-			<CardHeader>
-				<CardTitle className='flex items-center gap-2 min-h-8'>
-					<AbbreviationText text={indicator.name} />
-					{hasChildren && (
-						<Select
-							value={selectedChildId?.toString() ?? undefined}
-							onValueChange={(value) => setSelectedChildId(Number(value))}
-						>
-							<SelectTrigger className='w-fit' size='sm'>
-								<AbbreviationText text={selectedIndicator?.name} cursorPointer={true} />
-							</SelectTrigger>
-							<SelectContent>
-								{indicator.children.map((child) => (
-									<SelectItem key={child.id} value={child.id.toString()}>
-										{child.name}
-									</SelectItem>
-								))}
-							</SelectContent>
-						</Select>
-					)}
-					<Button size='icon-sm' className='ml-auto' variant='ghost'>
-						<Expand />
-					</Button>
-				</CardTitle>
-			</CardHeader>
+			<IndicatorCardHeader
+				indicator={indicator}
+				hasChildren={hasChildren}
+				selectedChildId={selectedChildId}
+				setSelectedChildId={setSelectedChildId}
+				selectedIndicator={selectedIndicator}
+				setIsExpanded={setIsExpanded}
+			/>
 			<CardContent className='h-[200px]'>
 				{status === 'success' ? (
 					timeSeriesData?.length > 0 ? (
