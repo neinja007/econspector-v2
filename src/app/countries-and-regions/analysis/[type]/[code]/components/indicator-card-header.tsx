@@ -1,4 +1,3 @@
-import { AbbreviationText } from '@/components/abbreviation-text';
 import { CardHeader, CardTitle } from '@/components/shadcn/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/shadcn/ui/select';
 import { SimpleTooltip } from '@/components/simple-tooltip';
@@ -24,20 +23,16 @@ export const IndicatorCardHeader = ({
 	return (
 		<CardHeader>
 			<CardTitle className='flex items-center gap-2 min-h-8'>
-				<div className='max-w-[200px] line-clamp-1 leading-5'>
-					{indicator.description ? (
-						<SimpleTooltip tooltip={indicator.description}>{indicator.name}</SimpleTooltip>
-					) : (
-						indicator.name
-					)}
-				</div>
+				<SimpleTooltip tooltip={`${indicator.name}${indicator.description ? `: ${indicator.description}` : ''}`}>
+					<div className='max-w-[200px] line-clamp-1 leading-5'>{indicator.name}</div>
+				</SimpleTooltip>
 				{hasChildren && (
 					<Select
 						value={selectedChild ? selectedChild.id.toString() : undefined}
 						onValueChange={(value) => setSelectedChildId(Number(value))}
 					>
-						<SelectTrigger className='w-fit' size='sm'>
-							<AbbreviationText text={selectedIndicator?.name} cursorPointer={true} />
+						<SelectTrigger className='max-w-44 min-w-0' size='sm'>
+							<span className='truncate block min-w-0 flex-1'>{selectedIndicator?.name}</span>
 						</SelectTrigger>
 						<SelectContent>
 							{indicator.children.map((child) => (
