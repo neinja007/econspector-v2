@@ -6,6 +6,7 @@ export const useTimeSeriesData = (sourceId: number, countryCode: string) => {
 	return useQuery<TimeSeriesData>({
 		queryKey: ['time-series-data', sourceId, countryCode],
 		enabled: !!sourceId && !!countryCode,
-		queryFn: () => getTimeSeriesData(sourceId, countryCode)
+		queryFn: () => getTimeSeriesData(sourceId, countryCode),
+		placeholderData: (previousData) => previousData
 	});
 };
