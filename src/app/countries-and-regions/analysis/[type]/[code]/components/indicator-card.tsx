@@ -77,11 +77,12 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 				setSelectedChildId={setSelectedChildId}
 				selectedIndicator={selectedIndicator}
 			>
-				{timeSeriesData && selectedChild && selectedFrequency && selectedSource && selectedTimePeriod && (
+				{timeSeriesData && selectedFrequency && selectedSource && selectedTimePeriod && (
 					<IndicatorDialog
 						indicator={indicator}
 						timeSeriesData={timeSeriesData}
 						selectedChild={selectedIndicator}
+						hasChildren={hasChildren}
 						selectedFrequency={selectedFrequency}
 						selectedSource={selectedSource}
 						setSelectedChildId={setSelectedChildId}
@@ -89,6 +90,7 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 						setSelectedSourceId={setSelectedSourceId}
 						selectedTimePeriod={selectedTimePeriod}
 						setSelectedTimePeriod={setSelectedTimePeriod}
+						setIsExpanded={setIsExpanded}
 					>
 						<Button size='icon-sm' className='ml-auto' variant='ghost' onClick={() => setIsExpanded(true)}>
 							<Expand />
