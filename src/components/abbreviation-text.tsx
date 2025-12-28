@@ -31,5 +31,5 @@ export const AbbreviationText = ({ text, cursorPointer = false }: { text: string
 		return <span key={index}>{part}</span>;
 	});
 
-	return <div className='flex gap-1'>{partsWithAbbreviations}</div>;
+	return <span className='inline-flex gap-1 items-center min-w-0 max-w-full'>{partsWithAbbreviations}</span>;
 };
