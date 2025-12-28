@@ -77,7 +77,7 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 				setSelectedChildId={setSelectedChildId}
 				selectedIndicator={selectedIndicator}
 			>
-				{selectedFrequency && selectedSource && (
+				{
 					<IndicatorDialog
 						indicator={indicator}
 						areaCode={areaCode}
@@ -93,12 +93,13 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 						selectedTimePeriod={selectedTimePeriod}
 						setSelectedTimePeriod={setSelectedTimePeriod}
 						setIsExpanded={setIsExpanded}
+						isExpanded={isExpanded}
 					>
-						<Button size='icon-sm' className='ml-auto' variant='ghost' onClick={() => setIsExpanded(true)}>
+						<Button size='icon-sm' className='ml-auto' variant='ghost' onClick={() => setIsExpanded(!isExpanded)}>
 							<Expand />
 						</Button>
 					</IndicatorDialog>
-				)}
+				}
 			</IndicatorCardHeader>
 			<CardContent className='h-[200px]'>
 				{status === 'success' ? (
