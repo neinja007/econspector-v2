@@ -7,7 +7,7 @@ import { Indicator } from '@/types/indicator';
 type IndicatorCardHeaderProps = {
 	indicator: Indicator;
 	hasChildren: boolean;
-	selectedChildId: number | null;
+	selectedChild: Indicator | null;
 	setSelectedChildId: (id: number | null) => void;
 	selectedIndicator: Indicator;
 	children: React.ReactNode;
@@ -16,7 +16,7 @@ type IndicatorCardHeaderProps = {
 export const IndicatorCardHeader = ({
 	indicator,
 	hasChildren,
-	selectedChildId,
+	selectedChild,
 	setSelectedChildId,
 	selectedIndicator,
 	children
@@ -33,7 +33,7 @@ export const IndicatorCardHeader = ({
 				</div>
 				{hasChildren && (
 					<Select
-						value={selectedChildId?.toString() ?? undefined}
+						value={selectedChild ? selectedChild.id.toString() : undefined}
 						onValueChange={(value) => setSelectedChildId(Number(value))}
 					>
 						<SelectTrigger className='w-fit' size='sm'>

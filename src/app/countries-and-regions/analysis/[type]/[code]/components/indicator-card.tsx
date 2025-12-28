@@ -64,22 +64,26 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 		}
 	}, [timeSeriesData]);
 
+	const selectedChild = hasChildren ? indicator.children.find((child) => child.id === selectedChildId) ?? null : null;
+	const selectedFrequency = availableFrequencies?.find((frequency) => frequency.id === selectedFrequencyId) ?? null;
+	const selectedSource = availableSources?.find((source) => source.id === selectedSourceId) ?? null;
+
 	return (
 		<Card>
 			<IndicatorCardHeader
 				indicator={indicator}
 				hasChildren={hasChildren}
-				selectedChildId={selectedChildId}
+				selectedChild={selectedChild}
 				setSelectedChildId={setSelectedChildId}
 				selectedIndicator={selectedIndicator}
 			>
-				{timeSeriesData && selectedChildId && selectedFrequencyId && selectedSourceId && selectedTimePeriod && (
+				{timeSeriesData && selectedChild && selectedFrequency && selectedSource && selectedTimePeriod && (
 					<IndicatorDialog
 						indicator={indicator}
 						timeSeriesData={timeSeriesData}
-						selectedChildId={selectedChildId}
-						selectedFrequencyId={selectedFrequencyId}
-						selectedSourceId={selectedSourceId}
+						selectedChild={selectedIndicator}
+						selectedFrequency={selectedFrequency}
+						selectedSource={selectedSource}
 						setSelectedChildId={setSelectedChildId}
 						setSelectedFrequencyId={setSelectedFrequencyId}
 						setSelectedSourceId={setSelectedSourceId}
