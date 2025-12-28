@@ -11,13 +11,13 @@ import { capitalize } from '@/utils/capitalize';
 import { TriangleAlertIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-type IndicatorDataProps = {
+type IndicatorCardProps = {
 	indicator: Indicator;
 	areaName: string;
 	areaCode: string;
 };
 
-export const IndicatorData = ({ indicator, areaName, areaCode }: IndicatorDataProps) => {
+export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardProps) => {
 	const hasChildren = indicator.children.length > 0;
 	const [selectedChildId, setSelectedChildId] = useState<number | null>(indicator.children[0]?.id ?? null);
 
