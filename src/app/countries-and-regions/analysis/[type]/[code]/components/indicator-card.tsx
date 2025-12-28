@@ -51,7 +51,7 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 		}
 	}, [availableSources]);
 
-	const [selectedTimePeriod, setSelectedTimePeriod] = useState<[number, number] | null>();
+	const [selectedTimePeriod, setSelectedTimePeriod] = useState<[number, number] | null>(null);
 
 	const { data: timeSeriesData, status } = useTimeSeriesData(selectedSourceId ?? 0, areaCode);
 
@@ -77,9 +77,11 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 				setSelectedChildId={setSelectedChildId}
 				selectedIndicator={selectedIndicator}
 			>
-				{timeSeriesData && selectedFrequency && selectedSource && selectedTimePeriod && (
+				{selectedFrequency && selectedSource && (
 					<IndicatorDialog
 						indicator={indicator}
+						areaCode={areaCode}
+						areaName={areaName}
 						timeSeriesData={timeSeriesData}
 						selectedChild={selectedIndicator}
 						hasChildren={hasChildren}
