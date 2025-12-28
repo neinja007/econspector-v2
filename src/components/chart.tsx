@@ -17,10 +17,9 @@ type ChartProps = {
 	type: ChartType | null;
 	unit: string;
 	config: ChartConfig;
-	loading?: boolean;
 };
 
-export const Chart = ({ data, type, unit, config, loading = false }: ChartProps) => {
+export const Chart = ({ data, type, unit, config }: ChartProps) => {
 	const chartData = data.map((item) => ({
 		period: item.period,
 		...item.values
