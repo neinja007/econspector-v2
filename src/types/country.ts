@@ -10,6 +10,14 @@ export type Country = {
 	capital: string;
 };
 
+export type CountryGroup = {
+	id: string;
+	name: string;
+	description: string;
+	core: boolean;
+	countries: string[];
+};
+
 export type CountryWithCurrencies = Country & {
 	currencies: Currency[];
 };
