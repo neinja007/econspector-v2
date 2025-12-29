@@ -2,7 +2,7 @@ import Flag from '@/components/flag';
 import Link from 'next/link';
 import { CountryOrRegion } from '../types/search-results';
 import { slug } from '@/utils/slug';
-import { useFavouriteCountries } from '@/hooks/react-query/queries/use-favourite-countries';
+import { useCountryGroups } from '@/hooks/react-query/queries/use-country-groups';
 import { cn } from '@/utils/shadcn/utils';
 import { Star } from 'lucide-react';
 
@@ -12,18 +12,16 @@ type SearchResultsProps = {
 };
 
 export const SearchResults = ({ searchResults, showType }: SearchResultsProps) => {
-	const { data: favouriteCountries } = useFavouriteCountries();
+	const { data: countryGroups } = useCountryGroups();
+	const favouriteGroup = countryGroups?.find((group) => group.name === 'Favourites' && group.core);
+	const favouriteCountries = favouriteGroup?.countries;
 
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8'>
 			{searchResults
 				.sort((a, b) => {
-					const aIndex = favouriteCountries?.some((country) =>
-						a.type === 'country' ? country === a.data.cca3 : a.data.code
-					);
-					const bIndex = favouriteCountries?.some((country) =>
-						b.type === 'country' ? country === b.data.cca3 : b.data.code
-					);
+					const aIndex = favouriteCountries?.includes(a.type === 'country' ? a.data.cca3 : a.data.code) ? 0 : 1;
+					const bIndex = favouriteCountries?.includes(b.type === 'country' ? b.data.cca3 : b.data.code) ? 0 : 1;
 					return (aIndex ? 0 : 1) - (bIndex ? 0 : 1);
 				})
 				.map((element) => (

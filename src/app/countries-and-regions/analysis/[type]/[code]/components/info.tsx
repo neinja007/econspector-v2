@@ -4,17 +4,21 @@ import { Region } from '@/types/region';
 import { Subregion } from '@/types/subregion';
 import { Codes } from './codes';
 import { Currencies } from './currencies';
-import { useFavouriteCountries } from '@/hooks/react-query/queries/use-favourite-countries';
+import { useCountryGroups } from '@/hooks/react-query/queries/use-country-groups';
 import { Button } from '@/components/shadcn/ui/button';
 import { Star } from 'lucide-react';
 import { Spinner } from '@/components/shadcn/ui/spinner';
-import { useToggleFavouriteCountry } from '@/hooks/react-query/mutations/use-toggle-favourite-country';
+import { useAddCountryToGroup } from '@/hooks/react-query/mutations/add-country-to-group';
+import { useRemoveCountryFromGroup } from '@/hooks/react-query/mutations/remove-country-from-group';
 
 type InfoProps = { data: Region | Subregion | CountryWithCurrencies };
 
 export const Info = ({ data }: InfoProps) => {
-	const { mutate: toggleFavouriteCountry, isPending: isTogglingFavouriteCountry } = useToggleFavouriteCountry();
-	const { data: favouriteCountries } = useFavouriteCountries();
+	const { mutate: addCountryToGroup, isPending: isAddingCountryToGroup } = useAddCountryToGroup();
+	const { mutate: removeCountryFromGroup, isPending: isRemovingCountryFromGroup } = useRemoveCountryFromGroup();
+	const { data: countryGroups } = useCountryGroups();
+
+	const favouriteGroup = countryGroups?.find((group) => group.name === 'Favourites' && group.core);
 
 	return (
 		<div className='flex gap-4 justify-between w-full'>
@@ -35,23 +39,23 @@ export const Info = ({ data }: InfoProps) => {
 					{'currencies' in data && <Currencies data={data.currencies} />}
 				</div>
 			</div>
-			{'cca3' in data && (
+			{'cca3' in data && favouriteGroup && (
 				<div>
-					{favouriteCountries?.some((country) => country === data.cca3) ? (
+					{favouriteGroup.countries.includes(data.cca3) ? (
 						<Button
 							variant='outline'
-							onClick={() => toggleFavouriteCountry({ countryCode: data.cca3, action: 'remove' })}
-							disabled={isTogglingFavouriteCountry}
+							onClick={() => removeCountryFromGroup({ countryCode: data.cca3, groupId: favouriteGroup.id })}
+							disabled={isRemovingCountryFromGroup}
 						>
-							{isTogglingFavouriteCountry ? <Spinner /> : <Star className='size-5' />} Remove from favourites
+							{isRemovingCountryFromGroup ? <Spinner /> : <Star className='size-5' />} Remove from favourites
 						</Button>
 					) : (
 						<Button
 							variant='default'
-							onClick={() => toggleFavouriteCountry({ countryCode: data.cca3, action: 'add' })}
-							disabled={isTogglingFavouriteCountry}
+							onClick={() => addCountryToGroup({ countryCode: data.cca3, groupId: favouriteGroup.id })}
+							disabled={isAddingCountryToGroup}
 						>
-							{isTogglingFavouriteCountry ? <Spinner /> : <Star className='size-5' />} Add to favourites
+							{isAddingCountryToGroup ? <Spinner /> : <Star className='size-5' />} Add to favourites
 						</Button>
 					)}
 				</div>
