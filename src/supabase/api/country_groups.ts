@@ -23,7 +23,7 @@ export const addCountryToGroup = async (countryCode: string, groupId: string) =>
 	const { data, error } = await supabase
 		.schema(DatabaseSchema.USERS)
 		.from(DatabaseTable.COUNTRY_GROUPS_COUNTRIES)
-		.upsert({ group_id: groupId, country_cca3: countryCode }, { onConflict: 'country_group_id, country_cca3' });
+		.upsert({ group_id: groupId, country_cca3: countryCode }, { onConflict: 'group_id, country_cca3' });
 	if (error) throw error;
 	return data;
 };
