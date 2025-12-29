@@ -1,4 +1,4 @@
-import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
+import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { supabase } from '@/supabase/clients/client';
 import { Country, CountryWithCurrencies } from '@/types/country';
 import { RankedItem } from '@/types/ranked-item';

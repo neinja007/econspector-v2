@@ -1,4 +1,4 @@
-import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
+import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { supabase } from '@/supabase/clients/client';
 import { Subregion } from '@/types/subregion';
 

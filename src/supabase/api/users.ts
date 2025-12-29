@@ -1,4 +1,4 @@
-import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
+import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { supabase } from '@/supabase/clients/client';
 
 export const updateUserProfile = async (userId: string, name: string, email: string) => {

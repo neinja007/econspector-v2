@@ -1,4 +1,4 @@
-import { DatabaseSchema, DatabaseTable } from '@/data/supabase';
+import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 import { adminSupabase } from '@/supabase/clients/admin';
