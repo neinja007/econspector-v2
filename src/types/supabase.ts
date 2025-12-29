@@ -16,5 +16,7 @@ export enum DatabaseTable {
 	SUBREGIONS = 'subregions',
 
 	COUNTRY_GROUPS = 'country_groups',
-	INDICATOR_GROUPS = 'indicator_groups'
+	COUNTRY_GROUPS_COUNTRIES = 'country_groups_countries',
+	INDICATOR_GROUPS = 'indicator_groups',
+	INDICATOR_GROUPS_INDICATORS = 'indicator_groups_indicators'
 }
