@@ -14,6 +14,7 @@ import { DataSourceMap } from '@/types/data_source';
 import { FrequencyMap } from '@/types/frequency';
 import { FrequencySource, Indicator, IndicatorFrequency } from '@/types/indicator';
 import { X } from 'lucide-react';
+import Link from 'next/link';
 
 type IndicatorDialogProps = {
 	children: React.ReactNode;
@@ -117,7 +118,20 @@ export const IndicatorDialog = ({
 						</Button>
 					</DialogTitle>
 					<DialogDescription>
-						{indicator.description ? indicator.description : 'There is no description associated with this indicator.'}
+						{indicator.description ? indicator.description : 'There is no description associated with this indicator.'}{' '}
+						{selectedSource && (
+							<span>
+								The data shown below is sourced from {DataSourceMap[selectedSource.data_source]}.{' '}
+								<Link
+									className='text-blue-500 hover:underline'
+									href={'/documentation/sources#' + selectedSource.data_source}
+									target='_blank'
+								>
+									Learn more about our sources
+								</Link>
+								.{' '}
+							</span>
+						)}
 					</DialogDescription>
 				</DialogHeader>
 				<hr />
