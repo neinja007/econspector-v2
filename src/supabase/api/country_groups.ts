@@ -7,9 +7,16 @@ export const getCountryGroups = async (): Promise<
 	const { data, error } = await supabase
 		.schema(DatabaseSchema.USERS)
 		.from(DatabaseTable.COUNTRY_GROUPS)
-		.select('id, name, description, core, countries:country_groups_countries(*)');
+		.select('id, name, description, core, countries:country_groups_countries(country_cca3)');
 	if (error) throw error;
-	return data;
+
+	return (data || []).map((group) => ({
+		id: group.id,
+		name: group.name,
+		description: group.description,
+		core: group.core,
+		countries: (group.countries || []).map((country: { country_cca3: string }) => country.country_cca3)
+	}));
 };
 
 export const addCountryToGroup = async (countryCode: string, groupId: string) => {
