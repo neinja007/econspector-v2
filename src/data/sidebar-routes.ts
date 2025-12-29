@@ -1,6 +1,4 @@
 import { getCountry } from '@/supabase/api/countries';
-import { getRegion } from '@/supabase/api/regions';
-import { getSubregion } from '@/supabase/api/subregions';
 import { datasets } from '@/app/advanced/data-explorer/data/datasets';
 import FlagComponent from '@/components/flag';
 import {
@@ -64,15 +62,15 @@ export const sidebarRoutes: {
 	}[];
 }[] = [
 	{
-		name: 'Countries & Regions',
+		name: 'Countries',
 		icon: Landmark,
 		routes: [
 			{
 				label: 'Analysis',
-				href: '/countries-and-regions/analysis',
+				href: '/countries/analysis',
 				icon: Search,
 				getBreadcrumbs: async (pathname) => {
-					const type = pathname.split('/')[1] as 'country' | 'region';
+					const type = pathname.split('/')[1] as 'country' | 'group';
 					const code = pathname.split('/')[2];
 					if (!type || !code) return undefined;
 					if (type === 'country') {
@@ -80,17 +78,17 @@ export const sidebarRoutes: {
 						return [
 							{
 								label: `${country.full_name} (${country.name})`,
-								href: `/countries-and-regions/analysis/${type}/${code}`,
+								href: `/countries/analysis/${type}/${code}`,
 								icon: createElement(FlagComponent, { code: country.cca2, ratio: '4x3', height: 24 })
 							}
 						];
-					} else if (type === 'region') {
-						const region = await getRegion(code);
-						const subregion = await getSubregion(code);
+					} else if (type === 'group') {
+						// const group = await getCountryGroup(code);
 						return [
 							{
-								label: region.name || subregion.name,
-								href: `/countries-and-regions/analysis/${type}/${code}`,
+								label: 'Group',
+								// label: group.name,
+								href: `/countries/analysis/${type}/${code}`,
 								icon: Component
 							}
 						];
@@ -101,12 +99,12 @@ export const sidebarRoutes: {
 			},
 			{
 				label: 'Rankings',
-				href: '/countries-and-regions/rankings',
+				href: '/countries/rankings',
 				icon: BarChart
 			},
 			{
 				label: 'Comparison',
-				href: '/countries-and-regions/comparison',
+				href: '/countries/comparison',
 				icon: Scale
 			}
 		]

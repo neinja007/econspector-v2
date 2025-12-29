@@ -1,7 +1,5 @@
 import Flag from '@/components/flag';
-import { CountryWithCurrencies } from '@/types/country';
-import { Region } from '@/types/region';
-import { Subregion } from '@/types/subregion';
+import { CountryGroup, CountryWithCurrencies } from '@/types/country';
 import { Codes } from './codes';
 import { Currencies } from './currencies';
 import { useCountryGroups } from '@/hooks/react-query/queries/use-country-groups';
@@ -11,7 +9,7 @@ import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useAddCountryToGroup } from '@/hooks/react-query/mutations/add-country-to-group';
 import { useRemoveCountryFromGroup } from '@/hooks/react-query/mutations/remove-country-from-group';
 
-type InfoProps = { data: Region | Subregion | CountryWithCurrencies };
+type InfoProps = { data: CountryGroup | CountryWithCurrencies };
 
 export const Info = ({ data }: InfoProps) => {
 	const { mutate: addCountryToGroup, isPending: isAddingCountryToGroup } = useAddCountryToGroup();

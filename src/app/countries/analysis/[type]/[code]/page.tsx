@@ -1,7 +1,6 @@
 'use client';
 
 import { Spinner } from '@/components/shadcn/ui/spinner';
-import { useCountryOrRegion } from '@/hooks/react-query/queries/use-country-or-region';
 import { useParams } from 'next/navigation';
 import { Info } from './components/info';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/shadcn/ui/tabs';
@@ -11,11 +10,12 @@ import { InputGroup } from '@/components/shadcn/ui/input-group';
 import { Search } from 'lucide-react';
 import { Indicators } from './components/indicators';
 import { useState } from 'react';
+import { useCountryOrGroup } from '@/hooks/react-query/queries/use-country-or-group';
 
 const CountryAnalysisPage = () => {
-	const { code, type } = useParams<{ code: string; type: 'country' | 'region' | 'subregion' }>();
+	const { code, type } = useParams<{ code: string; type: 'country' | 'group' }>();
 
-	const { data, status } = useCountryOrRegion(type, code);
+	const { data, status } = useCountryOrGroup(type, code);
 	const { data: indicatorCategories } = useIndicatorCategories();
 
 	const [tab, setTab] = useState<string>('all');

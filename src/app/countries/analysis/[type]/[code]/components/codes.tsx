@@ -1,10 +1,8 @@
 import { SimpleTooltip } from '@/components/simple-tooltip';
-import { Country } from '@/types/country';
-import { Region } from '@/types/region';
-import { Subregion } from '@/types/subregion';
+import { Country, CountryGroup } from '@/types/country';
 import Link from 'next/link';
 
-export const Codes = ({ keys, data }: { keys: string[]; data: Country | Region | Subregion }) => {
+export const Codes = ({ keys, data }: { keys: string[]; data: Country | CountryGroup }) => {
 	const codesString = keys
 		.map((key) => (key in data ? data[key as keyof typeof data] : undefined))
 		.filter(Boolean)

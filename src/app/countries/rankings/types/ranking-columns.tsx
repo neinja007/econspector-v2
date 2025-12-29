@@ -65,7 +65,7 @@ export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 					<Flag code={row.original.item.iconPath || ''} ratio='4x3' height={24} />
 					<SimpleTooltip tooltip={row.original.item.fullName}>
 						<Link
-							href={`/countries-and-regions/analysis/${row.original.item.type}/${row.original.item.code}`}
+							href={`/countries/analysis/${row.original.item.type}/${row.original.item.code}`}
 							className='hover:underline'
 						>
 							{row.original.item.name}

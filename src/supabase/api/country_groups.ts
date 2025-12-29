@@ -1,5 +1,6 @@
 import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { supabase } from '../clients/client';
+import { CountryGroup } from '@/types/country';
 
 export const getCountryGroups = async (): Promise<
 	{ id: string; name: string; description: string; core: boolean; countries: string[] }[]
@@ -17,6 +18,22 @@ export const getCountryGroups = async (): Promise<
 		core: group.core,
 		countries: (group.countries || []).map((country: { country_cca3: string }) => country.country_cca3)
 	}));
+};
+
+export const getCountryGroup = async (id: string): Promise<CountryGroup> => {
+	const { data, error } = await supabase
+		.schema(DatabaseSchema.USERS)
+		.from(DatabaseTable.COUNTRY_GROUPS)
+		.select('*, countries:country_groups_countries(country_cca3)')
+		.eq('id', id);
+	if (error) throw error;
+	return {
+		id: data[0].id,
+		name: data[0].name,
+		description: data[0].description,
+		core: data[0].core,
+		countries: (data[0].countries || []).map((country: { country_cca3: string }) => country.country_cca3)
+	};
 };
 
 export const addCountryToGroup = async (countryCode: string, groupId: string) => {
