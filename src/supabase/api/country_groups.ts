@@ -7,7 +7,7 @@ export const getCountryGroups = async (): Promise<
 	const { data, error } = await supabase
 		.schema(DatabaseSchema.USERS)
 		.from(DatabaseTable.COUNTRY_GROUPS)
-		.select('id, name, description, core, countries(*)');
+		.select('id, name, description, core, countries:country_groups_countries(*)');
 	if (error) throw error;
 	return data;
 };
