@@ -22,7 +22,7 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 				.sort((a, b) => {
 					const aIndex = favouriteCountries?.includes(a.type === 'country' ? a.data.cca3 : a.data.code) ? 0 : 1;
 					const bIndex = favouriteCountries?.includes(b.type === 'country' ? b.data.cca3 : b.data.code) ? 0 : 1;
-					return (aIndex ? 0 : 1) - (bIndex ? 0 : 1);
+					return aIndex - bIndex;
 				})
 				.map((element) => (
 					<Link
