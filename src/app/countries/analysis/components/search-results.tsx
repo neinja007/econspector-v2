@@ -41,14 +41,14 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 					>
 						{element.type === 'country' ? (
 							<div className='shrink-0'>
-								<Flag code={element.data.cca2} ratio='4x3' height={72} />
+								<Flag code={element.data.cca3} ratio='4x3' height={72} />
 							</div>
 						) : (
 							<div className='w-24 h-18 relative bg-gray-500 overflow-hidden rounded-md flex items-center text-center justify-center shrink-0'>
 								<div className='h-full w-full grid grid-cols-3'>
 									{element.data.countries.map((country, index) => (
-										<div key={index} className='h-full w-full bg-red-500'>
-											<Flag code={country.cca2} ratio='4x3' height={72} />
+										<div key={index} className='h-full w-full'>
+											<Flag code={country} ratio='4x3' height={72} />
 										</div>
 									))}
 								</div>
