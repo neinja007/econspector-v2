@@ -5,6 +5,7 @@ import { useCountryGroups } from '@/hooks/react-query/queries/use-country-groups
 import { cn } from '@/utils/shadcn/utils';
 import { CountryOrGroup } from '../types/search-results';
 import GroupFlags from '@/components/group-flags';
+import { Star } from 'lucide-react';
 
 type SearchResultsProps = {
 	searchResults: CountryOrGroup[];
@@ -29,25 +30,30 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 						href={`/countries/analysis/${element.type}/${
 							element.type === 'country' ? element.data.cca3 : element.data.id
 						}`}
-						className={cn(
-							'rounded-md group transition-colors',
-							favouriteCountries?.some((country) =>
-								element.type === 'country' ? country === element.data.cca3 : country === element.data.id
-							)
-								? 'hover:bg-yellow-500/10'
-								: 'hover:bg-accent'
-						)}
+						className={cn('rounded-md group transition-colors')}
 						key={slug(element.type + '-' + (element.type === 'country' ? element.data.cca3 : element.data.id))}
 					>
 						<div className='relative'>
-							<div className='opacity-50 group-hover:opacity-100 aspect-4/3 group-hover:blur-xs transition-all'>
+							<div className='opacity-50 group-hover:opacity-100 aspect-4/3 group-hover:blur-xs transition-all rounded-md overflow-hidden'>
 								{element.type === 'country' ? (
 									<Flag code={element.data.cca3} ratio='4x3' />
 								) : (
-									<GroupFlags countries={element.data.countries} name={element.data.name} width={174} />
+									<GroupFlags countries={element.data.countries} />
 								)}
 							</div>
-							<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center px-1 py-0.5 rounded-md font-medium text-white group-hover:scale-125 group-hover:bg-black/40 transition-all'>
+							<div
+								className={cn(
+									'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center px-1 py-0.5 rounded-md font-medium group-hover:scale-125 group-hover:bg-black/40 transition-all flex items-center gap-1',
+									element.type === 'country'
+										? favouriteCountries?.some((country) => country === element.data.cca3)
+											? 'text-yellow-400'
+											: 'text-white'
+										: undefined
+								)}
+							>
+								{element.type === 'country' && favouriteCountries?.some((country) => country === element.data.cca3) && (
+									<Star className='size-4 text-yellow-400' />
+								)}
 								{element.data.name}
 							</div>
 						</div>
