@@ -44,8 +44,15 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 								<Flag code={element.data.cca2} ratio='4x3' height={72} />
 							</div>
 						) : (
-							<div className='w-24 h-18 bg-gray-500 rounded-md flex items-center justify-center shrink-0'>
-								{element.data.id}
+							<div className='w-24 h-18 relative bg-gray-500 overflow-hidden rounded-md flex items-center text-center justify-center shrink-0'>
+								<div className='h-full w-full grid grid-cols-3'>
+									{element.data.countries.map((country, index) => (
+										<div key={index} className='h-full w-full bg-red-500'>
+											<Flag code={country.cca2} ratio='4x3' height={72} />
+										</div>
+									))}
+								</div>
+								<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>{element.data.name}</div>
 							</div>
 						)}
 						<div className='flex flex-col items-end justify-between'>
@@ -58,8 +65,7 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 								) : null}
 							</span>
 							<span className='text-sm text-muted-foreground'>
-								{showType && `${element.type.charAt(0).toUpperCase() + element.type.slice(1)} | `}
-								{element.type === 'country' ? element.data.cca3 : element.data.id}
+								{element.type === 'country' ? element.data.cca3 : element.data.countries.length + ' countries'}
 							</span>
 						</div>
 					</Link>
