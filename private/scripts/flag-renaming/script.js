@@ -2,9 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 // Paths - resolve to absolute paths
+// __dirname is private/scripts/flag-renaming, so we need to go up 3 levels to reach root
 const csvPath = path.resolve(__dirname, 'country_data.csv');
-const archive1x1Path = path.resolve(__dirname, '../../archive/flags/1x1');
-const archive4x3Path = path.resolve(__dirname, '../../archive/flags/4x3');
+const archive1x1Path = path.resolve(__dirname, '../../../archive/flags/1x1');
+const archive4x3Path = path.resolve(__dirname, '../../../archive/flags/4x3');
 const public1x1Path = path.resolve(__dirname, '../../../public/flags/1x1');
 const public4x3Path = path.resolve(__dirname, '../../../public/flags/4x3');
 
@@ -80,13 +81,6 @@ for (let i = 1; i < lines.length; i++) {
 	const source4x3 = path.join(archive4x3Path, `${cca2Lower}.svg`);
 	const dest1x1 = path.join(public1x1Path, `${cca3}.svg`);
 	const dest4x3 = path.join(public4x3Path, `${cca3}.svg`);
-
-	// Debug: print first few paths
-	if (i === 1) {
-		console.log(`Debug - archive1x1Path: ${archive1x1Path}`);
-		console.log(`Debug - source1x1 (first): ${source1x1}`);
-		console.log(`Debug - exists: ${fs.existsSync(source1x1)}`);
-	}
 
 	// Copy 1x1 flag
 	if (fs.existsSync(source1x1)) {
