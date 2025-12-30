@@ -35,7 +35,8 @@ const CountriesAnalysisPage = () => {
 		'data.cca2',
 		'data.ccn3',
 		'data.cioc',
-		'data.capital'
+		'data.capital',
+		'data.countries'
 	]);
 
 	return (
