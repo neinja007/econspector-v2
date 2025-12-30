@@ -1,0 +1,251 @@
+cca3,name,full_name,cca2,ccn3,cioc,capital,world_bank
+ABW,Aruba,Aruba,AW,533,ARU,Oranjestad,true
+AFG,Afghanistan,Islamic Republic of Afghanistan,AF,004,AFG,Kabul,true
+AGO,Angola,Republic of Angola,AO,024,ANG,Luanda,true
+AIA,Anguilla,Anguilla,AI,660,,The Valley,false
+ALA,Åland Islands,Åland Islands,AX,248,,Mariehamn,false
+ALB,Albania,Republic of Albania,AL,008,ALB,Tirana,true
+AND,Andorra,Principality of Andorra,AD,020,AND,Andorra la Vella,true
+ARE,United Arab Emirates,United Arab Emirates,AE,784,UAE,Abu Dhabi,true
+ARG,Argentina,Argentine Republic,AR,032,ARG,Buenos Aires,true
+ARM,Armenia,Republic of Armenia,AM,051,ARM,Yerevan,true
+ASM,American Samoa,American Samoa,AS,016,ASA,Pago Pago,true
+ATA,Antarctica,Antarctica,AQ,010,,,false
+ATF,French Southern and Antarctic Lands,Territory of the French Southern and Antarctic Lands,TF,260,,Port-aux-Français,false
+ATG,Antigua and Barbuda,Antigua and Barbuda,AG,028,ANT,Saint John's,true
+AUS,Australia,Commonwealth of Australia,AU,036,AUS,Canberra,true
+AUT,Austria,Republic of Austria,AT,040,AUT,Vienna,true
+AZE,Azerbaijan,Republic of Azerbaijan,AZ,031,AZE,Baku,true
+BDI,Burundi,Republic of Burundi,BI,108,BDI,Gitega,true
+BEL,Belgium,Kingdom of Belgium,BE,056,BEL,Brussels,true
+BEN,Benin,Republic of Benin,BJ,204,BEN,Porto-Novo,true
+BES,Caribbean Netherlands,"Bonaire, Sint Eustatius and Saba",BQ,535,,,false
+BFA,Burkina Faso,Burkina Faso,BF,854,BUR,Ouagadougou,true
+BGD,Bangladesh,People's Republic of Bangladesh,BD,050,BAN,Dhaka,true
+BGR,Bulgaria,Republic of Bulgaria,BG,100,BUL,Sofia,true
+BHR,Bahrain,Kingdom of Bahrain,BH,048,BRN,Manama,true
+BHS,Bahamas,Commonwealth of the Bahamas,BS,044,BAH,Nassau,true
+BIH,Bosnia and Herzegovina,Bosnia and Herzegovina,BA,070,BIH,Sarajevo,true
+BLM,Saint Barthélemy,Collectivity of Saint Barthélemy,BL,652,,Gustavia,false
+BLR,Belarus,Republic of Belarus,BY,112,BLR,Minsk,true
+BLZ,Belize,Belize,BZ,084,BIZ,Belmopan,true
+BMU,Bermuda,Bermuda,BM,060,BER,Hamilton,true
+BOL,Bolivia,Plurinational State of Bolivia,BO,068,BOL,Sucre,true
+BRA,Brazil,Federative Republic of Brazil,BR,076,BRA,Brasília,true
+BRB,Barbados,Barbados,BB,052,BAR,Bridgetown,true
+BRN,Brunei,"Nation of Brunei, Abode of Peace",BN,096,,,true
+BTN,Bhutan,Kingdom of Bhutan,BT,064,BHU,Thimphu,true
+BVT,Bouvet Island,Bouvet Island,BV,074,,,false
+BWA,Botswana,Republic of Botswana,BW,072,BOT,Gaborone,true
+CAF,Central African Republic,Central African Republic,CF,140,CAF,Bangui,true
+CAN,Canada,Canada,CA,124,CAN,Ottawa,true
+CCK,Cocos (Keeling) Islands,Territory of the Cocos (Keeling) Islands,CC,166,,West Island,false
+CHE,Switzerland,Swiss Confederation,CH,756,SUI,Bern,true
+CHL,Chile,Republic of Chile,CL,152,CHI,Santiago,true
+CHN,China,People's Republic of China,CN,156,CHN,Beijing,true
+CIV,Ivory Coast,Republic of Côte d'Ivoire,CI,384,CIV,Yamoussoukro,true
+CMR,Cameroon,Republic of Cameroon,CM,120,CMR,Yaoundé,true
+COD,DR Congo,Democratic Republic of the Congo,CD,180,COD,Kinshasa,true
+COG,Congo,Republic of the Congo,CG,178,CGO,Brazzaville,true
+COK,Cook Islands,Cook Islands,CK,184,COK,Avarua,false
+COL,Colombia,Republic of Colombia,CO,170,COL,Bogotá,true
+COM,Comoros,Union of the Comoros,KM,174,COM,Moroni,true
+CPV,Cape Verde,Republic of Cabo Verde,CV,132,CPV,Praia,true
+CRI,Costa Rica,Republic of Costa Rica,CR,188,CRC,San José,true
+CUB,Cuba,Republic of Cuba,CU,192,CUB,Havana,true
+CUW,Curaçao,Country of Curaçao,CW,531,,Willemstad,true
+CXR,Christmas Island,Territory of Christmas Island,CX,162,,Flying Fish Cove,false
+CYM,Cayman Islands,Cayman Islands,KY,136,CAY,George Town,true
+CYP,Cyprus,Republic of Cyprus,CY,196,CYP,Nicosia,true
+CZE,Czechia,Czech Republic,CZ,203,CZE,Prague,true
+DEU,Germany,Federal Republic of Germany,DE,276,GER,Berlin,true
+DJI,Djibouti,Republic of Djibouti,DJ,262,DJI,Djibouti,true
+DMA,Dominica,Commonwealth of Dominica,DM,212,DMA,Roseau,true
+DNK,Denmark,Kingdom of Denmark,DK,208,DEN,Copenhagen,true
+DOM,Dominican Republic,Dominican Republic,DO,214,DOM,Santo Domingo,true
+DZA,Algeria,People's Democratic Republic of Algeria,DZ,012,ALG,Algiers,true
+ECU,Ecuador,Republic of Ecuador,EC,218,ECU,Quito,true
+EGY,Egypt,Arab Republic of Egypt,EG,818,EGY,Cairo,true
+ERI,Eritrea,State of Eritrea,ER,232,ERI,Asmara,true
+ESH,Western Sahara,Sahrawi Arab Democratic Republic,EH,732,,El Aaiún,false
+ESP,Spain,Kingdom of Spain,ES,724,ESP,Madrid,true
+EST,Estonia,Republic of Estonia,EE,233,EST,Tallinn,true
+ETH,Ethiopia,Federal Democratic Republic of Ethiopia,ET,231,ETH,Addis Ababa,true
+FIN,Finland,Republic of Finland,FI,246,FIN,Helsinki,true
+FJI,Fiji,Republic of Fiji,FJ,242,FIJ,Suva,true
+FLK,Falkland Islands,Falkland Islands,FK,238,,Stanley,false
+FRA,France,French Republic,FR,250,FRA,Paris,true
+FRO,Faroe Islands,Faroe Islands,FO,234,,Tórshavn,true
+FSM,Micronesia,Federated States of Micronesia,FM,583,FSM,Palikir,true
+GAB,Gabon,Gabonese Republic,GA,266,GAB,Libreville,true
+GBR,United Kingdom,United Kingdom of Great Britain and Northern Ireland,GB,826,GBR,London,true
+GEO,Georgia,Georgia,GE,268,GEO,Tbilisi,true
+GGY,Guernsey,Bailiwick of Guernsey,GG,831,,St. Peter Port,false
+GHA,Ghana,Republic of Ghana,GH,288,GHA,Accra,true
+GIB,Gibraltar,Gibraltar,GI,292,,Gibraltar,true
+GIN,Guinea,Republic of Guinea,GN,324,GUI,Conakry,true
+GLP,Guadeloupe,Guadeloupe,GP,312,,Basse-Terre,false
+GMB,Gambia,Republic of the Gambia,GM,270,GAM,Banjul,true
+GNB,Guinea-Bissau,Republic of Guinea-Bissau,GW,624,GBS,Bissau,true
+GNQ,Equatorial Guinea,Republic of Equatorial Guinea,GQ,226,GEQ,Malabo,true
+GRC,Greece,Hellenic Republic,GR,300,GRE,Athens,true
+GRD,Grenada,Grenada,GD,308,GRN,St. George's,true
+GRL,Greenland,Greenland,GL,304,,Nuuk,true
+GTM,Guatemala,Republic of Guatemala,GT,320,GUA,Guatemala City,true
+GUF,French Guiana,Guiana,GF,254,,Cayenne,false
+GUM,Guam,Guam,GU,316,GUM,Hagåtña,true
+GUY,Guyana,Co-operative Republic of Guyana,GY,328,GUY,Georgetown,true
+HKG,Hong Kong,Hong Kong Special Administrative Region of the People's Republic of China,HK,344,HKG,City of Victoria,true
+HMD,Heard Island and McDonald Islands,Heard Island and McDonald Islands,HM,334,,,false
+HND,Honduras,Republic of Honduras,HN,340,HON,Tegucigalpa,true
+HRV,Croatia,Republic of Croatia,HR,191,CRO,Zagreb,true
+HTI,Haiti,Republic of Haiti,HT,332,HAI,Port-au-Prince,true
+HUN,Hungary,Hungary,HU,348,HUN,Budapest,true
+IDN,Indonesia,Republic of Indonesia,ID,360,INA,Jakarta,true
+IMN,Isle of Man,Isle of Man,IM,833,,Douglas,true
+IND,India,Republic of India,IN,356,IND,New Delhi,true
+IOT,British Indian Ocean Territory,British Indian Ocean Territory,IO,086,,Diego Garcia,false
+IRL,Ireland,Republic of Ireland,IE,372,IRL,Dublin,true
+IRN,Iran,Islamic Republic of Iran,IR,364,IRI,Tehran,true
+IRQ,Iraq,Republic of Iraq,IQ,368,IRQ,Baghdad,true
+ISL,Iceland,Iceland,IS,352,ISL,Reykjavik,true
+ISR,Israel,State of Israel,IL,376,ISR,Jerusalem,true
+ITA,Italy,Italian Republic,IT,380,ITA,Rome,true
+JAM,Jamaica,Jamaica,JM,388,JAM,Kingston,true
+JEY,Jersey,Bailiwick of Jersey,JE,832,,Saint Helier,false
+JOR,Jordan,Hashemite Kingdom of Jordan,JO,400,JOR,Amman,true
+JPN,Japan,Japan,JP,392,JPN,Tokyo,true
+KAZ,Kazakhstan,Republic of Kazakhstan,KZ,398,KAZ,Astana,true
+KEN,Kenya,Republic of Kenya,KE,404,KEN,Nairobi,true
+KGZ,Kyrgyzstan,Kyrgyz Republic,KG,417,KGZ,Bishkek,true
+KHM,Cambodia,Kingdom of Cambodia,KH,116,CAM,Phnom Penh,true
+KIR,Kiribati,Independent and Sovereign Republic of Kiribati,KI,296,KIR,South Tarawa,true
+KNA,Saint Kitts and Nevis,Federation of Saint Christopher and Nevis,KN,659,SKN,Basseterre,true
+KOR,South Korea,Republic of Korea,KR,410,KOR,Seoul,true
+KWT,Kuwait,State of Kuwait,KW,414,KUW,Kuwait City,true
+LAO,Laos,Lao People's Democratic Republic,LA,418,LAO,Vientiane,true
+LBN,Lebanon,Lebanese Republic,LB,422,LBN,Beirut,true
+LBR,Liberia,Republic of Liberia,LR,430,LBR,Monrovia,true
+LBY,Libya,State of Libya,LY,434,LBA,Tripoli,true
+LCA,Saint Lucia,Saint Lucia,LC,662,LCA,Castries,true
+LIE,Liechtenstein,Principality of Liechtenstein,LI,438,LIE,Vaduz,true
+LKA,Sri Lanka,Democratic Socialist Republic of Sri Lanka,LK,144,SRI,Colombo,true
+LSO,Lesotho,Kingdom of Lesotho,LS,426,LES,Maseru,true
+LTU,Lithuania,Republic of Lithuania,LT,440,LTU,Vilnius,true
+LUX,Luxembourg,Grand Duchy of Luxembourg,LU,442,LUX,Luxembourg,true
+LVA,Latvia,Republic of Latvia,LV,428,LAT,Riga,true
+MAC,Macau,Macao Special Administrative Region of the People's Republic of China,MO,446,,,true
+MAF,Saint Martin,Saint Martin,MF,663,,Marigot,true
+MAR,Morocco,Kingdom of Morocco,MA,504,MAR,Rabat,true
+MCO,Monaco,Principality of Monaco,MC,492,MON,Monaco,true
+MDA,Moldova,Republic of Moldova,MD,498,MDA,Chișinău,true
+MDG,Madagascar,Republic of Madagascar,MG,450,MAD,Antananarivo,true
+MDV,Maldives,Republic of the Maldives,MV,462,MDV,Malé,true
+MEX,Mexico,United Mexican States,MX,484,MEX,Mexico City,true
+MHL,Marshall Islands,Republic of the Marshall Islands,MH,584,MHL,Majuro,true
+MKD,North Macedonia,Republic of North Macedonia,MK,807,MKD,Skopje,true
+MLI,Mali,Republic of Mali,ML,466,MLI,Bamako,true
+MLT,Malta,Republic of Malta,MT,470,MLT,Valletta,true
+MMR,Myanmar,Republic of the Union of Myanmar,MM,104,MYA,Naypyidaw,true
+MNE,Montenegro,Montenegro,ME,499,MNE,Podgorica,true
+MNG,Mongolia,Mongolia,MN,496,MGL,Ulan Bator,true
+MNP,Northern Mariana Islands,Commonwealth of the Northern Mariana Islands,MP,580,,Saipan,true
+MOZ,Mozambique,Republic of Mozambique,MZ,508,MOZ,Maputo,true
+MRT,Mauritania,Islamic Republic of Mauritania,MR,478,MTN,Nouakchott,true
+MSR,Montserrat,Montserrat,MS,500,,Plymouth,false
+MTQ,Martinique,Martinique,MQ,474,,Fort-de-France,false
+MUS,Mauritius,Republic of Mauritius,MU,480,MRI,Port Louis,true
+MWI,Malawi,Republic of Malawi,MW,454,MAW,Lilongwe,true
+MYS,Malaysia,Malaysia,MY,458,MAS,Kuala Lumpur,true
+MYT,Mayotte,Department of Mayotte,YT,175,,Mamoudzou,false
+NAM,Namibia,Republic of Namibia,NA,516,NAM,Windhoek,true
+NCL,New Caledonia,New Caledonia,NC,540,,Nouméa,true
+NER,Niger,Republic of Niger,NE,562,NIG,Niamey,true
+NFK,Norfolk Island,Territory of Norfolk Island,NF,574,,Kingston,false
+NGA,Nigeria,Federal Republic of Nigeria,NG,566,NGR,Abuja,true
+NIC,Nicaragua,Republic of Nicaragua,NI,558,NCA,Managua,true
+NIU,Niue,Niue,NU,570,,Alofi,false
+NLD,Netherlands,Kingdom of the Netherlands,NL,528,NED,Amsterdam,true
+NOR,Norway,Kingdom of Norway,NO,578,NOR,Oslo,true
+NPL,Nepal,Federal Democratic Republic of Nepal,NP,524,NEP,Kathmandu,true
+NRU,Nauru,Republic of Nauru,NR,520,NRU,Yaren,true
+NZL,New Zealand,New Zealand,NZ,554,NZL,Wellington,true
+OMN,Oman,Sultanate of Oman,OM,512,OMA,Muscat,true
+PAK,Pakistan,Islamic Republic of Pakistan,PK,586,PAK,Islamabad,true
+PAN,Panama,Republic of Panama,PA,591,PAN,Panama City,true
+PCN,Pitcairn Islands,Pitcairn Group of Islands,PN,612,,Adamstown,false
+PER,Peru,Republic of Peru,PE,604,PER,Lima,true
+PHL,Philippines,Republic of the Philippines,PH,608,PHI,Manila,true
+PLW,Palau,Republic of Palau,PW,585,PLW,Ngerulmud,true
+PNG,Papua New Guinea,Independent State of Papua New Guinea,PG,598,PNG,Port Moresby,true
+POL,Poland,Republic of Poland,PL,616,POL,Warsaw,true
+PRI,Puerto Rico,Commonwealth of Puerto Rico,PR,630,PUR,San Juan,true
+PRK,North Korea,Democratic People's Republic of Korea,KP,408,PRK,Pyongyang,true
+PRT,Portugal,Portuguese Republic,PT,620,POR,Lisbon,true
+PRY,Paraguay,Republic of Paraguay,PY,600,PAR,Asunción,true
+PSE,Palestine,State of Palestine,PS,275,PLE,Ramallah,true
+PYF,French Polynesia,French Polynesia,PF,258,,Papeetē,true
+QAT,Qatar,State of Qatar,QA,634,QAT,Doha,true
+REU,Réunion,Réunion Island,RE,638,,Saint-Denis,false
+ROU,Romania,Romania,RO,642,ROU,Bucharest,true
+RUS,Russia,Russian Federation,RU,643,RUS,Moscow,true
+RWA,Rwanda,Republic of Rwanda,RW,646,RWA,Kigali,true
+SAU,Saudi Arabia,Kingdom of Saudi Arabia,SA,682,KSA,Riyadh,true
+SDN,Sudan,Republic of the Sudan,SD,729,SUD,Khartoum,true
+SEN,Senegal,Republic of Senegal,SN,686,SEN,Dakar,true
+SGP,Singapore,Republic of Singapore,SG,702,SGP,Singapore,true
+SGS,South Georgia,South Georgia and the South Sandwich Islands,GS,239,,King Edward Point,false
+SHN,"Saint Helena, Ascension and Tristan da Cunha","Saint Helena, Ascension and Tristan da Cunha",SH,654,,,false
+SJM,Svalbard and Jan Mayen,Svalbard og Jan Mayen,SJ,744,,Longyearbyen,false
+SLB,Solomon Islands,Solomon Islands,SB,090,SOL,Honiara,true
+SLE,Sierra Leone,Republic of Sierra Leone,SL,694,SLE,Freetown,true
+SLV,El Salvador,Republic of El Salvador,SV,222,ESA,San Salvador,true
+SMR,San Marino,Most Serene Republic of San Marino,SM,674,SMR,City of San Marino,true
+SOM,Somalia,Federal Republic of Somalia,SO,706,SOM,Mogadishu,true
+SPM,Saint Pierre and Miquelon,Saint Pierre and Miquelon,PM,666,,Saint-Pierre,false
+SRB,Serbia,Republic of Serbia,RS,688,SRB,Belgrade,true
+SSD,South Sudan,Republic of South Sudan,SS,728,,Juba,true
+STP,São Tomé and Príncipe,Democratic Republic of São Tomé and Príncipe,ST,678,STP,São Tomé,true
+SUR,Suriname,Republic of Suriname,SR,740,SUR,Paramaribo,true
+SVK,Slovakia,Slovak Republic,SK,703,SVK,Bratislava,true
+SVN,Slovenia,Republic of Slovenia,SI,705,SLO,Ljubljana,true
+SWE,Sweden,Kingdom of Sweden,SE,752,SWE,Stockholm,true
+SWZ,Eswatini,Kingdom of Eswatini,SZ,748,SWZ,Lobamba,true
+SXM,Sint Maarten,Sint Maarten,SX,534,,Philipsburg,true
+SYC,Seychelles,Republic of Seychelles,SC,690,SEY,Victoria,true
+SYR,Syria,Syrian Arab Republic,SY,760,SYR,Damascus,true
+TCA,Turks and Caicos Islands,Turks and Caicos Islands,TC,796,,Cockburn Town,true
+TCD,Chad,Republic of Chad,TD,148,CHA,N'Djamena,true
+TGO,Togo,Togolese Republic,TG,768,TOG,Lomé,true
+THA,Thailand,Kingdom of Thailand,TH,764,THA,Bangkok,true
+TJK,Tajikistan,Republic of Tajikistan,TJ,762,TJK,Dushanbe,true
+TKL,Tokelau,Tokelau,TK,772,,Fakaofo,false
+TKM,Turkmenistan,Turkmenistan,TM,795,TKM,Ashgabat,true
+TLS,Timor-Leste,Democratic Republic of Timor-Leste,TL,626,TLS,Dili,true
+TON,Tonga,Kingdom of Tonga,TO,776,TGA,Nuku'alofa,true
+TTO,Trinidad and Tobago,Republic of Trinidad and Tobago,TT,780,TTO,Port of Spain,true
+TUN,Tunisia,Tunisian Republic,TN,788,TUN,Tunis,true
+TUR,Türkiye,Republic of Türkiye,TR,792,TUR,Ankara,true
+TUV,Tuvalu,Tuvalu,TV,798,TUV,Funafuti,true
+TWN,Taiwan,Republic of China (Taiwan),TW,158,TPE,Taipei,false
+TZA,Tanzania,United Republic of Tanzania,TZ,834,TAN,Dodoma,true
+UGA,Uganda,Republic of Uganda,UG,800,UGA,Kampala,true
+UKR,Ukraine,Ukraine,UA,804,UKR,Kyiv,true
+UMI,United States Minor Outlying Islands,United States Minor Outlying Islands,UM,581,,,false
+URY,Uruguay,Oriental Republic of Uruguay,UY,858,URU,Montevideo,true
+USA,United States,United States of America,US,840,USA,Washington D.C.,true
+UZB,Uzbekistan,Republic of Uzbekistan,UZ,860,UZB,Tashkent,true
+VAT,Vatican City,Vatican City State,VA,336,,Vatican City,false
+VCT,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,VC,670,VIN,Kingstown,true
+VEN,Venezuela,Bolivarian Republic of Venezuela,VE,862,VEN,Caracas,true
+VGB,British Virgin Islands,Virgin Islands,VG,092,IVB,Road Town,true
+VIR,United States Virgin Islands,Virgin Islands of the United States,VI,850,ISV,Charlotte Amalie,true
+VNM,Vietnam,Socialist Republic of Vietnam,VN,704,VIE,Hanoi,true
+VUT,Vanuatu,Republic of Vanuatu,VU,548,VAN,Port Vila,true
+WLF,Wallis and Futuna,Territory of the Wallis and Futuna Islands,WF,876,,Mata-Utu,false
+WSM,Samoa,Independent State of Samoa,WS,882,SAM,Apia,true
+XKX,Kosovo,Republic of Kosovo,XK,,KOS,Pristina,true
+YEM,Yemen,Republic of Yemen,YE,887,YEM,Sana'a,true
+ZAF,South Africa,Republic of South Africa,ZA,710,RSA,Pretoria,true
+ZMB,Zambia,Republic of Zambia,ZM,894,ZAM,Lusaka,true
+ZWE,Zimbabwe,Republic of Zimbabwe,ZW,716,ZIM,Harare,true
