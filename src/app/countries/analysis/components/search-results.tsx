@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { slug } from '@/utils/slug';
 import { useCountryGroups } from '@/hooks/react-query/queries/use-country-groups';
 import { cn } from '@/utils/shadcn/utils';
-import { Star } from 'lucide-react';
 import { CountryOrGroup } from '../types/search-results';
+import GroupFlags from '@/components/group-flags';
 
 type SearchResultsProps = {
 	searchResults: CountryOrGroup[];
@@ -17,7 +17,7 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 	const favouriteCountries = favouriteGroup?.countries;
 
 	return (
-		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8'>
+		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mt-8'>
 			{searchResults
 				.sort((a, b) => {
 					const aIndex = a.type === 'country' ? (favouriteCountries?.includes(a.data.cca3) ? 0 : 1) : 0;
@@ -30,45 +30,26 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 							element.type === 'country' ? element.data.cca3 : element.data.id
 						}`}
 						className={cn(
-							'border rounded-md p-4 flex gap-4 justify-between transition-colors',
+							'rounded-md group transition-colors',
 							favouriteCountries?.some((country) =>
 								element.type === 'country' ? country === element.data.cca3 : country === element.data.id
 							)
-								? 'hover:bg-yellow-500/10 hover:border-yellow-500'
-								: 'hover:bg-accent hover:border-accent-foreground'
+								? 'hover:bg-yellow-500/10'
+								: 'hover:bg-accent'
 						)}
 						key={slug(element.type + '-' + (element.type === 'country' ? element.data.cca3 : element.data.id))}
 					>
-						{element.type === 'country' ? (
-							<div className='shrink-0'>
-								<Flag code={element.data.cca3} ratio='4x3' height={72} />
+						<div className='relative'>
+							<div className='opacity-50 group-hover:opacity-100 aspect-4/3 group-hover:blur-xs transition-all'>
+								{element.type === 'country' ? (
+									<Flag code={element.data.cca3} ratio='4x3' />
+								) : (
+									<GroupFlags countries={element.data.countries} name={element.data.name} width={174} />
+								)}
 							</div>
-						) : (
-							<div className='w-24 h-18 relative overflow-hidden rounded-md flex items-center text-center justify-center shrink-0'>
-								<div className='h-full w-full grid grid-cols-3 opacity-50'>
-									{element.data.countries.map((country, index) => (
-										<div key={index} className='h-full w-full'>
-											<Flag code={country} ratio='4x3' height={72} rounded={false} />
-										</div>
-									))}
-								</div>
-								<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-sm font-medium'>
-									{element.data.name}
-								</div>
+							<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center px-1 py-0.5 rounded-md font-medium text-white group-hover:scale-125 group-hover:bg-black/40 transition-all'>
+								{element.data.name}
 							</div>
-						)}
-						<div className='flex flex-col items-end justify-between'>
-							<span className='line-clamp-2 text-right flex items-center gap-2'>
-								{element.data.name}{' '}
-								{favouriteCountries?.some((country) =>
-									element.type === 'country' ? country === element.data.cca3 : country === element.data.id
-								) ? (
-									<Star className='size-5 text-yellow-500' />
-								) : null}
-							</span>
-							<span className='text-sm text-muted-foreground'>
-								{element.type === 'country' ? element.data.cca3 : element.data.countries.length + ' countries'}
-							</span>
 						</div>
 					</Link>
 				))}
