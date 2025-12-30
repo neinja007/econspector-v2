@@ -44,15 +44,17 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 								<Flag code={element.data.cca3} ratio='4x3' height={72} />
 							</div>
 						) : (
-							<div className='w-24 h-18 relative bg-gray-500 overflow-hidden rounded-md flex items-center text-center justify-center shrink-0'>
-								<div className='h-full w-full grid grid-cols-3'>
+							<div className='w-24 h-18 relative overflow-hidden rounded-md flex items-center text-center justify-center shrink-0'>
+								<div className='h-full w-full grid grid-cols-3 opacity-50'>
 									{element.data.countries.map((country, index) => (
 										<div key={index} className='h-full w-full'>
-											<Flag code={country} ratio='4x3' height={72} />
+											<Flag code={country} ratio='4x3' height={72} rounded={false} />
 										</div>
 									))}
 								</div>
-								<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>{element.data.name}</div>
+								<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-sm font-medium'>
+									{element.data.name}
+								</div>
 							</div>
 						)}
 						<div className='flex flex-col items-end justify-between'>
