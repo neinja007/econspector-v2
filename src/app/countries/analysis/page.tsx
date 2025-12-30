@@ -28,6 +28,8 @@ const CountriesAnalysisPage = () => {
 		[showCountries, showGroups, countries, countryGroups]
 	);
 
+	// TODO: Consider just searching countries and then filtering groups by the countries in the search results
+
 	const searchResults = useSearch(searchList, search, [
 		'data.cca3',
 		'data.name',
