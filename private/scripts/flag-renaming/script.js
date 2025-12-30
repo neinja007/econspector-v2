@@ -80,14 +80,14 @@ for (let i = 1; i < lines.length; i++) {
 	const source4x3 = path.join(archive4x3Path, `${cca2Lower}.svg`);
 	const dest1x1 = path.join(public1x1Path, `${cca3}.svg`);
 	const dest4x3 = path.join(public4x3Path, `${cca3}.svg`);
-	
+
 	// Debug: print first few paths
 	if (i === 1) {
 		console.log(`Debug - archive1x1Path: ${archive1x1Path}`);
 		console.log(`Debug - source1x1 (first): ${source1x1}`);
 		console.log(`Debug - exists: ${fs.existsSync(source1x1)}`);
 	}
-	
+
 	// Copy 1x1 flag
 	if (fs.existsSync(source1x1)) {
 		try {
