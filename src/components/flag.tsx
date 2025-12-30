@@ -4,12 +4,12 @@ import Image from 'next/image';
 type FlagProps = {
 	code: string;
 	ratio: '1x1' | '4x3';
-	height: number;
+	width?: number;
 	rounded?: boolean;
 };
 
-const Flag = ({ code, ratio, height, rounded = true }: FlagProps) => {
-	const width = ratio === '1x1' ? height : (height * 4) / 3;
+const Flag = ({ code, ratio, width, rounded = true }: FlagProps) => {
+	const height = width ? (ratio === '1x1' ? width : (width * 3) / 4) : undefined;
 
 	return (
 		<Image
@@ -18,6 +18,7 @@ const Flag = ({ code, ratio, height, rounded = true }: FlagProps) => {
 			className={cn('object-cover', rounded && 'rounded-md')}
 			width={width}
 			height={height}
+			fill={!width && !height}
 		/>
 	);
 };
