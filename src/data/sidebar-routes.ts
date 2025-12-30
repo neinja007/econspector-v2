@@ -80,7 +80,7 @@ export const sidebarRoutes: {
 							{
 								label: `${country.full_name} (${country.name})`,
 								href: `/countries/analysis/${type}/${code}`,
-								icon: createElement(FlagComponent, { code: country.cca3, ratio: '4x3', height: 24 })
+								icon: createElement(FlagComponent, { code: country.cca3, ratio: '4x3', width: 32 })
 							}
 						];
 					} else if (type === 'group') {
