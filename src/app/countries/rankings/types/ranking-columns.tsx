@@ -62,7 +62,7 @@ export const columns = (unit: string): ColumnDef<RankedItem>[] => [
 		cell: ({ row }) => {
 			return (
 				<div className='flex items-center gap-2'>
-					<Flag code={row.original.item.iconPath || ''} ratio='4x3' height={24} />
+					<Flag code={row.original.item.iconPath || ''} ratio='4x3' width={32} />
 					<SimpleTooltip tooltip={row.original.item.fullName}>
 						<Link
 							href={`/countries/analysis/${row.original.item.type}/${row.original.item.code}`}
