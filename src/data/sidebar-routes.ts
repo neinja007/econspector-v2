@@ -31,6 +31,7 @@ import {
 	User
 } from 'lucide-react';
 import { createElement, ReactNode } from 'react';
+import { getCountryGroup } from '@/supabase/api/country_groups';
 
 export const sidebarRoutes: {
 	name: string;
@@ -83,11 +84,10 @@ export const sidebarRoutes: {
 							}
 						];
 					} else if (type === 'group') {
-						// const group = await getCountryGroup(code);
+						const group = await getCountryGroup(code);
 						return [
 							{
-								label: 'Group',
-								// label: group.name,
+								label: group?.name || 'Unknown Group',
 								href: `/countries/analysis/${type}/${code}`,
 								icon: Component
 							}
