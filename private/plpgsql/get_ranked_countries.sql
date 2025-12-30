@@ -13,7 +13,6 @@
 --         "code": string (cca3),
 --         "name": string,
 --         "fullName": string,
---         "iconPath": string (cca2)
 --       },
 --       "coverage": [
 --         {
@@ -54,7 +53,6 @@ BEGIN
       c.cca3,
       c.name,
       c.full_name,
-      c.cca2,
       AVG(tsd.value) as avg_value,
       jsonb_agg(
         jsonb_build_object(
@@ -69,7 +67,7 @@ BEGIN
       AND tsd.period <= p_end_year::TEXT
       AND tsd.value IS NOT NULL
       AND c.name IS NOT NULL
-    GROUP BY c.cca3, c.name, c.full_name, c.cca2
+    GROUP BY c.cca3, c.name, c.full_name
     HAVING COUNT(tsd.value) > 0
   ),
   ranked_with_coverage AS (
@@ -81,7 +79,6 @@ BEGIN
         'code', ca.cca3,
         'name', ca.name,
         'fullName', COALESCE(ca.full_name, ca.name),
-        'iconPath', ca.cca2
       ) as item,
       jsonb_build_array(
         jsonb_build_object(
@@ -122,4 +119,4 @@ BEGIN
 
   RETURN COALESCE(v_result, '[]'::JSON);
 END;
-$$;
+$$
