@@ -31,6 +31,17 @@ const CountryAnalysisPage = () => {
 		);
 	}
 
+	// TODO Modify this horrendous error handling
+
+	if (!data) {
+		return (
+			<div className='flex items-center justify-center h-96 gap-2'>
+				<Spinner />
+				The {type} {code} is not found.
+			</div>
+		);
+	}
+
 	if (status === 'success') {
 		return (
 			<div className='flex flex-col gap-4'>

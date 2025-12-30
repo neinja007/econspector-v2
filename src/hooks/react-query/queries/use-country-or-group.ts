@@ -4,7 +4,7 @@ import { CountryGroup, CountryWithCurrencies } from '@/types/country';
 import { useQuery } from '@tanstack/react-query';
 
 export function useCountryOrGroup(type: 'country' | 'group', code: string) {
-	return useQuery<CountryWithCurrencies | CountryGroup>({
+	return useQuery<CountryWithCurrencies | CountryGroup | undefined>({
 		queryKey: ['country-or-groups', type, code],
 		queryFn: () => (type === 'country' ? getCountry(code) : getCountryGroup(code))
 	});

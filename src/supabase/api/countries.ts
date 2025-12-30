@@ -15,13 +15,16 @@ async function getCountries(): Promise<{ data: Country[]; count: number }> {
 	return { data, count: count ?? 0 };
 }
 
-async function getCountry(code: string): Promise<CountryWithCurrencies> {
+async function getCountry(code: string): Promise<CountryWithCurrencies | undefined> {
 	const { data, error } = await supabase
 		.schema(DatabaseSchema.DATA)
 		.from(DatabaseTable.COUNTRIES)
 		.select('*, currencies(*)')
 		.eq('cca3', code);
 	if (error) throw error;
+	if (!data || data.length === 0) {
+		return undefined;
+	}
 	return data[0];
 }
 
