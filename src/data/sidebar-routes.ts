@@ -76,18 +76,20 @@ export const sidebarRoutes: {
 					if (!type || !code) return undefined;
 					if (type === 'country') {
 						const country = await getCountry(code);
+						const label = country ? `${country.full_name} (${country.name})` : 'Unknown Country';
 						return [
 							{
-								label: `${country.full_name} (${country.name})`,
+								label,
 								href: `/countries/analysis/${type}/${code}`,
-								icon: createElement(FlagComponent, { code: country.cca3, ratio: '4x3', width: 32 })
+								icon: createElement(FlagComponent, { code: country?.cca3 || '', ratio: '4x3', width: 32 })
 							}
 						];
 					} else if (type === 'group') {
 						const group = await getCountryGroup(code);
+						const label = group ? group.name : 'Unknown Group';
 						return [
 							{
-								label: group?.name || 'Unknown Group',
+								label,
 								href: `/countries/analysis/${type}/${code}`,
 								icon: Component
 							}
