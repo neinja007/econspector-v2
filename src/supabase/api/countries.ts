@@ -80,7 +80,6 @@ async function getCountry(code: string): Promise<CountryWithCurrencies> {
 // 						code: record.country.cca3,
 // 						name: record.country.name,
 // 						fullName: record.country.full_name,
-// 						iconPath: record.country.cca2,
 // 					},
 // 					dataPoints: [{ period: record.period, value: record.value }],
 // 				});

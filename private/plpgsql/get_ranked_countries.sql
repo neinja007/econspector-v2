@@ -12,7 +12,7 @@
 --         "type": "country",
 --         "code": string (cca3),
 --         "name": string,
---         "fullName": string,
+--         "fullName": string
 --       },
 --       "coverage": [
 --         {
@@ -78,7 +78,7 @@ BEGIN
         'type', 'country',
         'code', ca.cca3,
         'name', ca.name,
-        'fullName', COALESCE(ca.full_name, ca.name),
+        'fullName', COALESCE(ca.full_name, ca.name)
       ) as item,
       jsonb_build_array(
         jsonb_build_object(
@@ -119,4 +119,4 @@ BEGIN
 
   RETURN COALESCE(v_result, '[]'::JSON);
 END;
-$$
+$$;

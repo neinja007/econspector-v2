@@ -4,8 +4,7 @@ export type RankedItem = {
 		type: 'country' | 'region' | 'subregion';
 		code: string;
 		name: string;
-		fullName?: string;
-		iconPath?: string;
+		fullName: string;
 	};
 	coverage: (Coverage | TemporalCoverage)[];
 	rank: number;
