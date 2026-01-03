@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import axios from 'axios';
 import { adminSupabase } from '@/supabase/clients/admin';
 import { DataSource } from '@/types/data_source';
+import { Database } from '@/types/db';
 
 export const POST = async (req: Request) => {
 	const body = await req.json();
@@ -28,7 +29,7 @@ export const POST = async (req: Request) => {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });
 	}
 
-	let sourcesToUpdate = [];
+	let sourcesToUpdate: Database['data']['Tables']['frequency_sources']['Row'][] = [];
 
 	if (updateMode === 'all') {
 		sourcesToUpdate = worldBankSources.data;
@@ -36,8 +37,15 @@ export const POST = async (req: Request) => {
 		sourcesToUpdate = worldBankSources.data.filter((source) => source.data_updated_at === null);
 	}
 
-	for (const source of sourcesToUpdate) {
-		console.log(`${source.code}: Removing existing data...`);
+	const filteredSources = sourcesToUpdate.filter((source) => source['wb-code'] !== null);
+
+	if (sourcesToUpdate.length !== filteredSources.length) {
+		return NextResponse.json({ error: 'Some WB sources have no wb-code, which is fucking bullshit.' }, { status: 400 });
+	}
+
+	// TODO maybe use econspector internal indicator codes instead of wb.
+	for (const source of filteredSources) {
+		console.log(`${source['wb-code']}: Removing existing data...`);
 
 		await adminSupabase
 			.schema(DatabaseSchema.DATA)
@@ -45,10 +53,10 @@ export const POST = async (req: Request) => {
 			.delete()
 			.eq('source_id', source.id);
 
-		console.log(`${source.code}: Fetching data...`);
+		console.log(`${source['wb-code']}: Fetching data...`);
 
 		const res = await axios.get(
-			`https://api.worldbank.org/v2/country/all/indicator/${source.code}?per_page=30000&format=json`,
+			`https://api.worldbank.org/v2/country/all/indicator/${source['wb-code']}?per_page=30000&format=json`,
 			{
 				timeout: 30000,
 				headers: {
@@ -67,36 +75,32 @@ export const POST = async (req: Request) => {
 			decimal: number;
 		}[] = res.data[1];
 
-		console.log(`${source.code}: Received ${data.length} data points.`);
+		console.log(`${source['wb-code']}: Received ${data.length} data points.`);
 
-		const insertableData = data
-			.filter(
-				(item) =>
-					item.value !== null &&
-					item.value !== undefined &&
-					worldBankCountries.data?.some((country) => country.cca3 === item.countryiso3code)
-			)
-			.map((item) => ({
-				source_id: source.id,
-				country_code: item.countryiso3code,
-				period: item.date,
-				value: item.value,
-				data_source: DataSource.WORLD_BANK
-			}));
+		const filteredData = data.filter(
+			(item): item is typeof item & { value: number } => item.value !== null && item.value !== undefined
+		);
 
-		console.log(`${source.code}: Conversion complete.`);
+		const mappedData = filteredData.map((item) => ({
+			source_id: source.id,
+			country_code: item.countryiso3code,
+			period: item.date,
+			value: item.value
+		}));
+
+		console.log(`${source['wb-code']}: Conversion complete.`);
 
 		const { error } = await adminSupabase
 			.schema(DatabaseSchema.DATA)
 			.from(DatabaseTable.TIME_SERIES_DATA)
-			.upsert(insertableData);
+			.upsert(mappedData);
 
 		if (error) {
 			console.error(`Error inserting data:`, error);
 			return NextResponse.json({ error: 'Failed to insert data' }, { status: 500 });
 		}
 
-		console.log(`${source.code}: Insertion complete.`);
+		console.log(`${source['wb-code']}: Insertion complete.`);
 
 		await adminSupabase
 			.schema(DatabaseSchema.DATA)
@@ -106,7 +110,7 @@ export const POST = async (req: Request) => {
 			})
 			.eq('id', source.id);
 
-		console.log(`${source.code}: Indicator date updated successfully.`);
+		console.log(`${source['wb-code']}: Indicator date updated successfully.`);
 	}
 
 	return NextResponse.json({ message: 'Data inserted successfully' });
