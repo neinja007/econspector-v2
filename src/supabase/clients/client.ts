@@ -1,5 +1,5 @@
 import { createBrowserClient } from '@supabase/ssr';
-import { DatabaseWithOverrides } from '@/types/db/alias';
+import { DatabaseWithOverrides } from '@/types/db/type-overrides';
 
 export const supabase = createBrowserClient<DatabaseWithOverrides>(
 	process.env.NEXT_PUBLIC_SUPABASE_URL!,
