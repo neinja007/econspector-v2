@@ -20,7 +20,7 @@ export const POST = async () => {
 			const dbIndicator = await adminSupabase
 				.schema(DatabaseSchema.DATA)
 				.from(DatabaseTable.INDICATORS)
-				.insert({ name: indicator.name, abbreviation: indicator.abbreviation })
+				.insert({ name: indicator.name, code: indicator.abbreviation })
 				.select()
 				.single();
 
@@ -35,6 +35,7 @@ export const POST = async () => {
 					.from(DatabaseTable.INDICATORS)
 					.insert({
 						name: subindicator.name,
+						code: subindicator.abbreviation,
 						parent_id: dbIndicator.data.id,
 						unit: subindicator.unit,
 						chart_type: subindicator.chart_type
@@ -80,7 +81,7 @@ export const POST = async () => {
 				.from(DatabaseTable.INDICATORS)
 				.insert({
 					name: indicator.name,
-					abbreviation: indicator.abbreviation,
+					code: indicator.abbreviation,
 					unit: indicator.unit,
 					chart_type: indicator.chart_type
 				})
