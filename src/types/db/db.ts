@@ -49,23 +49,30 @@ export type Database = {
       }
       countries_currencies: {
         Row: {
-          country_code: string
+          country_cca3: string
           currency_code: string
         }
         Insert: {
-          country_code: string
+          country_cca3: string
           currency_code: string
         }
         Update: {
-          country_code?: string
+          country_cca3?: string
           currency_code?: string
         }
         Relationships: [
           {
             foreignKeyName: "countries_currencies_country_code_fkey"
-            columns: ["country_code"]
+            columns: ["country_cca3"]
             isOneToOne: false
             referencedRelation: "countries"
+            referencedColumns: ["cca3"]
+          },
+          {
+            foreignKeyName: "countries_currencies_country_code_fkey"
+            columns: ["country_cca3"]
+            isOneToOne: false
+            referencedRelation: "countries_with_currencies"
             referencedColumns: ["cca3"]
           },
           {
@@ -73,25 +80,25 @@ export type Database = {
             columns: ["currency_code"]
             isOneToOne: false
             referencedRelation: "currencies"
-            referencedColumns: ["currency_code"]
+            referencedColumns: ["code"]
           },
         ]
       }
       currencies: {
         Row: {
-          currency_code: string
+          code: string
           name: string
           symbol: string
           symbol_native: string
         }
         Insert: {
-          currency_code: string
+          code: string
           name: string
           symbol: string
           symbol_native: string
         }
         Update: {
-          currency_code?: string
+          code?: string
           name?: string
           symbol?: string
           symbol_native?: string
@@ -228,6 +235,13 @@ export type Database = {
             referencedColumns: ["cca3"]
           },
           {
+            foreignKeyName: "world_bank_data_country_code_fkey"
+            columns: ["country_code"]
+            isOneToOne: false
+            referencedRelation: "countries_with_currencies"
+            referencedColumns: ["cca3"]
+          },
+          {
             foreignKeyName: "world_bank_data_source_id_fkey"
             columns: ["source_id"]
             isOneToOne: false
@@ -238,7 +252,20 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      countries_with_currencies: {
+        Row: {
+          capital: string | null
+          cca2: string | null
+          cca3: string | null
+          ccn3: string | null
+          cioc: string | null
+          currencies: Json | null
+          full_name: string | null
+          name: string | null
+          world_bank: boolean | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       get_ranked_countries: {

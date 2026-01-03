@@ -1,26 +1,20 @@
-import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { supabase } from '@/supabase/clients/client';
-import { Country, CountryWithCurrencies } from '@/types/country';
-import { RankedItem } from '@/types/ranked-item';
+import { DbDataFunctions, DbDataTables, DbDataViews } from '@/types/db/tables';
 
-async function getCountries(): Promise<{ data: Country[]; count: number }> {
+async function getCountries(): Promise<{ data: DbDataTables<'countries'>[]; count: number | null }> {
 	const { data, error, count } = await supabase
-		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.COUNTRIES)
+		.schema('data')
+		.from('countries')
 		.select('*', {
 			count: 'estimated'
 		})
 		.order('name', { ascending: true });
 	if (error) throw error;
-	return { data, count: count ?? 0 };
+	return { data, count };
 }
 
-async function getCountry(code: string): Promise<CountryWithCurrencies | undefined> {
-	const { data, error } = await supabase
-		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.COUNTRIES)
-		.select('*, currencies(*)')
-		.eq('cca3', code);
+async function getCountry(code: string): Promise<DbDataViews<'countries_with_currencies'> | undefined> {
+	const { data, error } = await supabase.schema('data').from('countries_with_currencies').select('*').eq('cca3', code);
 	if (error) throw error;
 	if (!data || data.length === 0) {
 		return undefined;
@@ -122,16 +116,16 @@ async function getCountry(code: string): Promise<CountryWithCurrencies | undefin
 const getRankedCountries = async (
 	type: 'countries' | 'regions' | 'subregions',
 	sourceId: number,
-	timePeriod: [number, number] | null
-): Promise<RankedItem[]> =>
+	timePeriod: [number, number]
+): Promise<DbDataFunctions<'get_ranked_countries'>> =>
 	supabase
-		.schema(DatabaseSchema.DATA)
+		.schema('data')
 		.rpc('get_ranked_countries', {
 			p_level: type,
 			p_source_id: sourceId,
-			p_start_year: timePeriod?.[0],
-			p_end_year: timePeriod?.[1]
+			p_start_year: timePeriod?.[0] ?? 0,
+			p_end_year: timePeriod?.[1] ?? 0
 		})
-		.then(({ data }) => data as RankedItem[]);
+		.then(({ data }) => data);
 
 export { getCountries, getCountry, getRankedCountries };

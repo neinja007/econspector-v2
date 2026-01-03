@@ -1,27 +1,22 @@
-import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 import { adminSupabase } from '@/supabase/clients/admin';
 import { DataSource } from '@/types/data_source';
-import { Database } from '@/types/db/db';
+import { DbDataTables } from '@/types/db/tables';
 
 export const POST = async (req: Request) => {
 	const body = await req.json();
 	const updateMode = body.update === 'all' || body.update === 'new' ? body.update : 'all';
 
-	const worldBankCountries = await adminSupabase
-		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.COUNTRIES)
-		.select('*')
-		.eq('world_bank', true);
+	const worldBankCountries = await adminSupabase.schema('data').from('countries').select('*').eq('world_bank', true);
 
 	if (!worldBankCountries.data) {
 		return NextResponse.json({ error: 'No world bank countries found' }, { status: 404 });
 	}
 
 	const worldBankSources = await adminSupabase
-		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.FREQUENCY_SOURCES)
+		.schema('data')
+		.from('frequency_sources')
 		.select('*, indicator_frequencies(indicator_id)')
 		.eq('data_source', DataSource.WORLD_BANK);
 
@@ -29,7 +24,7 @@ export const POST = async (req: Request) => {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });
 	}
 
-	let sourcesToUpdate: Database['data']['Tables']['frequency_sources']['Row'][] = [];
+	let sourcesToUpdate: DbDataTables<'frequency_sources'>[] = [];
 
 	if (updateMode === 'all') {
 		sourcesToUpdate = worldBankSources.data;
@@ -47,11 +42,7 @@ export const POST = async (req: Request) => {
 	for (const source of filteredSources) {
 		console.log(`${source['wb-code']}: Removing existing data...`);
 
-		await adminSupabase
-			.schema(DatabaseSchema.DATA)
-			.from(DatabaseTable.TIME_SERIES_DATA)
-			.delete()
-			.eq('source_id', source.id);
+		await adminSupabase.schema('data').from('time_series_data').delete().eq('source_id', source.id);
 
 		console.log(`${source['wb-code']}: Fetching data...`);
 
@@ -90,10 +81,7 @@ export const POST = async (req: Request) => {
 
 		console.log(`${source['wb-code']}: Conversion complete.`);
 
-		const { error } = await adminSupabase
-			.schema(DatabaseSchema.DATA)
-			.from(DatabaseTable.TIME_SERIES_DATA)
-			.upsert(mappedData);
+		const { error } = await adminSupabase.schema('data').from('time_series_data').upsert(mappedData);
 
 		if (error) {
 			console.error(`Error inserting data:`, error);
@@ -103,8 +91,8 @@ export const POST = async (req: Request) => {
 		console.log(`${source['wb-code']}: Insertion complete.`);
 
 		await adminSupabase
-			.schema(DatabaseSchema.DATA)
-			.from(DatabaseTable.FREQUENCY_SOURCES)
+			.schema('data')
+			.from('frequency_sources')
 			.update({
 				data_updated_at: new Date().toISOString()
 			})
@@ -117,6 +105,6 @@ export const POST = async (req: Request) => {
 };
 
 export const DELETE = async () => {
-	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.TIME_SERIES_DATA).delete().neq('id', 0);
+	await adminSupabase.schema('data').from('time_series_data').delete().neq('id', 0);
 	return NextResponse.json({ message: 'World bank data deleted successfully' });
 };
