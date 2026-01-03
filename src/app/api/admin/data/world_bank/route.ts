@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import axios from 'axios';
 import { adminSupabase } from '@/supabase/clients/admin';
 import { DataSource } from '@/types/data_source';
-import { Database } from '@/types/db';
+import { Database } from '@/types/db/db';
 
 export const POST = async (req: Request) => {
 	const body = await req.json();

@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"tssync": "pn supabase gen types typescript --schema data,users --project-id jkwjzwjnngbtudltvqvs > src\\types\\db.ts",
+		"tssync": "pn supabase gen types typescript --schema data,users --project-id jkwjzwjnngbtudltvqvs > src\\types\\db\\db.ts",
 		"dev": "next dev --turbopack",
 		"build": "next build --turbopack",
 		"start": "next start",
