@@ -3,19 +3,18 @@ import { DbTypeOverrides } from './overrides';
 
 /**
  * Utility type to apply column type overrides to a base type.
- * Merges the base type with any overrides defined in DbTypeOverrides.
+ * Replaces (rather than intersects) column types with any overrides defined in DbTypeOverrides.
  */
 export type ApplyOverrides<
 	Schema extends 'data' | 'users',
 	Type extends 'Views' | 'Tables',
 	T extends keyof Database[Schema][Type]
 > = Database[Schema][Type][T] extends { Row: infer R }
-	? R &
-			(T extends keyof DbTypeOverrides[Schema][Type]
-				? DbTypeOverrides[Schema][Type][T] extends Record<string, any>
-					? DbTypeOverrides[Schema][Type][T]
-					: {}
-				: {})
+	? T extends keyof DbTypeOverrides[Schema][Type]
+		? DbTypeOverrides[Schema][Type][T] extends Record<string, any>
+			? Omit<R, keyof DbTypeOverrides[Schema][Type][T]> & DbTypeOverrides[Schema][Type][T]
+			: R
+		: R
 	: never;
 
 /**
