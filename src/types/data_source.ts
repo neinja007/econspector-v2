@@ -13,3 +13,11 @@ export const DataSourceMap = {
 	[DataSource.TRADING_ECONOMICS]: 'Trading Economics',
 	[DataSource.OECD]: 'Organisation for Economic Co-operation and Development'
 };
+
+export const DataSourceAbbreviationMap = {
+	[DataSource.WORLD_BANK]: 'WB',
+	[DataSource.UN_DATA]: 'UN',
+	[DataSource.IMF]: 'IMF',
+	[DataSource.TRADING_ECONOMICS]: 'TE',
+	[DataSource.OECD]: 'OECD'
+};

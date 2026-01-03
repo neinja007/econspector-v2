@@ -14,6 +14,7 @@ export type IndicatorFrequency = {
 
 export type Subindicator = {
 	name: string;
+	abbreviation: string;
 	unit: string;
 	chart_type?: ChartType;
 	frequencies: IndicatorFrequency[];
@@ -22,6 +23,7 @@ export type Subindicator = {
 export type Indicator =
 	| {
 			name: string;
+			abbreviation: string;
 			subindicators: Subindicator[];
 	  }
 	| Subindicator;
@@ -29,9 +31,11 @@ export type Indicator =
 export const indicators: Indicator[] = [
 	{
 		name: 'GDP',
+		abbreviation: 'GDP',
 		subindicators: [
 			{
 				name: '% growth',
+				abbreviation: '%-GR',
 				unit: '%',
 				chart_type: ChartType.BAR,
 				frequencies: [
@@ -48,6 +52,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'constant 2015 US$',
+				abbreviation: 'CON-2015-USD',
 				unit: 'USD',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -64,6 +69,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'constant LCU',
+				abbreviation: 'CON-LCU',
 				unit: 'LCU',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -80,6 +86,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'current US$',
+				abbreviation: 'CUR-USD',
 				unit: 'USD',
 				chart_type: ChartType.LINE,
 				frequencies: [
@@ -96,6 +103,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'current LCU',
+				abbreviation: 'CUR-LCU',
 				unit: 'LCU',
 				chart_type: ChartType.LINE,
 				frequencies: [
@@ -114,9 +122,11 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'GDP per capita',
+		abbreviation: 'GDP-PC',
 		subindicators: [
 			{
 				name: '% growth',
+				abbreviation: '%-GR',
 				unit: '%',
 				chart_type: ChartType.BAR,
 				frequencies: [
@@ -133,6 +143,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'current US$',
+				abbreviation: 'CUR-USD',
 				unit: 'USD',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -149,6 +160,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'PPP (current international US$)',
+				abbreviation: 'PPP-CUR-USD',
 				unit: 'USD',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -167,9 +179,11 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Population',
+		abbreviation: 'POP',
 		subindicators: [
 			{
 				name: 'Total',
+				abbreviation: 'TOT',
 				unit: 'people',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -186,6 +200,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'Urban',
+				abbreviation: 'URB',
 				unit: 'people',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -202,6 +217,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'Rural',
+				abbreviation: 'RUR',
 				unit: 'people',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -218,6 +234,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: '% growth',
+				abbreviation: '%-GR',
 				unit: '%',
 				chart_type: ChartType.BAR,
 				frequencies: [
@@ -236,9 +253,11 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Inflation',
+		abbreviation: 'INF',
 		subindicators: [
 			{
 				name: 'Consumer prices',
+				abbreviation: 'CPI',
 				unit: '%',
 				chart_type: ChartType.BAR,
 				frequencies: [
@@ -255,6 +274,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'GDP deflator',
+				abbreviation: 'GDP-DEF',
 				unit: '%',
 				chart_type: ChartType.BAR,
 				frequencies: [
@@ -273,6 +293,7 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Surface area',
+		abbreviation: 'SUR',
 		unit: 'km²',
 		chart_type: ChartType.AREA,
 		frequencies: [
@@ -289,6 +310,7 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Land area',
+		abbreviation: 'LAN',
 		unit: 'km²',
 		chart_type: ChartType.AREA,
 		frequencies: [
@@ -305,9 +327,11 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Forest area',
+		abbreviation: 'FOR',
 		subindicators: [
 			{
 				name: 'Total',
+				abbreviation: 'TOT',
 				unit: 'km²',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -324,6 +348,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: '% of land area',
+				abbreviation: '%-LAND',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -342,9 +367,11 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Income Distribution',
+		abbreviation: 'INC-DIST',
 		subindicators: [
 			{
 				name: 'Gini index',
+				abbreviation: 'GINI',
 				unit: '%',
 				chart_type: ChartType.LINE,
 				frequencies: [
@@ -361,6 +388,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'lowest 20%',
+				abbreviation: '1ST-20%',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -377,6 +405,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'lowest 10%',
+				abbreviation: '1ST-10%',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -393,6 +422,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'second 20%',
+				abbreviation: '2ND-20%',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -409,6 +439,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'third 20%',
+				abbreviation: '3RD-20%',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -425,6 +456,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'fourth 20%',
+				abbreviation: '4TH-20%',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -441,6 +473,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'highest 20%',
+				abbreviation: '5TH-20%',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -459,9 +492,11 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Unemployment',
+		abbreviation: 'UNEMP',
 		subindicators: [
 			{
 				name: 'Total',
+				abbreviation: 'TOT',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -478,6 +513,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'Male',
+				abbreviation: 'MA',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -494,6 +530,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'Female',
+				abbreviation: 'FE',
 				unit: '%',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -512,6 +549,7 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Birth rate, crude',
+		abbreviation: 'BR-CR',
 		unit: 'per 1000',
 		chart_type: ChartType.AREA,
 		frequencies: [
@@ -528,9 +566,11 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Life expectancy',
+		abbreviation: 'LE',
 		subindicators: [
 			{
 				name: 'Total',
+				abbreviation: 'TOT',
 				unit: 'years',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -547,6 +587,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'Male',
+				abbreviation: 'MA',
 				unit: 'years',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -563,6 +604,7 @@ export const indicators: Indicator[] = [
 			},
 			{
 				name: 'Female',
+				abbreviation: 'FE',
 				unit: 'years',
 				chart_type: ChartType.AREA,
 				frequencies: [
@@ -581,6 +623,7 @@ export const indicators: Indicator[] = [
 	},
 	{
 		name: 'Women who believe a husband is justified in beating his wife when she burns the food',
+		abbreviation: 'VAW-BURN',
 		unit: '%',
 		chart_type: ChartType.AREA,
 		frequencies: [

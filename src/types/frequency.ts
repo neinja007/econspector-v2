@@ -11,3 +11,10 @@ export const FrequencyMap = {
 	[Frequency.QUARTERLY]: 'Quarterly',
 	[Frequency.MONTHLY]: 'Monthly'
 };
+
+export const FrequencyAbbreviationMap = {
+	[Frequency.ANNUAL]: 'AN',
+	[Frequency.BIANNUAL]: 'BI',
+	[Frequency.QUARTERLY]: 'QU',
+	[Frequency.MONTHLY]: 'MO'
+};
