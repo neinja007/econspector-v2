@@ -1,5 +1,5 @@
 import { supabase } from '@/supabase/clients/client';
-import { DbDataFunctions, DbDataTables, DbDataViews } from '@/types/db/tables';
+import { DbDataFunctions, DbDataTables, DbDataViews } from '@/types/db/alias';
 
 async function getCountries(): Promise<{ data: DbDataTables<'countries'>[]; count: number | null }> {
 	const { data, error, count } = await supabase
