@@ -1,5 +1,5 @@
 import { supabase } from '@/supabase/clients/client';
-import { DbDataFunctions, DbDataTables, DbDataViews } from '@/types/db/alias';
+import { DbDataFunctions, DbDataTables } from '@/types/db/alias';
 
 async function getCountries(): Promise<{ data: DbDataTables<'countries'>[]; count: number | null }> {
 	const { data, error, count } = await supabase
@@ -13,13 +13,20 @@ async function getCountries(): Promise<{ data: DbDataTables<'countries'>[]; coun
 	return { data, count };
 }
 
-async function getCountry(code: string): Promise<DbDataViews<'countries_with_currencies'> | undefined> {
-	const { data, error } = await supabase.schema('data').from('countries_with_currencies').select('*').eq('cca3', code);
+// TODO: use maybesingle everywhere you need to, like below
+
+async function getCountry(code: string) {
+	const { data, error } = await supabase
+		.schema('data')
+		.from('countries_with_currencies')
+		.select('*')
+		.eq('cca3', code)
+		.maybeSingle();
 	if (error) throw error;
-	if (!data || data.length === 0) {
+	if (!data) {
 		return undefined;
 	}
-	return data[0];
+	return data;
 }
 
 // async function getRankedCountries(
