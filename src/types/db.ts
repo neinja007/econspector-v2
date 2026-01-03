@@ -100,23 +100,23 @@ export type Database = {
       }
       frequency_sources: {
         Row: {
-          data_source: Database["data"]["Enums"]["data_source"] | null
+          data_source: Database["data"]["Enums"]["data_source"]
           data_updated_at: string | null
-          frequency_id: number | null
+          frequency_id: number
           id: number
           "wb-code": string | null
         }
         Insert: {
-          data_source?: Database["data"]["Enums"]["data_source"] | null
+          data_source: Database["data"]["Enums"]["data_source"]
           data_updated_at?: string | null
-          frequency_id?: number | null
+          frequency_id: number
           id?: number
           "wb-code"?: string | null
         }
         Update: {
-          data_source?: Database["data"]["Enums"]["data_source"] | null
+          data_source?: Database["data"]["Enums"]["data_source"]
           data_updated_at?: string | null
-          frequency_id?: number | null
+          frequency_id?: number
           id?: number
           "wb-code"?: string | null
         }
