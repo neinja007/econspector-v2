@@ -1,5 +1,5 @@
-import { ChartType } from './chart';
 import { DataSource } from './data_source';
+import { DbDataEnums } from './db/alias';
 import { Frequency } from './frequency';
 
 export type IndicatorCategory = {
@@ -12,7 +12,7 @@ export type Indicator = {
 	parent_id: number;
 	name: string;
 	unit: string;
-	chart_type: ChartType | null;
+	chart_type: DbDataEnums<'chart_type'> | null;
 	data_updated_at: string;
 	category_id: string;
 	indicator_frequencies: IndicatorFrequency[];

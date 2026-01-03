@@ -1,4 +1,4 @@
-import { Currency } from '../currency';
+import { DbDataTables } from './alias';
 
 /**
  * Type overrides for database views and tables.
@@ -37,7 +37,7 @@ export interface DbTypeOverrides {
 	data: {
 		Views: {
 			countries_with_currencies: {
-				currencies: Currency[] | null;
+				currencies: DbDataTables<'currencies'> | null;
 			};
 		};
 		Tables: Record<string, Record<string, any>>;
@@ -53,7 +53,7 @@ export const dbTypeOverrides: DbTypeOverrides = {
 	data: {
 		Views: {
 			countries_with_currencies: {
-				currencies: null as Currency[] | null
+				currencies: null as DbDataTables<'currencies'>[] | null
 			}
 		},
 		Tables: {}
