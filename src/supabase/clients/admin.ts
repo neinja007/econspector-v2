@@ -1,4 +1,4 @@
-import { DatabaseWithOverrides } from '@/types/db/type-overrides';
+import { DatabaseWithOverrides } from '@/types/db/override-types';
 import { createClient } from '@supabase/supabase-js';
 
 export const adminSupabase = createClient<DatabaseWithOverrides>(

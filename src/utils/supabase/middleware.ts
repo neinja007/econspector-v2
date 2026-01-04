@@ -1,4 +1,4 @@
-import { DatabaseWithOverrides } from '@/types/db/type-overrides';
+import { DatabaseWithOverrides } from '@/types/db/override-types';
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 

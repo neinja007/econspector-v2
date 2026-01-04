@@ -1,5 +1,5 @@
 import { Database } from './db';
-import { ApplyOverrides } from './type-overrides';
+import { ApplyOverrides } from './override-types';
 
 export type DbDataTables<T extends keyof Database['data']['Tables']> = ApplyOverrides<'data', 'Tables', T>;
 export type DbUsersTables<T extends keyof Database['users']['Tables']> = ApplyOverrides<'users', 'Tables', T>;
