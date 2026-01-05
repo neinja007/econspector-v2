@@ -108,7 +108,6 @@ export type Database = {
       data_sources: {
         Row: {
           abbreviation: string
-          created_at: string
           icon_path: string | null
           id: number
           name: string
@@ -116,7 +115,6 @@ export type Database = {
         }
         Insert: {
           abbreviation: string
-          created_at?: string
           icon_path?: string | null
           id?: number
           name: string
@@ -124,7 +122,6 @@ export type Database = {
         }
         Update: {
           abbreviation?: string
-          created_at?: string
           icon_path?: string | null
           id?: number
           name?: string
@@ -305,6 +302,10 @@ export type Database = {
       }
     }
     Functions: {
+      get_indicators: {
+        Args: { p_group_id: number; p_user_id: string }
+        Returns: Json
+      }
       get_ranked_countries: {
         Args: {
           p_end_year: number
