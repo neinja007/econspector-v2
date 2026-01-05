@@ -29,7 +29,7 @@ async function getCountry(code: string) {
 const getRankedCountries = async (
 	type: 'countries' | 'regions' | 'subregions',
 	sourceId: number,
-	timePeriod: [number, number]
+	timePeriod: [number, number] | null
 ) => {
 	const { data } = await supabase.schema('data').rpc('get_ranked_countries', {
 		p_level: type,
