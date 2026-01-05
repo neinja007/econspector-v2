@@ -47,7 +47,7 @@ export interface DbTypeOverrides {
 	data: {
 		Views: {
 			countries_with_currencies: {
-				currencies: DbDataTables<'currencies'>[] | null;
+				currencies: DbDataTables<'currencies'>[];
 			};
 		};
 		Tables: {};
@@ -70,7 +70,7 @@ export const dbTypeOverrides: DbTypeOverrides = {
 	data: {
 		Views: {
 			countries_with_currencies: {
-				currencies: null as DbDataTables<'currencies'>[] | null
+				currencies: [] as DbDataTables<'currencies'>[]
 			}
 		},
 		Tables: {},

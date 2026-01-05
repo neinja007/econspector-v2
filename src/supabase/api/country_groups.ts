@@ -25,21 +25,21 @@ export const getCountryGroup = async (id: number) => {
 	return data;
 };
 
-export const addCountryToGroup = async (countryCode: string, groupId: string) => {
+export const addCountryToGroup = async (countryCode: string, groupId: number) => {
 	const { data, error } = await supabase
 		.schema('users')
 		.from('country_groups_countries')
-		.upsert({ group_id: parseInt(groupId), country_cca3: countryCode }, { onConflict: 'group_id, country_cca3' });
+		.upsert({ group_id: groupId, country_cca3: countryCode }, { onConflict: 'group_id, country_cca3' });
 	if (error) throw error;
 	return data;
 };
 
-export const removeCountryFromGroup = async (countryCode: string, groupId: string) => {
+export const removeCountryFromGroup = async (countryCode: string, groupId: number) => {
 	const { data, error } = await supabase
 		.schema('users')
 		.from('country_groups_countries')
 		.delete()
-		.eq('group_id', parseInt(groupId))
+		.eq('group_id', groupId)
 		.eq('country_cca3', countryCode);
 
 	if (error) throw error;

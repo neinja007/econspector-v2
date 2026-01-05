@@ -17,7 +17,7 @@ export const POST = async (req: Request) => {
 		.schema('data')
 		.from('frequency_sources')
 		.select('*, indicator_frequencies(indicator_id)')
-		.eq('data_source', 'World Bank');
+		.eq('data_source', 1); // 'World Ban data source id;
 
 	if (!worldBankSources.data) {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });

@@ -1,8 +1,15 @@
 import { SimpleTooltip } from '@/components/simple-tooltip';
-import { Country, CountryGroup } from '@/types/country';
+import { DbDataViews } from '@/types/db/alias';
+import { CountryGroup } from '@/types/db/types/country-group';
 import Link from 'next/link';
 
-export const Codes = ({ keys, data }: { keys: string[]; data: Country | CountryGroup }) => {
+export const Codes = ({
+	keys,
+	data
+}: {
+	keys: string[];
+	data: DbDataViews<'countries_with_currencies'> | CountryGroup;
+}) => {
 	const codesString = keys
 		.map((key) => (key in data ? data[key as keyof typeof data] : undefined))
 		.filter(Boolean)

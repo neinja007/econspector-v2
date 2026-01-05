@@ -5,7 +5,7 @@ export const useRemoveCountryFromGroup = () => {
 	const queryClient = useQueryClient();
 
 	return useMutation({
-		mutationFn: ({ countryCode, groupId }: { countryCode: string; groupId: string }) =>
+		mutationFn: ({ countryCode, groupId }: { countryCode: string; groupId: number }) =>
 			removeCountryFromGroup(countryCode, groupId),
 		onSuccess: () => queryClient.invalidateQueries({ queryKey: ['country-groups'] })
 	});
