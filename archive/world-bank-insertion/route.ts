@@ -1,4 +1,3 @@
-import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 import { adminSupabase } from '@/supabase/clients/admin';
@@ -41,21 +40,17 @@ const processBatch = async <T>(requests: Promise<T>[], batchSize: number = 5): P
 };
 
 export const POST = async () => {
-	const worldBankCountries = await adminSupabase
-		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.COUNTRIES)
-		.select('*')
-		.eq('world_bank', true);
+	const worldBankCountries = await adminSupabase.schema('data').from('countries').select('*').eq('world_bank', true);
 
 	if (!worldBankCountries.data) {
 		return NextResponse.json({ error: 'No world bank countries found' }, { status: 404 });
 	}
 
 	const worldBankSources = await adminSupabase
-		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.FREQUENCY_SOURCES)
+		.schema('data')
+		.from('frequency_sources')
 		.select('*')
-		.eq('data_source', 'World Bank');
+		.eq('data_source', 1); // World Bank data source id
 
 	if (!worldBankSources.data) {
 		return NextResponse.json({ error: 'No world bank sources found' }, { status: 404 });
@@ -68,7 +63,7 @@ export const POST = async () => {
 			allRequests.push(
 				retryRequest(async () => {
 					const res = await axios.get(
-						`https://api.worldbank.org/v2/countries/${country.cca3}/indicators/${source.code}?per_page=10000&format=json`,
+						`https://api.worldbank.org/v2/countries/${country.cca3}/indicators/${source['wb-code']}?per_page=10000&format=json`,
 						{
 							timeout: 30000,
 							headers: {
@@ -83,7 +78,7 @@ export const POST = async () => {
 						data: res.data[1] ?? []
 					};
 				}).catch((err) => {
-					console.error(`Failed to fetch ${country.cca3} ${source.code} after retries:`, err.message);
+					console.error(`Failed to fetch ${country.cca3} ${source['wb-code']} after retries:`, err.message);
 					return null;
 				})
 			);
@@ -119,10 +114,7 @@ export const POST = async () => {
 		try {
 			for (let i = 0; i < allDataToInsert.length; i += BATCH_SIZE) {
 				const batch = allDataToInsert.slice(i, i + BATCH_SIZE);
-				const { error } = await adminSupabase
-					.schema(DatabaseSchema.DATA)
-					.from(DatabaseTable.TIME_SERIES_DATA)
-					.upsert(batch);
+				const { error } = await adminSupabase.schema('data').from('time_series_data').upsert(batch);
 
 				console.log(`Inserted batch ${i / BATCH_SIZE + 1}: ${batch.length} records`);
 
@@ -145,7 +137,7 @@ export const POST = async () => {
 };
 
 export const DELETE = async () => {
-	await adminSupabase.schema(DatabaseSchema.DATA).from(DatabaseTable.TIME_SERIES_DATA).delete().neq('id', 0);
+	await adminSupabase.schema('data').from('time_series_data').delete().neq('id', 0);
 
 	return NextResponse.json({ message: 'World bank data deleted successfully' });
 };
