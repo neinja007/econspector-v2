@@ -11,6 +11,7 @@ import {
 } from '@/components/shadcn/ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
 import { FrequencySource, Indicator, IndicatorFrequency } from '@/types/db/types/indicators';
+import { capitalize } from '@/utils/capitalize';
 import { X } from 'lucide-react';
 import Link from 'next/link';
 
@@ -87,7 +88,7 @@ export const IndicatorDialog = ({
 								<SelectContent>
 									{availableFrequencies?.map((frequency) => (
 										<SelectItem key={frequency.id} value={frequency.id.toString()}>
-											{frequency.frequency}
+											{capitalize(frequency.frequency)}
 										</SelectItem>
 									))}
 								</SelectContent>
