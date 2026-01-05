@@ -10,10 +10,7 @@ import {
 	DialogTrigger
 } from '@/components/shadcn/ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
-import { TimeSeriesData } from '@/types/data';
-import { DataSourceMap } from '@/types/data_source';
-import { FrequencyMap } from '@/types/db/types/frequency';
-import { FrequencySource, Indicator, IndicatorFrequency } from '@/types/indicator';
+import { FrequencySource, Indicator, IndicatorFrequency } from '@/types/db/types/indicators';
 import { X } from 'lucide-react';
 import Link from 'next/link';
 
@@ -22,7 +19,7 @@ type IndicatorDialogProps = {
 	indicator: Indicator;
 	areaCode: string;
 	areaName: string;
-	timeSeriesData: TimeSeriesData | undefined;
+	timeSeriesData: { period: string; value: number }[] | undefined;
 	selectedChild: Indicator | null;
 	hasChildren: boolean;
 	selectedFrequency: IndicatorFrequency | null;
@@ -90,7 +87,7 @@ export const IndicatorDialog = ({
 								<SelectContent>
 									{availableFrequencies?.map((frequency) => (
 										<SelectItem key={frequency.id} value={frequency.id.toString()}>
-											{FrequencyMap[frequency.frequency]}
+											{frequency.frequency}
 										</SelectItem>
 									))}
 								</SelectContent>
@@ -108,7 +105,7 @@ export const IndicatorDialog = ({
 								<SelectContent>
 									{selectedFrequency?.frequency_sources.map((source) => (
 										<SelectItem key={source.id} value={source.id.toString()}>
-											{DataSourceMap[source.data_source]}
+											{source.data_source.name}
 										</SelectItem>
 									))}
 								</SelectContent>
@@ -139,7 +136,7 @@ export const IndicatorDialog = ({
 					<DialogDescription className='w-full text-center'>
 						{selectedSource && (
 							<span>
-								The data shown below is sourced from {DataSourceMap[selectedSource.data_source]}.{' '}
+								The data shown below is sourced from {selectedSource.data_source.name}.{' '}
 								<Link
 									className='text-blue-500 hover:underline'
 									href={'/documentation/sources#' + selectedSource.data_source}

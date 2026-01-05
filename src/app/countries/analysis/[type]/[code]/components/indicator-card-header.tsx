@@ -1,7 +1,7 @@
 import { CardHeader, CardTitle } from '@/components/shadcn/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/shadcn/ui/select';
 import { SimpleTooltip } from '@/components/simple-tooltip';
-import { Indicator } from '@/types/indicator';
+import { Indicator } from '@/types/db/types/indicators';
 
 type IndicatorCardHeaderProps = {
 	indicator: Indicator;
