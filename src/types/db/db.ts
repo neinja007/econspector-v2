@@ -105,29 +105,66 @@ export type Database = {
         }
         Relationships: []
       }
+      data_sources: {
+        Row: {
+          abbreviation: string
+          created_at: string
+          icon_path: string | null
+          id: number
+          name: string
+          website: string
+        }
+        Insert: {
+          abbreviation: string
+          created_at?: string
+          icon_path?: string | null
+          id?: number
+          name: string
+          website: string
+        }
+        Update: {
+          abbreviation?: string
+          created_at?: string
+          icon_path?: string | null
+          id?: number
+          name?: string
+          website?: string
+        }
+        Relationships: []
+      }
       frequency_sources: {
         Row: {
-          data_source: Database["data"]["Enums"]["data_source"]
+          data_source: number
           data_updated_at: string | null
           frequency_id: number
           id: number
+          origin: Database["data"]["Enums"]["origin"]
           "wb-code": string | null
         }
         Insert: {
-          data_source: Database["data"]["Enums"]["data_source"]
+          data_source: number
           data_updated_at?: string | null
           frequency_id: number
           id?: number
+          origin: Database["data"]["Enums"]["origin"]
           "wb-code"?: string | null
         }
         Update: {
-          data_source?: Database["data"]["Enums"]["data_source"]
+          data_source?: number
           data_updated_at?: string | null
           frequency_id?: number
           id?: number
+          origin?: Database["data"]["Enums"]["origin"]
           "wb-code"?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "frequency_sources_data_source_fkey"
+            columns: ["data_source"]
+            isOneToOne: false
+            referencedRelation: "data_sources"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "frequency_sources_frequency_id_fkey"
             columns: ["frequency_id"]
@@ -287,6 +324,7 @@ export type Database = {
         | "TRADING_ECONOMICS"
         | "OECD"
       frequency: "ANNUAL" | "BIANNUAL" | "MONTHLY" | "QUARTERLY"
+      origin: "COMPUTED" | "SOURCE"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -542,6 +580,7 @@ export const Constants = {
         "OECD",
       ],
       frequency: ["ANNUAL", "BIANNUAL", "MONTHLY", "QUARTERLY"],
+      origin: ["COMPUTED", "SOURCE"],
     },
   },
   users: {
