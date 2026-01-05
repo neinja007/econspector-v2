@@ -1,10 +1,9 @@
-import { DatabaseSchema, DatabaseTable } from '@/types/supabase';
 import { supabase } from '@/supabase/clients/client';
 
 export const getTimeSeriesData = async (sourceId: number, countryCode: string) => {
 	const { data, error } = await supabase
-		.schema(DatabaseSchema.DATA)
-		.from(DatabaseTable.TIME_SERIES_DATA)
+		.schema('data')
+		.from('time_series_data')
 		.select('period, value')
 		.eq('country_code', countryCode)
 		.eq('source_id', sourceId)

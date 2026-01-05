@@ -11,7 +11,7 @@ export const getCountryGroups = async () => {
 	return data;
 };
 
-export const getCountryGroup = async (id: string) => {
+export const getCountryGroup = async (id: number) => {
 	const { data, error } = await supabase
 		.schema('users')
 		.from('country_groups')
