@@ -1,15 +1,13 @@
 import { supabase } from '@/supabase/clients/client';
 
 async function getCountries() {
-	const { data, error, count } = await supabase
+	const { data, error } = await supabase
 		.schema('data')
 		.from('countries')
-		.select('*', {
-			count: 'estimated'
-		})
+		.select('*')
 		.order('name', { ascending: true });
 	if (error) throw error;
-	return { data, count };
+	return data;
 }
 
 // TODO: use maybesingle everywhere you need to, like below
