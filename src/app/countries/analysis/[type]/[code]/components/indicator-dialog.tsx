@@ -136,10 +136,18 @@ export const IndicatorDialog = ({
 					<DialogDescription className='w-full text-center'>
 						{selectedSource && (
 							<span>
-								The data shown below is sourced from {selectedSource.data_source.name}.{' '}
+								The data shown below is sourced from{' '}
 								<Link
 									className='text-blue-500 hover:underline'
-									href={'/documentation/sources#' + selectedSource.data_source}
+									href={selectedSource.data_source.website}
+									target='_blank'
+								>
+									{selectedSource.data_source.name}
+								</Link>
+								.{' '}
+								<Link
+									className='text-blue-500 hover:underline'
+									href={'/documentation/sources#' + selectedSource.data_source.abbreviation}
 									target='_blank'
 								>
 									Learn more about our sources
