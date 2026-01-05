@@ -85,7 +85,7 @@ export const sidebarRoutes: {
 							}
 						];
 					} else if (type === 'group') {
-						const group = await getCountryGroup(code);
+						const group = await getCountryGroup(parseInt(code));
 						const label = group ? group.name : 'Unknown Group';
 						return [
 							{
