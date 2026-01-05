@@ -5,7 +5,7 @@ export const useAddCountryToGroup = () => {
 	const queryClient = useQueryClient();
 
 	return useMutation({
-		mutationFn: ({ countryCode, groupId }: { countryCode: string; groupId: string }) =>
+		mutationFn: ({ countryCode, groupId }: { countryCode: string; groupId: number }) =>
 			addCountryToGroup(countryCode, groupId),
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: ['country-groups'] });

@@ -1,5 +1,4 @@
 import Flag from '@/components/flag';
-import { CountryGroup, CountryWithCurrencies } from '@/types/country';
 import { Codes } from './codes';
 import { Currencies } from './currencies';
 import { useCountryGroups } from '@/hooks/react-query/queries/use-country-groups';
@@ -8,8 +7,10 @@ import { Star } from 'lucide-react';
 import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useAddCountryToGroup } from '@/hooks/react-query/mutations/add-country-to-group';
 import { useRemoveCountryFromGroup } from '@/hooks/react-query/mutations/remove-country-from-group';
+import { DbDataViews } from '@/types/db/alias';
+import { CountryGroup } from '@/types/db/types/country-group';
 
-type InfoProps = { data: CountryGroup | CountryWithCurrencies };
+type InfoProps = { data: DbDataViews<'countries_with_currencies'> | CountryGroup };
 
 export const Info = ({ data }: InfoProps) => {
 	const { mutate: addCountryToGroup, isPending: isAddingCountryToGroup } = useAddCountryToGroup();
@@ -39,10 +40,10 @@ export const Info = ({ data }: InfoProps) => {
 			</div>
 			{'cca3' in data && favouriteGroup && (
 				<div>
-					{favouriteGroup.countries.includes(data.cca3) ? (
+					{favouriteGroup.countries.includes(data.cca3!) ? (
 						<Button
 							variant='outline'
-							onClick={() => removeCountryFromGroup({ countryCode: data.cca3, groupId: favouriteGroup.id })}
+							onClick={() => removeCountryFromGroup({ countryCode: data.cca3!, groupId: favouriteGroup.id })}
 							disabled={isRemovingCountryFromGroup}
 						>
 							{isRemovingCountryFromGroup ? <Spinner /> : <Star className='size-5' />} Remove from favourites
@@ -50,7 +51,7 @@ export const Info = ({ data }: InfoProps) => {
 					) : (
 						<Button
 							variant='default'
-							onClick={() => addCountryToGroup({ countryCode: data.cca3, groupId: favouriteGroup.id })}
+							onClick={() => addCountryToGroup({ countryCode: data.cca3!, groupId: favouriteGroup.id })}
 							disabled={isAddingCountryToGroup}
 						>
 							{isAddingCountryToGroup ? <Spinner /> : <Star className='size-5' />} Add to favourites
