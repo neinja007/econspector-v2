@@ -46,7 +46,7 @@ import { RankedItem } from './types/ranked-item';
 export interface DbTypeOverrides {
 	data: {
 		Views: {
-			countries_with_currencies: {
+			countries_with_currencies: DbDataTables<'countries'> & {
 				currencies: DbDataTables<'currencies'>[];
 			};
 		};
@@ -70,6 +70,14 @@ export const dbTypeOverrides: DbTypeOverrides = {
 	data: {
 		Views: {
 			countries_with_currencies: {
+				cca2: '' as string,
+				cca3: '' as string,
+				ccn3: '' as string,
+				cioc: '' as string,
+				capital: '' as string,
+				full_name: '' as string,
+				name: '' as string,
+				world_bank: false as boolean,
 				currencies: [] as DbDataTables<'currencies'>[]
 			}
 		},
