@@ -1,6 +1,6 @@
 import { DbDataTables } from './alias';
 import { CountryGroup } from './types/country-group';
-import { Indicator } from './types/indicators';
+import { IndicatorType } from './types/indicators';
 import { RankedItem } from './types/ranked-item';
 
 /**
@@ -53,7 +53,7 @@ export interface DbTypeOverrides {
 		Tables: {};
 		Functions: {
 			get_ranked_countries: RankedItem[] | null;
-			get_indicators: Indicator[] | null;
+			get_indicators: IndicatorType[] | null;
 		};
 	};
 	users: {
@@ -76,7 +76,7 @@ export const dbTypeOverrides: DbTypeOverrides = {
 		Tables: {},
 		Functions: {
 			get_ranked_countries: null as RankedItem[] | null,
-			get_indicators: null as Indicator[] | null
+			get_indicators: null as IndicatorType[] | null
 		}
 	},
 	users: {
