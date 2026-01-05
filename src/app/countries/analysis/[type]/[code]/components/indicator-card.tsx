@@ -21,7 +21,7 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 
 	const [isExpanded, setIsExpanded] = useState(false);
 
-	const [selectedChildId, setSelectedChildId] = useState<number | null>(indicator.getChild(0)?.id ?? null);
+	const [selectedChildId, setSelectedChildId] = useState<number | null>(indicator.children[0]?.id ?? null);
 
 	const selectedIndicator = hasChildren ? indicator.getChild(selectedChildId ?? 0) ?? indicator : indicator;
 
@@ -30,7 +30,7 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 	const [selectedFrequencyId, setSelectedFrequencyId] = useState<number | null>(availableFrequencies?.[0]?.id ?? null);
 
 	useEffect(() => {
-		if (availableFrequencies) {
+		if (availableFrequencies && availableFrequencies.length > 0) {
 			setSelectedFrequencyId(availableFrequencies[0].id);
 		}
 	}, [availableFrequencies]);
@@ -40,7 +40,7 @@ export const IndicatorCard = ({ indicator, areaName, areaCode }: IndicatorCardPr
 	const [selectedSourceId, setSelectedSourceId] = useState<number | null>(availableSources?.[0]?.id ?? null);
 
 	useEffect(() => {
-		if (availableSources) {
+		if (availableSources && availableSources.length > 0) {
 			setSelectedSourceId(availableSources[0].id);
 		}
 	}, [availableSources]);
