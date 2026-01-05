@@ -22,7 +22,10 @@ export const getCountryGroup = async (id: number) => {
 	if (!data) {
 		return undefined;
 	}
-	return data;
+	return {
+		...data,
+		countries: data.countries.map((country) => country.country_cca3)
+	};
 };
 
 export const addCountryToGroup = async (countryCode: string, groupId: number) => {
