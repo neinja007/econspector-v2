@@ -1,6 +1,6 @@
 'use client';
 
-import { RankedItem } from '@/types/ranked-item';
+import { RankedItem } from '@/types/db/types/ranked-item';
 import { ColumnDef } from '@tanstack/react-table';
 import Flag from '@/components/flag';
 import Link from 'next/link';

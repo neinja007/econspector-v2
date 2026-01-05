@@ -12,7 +12,7 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/shadcn/ui/select';
 import { TimeSeriesData } from '@/types/data';
 import { DataSourceMap } from '@/types/data_source';
-import { FrequencyMap } from '@/types/frequency';
+import { FrequencyMap } from '@/types/db/types/frequency';
 import { FrequencySource, Indicator, IndicatorFrequency } from '@/types/indicator';
 import { X } from 'lucide-react';
 import Link from 'next/link';

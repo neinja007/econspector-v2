@@ -1,6 +1,6 @@
 import { ChartType } from '@/types/chart';
 import { DataSource } from '@/types/data_source';
-import { Frequency } from '@/types/frequency';
+import { Frequency } from '@/types/db/types/frequency';
 
 export type Source = {
 	source: DataSource;
