@@ -34,7 +34,7 @@ export class IndicatorFrequency {
 	constructor(data: IndicatorFrequency) {
 		this.id = data.id;
 		this.frequency = data.frequency;
-		this.frequency_sources = data.frequency_sources.map((fs) => new FrequencySource(fs));
+		this.frequency_sources = (data.frequency_sources ?? []).map((fs) => new FrequencySource(fs));
 	}
 
 	getSource(id: number): FrequencySource | undefined {
@@ -42,25 +42,36 @@ export class IndicatorFrequency {
 	}
 }
 
+export type IndicatorType = {
+	id: number;
+	code: string | null;
+	name: string;
+	unit: string | null;
+	description: string | null;
+	chart_type: DbDataEnums<'chart_type'> | null;
+	children?: IndicatorType[];
+	indicator_frequencies?: IndicatorFrequency[];
+};
+
 export class Indicator {
 	id: number;
 	code: string;
 	name: string;
-	unit: string;
-	description: string;
+	unit: string | null;
+	description: string | null;
 	chart_type: DbDataEnums<'chart_type'>;
 	children: Indicator[];
 	indicator_frequencies: IndicatorFrequency[];
 
-	constructor(data: Indicator) {
+	constructor(data: IndicatorType) {
 		this.id = data.id;
-		this.code = data.code;
+		this.code = data.code ?? '???';
 		this.name = data.name;
 		this.unit = data.unit;
 		this.description = data.description;
-		this.chart_type = data.chart_type;
-		this.children = data.children.map((child) => new Indicator(child));
-		this.indicator_frequencies = data.indicator_frequencies.map((freq) => new IndicatorFrequency(freq));
+		this.chart_type = data.chart_type ?? 'AREA';
+		this.children = (data.children ?? []).map((child) => new Indicator(child));
+		this.indicator_frequencies = (data.indicator_frequencies ?? []).map((freq) => new IndicatorFrequency(freq));
 	}
 
 	hasChildren(): boolean {
