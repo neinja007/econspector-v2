@@ -237,27 +237,27 @@ export type Database = {
       }
       time_series_data: {
         Row: {
-          country_code: string | null
+          country_code: string
           created_at: string
           id: number
-          period: string | null
-          source_id: number | null
+          period: string
+          source_id: number
           value: number
         }
         Insert: {
-          country_code?: string | null
+          country_code: string
           created_at?: string
           id?: number
-          period?: string | null
-          source_id?: number | null
+          period: string
+          source_id: number
           value: number
         }
         Update: {
-          country_code?: string | null
+          country_code?: string
           created_at?: string
           id?: number
-          period?: string | null
-          source_id?: number | null
+          period?: string
+          source_id?: number
           value?: number
         }
         Relationships: [
