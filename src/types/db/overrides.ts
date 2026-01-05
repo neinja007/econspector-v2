@@ -49,16 +49,16 @@ export interface DbTypeOverrides {
 				currencies: DbDataTables<'currencies'>[] | null;
 			};
 		};
-		Tables: Record<string, Record<string, any>>;
+		Tables: {};
 		Functions: {
 			get_ranked_countries: RankedItem[] | null;
 			get_indicators: Indicator[] | null;
 		};
 	};
 	users: {
-		Views: Record<string, Record<string, any>>;
-		Tables: Record<string, Record<string, any>>;
-		Functions: Record<string, any>;
+		Views: {};
+		Tables: {};
+		Functions: {};
 	};
 }
 
