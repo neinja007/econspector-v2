@@ -36,7 +36,6 @@ BEGIN
           'id', fs.id,
           'data_source', jsonb_build_object(
             'abbreviation', ds.abbreviation,
-            'created_at', ds.created_at,
             'icon_path', ds.icon_path,
             'name', ds.name,
             'website', ds.website
@@ -68,7 +67,6 @@ BEGIN
           'id', fs.id,
           'data_source', jsonb_build_object(
             'abbreviation', ds.abbreviation,
-            'created_at', ds.created_at,
             'icon_path', ds.icon_path,
             'name', ds.name,
             'website', ds.website
