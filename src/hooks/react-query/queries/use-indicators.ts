@@ -1,9 +1,9 @@
 import { getIndicators } from '@/supabase/api/indicators';
 import { useQuery } from '@tanstack/react-query';
 
-export const useIndicators = (categoryId?: number) => {
+export const useIndicators = (groupId?: number) => {
 	return useQuery({
-		queryKey: ['indicators', categoryId],
-		queryFn: () => getIndicators(categoryId || null)
+		queryKey: ['indicators', groupId],
+		queryFn: () => getIndicators(groupId ?? null)
 	});
 };

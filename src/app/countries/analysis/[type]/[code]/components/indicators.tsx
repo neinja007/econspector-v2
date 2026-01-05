@@ -1,17 +1,16 @@
 import { useIndicators } from '@/hooks/react-query/queries/use-indicators';
-import { IndicatorCategory } from '@/types/indicator-category';
 import { IndicatorCard } from './indicator-card';
 import { Skeleton } from '@/components/shadcn/ui/skeleton';
 import { TriangleAlertIcon } from 'lucide-react';
 
 type IndicatorsProps = {
-	category: IndicatorCategory | null;
+	groupId: number | null;
 	areaName: string;
 	areaCode: string;
 };
 
-export const Indicators = ({ category, areaName, areaCode }: IndicatorsProps) => {
-	const { data: indicators, status } = useIndicators(category?.id ?? undefined);
+export const Indicators = ({ groupId, areaName, areaCode }: IndicatorsProps) => {
+	const { data: indicators, status } = useIndicators(groupId ?? undefined);
 
 	if (status === 'success' && indicators?.length === 0) {
 		return (

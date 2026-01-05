@@ -65,7 +65,7 @@ const CountryAnalysisPage = () => {
 						</InputGroup>
 					</div>
 					<TabsContent value='all'>
-						<Indicators category={null} areaName={data.name} areaCode={code} />
+						<Indicators groupId={null} areaName={data.name} areaCode={code} />
 					</TabsContent>
 				</Tabs>
 			</div>
