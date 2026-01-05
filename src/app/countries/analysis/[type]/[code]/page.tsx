@@ -4,7 +4,6 @@ import { Spinner } from '@/components/shadcn/ui/spinner';
 import { useParams } from 'next/navigation';
 import { Info } from './components/info';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/shadcn/ui/tabs';
-import { useIndicatorCategories } from '@/hooks/react-query/queries/use-indicator-categories';
 import { InputGroupAddon, InputGroupInput } from '@/components/shadcn/ui/input-group';
 import { InputGroup } from '@/components/shadcn/ui/input-group';
 import { Search } from 'lucide-react';
@@ -16,7 +15,6 @@ const CountryAnalysisPage = () => {
 	const { code, type } = useParams<{ code: string; type: 'country' | 'group' }>();
 
 	const { data, status } = useCountryOrGroup(type, code);
-	const { data: indicatorCategories } = useIndicatorCategories();
 
 	const [tab, setTab] = useState<string>('all');
 
@@ -53,11 +51,6 @@ const CountryAnalysisPage = () => {
 					<div className='flex gap-4'>
 						<TabsList>
 							<TabsTrigger value='all'>All</TabsTrigger>
-							{indicatorCategories?.map((category) => (
-								<TabsTrigger key={category.id} value={category.name}>
-									{category.name}
-								</TabsTrigger>
-							))}
 						</TabsList>
 						<InputGroup>
 							<InputGroupInput
@@ -71,11 +64,6 @@ const CountryAnalysisPage = () => {
 							{search && <InputGroupAddon align='inline-end'>12 results</InputGroupAddon>}
 						</InputGroup>
 					</div>
-					{indicatorCategories?.map((category) => (
-						<TabsContent key={category.id} value={category.name}>
-							<Indicators category={category} areaName={data.name} areaCode={code} />
-						</TabsContent>
-					))}
 					<TabsContent value='all'>
 						<Indicators category={null} areaName={data.name} areaCode={code} />
 					</TabsContent>
