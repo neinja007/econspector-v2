@@ -1,4 +1,3 @@
-import { ChartType } from '@/types/chart';
 import { ChartConfig, ChartContainer, ChartLegend, ChartTooltip, ChartTooltipContent } from './shadcn/ui/chart';
 import {
 	XAxis,
@@ -11,10 +10,11 @@ import {
 	Bar
 } from 'recharts';
 import { useMemo } from 'react';
+import { DbDataEnums } from '@/types/db/alias';
 
 type ChartProps = {
 	data: { period: string; values: Record<string, number> }[];
-	type: ChartType | null;
+	type: DbDataEnums<'chart_type'> | null;
 	unit: string;
 	config: ChartConfig;
 };
@@ -25,8 +25,7 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 		...item.values
 	}));
 
-	const RechartsComponent =
-		type === ChartType.LINE ? RechartsLineChart : type === ChartType.BAR ? RechartsBarChart : RechartsAreaChart;
+	const RechartsComponent = type === 'LINE' ? RechartsLineChart : type === 'BAR' ? RechartsBarChart : RechartsAreaChart;
 
 	const chartKey = useMemo(() => {
 		return Math.random().toString();
@@ -48,7 +47,7 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 				<ChartTooltip content={<ChartTooltipContent compactNotation unit={unit} />} />
 				{Object.keys(config).map((key) => {
 					const color = config[key].color ?? '#ff0000';
-					if (type === ChartType.AREA) {
+					if (type === 'AREA') {
 						return (
 							<Area
 								key={key}
@@ -59,7 +58,7 @@ export const Chart = ({ data, type, unit, config }: ChartProps) => {
 								dataKey={key}
 							/>
 						);
-					} else if (type === ChartType.LINE) {
+					} else if (type === 'LINE') {
 						return <Line key={key} dataKey={key} stroke={color} strokeWidth={2} dot={false} />;
 					} else {
 						return <Bar key={key} dataKey={key} fill={color} />;
