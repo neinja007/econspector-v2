@@ -1,7 +1,7 @@
 import { supabase } from '@/supabase/clients/client';
 import { DbDataFunctions, DbDataTables } from '@/types/db/alias';
 
-async function getCountries(): Promise<{ data: DbDataTables<'countries'>[]; count: number | null }> {
+async function getCountries(): Promise<{ data: DbDataTables<'countries'>; count: number | null }> {
 	const { data, error, count } = await supabase
 		.schema('data')
 		.from('countries')
@@ -124,15 +124,14 @@ const getRankedCountries = async (
 	type: 'countries' | 'regions' | 'subregions',
 	sourceId: number,
 	timePeriod: [number, number]
-): Promise<DbDataFunctions<'get_ranked_countries'>> =>
-	supabase
-		.schema('data')
-		.rpc('get_ranked_countries', {
-			p_level: type,
-			p_source_id: sourceId,
-			p_start_year: timePeriod?.[0] ?? 0,
-			p_end_year: timePeriod?.[1] ?? 0
-		})
-		.then(({ data }) => data);
+): Promise<DbDataFunctions<'get_ranked_countries'>> => {
+	const { data } = await supabase.schema('data').rpc('get_ranked_countries', {
+		p_level: type,
+		p_source_id: sourceId,
+		p_start_year: timePeriod?.[0] ?? 0,
+		p_end_year: timePeriod?.[1] ?? 0
+	});
+	return data;
+};
 
 export { getCountries, getCountry, getRankedCountries };

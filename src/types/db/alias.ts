@@ -1,5 +1,5 @@
 import { Database } from './db';
-import { ApplyOverrides } from './override-types';
+import { ApplyOverrides, DatabaseWithOverrides } from './override-types';
 
 export type DbDataTables<T extends keyof Database['data']['Tables']> = ApplyOverrides<'data', 'Tables', T>;
 export type DbUsersTables<T extends keyof Database['users']['Tables']> = ApplyOverrides<'users', 'Tables', T>;
@@ -11,6 +11,6 @@ export type DbDataViews<T extends keyof Database['data']['Views']> = ApplyOverri
 export type DbUsersViews<T extends keyof Database['users']['Views']> = ApplyOverrides<'users', 'Views', T>;
 
 export type DbDataFunctions<T extends keyof Database['data']['Functions']> =
-	Database['data']['Functions'][T]['Returns'];
+	DatabaseWithOverrides['data']['Functions'][T] extends { Returns: infer R } ? R : never;
 export type DbUsersFunctions<T extends keyof Database['users']['Functions']> =
-	Database['users']['Functions'][T]['Returns'];
+	DatabaseWithOverrides['users']['Functions'][T] extends { Returns: infer R } ? R : never;
