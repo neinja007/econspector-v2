@@ -22,13 +22,11 @@ const CountriesAnalysisPage = () => {
 
 	const searchList: CountryOrGroup[] = useMemo(
 		() => [
-			...(showCountries ? countries?.data.map((country) => ({ type: 'country' as const, data: country })) || [] : []),
+			...(showCountries ? countries?.map((country) => ({ type: 'country' as const, data: country })) || [] : []),
 			...(showGroups ? countryGroups?.map((group) => ({ type: 'group' as const, data: group })) || [] : [])
 		],
 		[showCountries, showGroups, countries, countryGroups]
 	);
-
-	// TODO: Consider just searching countries and then filtering groups by the countries in the search results
 
 	const searchResults = useSearch(searchList, search, [
 		'data.cca3',
@@ -37,8 +35,7 @@ const CountriesAnalysisPage = () => {
 		'data.cca2',
 		'data.ccn3',
 		'data.cioc',
-		'data.capital',
-		'data.countries'
+		'data.capital'
 	]);
 
 	return (
