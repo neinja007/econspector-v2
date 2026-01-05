@@ -123,7 +123,7 @@ export const IndicatorDialog = ({
 				<Chart
 					data={timeSeriesData?.map((data) => ({ period: data.period, values: { [areaCode]: data.value } })) ?? []}
 					type={selectedIndicator.chart_type}
-					unit={selectedIndicator.unit}
+					unit={selectedIndicator.unit ?? ''}
 					config={{
 						[areaCode]: {
 							label: areaName,
