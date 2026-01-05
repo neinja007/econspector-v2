@@ -1,45 +1,3 @@
--- Parameters:
---   p_group_id: Optional indicator group ID to filter by (currently unused)
---   p_user_id: ID of the user requesting the indicators (currently unused)
---
--- Returns: JSON array of indicators with nested structure:
---   [
---     {
---       "id": number,
---       "name": string,
---       "code": string,
---       "description": string,
---       "unit": string,
---       "chart_type": string,
---       "parent_id": null,
---       "indicator_frequencies": [
---         {
---           "id": number,
---           "frequency": string,
---           "indicator_id": number,
---           "frequency_sources": [
---             {
---               "id": number,
---               "frequency_id": number,
---               "data_source": number,
---               "wb-code": string,
---               "origin": string,
---               "data_updated_at": string
---             }
---           ]
---         }
---       ],
---       "children": [
---         {
---           "id": number,
---           "name": string,
---           ...
---           "indicator_frequencies": [...]
---         }
---       ]
---     }
---   ]
-
 CREATE OR REPLACE FUNCTION data.get_indicators(
   p_group_id INTEGER DEFAULT NULL,
   p_user_id UUID
@@ -51,12 +9,12 @@ DECLARE
   v_result json;
 BEGIN
   WITH parent_indicators AS (
-    SELECT *
+    SELECT i.id, i.name, i.code, i.description, i.unit, i.chart_type
     FROM data.indicators i
     WHERE i.parent_id IS NULL
   ),
   children_indicators AS (
-    SELECT *
+    SELECT i.id, i.name, i.code, i.description, i.unit, i.chart_type, i.parent_id
     FROM data.indicators i
     WHERE i.parent_id IS NOT NULL
       AND i.parent_id IN (SELECT id FROM parent_indicators)
@@ -68,7 +26,6 @@ BEGIN
         jsonb_build_object(
           'id', if.id,
           'frequency', if.frequency,
-          'indicator_id', if.indicator_id,
           'frequency_sources', COALESCE(fs.sources, '[]'::jsonb)
         )
       ) as frequencies
@@ -77,14 +34,18 @@ BEGIN
       SELECT jsonb_agg(
         jsonb_build_object(
           'id', fs.id,
-          'frequency_id', fs.frequency_id,
-          'data_source', fs.data_source,
-          'wb-code', fs."wb-code",
-          'origin', fs.origin,
-          'data_updated_at', fs.data_updated_at
+          'data_source', jsonb_build_object(
+            'abbreviation', ds.abbreviation,
+            'created_at', ds.created_at,
+            'icon_path', ds.icon_path,
+            'name', ds.name,
+            'website', ds.website
+          ),
+          'origin', fs.origin
         )
       ) as sources
       FROM data.frequency_sources fs
+      INNER JOIN data.data_sources ds ON ds.id = fs.data_source
       WHERE fs.frequency_id = if.id
     ) fs ON true
     WHERE if.indicator_id IN (SELECT id FROM parent_indicators)
@@ -97,7 +58,6 @@ BEGIN
         jsonb_build_object(
           'id', if.id,
           'frequency', if.frequency,
-          'indicator_id', if.indicator_id,
           'frequency_sources', COALESCE(fs.sources, '[]'::jsonb)
         )
       ) as frequencies
@@ -106,14 +66,18 @@ BEGIN
       SELECT jsonb_agg(
         jsonb_build_object(
           'id', fs.id,
-          'frequency_id', fs.frequency_id,
-          'data_source', fs.data_source,
-          'wb-code', fs."wb-code",
-          'origin', fs.origin,
-          'data_updated_at', fs.data_updated_at
+          'data_source', jsonb_build_object(
+            'abbreviation', ds.abbreviation,
+            'created_at', ds.created_at,
+            'icon_path', ds.icon_path,
+            'name', ds.name,
+            'website', ds.website
+          ),
+          'origin', fs.origin
         )
       ) as sources
       FROM data.frequency_sources fs
+      INNER JOIN data.data_sources ds ON ds.id = fs.data_source
       WHERE fs.frequency_id = if.id
     ) fs ON true
     WHERE if.indicator_id IN (SELECT id FROM children_indicators)
@@ -139,7 +103,6 @@ BEGIN
             'description', cwf.description,
             'unit', cwf.unit,
             'chart_type', cwf.chart_type,
-            'parent_id', cwf.parent_id,
             'indicator_frequencies', cwf.indicator_frequencies
           )
         ) FILTER (WHERE cwf.id IS NOT NULL),
@@ -148,7 +111,7 @@ BEGIN
     FROM parent_indicators pi
     LEFT JOIN parent_frequencies pf ON pf.indicator_id = pi.id
     LEFT JOIN children_with_frequencies cwf ON cwf.parent_id = pi.id
-    GROUP BY pi.id, pi.name, pi.code, pi.description, pi.unit, pi.chart_type, pi.parent_id, pf.frequencies
+    GROUP BY pi.id, pi.name, pi.code, pi.description, pi.unit, pi.chart_type, pf.frequencies
   )
   SELECT jsonb_agg(
     jsonb_build_object(
@@ -158,7 +121,6 @@ BEGIN
       'description', pwc.description,
       'unit', pwc.unit,
       'chart_type', pwc.chart_type,
-      'parent_id', pwc.parent_id,
       'indicator_frequencies', pwc.indicator_frequencies,
       'children', pwc.children
     )
