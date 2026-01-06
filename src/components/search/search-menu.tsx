@@ -50,7 +50,7 @@ export function SearchMenu() {
 				</Button>
 			}
 		>
-			<CommandInput placeholder='Type a command or search...' />
+			<CommandInput placeholder='Search for pages, countries, and more...' />
 			<CommandList>
 				<CommandEmpty>No results found. Report a missing solution or feature request:</CommandEmpty>
 				{searchGroups.map((group) => (
