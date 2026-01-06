@@ -63,6 +63,18 @@ export const sidebarRoutes: {
 	}[];
 }[] = [
 	{
+		name: 'General',
+		icon: Globe,
+		hidden: true,
+		routes: [
+			{
+				label: 'Welcome to EconSpector v2!',
+				href: '/',
+				icon: Home
+			}
+		]
+	},
+	{
 		name: 'Countries',
 		icon: Landmark,
 		routes: [
@@ -256,18 +268,6 @@ export const sidebarRoutes: {
 				label: 'An Authentication Error Occurred',
 				href: '/auth/error',
 				icon: AlertCircle
-			}
-		]
-	},
-	{
-		name: 'General',
-		icon: Globe,
-		hidden: true,
-		routes: [
-			{
-				label: 'Welcome to EconSpector v2!',
-				href: '/',
-				icon: Home
 			}
 		]
 	}
