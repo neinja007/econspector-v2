@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { HeadingBreadcrumbs } from '@/components/heading-breadcrumbs';
 import ThemeToggle from '@/components/theming/theme-toggle';
 import { generateGlobalMetadata } from '@/utils/generate-global-metadata';
+import { SearchMenu } from '@/components/search/search-menu';
 
 export const generateMetadata = generateGlobalMetadata;
 
@@ -25,7 +26,8 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 							<main className='w-full h-screen'>
 								<div className='flex items-center justify-between p-6'>
 									<HeadingBreadcrumbs />
-									<div>
+									<div className='flex items-center gap-2'>
+										<SearchMenu />
 										<ThemeToggle />
 									</div>
 								</div>
