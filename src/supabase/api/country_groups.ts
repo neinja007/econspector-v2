@@ -1,3 +1,4 @@
+import { emptyUuid } from '@/utils/empty-uuid';
 import { supabase } from '../clients/client';
 import { getUserId } from '@/utils/get-user-id';
 
@@ -5,7 +6,7 @@ export const getCountryGroups = async () => {
 	const userId = await getUserId();
 	const { data, error } = await supabase.schema('users').rpc('get_country_groups', {
 		p_source_id: 35, // GDP constant 2015 USD PPP, World Bank, Annual
-		p_user_id: userId ?? ''
+		p_user_id: userId ?? emptyUuid
 	});
 	if (error) throw error;
 	return data;

@@ -1,5 +1,6 @@
 import { supabase } from '@/supabase/clients/client';
 import { Indicator } from '@/types/db/types/indicators';
+import { emptyUuid } from '@/utils/empty-uuid';
 import { getUserId } from '@/utils/get-user-id';
 
 async function getIndicators(groupId: number | null) {
@@ -7,7 +8,7 @@ async function getIndicators(groupId: number | null) {
 
 	const { data, error } = await supabase
 		.schema('data')
-		.rpc('get_indicators', { p_group_id: groupId ?? 0, p_user_id: userId ?? '' });
+		.rpc('get_indicators', { p_group_id: groupId ?? 0, p_user_id: userId ?? emptyUuid });
 
 	if (error) throw error;
 
