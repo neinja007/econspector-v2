@@ -72,6 +72,5 @@ export const useSearchItems = () => {
 		});
 	}
 
-	console.log(searchGroups);
 	return searchGroups;
 };

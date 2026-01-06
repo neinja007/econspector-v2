@@ -10,7 +10,6 @@ async function getIndicators(groupId: number | null) {
 		.rpc('get_indicators', { p_group_id: groupId ?? 0, p_user_id: userId ?? '' });
 
 	if (error) throw error;
-	console.log(data);
 
 	if (!data) {
 		return null;
