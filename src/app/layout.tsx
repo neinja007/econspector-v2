@@ -8,6 +8,7 @@ import { HeadingBreadcrumbs } from '@/components/heading-breadcrumbs';
 import ThemeToggle from '@/components/theming/theme-toggle';
 import { generateGlobalMetadata } from '@/utils/generate-global-metadata';
 import { SearchMenu } from '@/components/search/search-menu';
+import { AuthButton } from '@/components/auth-button';
 
 export const generateMetadata = generateGlobalMetadata;
 
@@ -29,6 +30,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
 									<div className='flex items-center gap-2'>
 										<SearchMenu />
 										<ThemeToggle />
+										<AuthButton />
 									</div>
 								</div>
 								<div className='m-6 h-auto w-full max-w-7xl mx-auto px-4'>{children}</div>
