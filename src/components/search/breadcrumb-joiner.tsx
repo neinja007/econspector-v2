@@ -16,21 +16,32 @@ export const BreadcrumbJoiner = ({
 }) => {
 	return (
 		<Breadcrumb>
-			<BreadcrumbList>
+			<BreadcrumbList className='flex flex-nowrap items-center overflow-hidden'>
 				{breadcrumbs.map((breadcrumb, i) => (
 					<Fragment key={breadcrumb.label}>
 						{i > 0 && <BreadcrumbSeparator />}
 						<BreadcrumbItem>
 							{i === breadcrumbs.length - 1 ? (
-								<BreadcrumbPage className='flex items-center gap-1.5'>
-									{breadcrumb.icon && renderIconOrComponent({ icon: breadcrumb.icon, props: { className: 'size-4' } })}
-									{breadcrumb.label}
+								<BreadcrumbPage
+									className='flex items-center gap-1.5 min-w-0 max-w-full truncate'
+									style={{ flexShrink: 1 }}
+								>
+									{breadcrumb.icon &&
+										renderIconOrComponent({
+											icon: breadcrumb.icon,
+											props: { className: 'size-4 shrink-0' }
+										})}
+									<span className='truncate'>{breadcrumb.label}</span>
 								</BreadcrumbPage>
 							) : (
-								<>
-									{breadcrumb.icon && renderIconOrComponent({ icon: breadcrumb.icon, props: { className: 'size-4' } })}{' '}
+								<span className='flex items-center gap-1.5 whitespace-nowrap'>
+									{breadcrumb.icon &&
+										renderIconOrComponent({
+											icon: breadcrumb.icon,
+											props: { className: 'size-4 shrink-0' }
+										})}
 									{breadcrumb.label}
-								</>
+								</span>
 							)}
 						</BreadcrumbItem>
 					</Fragment>
