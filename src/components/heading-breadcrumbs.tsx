@@ -17,8 +17,10 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 import { Spinner } from './shadcn/ui/spinner';
 import { renderIconOrComponent } from '@/utils/render-icon-or-component';
 
-export const HeadingBreadcrumbs = () => {
-	const pathname = usePathname();
+export const HeadingBreadcrumbs = ({ overridePathname, small }: { overridePathname?: string; small?: boolean }) => {
+	const className = small ? 'text-sm' : 'text-lg';
+	const actualPathname = usePathname();
+	const pathname = overridePathname || actualPathname;
 	const parentRoute = useMemo(
 		() => sidebarRoutes.find((route) => route.routes.some((r) => pathMatches(pathname, r.href, r.exact))),
 		[pathname]
@@ -62,7 +64,7 @@ export const HeadingBreadcrumbs = () => {
 	if (!parentRoute || !childRoute)
 		return (
 			<Breadcrumb>
-				<BreadcrumbList className='text-lg'>
+				<BreadcrumbList className={className}>
 					<BreadcrumbItem>
 						<BreadcrumbPage className='flex items-center gap-1.5'>
 							<TriangleAlert className='size-5' /> Page not found
@@ -80,7 +82,7 @@ export const HeadingBreadcrumbs = () => {
 
 	return (
 		<Breadcrumb>
-			<BreadcrumbList className='text-lg'>
+			<BreadcrumbList className={className}>
 				<BreadcrumbItem>
 					<parentRoute.icon className='size-5' /> {parentRoute?.name || 'Home'}
 				</BreadcrumbItem>
