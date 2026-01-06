@@ -1,10 +1,15 @@
 import { sidebarRoutes } from '@/data/sidebar-routes';
-import { Book, LucideIcon } from 'lucide-react';
+import { useCountries } from '@/hooks/react-query/queries/use-countries';
+import { useCountryGroups } from '@/hooks/react-query/queries/use-country-groups';
+import { Book, Landmark, LucideIcon } from 'lucide-react';
+import { createElement } from 'react';
+import FlagComponent from '@/components/flag';
 
 export type SearchItem = {
 	label: { label: string; icon?: React.ReactNode | LucideIcon }[];
 	href: string;
 	display: 'heading-breadcrumbs' | 'breadcrumbs' | 'simple';
+	aliases?: (string | null)[];
 };
 
 export type SearchGroup = {
@@ -15,6 +20,8 @@ export type SearchGroup = {
 
 export const useSearchItems = () => {
 	const searchGroups: SearchGroup[] = [];
+
+	// Sidebar routes & pages
 	const sidebarRouteItems = sidebarRoutes
 		.filter((route) => route.name !== 'Authentication')
 		.reduce((acc: SearchItem[], route) => {
@@ -36,6 +43,34 @@ export const useSearchItems = () => {
 		icon: Book,
 		items: sidebarRouteItems
 	});
+
+	// Countries & Groups
+
+	const { data: countries } = useCountries();
+	const { data: countryGroups } = useCountryGroups();
+
+	const countryItems: SearchItem[] = countries
+		? countries.map((country) => ({
+				label: [
+					{ label: 'Countries', icon: Landmark },
+					{
+						label: country.name,
+						icon: createElement(FlagComponent, { code: country?.cca3 || '', ratio: '4x3', width: 32 })
+					}
+				],
+				href: `/countries/analysis/country/${country.cca3}`,
+				display: 'breadcrumbs' as const,
+				aliases: [country.full_name, country.cca2, country.ccn3, country.cioc]
+		  }))
+		: [];
+
+	if (countryItems.length > 0) {
+		searchGroups.push({
+			label: 'Countries',
+			icon: Landmark,
+			items: countryItems
+		});
+	}
 
 	console.log(searchGroups);
 	return searchGroups;

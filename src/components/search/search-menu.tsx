@@ -67,7 +67,10 @@ export function SearchMenu() {
 							<CommandItem
 								onSelect={() => handleSelect(item)}
 								key={item.label.map((l) => l.label).join(' - ')}
-								keywords={item.label.map((l) => l.label)}
+								keywords={item.label
+									.map((l) => l.label)
+									.concat(item.aliases?.filter((a) => a !== null) || [])
+									.concat([item.href])}
 							>
 								{item.display === 'heading-breadcrumbs' ? (
 									<HeadingBreadcrumbs overridePathname={item.href} small />
