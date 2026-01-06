@@ -54,9 +54,12 @@ export function SearchMenu() {
 			open={open}
 			onOpenChange={setOpen}
 			trigger={
+				// TODO: Tooltip for some reason breaks the dialog trigger, figure that out
+				// <SimpleTooltip tooltip='Search through everything EconSpector has to offer' asChild>
 				<Button variant='outline' size='icon'>
 					<SearchIcon className='size-4' />
 				</Button>
+				// </SimpleTooltip>
 			}
 		>
 			<CommandInput
