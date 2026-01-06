@@ -34,7 +34,7 @@ export const SearchResults = ({ searchResults, showType }: SearchResultsProps) =
 						key={slug(element.type + '-' + (element.type === 'country' ? element.data.cca3 : element.data.id))}
 					>
 						<div className='relative'>
-							<div className='opacity-50 group-hover:opacity-100 aspect-4/3 transition-all rounded-md overflow-hidden'>
+							<div className='dark:brightness-50 brightness-75 group-hover:brightness-100 aspect-4/3 transition-all rounded-md overflow-hidden'>
 								{element.type === 'country' ? (
 									<Flag code={element.data.cca3} ratio='4x3' />
 								) : (
