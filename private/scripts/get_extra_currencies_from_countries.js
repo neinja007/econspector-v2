@@ -25,7 +25,7 @@ for (const country of countries) {
 			const candidateName = candidate.name ? String(candidate.name).trim() : '';
 			if (candidateName && existingCurrencyNames.has(candidateName)) {
 				console.log(
-					`⚠️ Skipping currency with existing name: code="${code}", name="${candidateName}" (country: ${
+					`Skipping currency with existing name: code="${code}", name="${candidateName}" (country: ${
 						country.cca2 || country.ccn3 || country.name?.common || 'unknown'
 					})`
 				);
