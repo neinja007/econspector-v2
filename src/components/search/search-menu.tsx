@@ -25,6 +25,12 @@ export function SearchMenu() {
 	const router = useRouter();
 	const [showGroups, setShowGroups] = useState<string[]>([]);
 
+	useEffect(() => {
+		if (searchGroups.length > 0) {
+			setShowGroups(searchGroups.map((group) => group.label));
+		}
+	}, [searchGroups]);
+
 	const handleToggleGroup = (group: string) => {
 		if (showGroups.includes(group)) {
 			setShowGroups((prev) => prev.filter((g) => g !== group));
