@@ -59,7 +59,7 @@ export const SidebarFooter = () => {
 					<DropdownMenuContent
 						side='top'
 						align='start'
-						className='w-[var(--radix-dropdown-menu-trigger-width)] bg-sidebar border-t'
+						className='w-(--radix-dropdown-menu-trigger-width) bg-sidebar border-t'
 					>
 						<DropdownMenuItem>
 							<Link href='/auth' className='flex items-center gap-2'>
